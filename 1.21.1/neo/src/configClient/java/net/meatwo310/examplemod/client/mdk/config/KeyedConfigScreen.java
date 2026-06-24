@@ -1,4 +1,4 @@
-package net.scratch221171.examplemod.client.mdk.config;
+package net.scratch221171.astralenchant.client.mdk.config;
 
 import com.electronwill.nightconfig.core.UnmodifiableConfig;
 import com.electronwill.nightconfig.core.UnmodifiableConfig.Entry;
