@@ -1,7 +1,7 @@
-import net.meatwo310.mdk.build.VersionCatalogLibrary
-import net.meatwo310.mdk.build.library
-import net.meatwo310.mdk.build.module
-import net.meatwo310.mdk.build.versionCatalog
+import net.scratch221171.mdk.build.VersionCatalogLibrary
+import net.scratch221171.mdk.build.library
+import net.scratch221171.mdk.build.module
+import net.scratch221171.mdk.build.versionCatalog
 
 plugins {
     id("fabric-mod-conventions")

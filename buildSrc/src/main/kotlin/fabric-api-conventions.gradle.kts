@@ -1,5 +1,5 @@
 import net.fabricmc.loom.api.fabricapi.FabricApiExtension
-import net.meatwo310.mdk.build.*
+import net.scratch221171.mdk.build.*
 
 val modId: String by project
 val minecraftVersion: String by project

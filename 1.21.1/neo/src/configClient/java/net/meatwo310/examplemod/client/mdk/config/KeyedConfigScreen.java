@@ -1,10 +1,10 @@
-package net.meatwo310.examplemod.client.mdk.config;
+package net.scratch221171.examplemod.client.mdk.config;
 
 import com.electronwill.nightconfig.core.UnmodifiableConfig;
 import com.electronwill.nightconfig.core.UnmodifiableConfig.Entry;
-import net.meatwo310.examplemod.mdk.config.ConfigReadableNames;
-import net.meatwo310.examplemod.mdk.config.ConfigScreenTranslations;
-import net.meatwo310.examplemod.mdk.config.ConfigTranslationKeys;
+import net.scratch221171.astralenchant.mdk.config.ConfigReadableNames;
+import net.scratch221171.astralenchant.mdk.config.ConfigScreenTranslations;
+import net.scratch221171.astralenchant.mdk.config.ConfigTranslationKeys;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;

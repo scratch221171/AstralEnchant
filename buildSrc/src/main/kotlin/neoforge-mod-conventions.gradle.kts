@@ -1,5 +1,5 @@
-import net.meatwo310.mdk.build.configureCiRuntimeMods
-import net.meatwo310.mdk.build.supportsGameTestServer
+import net.scratch221171.mdk.build.configureCiRuntimeMods
+import net.scratch221171.mdk.build.supportsGameTestServer
 import org.gradle.api.file.DuplicatesStrategy
 
 plugins {

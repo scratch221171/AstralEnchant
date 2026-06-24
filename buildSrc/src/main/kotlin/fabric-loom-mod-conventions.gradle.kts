@@ -1,4 +1,4 @@
-import net.meatwo310.mdk.build.*
+import net.scratch221171.mdk.build.*
 
 plugins {
     id("fabric-mod-conventions")

@@ -1,5 +1,5 @@
 import groovy.json.JsonOutput
-import net.meatwo310.mdk.build.*
+import net.scratch221171.mdk.build.*
 import org.gradle.api.file.DuplicatesStrategy
 
 plugins {

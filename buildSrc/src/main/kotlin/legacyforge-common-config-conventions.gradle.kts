@@ -1,7 +1,7 @@
-import net.meatwo310.mdk.build.VersionCatalogLibrary
-import net.meatwo310.mdk.build.configureVersionCommonConfigSourceSet
-import net.meatwo310.mdk.build.module
-import net.meatwo310.mdk.build.versionCatalog
+import net.scratch221171.mdk.build.VersionCatalogLibrary
+import net.scratch221171.mdk.build.configureVersionCommonConfigSourceSet
+import net.scratch221171.mdk.build.module
+import net.scratch221171.mdk.build.versionCatalog
 
 val forgeConfigApiPortVersion: String by project
 
