@@ -1,4 +1,4 @@
-package net.meatwo310.examplemod;
+package net.scratch221171.astralenchant;
 
 import net.minecraft.resources.ResourceLocation;
 

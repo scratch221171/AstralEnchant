@@ -1,4 +1,4 @@
-package net.meatwo310.examplemod.mdk.config;
+package net.scratch221171.astralenchant.mdk.config;
 
 import fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry;
 import net.minecraftforge.fml.config.ModConfig;

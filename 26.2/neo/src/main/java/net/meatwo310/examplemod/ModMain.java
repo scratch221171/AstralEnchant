@@ -1,8 +1,8 @@
-package net.meatwo310.examplemod;
+package net.scratch221171.astralenchant;
 
-import net.meatwo310.examplemod.config.ModConfigs;
-import net.meatwo310.examplemod.mdk.config.PlatformConfigRegistrar;
-import net.meatwo310.examplemod.mdk.config.VersionedConfigSpec;
+import net.scratch221171.astralenchant.config.ModConfigs;
+import net.scratch221171.astralenchant.mdk.config.PlatformConfigRegistrar;
+import net.scratch221171.astralenchant.mdk.config.VersionedConfigSpec;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;

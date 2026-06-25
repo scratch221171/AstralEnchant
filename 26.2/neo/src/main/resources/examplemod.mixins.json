@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.meatwo310.examplemod.mixin",
+  "package": "net.scratch221171.astralenchant.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [],
   "injectors": {

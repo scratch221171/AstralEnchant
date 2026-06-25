@@ -1,8 +1,8 @@
-package net.meatwo310.examplemod;
+package net.scratch221171.astralenchant;
 
-import net.meatwo310.examplemod.config.ModConfigs;
-import net.meatwo310.examplemod.mdk.config.PlatformConfigRegistrar;
-import net.meatwo310.examplemod.mdk.config.VersionedConfigSpec;
+import net.scratch221171.astralenchant.config.ModConfigs;
+import net.scratch221171.astralenchant.mdk.config.PlatformConfigRegistrar;
+import net.scratch221171.astralenchant.mdk.config.VersionedConfigSpec;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 

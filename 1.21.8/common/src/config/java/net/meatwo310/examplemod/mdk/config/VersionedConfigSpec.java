@@ -1,4 +1,4 @@
-package net.meatwo310.examplemod.mdk.config;
+package net.scratch221171.astralenchant.mdk.config;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 import org.jspecify.annotations.Nullable;

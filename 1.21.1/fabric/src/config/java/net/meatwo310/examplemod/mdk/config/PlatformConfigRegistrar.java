@@ -1,4 +1,4 @@
-package net.meatwo310.examplemod.mdk.config;
+package net.scratch221171.astralenchant.mdk.config;
 
 import fuzs.forgeconfigapiport.fabric.api.neoforge.v4.NeoForgeConfigRegistry;
 import net.neoforged.fml.config.ModConfig;

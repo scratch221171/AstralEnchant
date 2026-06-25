@@ -1,4 +1,4 @@
-package net.meatwo310.examplemod.client;
+package net.scratch221171.astralenchant.client;
 
 import net.fabricmc.api.ClientModInitializer;
 

@@ -111,7 +111,7 @@ Use `req(version)` for normal version requests and `pin(version)` only when
 Gradle must reject any other selected version:
 
 ```kotlin
-import net.meatwo310.mdk.build.req
+import net.scratch221171.mdk.build.req
 
 val modmenuVersion: String by project
 
@@ -159,11 +159,11 @@ These conventions wire the `config` and `configClient` outputs into the jar and 
 The builder supports primitive values, ranged numbers, strings, lists, enums, and nested sections. Prefer `category(...)` plus nested classes for hierarchical config; keep `push(...)` and `pop()` for low-level adapter work or unusual migration cases.
 
 ```java
-package net.meatwo310.examplemod.config;
+package net.scratch221171.astralenchant.config;
 
-import net.meatwo310.examplemod.mdk.config.ConfigEntries;
-import net.meatwo310.examplemod.mdk.config.ConfigEntry;
-import net.meatwo310.examplemod.mdk.config.ConfigEntryBuilder;
+import net.scratch221171.astralenchant.mdk.config.ConfigEntries;
+import net.scratch221171.astralenchant.mdk.config.ConfigEntry;
+import net.scratch221171.astralenchant.mdk.config.ConfigEntryBuilder;
 
 import java.util.List;
 
@@ -404,7 +404,7 @@ Resolve conflicts carefully, then commit the merge.
 After merging upstream updates, review newly added files as well as conflicted
 files:
 
-- Replace any newly introduced `net.meatwo310.examplemod` package names with
+- Replace any newly introduced `net.scratch221171.astralenchant` package names with
   your mod's namespace.
 - Newly added subprojects are enabled by default when their `include(...)` lines
   are merged into `settings.gradle.kts`. Remove or comment out projects you do
