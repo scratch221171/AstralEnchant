@@ -15,7 +15,7 @@ import net.neoforged.fml.common.Mod;
 @Mod(Constants.MODID)
 public class AstralEnchant {
     public AstralEnchant(IEventBus modEventBus, ModContainer modContainer) {
-        Constants.LOGGER.debug(Constants.INITIALIZING, ModUtils.loc("1.21.1-neo-aaaaa"));
+        Constants.LOGGER.debug(Constants.INITIALIZING, ModUtils.loc("1.21.1-neo"));
         PlatformConfigRegistrar.registerAll(modContainer, VersionedConfigSpec.bindAll(ModConfigs.ALL));
 
         modEventBus.addListener(this::commonSetup);
@@ -24,9 +24,7 @@ public class AstralEnchant {
         NeoForge.EVENT_BUS.addListener(this::onAddReloadListeners);
     }
 
-    private void commonSetup(FMLCommonSetupEvent event) {
-        Constants.LOGGER.info("Hello, World!");
-    }
+    private void commonSetup(FMLCommonSetupEvent event) {}
 
     private void onAddReloadListeners(AddReloadListenerEvent event) {
         event.addListener(TagGroupLoader.INSTANCE);

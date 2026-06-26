@@ -1,4 +1,8 @@
 {
+  "enchantment.astralenchant.nullification": "Nullification",
+  "enchantment.astralenchant.nullification.desc": "Various damage reductions are negated, and attacks deal their full damage.",
+  "enchantment.astralenchant.reactive_armor": "Reactive Armor",
+  "enchantment.astralenchant.reactive_armor.desc": "Negates effects that bypass armor and enchantments for certain types of damage.",
   "item.astralenchant.arcane_quartz": "Arcane Quartz",
   "item.astralenchant.arcanium_ingot": "Arcanium Ingot",
   "item.astralenchant.budding_arcanium_ingot": "Budding Arcanium Ingot",

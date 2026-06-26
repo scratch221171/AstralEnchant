@@ -29,12 +29,9 @@ public class ReactiveArmorHandler {
             AEUtil.getEnchantmentHolder(AEEnchantments.REACTIVE_ARMOR, victim)
                     .ifPresent(holder -> {
                         if (EnchantmentHelper.getEnchantmentLevel(holder, victim) > 0) {
-                            Constants.LOGGER.info("hello");
                             var accessor = (IDamageSourceExtension) source;
                             List<TagKey<DamageType>> targets = TagGroupLoader.getReactiveArmorTags();
-                            Constants.LOGGER.info(targets.toString());
                             targets.forEach(accessor::astralenchant$addDisabledTag);
-                            targets.forEach(tag -> Constants.LOGGER.info("tag: " + tag.toString()));
                         }
                     });
         }

@@ -38,14 +38,6 @@ public class DamageSourceMixin implements IDamageSourceExtension {
      */
     @Inject(method = "is(Lnet/minecraft/tags/TagKey;)Z", at = @At("RETURN"), cancellable = true)
     private void astralenchant$isExtraTag(TagKey<DamageType> tag, CallbackInfoReturnable<Boolean> cir) {
-        Constants.LOGGER.info(tag.toString());
-        if (this.astralenchant$extraTags != null) {
-            Constants.LOGGER.info(this.astralenchant$extraTags.toString());
-        }
-        if (this.astralenchant$disabledTags != null) {
-            Constants.LOGGER.info(this.astralenchant$disabledTags.toString());
-        }
-
         if (this.astralenchant$extraTags != null && this.astralenchant$extraTags.contains(tag)) {
             cir.setReturnValue(true);
         } else if (this.astralenchant$disabledTags != null && this.astralenchant$disabledTags.contains(tag)) {

@@ -33,13 +33,9 @@ public class NullificationHandler {
                     .ifPresent(holder -> {
                         var weapon = source.getWeaponItem();
                         if (weapon != null && weapon.getEnchantmentLevel(holder) > 0) {
-                            Constants.LOGGER.info("hi");
                             var accessor = (IDamageSourceExtension) source;
                             List<TagKey<DamageType>> targets = TagGroupLoader.getNullificationTags();
-                            Constants.LOGGER.info(targets.toString());
-                            targets.forEach(accessor::astralenchant$addExtraTag);
-                            targets.forEach(tag -> Constants.LOGGER.info("tag: " + tag.toString()));
-                        }
+                            targets.forEach(accessor::astralenchant$addExtraTag);}
                     });
         }
     }
