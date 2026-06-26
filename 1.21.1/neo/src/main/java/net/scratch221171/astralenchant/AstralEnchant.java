@@ -1,5 +1,8 @@
 package net.scratch221171.astralenchant;
 
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
@@ -8,9 +11,6 @@ import net.scratch221171.astralenchant.common.tag.TagGroupLoader;
 import net.scratch221171.astralenchant.config.ModConfigs;
 import net.scratch221171.astralenchant.mdk.config.PlatformConfigRegistrar;
 import net.scratch221171.astralenchant.mdk.config.VersionedConfigSpec;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.Mod;
 
 @Mod(Constants.MODID)
 public class AstralEnchant {

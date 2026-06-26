@@ -4,14 +4,12 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.data.bootstrap.AEEnchantmentBootstrap;
 import net.scratch221171.astralenchant.data.lang.AEEnglishLangProvider;
 import net.scratch221171.astralenchant.data.lang.AEJapaneseLangProvider;
 import net.scratch221171.astralenchant.data.model.AEItemModelProvider;
-import net.scratch221171.astralenchant.data.tag.AEDamageTypeTagsProvider;
 
 @EventBusSubscriber(modid = Constants.MODID)
 public final class DataGenerators {

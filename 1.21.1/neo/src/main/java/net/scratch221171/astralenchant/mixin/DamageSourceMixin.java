@@ -12,7 +12,6 @@ package net.scratch221171.astralenchant.mixin;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageType;
-import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.util.IDamageSourceExtension;
 import org.spongepowered.asm.mixin.Mixin;

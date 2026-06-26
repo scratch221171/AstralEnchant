@@ -1,7 +1,6 @@
 package net.scratch221171.astralenchant.util;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import java.util.Optional;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -18,6 +17,8 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.server.ServerLifecycleHooks;
+
+import java.util.Optional;
 
 public class AEUtil {
     private static Optional<RegistryAccess> getRegistryAccess() {
