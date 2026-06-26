@@ -3,7 +3,9 @@
   "minVersion": "0.8",
   "package": "net.scratch221171.astralenchant.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "DamageSourceMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },

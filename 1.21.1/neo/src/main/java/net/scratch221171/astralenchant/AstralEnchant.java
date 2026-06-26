@@ -1,7 +1,10 @@
 package net.scratch221171.astralenchant;
 
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.scratch221171.astralenchant.common.item.AEItems;
+import net.scratch221171.astralenchant.common.tag.TagGroupLoader;
 import net.scratch221171.astralenchant.config.ModConfigs;
 import net.scratch221171.astralenchant.mdk.config.PlatformConfigRegistrar;
 import net.scratch221171.astralenchant.mdk.config.VersionedConfigSpec;
@@ -17,9 +20,15 @@ public class AstralEnchant {
 
         modEventBus.addListener(this::commonSetup);
         AEItems.register(modEventBus);
+
+        NeoForge.EVENT_BUS.addListener(this::onAddReloadListeners);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
         Constants.LOGGER.info("Hello, World!");
+    }
+
+    private void onAddReloadListeners(AddReloadListenerEvent event) {
+        event.addListener(TagGroupLoader.INSTANCE);
     }
 }

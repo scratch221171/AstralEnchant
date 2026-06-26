@@ -1,0 +1,85 @@
+/*
+ * Based on code from Apotheosis
+ * https://github.com/Shadows-of-Fire/Apotheosis
+ *
+ * Licensed under the MIT License.
+ *
+ * Original copyright (c) 2018-2025 Stormraven Studios, LLC
+ */
+
+package net.scratch221171.astralenchant.mixin;
+
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
+import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.util.IDamageSourceExtension;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Mixin(value = DamageSource.class, remap = false)
+public class DamageSourceMixin implements IDamageSourceExtension {
+
+    @Unique
+    private Set<TagKey<DamageType>> astralenchant$extraTags;
+
+    @Unique
+    private Set<TagKey<DamageType>> astralenchant$disabledTags;
+
+    /**
+     * {@link AEEnchantments#NULLIFICATION} または {@link AEEnchantments#REACTIVE_ARMOR} によるタグ編集を反映する。
+     */
+    @Inject(method = "is(Lnet/minecraft/tags/TagKey;)Z", at = @At("RETURN"), cancellable = true)
+    private void astralenchant$isExtraTag(TagKey<DamageType> tag, CallbackInfoReturnable<Boolean> cir) {
+        Constants.LOGGER.info(tag.toString());
+        if (this.astralenchant$extraTags != null) {
+            Constants.LOGGER.info(this.astralenchant$extraTags.toString());
+        }
+        if (this.astralenchant$disabledTags != null) {
+            Constants.LOGGER.info(this.astralenchant$disabledTags.toString());
+        }
+
+        if (this.astralenchant$extraTags != null && this.astralenchant$extraTags.contains(tag)) {
+            cir.setReturnValue(true);
+        } else if (this.astralenchant$disabledTags != null && this.astralenchant$disabledTags.contains(tag)) {
+            cir.setReturnValue(false);
+        }
+    }
+
+    @Override
+    public void astralenchant$addExtraTag(TagKey<DamageType> tag) {
+        if (this.astralenchant$extraTags == null) {
+            this.astralenchant$extraTags = new HashSet<>();
+        }
+        this.astralenchant$extraTags.add(tag);
+    }
+
+    @Override
+    public void astralenchant$removeExtraTag(TagKey<DamageType> tag) {
+        if (this.astralenchant$extraTags != null) {
+            this.astralenchant$extraTags.remove(tag);
+        }
+    }
+
+    @Override
+    public void astralenchant$addDisabledTag(TagKey<DamageType> tag) {
+        if (this.astralenchant$disabledTags == null) {
+            this.astralenchant$disabledTags = new HashSet<>();
+        }
+        this.astralenchant$disabledTags.add(tag);
+    }
+
+    @Override
+    public void astralenchant$removeDisabledTag(TagKey<DamageType> tag) {
+        if (this.astralenchant$disabledTags != null) {
+            this.astralenchant$disabledTags.remove(tag);
+        }
+    }
+}

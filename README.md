@@ -5,3 +5,8 @@
 
 <font color="#ff0000">***Note: This mod is still in alpha.***
 *It is strongly recommended to back up your data before installing this mod.*</font>
+
+
+*This project includes code adapted from [an unfinished pull request](https://github.com/scratch221171/Astral-Enchants-1.21.1/pull/1) originally submitted by @Hiiragi283.*
+
+*Special thanks to @Hiiragi283 for their contribution.*

@@ -10,11 +10,11 @@ public class AEEnchantments {
     /**
      * 与えた攻撃に様々なダメージタイプタグを付与し、ダメージ軽減を貫通する。
      *
-     * <p>Handler : {// @link MitigationPiercingHandler}
+     * <p>Handler : {@link net.scratch221171.astralenchant.common.enchantment.handler.NullificationHandler}
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> MITIGATION_PIERCING = create("mitigation_piercing");
+    public static final ResourceKey<Enchantment> NULLIFICATION = create("nullification");
 
     /**
      * 経験値を消費して死亡イベントをキャンセルする。
@@ -125,9 +125,9 @@ public class AEEnchantments {
     public static final ResourceKey<Enchantment> SLOT_EXPANSION = create("slot_expansion");
 
     /**
-     * 与えられた攻撃から防具貫通ダメージタイプタグを削除し、ダメージ貫通を無効化する。{// @link #MITIGATION_PIERCING} より権限が低い。
+     * 与えられた攻撃から防具貫通ダメージタイプタグを削除し、ダメージ貫通を無効化する。{@link #NULLIFICATION} より権限が低い。
      *
-     * <p>Handler : none
+     * <p>Handler : {@link net.scratch221171.astralenchant.common.enchantment.handler.ReactiveArmorHandler}
      *
      * <p>Mixin : none
      */
