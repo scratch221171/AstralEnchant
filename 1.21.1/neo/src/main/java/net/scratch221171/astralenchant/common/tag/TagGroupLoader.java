@@ -49,7 +49,7 @@ public class TagGroupLoader implements ResourceManagerReloadListener {
     }
 
     public static List<TagKey<DamageType>> getReactiveArmorTags() {
-        return Collections.unmodifiableList(nullificationLoadedTags);
+        return Collections.unmodifiableList(reactiveArmorLoadedTags);
     }
 
     private static void loadTagsInto(Resource resource, List<TagKey<DamageType>> loadedTags) {

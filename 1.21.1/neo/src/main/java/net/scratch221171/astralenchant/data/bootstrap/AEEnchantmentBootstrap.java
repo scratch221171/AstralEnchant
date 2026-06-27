@@ -71,7 +71,7 @@ public class AEEnchantmentBootstrap {
                         1,
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         Enchantment.constantCost(Integer.MAX_VALUE),
-                        32,
+                        64,
                         EquipmentSlotGroup.MAINHAND)));
 
         register(
@@ -83,7 +83,7 @@ public class AEEnchantmentBootstrap {
                         3,
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         Enchantment.constantCost(Integer.MAX_VALUE),
-                        32,
+                        64,
                         EquipmentSlotGroup.ARMOR)));
 /*
         register(

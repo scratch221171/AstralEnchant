@@ -24,6 +24,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Nullification",
                 "Various damage reductions are negated, and attacks deal their full damage.");
         addEnchantWithDesc(
+                AEEnchantments.LAST_STAND,
+                "Last Stand",
+                "Consumes experience points to avoid death.");
+        addEnchantWithDesc(
                 AEEnchantments.REACTIVE_ARMOR,
                 "Reactive Armor",
                 "Negates effects that bypass armor and enchantments for certain types of damage.");

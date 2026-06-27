@@ -23,14 +23,3 @@ jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
 configured = { module = "curse.maven:configured-457570" }
 forgeconfigscreens = { module = "maven.modrinth:forge-config-screens" }
 modmenu = { module = "maven.modrinth:modmenu" }
-
-sodium = { module = "maven.modrinth:sodium" }
-reeses-sodium-options = { module = "maven.modrinth:reeses-sodium-options" }
-sodium-extra = { module = "maven.modrinth:sodium-extra" }
-jade = { module = "maven.modrinth:jade" }
-emi = { module = "maven.modrinth:emi" }
-kotlinForForge = { module = "maven.modrinth:kotlin-for-forge" }
-emixx = { module = "maven.modrinth:emixx" }
-betterModlist = { module = "maven.modrinth:better-modlist" }
-cubesWithoutBorders = { module = "maven.modrinth:cubes-without-borders" }
-

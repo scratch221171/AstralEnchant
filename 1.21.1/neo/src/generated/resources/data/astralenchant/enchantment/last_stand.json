@@ -1,5 +1,5 @@
 {
-  "anvil_cost": 32,
+  "anvil_cost": 64,
   "description": {
     "translate": "enchantment.astralenchant.last_stand"
   },

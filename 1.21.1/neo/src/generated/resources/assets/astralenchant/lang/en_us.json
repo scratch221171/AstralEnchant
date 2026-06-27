@@ -1,4 +1,9 @@
 {
+  "astralenchant.configuration.last_stand": "Last Stand",
+  "astralenchant.configuration.nullification": "Nullification",
+  "astralenchant.configuration.reactive_armor": "Reactive Armor",
+  "enchantment.astralenchant.last_stand": "Last Stand",
+  "enchantment.astralenchant.last_stand.desc": "Consumes experience points to avoid death.",
   "enchantment.astralenchant.nullification": "Nullification",
   "enchantment.astralenchant.nullification.desc": "Various damage reductions are negated, and attacks deal their full damage.",
   "enchantment.astralenchant.reactive_armor": "Reactive Armor",
