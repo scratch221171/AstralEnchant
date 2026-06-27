@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.common.item;
+package net.scratch221171.astralenchant.common.registry;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Item;

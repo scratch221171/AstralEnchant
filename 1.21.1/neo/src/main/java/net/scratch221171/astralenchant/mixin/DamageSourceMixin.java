@@ -13,7 +13,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageType;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
-import net.scratch221171.astralenchant.util.IDamageSourceExtension;
+import net.scratch221171.astralenchant.common.util.IDamageSourceExtension;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

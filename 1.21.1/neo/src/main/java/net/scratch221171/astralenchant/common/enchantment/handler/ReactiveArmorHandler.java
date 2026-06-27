@@ -12,8 +12,8 @@ import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.tag.TagGroupLoader;
-import net.scratch221171.astralenchant.util.AEUtil;
-import net.scratch221171.astralenchant.util.IDamageSourceExtension;
+import net.scratch221171.astralenchant.common.util.AEUtil;
+import net.scratch221171.astralenchant.common.util.IDamageSourceExtension;
 
 import java.util.List;
 

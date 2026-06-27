@@ -2,7 +2,7 @@ package net.scratch221171.astralenchant.data.lang;
 
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
-import net.scratch221171.astralenchant.common.item.AEItems;
+import net.scratch221171.astralenchant.common.registry.AEItems;
 
 public class AEEnglishLangProvider extends AELangProvider {
 

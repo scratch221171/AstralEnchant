@@ -97,7 +97,7 @@ public class AEEnchantmentBootstrap {
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         16,
                         EquipmentSlotGroup.ANY)));
-
+*/
         register(
                 context,
                 AEEnchantments.ESSENCE_OF_ENCHANTMENT,
@@ -107,9 +107,9 @@ public class AEEnchantmentBootstrap {
                         5,
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         Enchantment.constantCost(Integer.MAX_VALUE),
-                        32,
+                        64,
                         EquipmentSlotGroup.ANY)));
-
+/*
         register(
                 context,
                 AEEnchantments.COOLDOWN_REDUCTION,

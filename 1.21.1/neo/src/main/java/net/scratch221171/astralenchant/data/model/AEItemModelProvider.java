@@ -4,7 +4,7 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.scratch221171.astralenchant.Constants;
-import net.scratch221171.astralenchant.common.item.AEItems;
+import net.scratch221171.astralenchant.common.registry.AEItems;
 
 public class AEItemModelProvider extends ItemModelProvider {
     public AEItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {

@@ -13,7 +13,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.config.ServerConfig;
-import net.scratch221171.astralenchant.util.AEUtil;
+import net.scratch221171.astralenchant.common.util.AEUtil;
 
 @EventBusSubscriber(modid = Constants.MODID)
 public class LastStandHandler {
@@ -23,9 +23,6 @@ public class LastStandHandler {
         if (!(event.getEntity() instanceof Player player)) return;
         if (event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)
             && !ServerConfig.EnchantmentSettings.LastStand.IGNORE_BYPASSES_INVULNERABILITY_TAG.getAsBoolean()) return;
-
-        Constants.LOGGER.info(event.getSource().toString());
-        Constants.LOGGER.info(String.valueOf(event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)));
 
         AEUtil.getEnchantmentHolder(AEEnchantments.LAST_STAND).ifPresent(holder -> {
             var sum = 0;

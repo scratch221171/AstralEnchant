@@ -33,6 +33,22 @@ public class ServerConfig {
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }
 
+        public static final ConfigEntries ESSENCE_OF_ENCHANTMENT =
+                BUILDER.comment("Essence of Enchantment")
+                        .category("essence_of_enchant", EssenceOfEnchantment.ENTRIES);
+
+        public static final class EssenceOfEnchantment {
+            private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
+
+            public static final ConfigEntry.BooleanEntry INCLUDE_OVERLOAD =
+                    BUILDER.define("include_overload", false);
+
+            public static final ConfigEntry.DoubleEntry MULTIPLIER =
+                    BUILDER.defineInRange("multiplier", 1.0, 0.0, Double.MAX_VALUE);
+
+            public static final ConfigEntries ENTRIES = BUILDER.build();
+        }
+
         public static final ConfigEntries ENTRIES = BUILDER.build();
     }
 

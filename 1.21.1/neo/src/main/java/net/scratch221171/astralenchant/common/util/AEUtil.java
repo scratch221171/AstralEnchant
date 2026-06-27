@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.util;
+package net.scratch221171.astralenchant.common.util;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.client.Minecraft;
