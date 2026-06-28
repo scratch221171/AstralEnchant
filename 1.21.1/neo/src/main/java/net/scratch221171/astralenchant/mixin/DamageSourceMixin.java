@@ -9,6 +9,8 @@
 
 package net.scratch221171.astralenchant.mixin;
 
+import java.util.HashSet;
+import java.util.Set;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageType;
@@ -20,17 +22,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Mixin(value = DamageSource.class, remap = false)
 public class DamageSourceMixin implements IDamageSourceExtension {
 
-    @Unique
-    private Set<TagKey<DamageType>> astralenchant$extraTags;
+    @Unique private Set<TagKey<DamageType>> astralenchant$extraTags;
 
-    @Unique
-    private Set<TagKey<DamageType>> astralenchant$disabledTags;
+    @Unique private Set<TagKey<DamageType>> astralenchant$disabledTags;
 
     /**
      * {@link AEEnchantments#NULLIFICATION} または {@link AEEnchantments#REACTIVE_ARMOR} によるタグ編集を反映する。

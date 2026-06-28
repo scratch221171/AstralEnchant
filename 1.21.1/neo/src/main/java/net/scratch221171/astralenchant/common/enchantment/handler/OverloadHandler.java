@@ -15,41 +15,41 @@ import net.scratch221171.astralenchant.common.util.AEUtil;
 @EventBusSubscriber(modid = Constants.MODID)
 public class OverloadHandler {
 
-//    @SubscribeEvent
-//    private static void setDataComponent(ItemSetEnchantmentEvent event) {
-//        var stack = event.getStack();
-//        var enchantments = event.getEnchantments();
-//
-//        var level = AEUtil.getEnchantmentLevel(enchantments, AEEnchantments.OVERLOAD);
-//        if (level <= 0) return;
-//
-//        ItemEnchantments.Mutable filtered = new ItemEnchantments.Mutable(ItemEnchantments.EMPTY);
-//        enchantments.entrySet().stream()
-//                .filter(e -> !e.getKey().is(AEEnchantments.OVERLOAD))
-//                .forEach(e -> filtered.set(e.getKey(), e.getIntValue()));
-//
-//        stack.set(DataComponents.ENCHANTMENTS, filtered.toImmutable());
-//        stack.set(AEDataComponents.OVERLOAD, stack.getOrDefault(AEDataComponents.OVERLOAD, 0) + level);
-//        event.setCanceled(true);
-//    }
+    //    @SubscribeEvent
+    //    private static void setDataComponent(ItemSetEnchantmentEvent event) {
+    //        var stack = event.getStack();
+    //        var enchantments = event.getEnchantments();
+    //
+    //        var level = AEUtil.getEnchantmentLevel(enchantments, AEEnchantments.OVERLOAD);
+    //        if (level <= 0) return;
+    //
+    //        ItemEnchantments.Mutable filtered = new ItemEnchantments.Mutable(ItemEnchantments.EMPTY);
+    //        enchantments.entrySet().stream()
+    //                .filter(e -> !e.getKey().is(AEEnchantments.OVERLOAD))
+    //                .forEach(e -> filtered.set(e.getKey(), e.getIntValue()));
+    //
+    //        stack.set(DataComponents.ENCHANTMENTS, filtered.toImmutable());
+    //        stack.set(AEDataComponents.OVERLOAD, stack.getOrDefault(AEDataComponents.OVERLOAD, 0) + level);
+    //        event.setCanceled(true);
+    //    }
 
-//    @SubscribeEvent
-//    private static void createNewItemEnchantment(ItemGetEnchantmentEvent event) {
-//        int overload = event.getStack().getOrDefault(AEDataComponents.OVERLOAD, 0);
-//        if (overload <= 0) return;
-//
-//        var modified = new Object2IntOpenHashMap<Holder<Enchantment>>();
-//        for (var entry : event.getEnchantments().entrySet()) {
-//            modified.put(entry.getKey(), entry.getIntValue() + overload);
-//        }
-//        var newEnchantments = new ItemEnchantments.Mutable(ItemEnchantments.EMPTY).toImmutable();
-//        ((IItemEnchantmentsExtension)newEnchantments).astralenchant$setEnchantments(modified);
-//        event.setEnchantments(newEnchantments);
-//    }
+    //    @SubscribeEvent
+    //    private static void createNewItemEnchantment(ItemGetEnchantmentEvent event) {
+    //        int overload = event.getStack().getOrDefault(AEDataComponents.OVERLOAD, 0);
+    //        if (overload <= 0) return;
+    //
+    //        var modified = new Object2IntOpenHashMap<Holder<Enchantment>>();
+    //        for (var entry : event.getEnchantments().entrySet()) {
+    //            modified.put(entry.getKey(), entry.getIntValue() + overload);
+    //        }
+    //        var newEnchantments = new ItemEnchantments.Mutable(ItemEnchantments.EMPTY).toImmutable();
+    //        ((IItemEnchantmentsExtension)newEnchantments).astralenchant$setEnchantments(modified);
+    //        event.setEnchantments(newEnchantments);
+    //    }
 
     @SubscribeEvent
     private static void modifyLevels(GetEnchantmentLevelEvent event) {
-//        int overload = event.getStack().getOrDefault(AEDataComponents.OVERLOAD, 0);
+        //        int overload = event.getStack().getOrDefault(AEDataComponents.OVERLOAD, 0);
         int overload = AEUtil.getEnchantmentLevel(event.getEnchantments().toImmutable(), AEEnchantments.OVERLOAD);
         if (overload <= 0) return;
 
@@ -69,12 +69,8 @@ public class OverloadHandler {
         if (level > 0) {
             AEUtil.modifyTooltip(
                     event.getToolTip(),
-                    c ->
-                            c instanceof TranslatableContents t
-                            && t.getKey().equals("enchantment.astralenchant.overload"),
-                    c ->
-                            createRainbowGradient(c.getString())
-            );
+                    c -> c instanceof TranslatableContents t && t.getKey().equals("enchantment.astralenchant.overload"),
+                    c -> createRainbowGradient(c.getString()));
         }
     }
 

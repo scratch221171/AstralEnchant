@@ -18,12 +18,8 @@ public abstract class AELangProvider extends LanguageProvider {
         add(Constants.MODID + ".configuration." + key.location().getPath(), name);
     }
 
-    protected <T> void addConfigWithDesc(ConfigEntry<T> configEntry, String name, String desc) {
-        add(generateTranslationKeyPath(configEntry), name);
-        add(generateTranslationKeyPath(configEntry) + ".tooltip", desc);
-    }
-
-    public static String generateTranslationKeyPath(ConfigEntry<?> entry) {
-        return Constants.MODID + ".configuration." + entry.key();
+    protected <T> void addConfigWithDesc(ConfigEntry<T> entry, String name, String desc) {
+        add(Constants.MODID + ".configuration." + entry.key(), name);
+        add(Constants.MODID + ".configuration." + entry.key() + ".tooltip", desc);
     }
 }

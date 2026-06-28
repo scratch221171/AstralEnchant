@@ -1,6 +1,10 @@
 package net.scratch221171.astralenchant.common.util;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -19,11 +23,6 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.server.ServerLifecycleHooks;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
-import java.util.function.Predicate;
 
 public class AEUtil {
     private static Optional<RegistryAccess> getRegistryAccess() {
@@ -137,10 +136,7 @@ public class AEUtil {
     }
 
     public static void modifyTooltip(
-            List<Component> tooltip,
-            Predicate<ComponentContents> filter,
-            Function<Component, Component> function
-    ) {
+            List<Component> tooltip, Predicate<ComponentContents> filter, Function<Component, Component> function) {
         for (int i = 0; i < tooltip.size(); i++) {
             var entry = tooltip.get(i);
             if (!filter.test(entry.getContents())) continue;

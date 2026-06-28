@@ -1,8 +1,11 @@
 package net.scratch221171.astralenchant.common.tag;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
@@ -13,12 +16,6 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.damagesource.DamageType;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ModUtils;
-
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class TagGroupLoader implements ResourceManagerReloadListener {
 
@@ -35,13 +32,9 @@ public class TagGroupLoader implements ResourceManagerReloadListener {
         var nullificationFileId = ModUtils.loc("damage_type_tag_group/nullification_tags.json");
         var reactiveArmorFileId = ModUtils.loc("damage_type_tag_group/reactive_armor_tags.json");
 
-        manager.getResource(nullificationFileId).ifPresent(resource -> {
-            loadTagsInto(resource, nullificationLoadedTags);
-        });
+        manager.getResource(nullificationFileId).ifPresent(resource -> loadTagsInto(resource, nullificationLoadedTags));
 
-        manager.getResource(reactiveArmorFileId).ifPresent(resource -> {
-            loadTagsInto(resource, reactiveArmorLoadedTags);
-        });
+        manager.getResource(reactiveArmorFileId).ifPresent(resource -> loadTagsInto(resource, reactiveArmorLoadedTags));
     }
 
     public static List<TagKey<DamageType>> getNullificationTags() {
@@ -54,11 +47,11 @@ public class TagGroupLoader implements ResourceManagerReloadListener {
 
     private static void loadTagsInto(Resource resource, List<TagKey<DamageType>> loadedTags) {
         try (InputStream stream = resource.open()) {
-            JsonObject json = GsonHelper.parse(new InputStreamReader(stream));
-            JsonArray tags = json.getAsJsonArray("tags");
+            var json = GsonHelper.parse(new InputStreamReader(stream));
+            var tags = json.getAsJsonArray("tags");
 
             for (JsonElement element : tags) {
-                ResourceLocation tagId = ResourceLocation.tryParse(element.getAsString());
+                var tagId = ResourceLocation.tryParse(element.getAsString());
                 if (tagId != null) {
                     loadedTags.add(TagKey.create(Registries.DAMAGE_TYPE, tagId));
                 }

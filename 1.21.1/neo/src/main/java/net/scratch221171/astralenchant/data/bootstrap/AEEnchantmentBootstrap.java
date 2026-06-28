@@ -1,5 +1,6 @@
 package net.scratch221171.astralenchant.data.bootstrap;
 
+import java.util.function.BiConsumer;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -12,8 +13,6 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.registries.holdersets.AnyHolderSet;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
-
-import java.util.function.BiConsumer;
 
 public class AEEnchantmentBootstrap {
 
@@ -59,7 +58,7 @@ public class AEEnchantmentBootstrap {
         HolderSet<Item> footTag = itemLookup.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE);
         HolderSet<Item> weaponTag = itemLookup.getOrThrow(ItemTags.WEAPON_ENCHANTABLE);
         HolderSet<Item> miningTag = itemLookup.getOrThrow(ItemTags.MINING_LOOT_ENCHANTABLE);
-//        HolderSet<Item> bundleTag = itemLookup.getOrThrow(AstralEnchantmentTags.Items.BUNDLE);
+        //        HolderSet<Item> bundleTag = itemLookup.getOrThrow(AstralEnchantmentTags.Items.BUNDLE);
         HolderSet<Item> durabilityTag = itemLookup.getOrThrow(ItemTags.DURABILITY_ENCHANTABLE);
 
         register(
@@ -85,19 +84,19 @@ public class AEEnchantmentBootstrap {
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         32,
                         EquipmentSlotGroup.ARMOR)));
-/*
-        register(
-                context,
-                AEEnchantments.ITEM_PROTECTION,
-                Enchantment.enchantment(Enchantment.definition(
-                        anyHolderSet,
-                        1,
-                        1,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        16,
-                        EquipmentSlotGroup.ANY)));
-*/
+        /*
+                register(
+                        context,
+                        AEEnchantments.ITEM_PROTECTION,
+                        Enchantment.enchantment(Enchantment.definition(
+                                anyHolderSet,
+                                1,
+                                1,
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                16,
+                                EquipmentSlotGroup.ANY)));
+        */
         register(
                 context,
                 AEEnchantments.ESSENCE_OF_ENCHANTMENT,
@@ -109,98 +108,98 @@ public class AEEnchantmentBootstrap {
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         32,
                         EquipmentSlotGroup.ANY)));
-/*
-        register(
-                context,
-                AEEnchantments.COOLDOWN_REDUCTION,
-                Enchantment.enchantment(Enchantment.definition(
-                                chestTag,
+        /*
+                register(
+                        context,
+                        AEEnchantments.COOLDOWN_REDUCTION,
+                        Enchantment.enchantment(Enchantment.definition(
+                                        chestTag,
+                                        1,
+                                        3,
+                                        Enchantment.constantCost(Integer.MAX_VALUE),
+                                        Enchantment.constantCost(Integer.MAX_VALUE),
+                                        16,
+                                        EquipmentSlotGroup.CHEST))
+                                .withEffect(
+                                        EnchantmentEffectComponents.ATTRIBUTES,
+                                        new EnchantmentAttributeEffect(
+                                                ModUtils.loc("cr_bonus"),
+                                                AEAttributes.COOLDOWN_DURATION,
+                                                LevelBasedValue.perLevel(-0.15f),
+                                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE)));
+
+                register(
+                        context,
+                        AEEnchantments.FEATHER_TOUCH,
+                        Enchantment.enchantment(Enchantment.definition(
+                                miningTag,
+                                1,
+                                1,
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                16,
+                                EquipmentSlotGroup.MAINHAND)));
+
+                register(
+                        context,
+                        AEEnchantments.ADVENTURERS_LORE,
+                        Enchantment.enchantment(Enchantment.definition(
+                                footTag,
                                 1,
                                 3,
                                 Enchantment.constantCost(Integer.MAX_VALUE),
                                 Enchantment.constantCost(Integer.MAX_VALUE),
+                                8,
+                                EquipmentSlotGroup.FEET)));
+
+                register(
+                        context,
+                        AEEnchantments.COMPATIBILITY,
+                        Enchantment.enchantment(Enchantment.definition(
+                                bundleTag,
+                                1,
+                                1,
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                32,
+                                EquipmentSlotGroup.ANY)));
+
+                register(
+                        context,
+                        AEEnchantments.ENDLESS_APPETITE,
+                        Enchantment.enchantment(Enchantment.definition(
+                                chestTag,
+                                1,
+                                1,
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                32,
+                                EquipmentSlotGroup.CHEST)));
+
+                register(
+                        context,
+                        AEEnchantments.MOMENTUM,
+                        Enchantment.enchantment(Enchantment.definition(
+                                chestTag,
+                                1,
+                                1,
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                Enchantment.constantCost(Integer.MAX_VALUE),
                                 16,
-                                EquipmentSlotGroup.CHEST))
-                        .withEffect(
-                                EnchantmentEffectComponents.ATTRIBUTES,
-                                new EnchantmentAttributeEffect(
-                                        ModUtils.loc("cr_bonus"),
-                                        AEAttributes.COOLDOWN_DURATION,
-                                        LevelBasedValue.perLevel(-0.15f),
-                                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE)));
+                                EquipmentSlotGroup.CHEST)));
 
-        register(
-                context,
-                AEEnchantments.FEATHER_TOUCH,
-                Enchantment.enchantment(Enchantment.definition(
-                        miningTag,
-                        1,
-                        1,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        16,
-                        EquipmentSlotGroup.MAINHAND)));
-
-        register(
-                context,
-                AEEnchantments.ADVENTURERS_LORE,
-                Enchantment.enchantment(Enchantment.definition(
-                        footTag,
-                        1,
-                        3,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        8,
-                        EquipmentSlotGroup.FEET)));
-
-        register(
-                context,
-                AEEnchantments.COMPATIBILITY,
-                Enchantment.enchantment(Enchantment.definition(
-                        bundleTag,
-                        1,
-                        1,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        32,
-                        EquipmentSlotGroup.ANY)));
-
-        register(
-                context,
-                AEEnchantments.ENDLESS_APPETITE,
-                Enchantment.enchantment(Enchantment.definition(
-                        chestTag,
-                        1,
-                        1,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        32,
-                        EquipmentSlotGroup.CHEST)));
-
-        register(
-                context,
-                AEEnchantments.MOMENTUM,
-                Enchantment.enchantment(Enchantment.definition(
-                        chestTag,
-                        1,
-                        1,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        16,
-                        EquipmentSlotGroup.CHEST)));
-
-        register(
-                context,
-                AEEnchantments.INSTANT_TELEPORT,
-                Enchantment.enchantment(Enchantment.definition(
-                        headTag,
-                        1,
-                        4,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        16,
-                        EquipmentSlotGroup.HEAD)));
-*/
+                register(
+                        context,
+                        AEEnchantments.INSTANT_TELEPORT,
+                        Enchantment.enchantment(Enchantment.definition(
+                                headTag,
+                                1,
+                                4,
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                16,
+                                EquipmentSlotGroup.HEAD)));
+        */
         register(
                 context,
                 AEEnchantments.OVERLOAD,
@@ -212,19 +211,19 @@ public class AEEnchantmentBootstrap {
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         32,
                         EquipmentSlotGroup.ANY)));
-/*
-        register(
-                context,
-                AEEnchantments.SLOT_EXPANSION,
-                Enchantment.enchantment(Enchantment.definition(
-                        anyHolderSet,
-                        1,
-                        3,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        16,
-                        EquipmentSlotGroup.ANY)));
-*/
+        /*
+                register(
+                        context,
+                        AEEnchantments.SLOT_EXPANSION,
+                        Enchantment.enchantment(Enchantment.definition(
+                                anyHolderSet,
+                                1,
+                                3,
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                16,
+                                EquipmentSlotGroup.ANY)));
+        */
         register(
                 context,
                 AEEnchantments.REACTIVE_ARMOR,
@@ -236,69 +235,69 @@ public class AEEnchantmentBootstrap {
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         16,
                         EquipmentSlotGroup.CHEST)));
-/*
-        register(
-                context,
-                AEEnchantments.MYSTIC_REMNANTS,
-                Enchantment.enchantment(Enchantment.definition(
-                        weaponTag,
-                        1,
-                        3,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        4,
-                        EquipmentSlotGroup.MAINHAND)));
+        /*
+            register(
+                    context,
+                    AEEnchantments.MYSTIC_REMNANTS,
+                    Enchantment.enchantment(Enchantment.definition(
+                            weaponTag,
+                            1,
+                            3,
+                            Enchantment.constantCost(Integer.MAX_VALUE),
+                            Enchantment.constantCost(Integer.MAX_VALUE),
+                            4,
+                            EquipmentSlotGroup.MAINHAND)));
 
-        register(
-                context,
-                AEEnchantments.CURSE_OF_IGNORANCE,
-                Enchantment.enchantment(Enchantment.definition(
-                        anyHolderSet,
-                        1,
-                        1,
-                        Enchantment.constantCost(25),
-                        Enchantment.constantCost(50),
-                        4,
-                        EquipmentSlotGroup.ANY)));
+            register(
+                    context,
+                    AEEnchantments.CURSE_OF_IGNORANCE,
+                    Enchantment.enchantment(Enchantment.definition(
+                            anyHolderSet,
+                            1,
+                            1,
+                            Enchantment.constantCost(25),
+                            Enchantment.constantCost(50),
+                            4,
+                            EquipmentSlotGroup.ANY)));
 
-        register(
-                context,
-                AEEnchantments.CURSE_OF_ENCHANTMENT,
-                Enchantment.enchantment(Enchantment.definition(
-                        anyHolderSet,
-                        1,
-                        1,
-                        Enchantment.constantCost(25),
-                        Enchantment.constantCost(50),
-                        4,
-                        EquipmentSlotGroup.ANY)));
+            register(
+                    context,
+                    AEEnchantments.CURSE_OF_ENCHANTMENT,
+                    Enchantment.enchantment(Enchantment.definition(
+                            anyHolderSet,
+                            1,
+                            1,
+                            Enchantment.constantCost(25),
+                            Enchantment.constantCost(50),
+                            4,
+                            EquipmentSlotGroup.ANY)));
 
-        register(
-                context,
-                AEEnchantments.DISTORTION,
-                Enchantment.enchantment(Enchantment.definition(
-                        anyHolderSet,
-                        1,
-                        3,
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        Enchantment.constantCost(Integer.MAX_VALUE),
-                        16,
-                        EquipmentSlotGroup.HAND)));
+            register(
+                    context,
+                    AEEnchantments.DISTORTION,
+                    Enchantment.enchantment(Enchantment.definition(
+                            anyHolderSet,
+                            1,
+                            3,
+                            Enchantment.constantCost(Integer.MAX_VALUE),
+                            Enchantment.constantCost(Integer.MAX_VALUE),
+                            16,
+                            EquipmentSlotGroup.HAND)));
 
-        register(
-                context,
-                AEEnchantments.OVER_MENDING,
-                Enchantment.enchantment(Enchantment.definition(
-                                durabilityTag,
-                                1,
-                                1,
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                16,
-                                EquipmentSlotGroup.ANY))
-                        .withEffect(EnchantmentEffectComponents.TICK, new OverMendingEffect()));
-    */
-        }
+            register(
+                    context,
+                    AEEnchantments.OVER_MENDING,
+                    Enchantment.enchantment(Enchantment.definition(
+                                    durabilityTag,
+                                    1,
+                                    1,
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    16,
+                                    EquipmentSlotGroup.ANY))
+                            .withEffect(EnchantmentEffectComponents.TICK, new OverMendingEffect()));
+        */
+    }
 
     private static void register(
             BootstrapContext<Enchantment> registry, ResourceKey<Enchantment> key, Enchantment.Builder builder) {
