@@ -24,11 +24,19 @@ public class AEJapaneseLangProvider extends AELangProvider {
         addEnchantWithDesc(
                 AEEnchantments.NULLIFICATION,
                 "無効化",
-                "様々なダメージ軽減が無効化され、攻撃が真のダメージを与えるようになります。");
+                "様々なダメージ軽減効果を無視し、攻撃が真のダメージを与えるようになります。");
         addEnchantWithDesc(
                 AEEnchantments.LAST_STAND,
                 "ラストスタンド",
                 "経験値を消費して死を回避します。");
+        addEnchantWithDesc(
+                AEEnchantments.ESSENCE_OF_ENCHANTMENT,
+                "エンチャントの極意",
+                "このエンチャント以外のエンチャントのレベルの合計に応じて、アイテムの全ステータスに補正がかかります。");
+        addEnchantWithDesc(
+                AEEnchantments.OVERLOAD,
+                "オーバーロード",
+                "既存のエンチャントのレベルがオーバーロードの値だけ上昇します。");
         addEnchantWithDesc(
                 AEEnchantments.REACTIVE_ARMOR,
                 "反応装甲",

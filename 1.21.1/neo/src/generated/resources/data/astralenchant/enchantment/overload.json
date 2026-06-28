@@ -1,7 +1,7 @@
 {
   "anvil_cost": 32,
   "description": {
-    "translate": "enchantment.astralenchant.essence_of_enchantment"
+    "translate": "enchantment.astralenchant.overload"
   },
   "max_cost": {
     "base": 2147483647,

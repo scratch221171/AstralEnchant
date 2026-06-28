@@ -11,15 +11,15 @@ import net.neoforged.bus.api.ICancellableEvent;
  * <br>
  * このイベントをキャンセルすると、エンチャントは変更されません。
  * <br>
- * このイベントは{@link net.scratch221171.astralenchant.mixin.ItemStackMixin}を通して呼ばれます
+ * このイベントは{@link net.scratch221171.astralenchant.mixin.ItemStackMixin}を通して呼ばれます。
  * <br>
  */
-public class ItemEnchantmentSetEvent extends Event implements ICancellableEvent {
+public class ItemSetEnchantmentEvent extends Event implements ICancellableEvent {
 
     private final ItemStack stack;
     private final ItemEnchantments enchantments;
 
-    public ItemEnchantmentSetEvent(ItemStack stack, ItemEnchantments enchantments) {
+    public ItemSetEnchantmentEvent(ItemStack stack, ItemEnchantments enchantments) {
         this.stack = stack;
         this.enchantments = enchantments;
     }

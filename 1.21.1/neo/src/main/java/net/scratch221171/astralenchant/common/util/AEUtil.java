@@ -6,6 +6,8 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.ComponentContents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.Entity;
@@ -18,7 +20,10 @@ import net.minecraft.world.level.Level;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.server.ServerLifecycleHooks;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class AEUtil {
     private static Optional<RegistryAccess> getRegistryAccess() {
@@ -125,24 +130,21 @@ public class AEUtil {
         return result.toImmutable();
     }
 
-    public static boolean hasEnoughXPPoint(float progress, int level, int required) {
-        long total = 0;
-        for (int i = 0; i < level; i++) {
-            total += getXpNeededForNextLevel(i);
-            if (total >= required) {
-                return true;
-            }
-        }
-        // ほぼintなのでround
-        total += Math.round(progress * getXpNeededForNextLevel(level));
-        return total >= required;
+    public static ItemEnchantments getAllEnchantments(ItemStack stack) {
+        return getRegistryAccess()
+                .map(access -> stack.getAllEnchantments(access.lookupOrThrow(Registries.ENCHANTMENT)))
+                .orElse(ItemEnchantments.EMPTY);
     }
 
-    public static int getXpNeededForNextLevel(int j) {
-        if (j >= 30) {
-            return 112 + (j - 30) * 9;
-        } else {
-            return j >= 15 ? 37 + (j - 15) * 5 : 7 + j * 2;
+    public static void modifyTooltip(
+            List<Component> tooltip,
+            Predicate<ComponentContents> filter,
+            Function<Component, Component> function
+    ) {
+        for (int i = 0; i < tooltip.size(); i++) {
+            var entry = tooltip.get(i);
+            if (!filter.test(entry.getContents())) continue;
+            tooltip.set(i, function.apply(entry));
         }
     }
 }

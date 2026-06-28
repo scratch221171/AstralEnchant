@@ -7,10 +7,9 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
-import net.scratch221171.astralenchant.common.registry.AEDataComponents;
-import net.scratch221171.astralenchant.config.ServerConfig;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import net.scratch221171.astralenchant.common.util.IAttributeSentimentExtension;
+import net.scratch221171.astralenchant.config.ServerConfig;
 
 import java.util.function.BiConsumer;
 
@@ -21,14 +20,12 @@ public class EssenceOfEnchantmentHandler {
 
         AEUtil.getEnchantmentHolder(AEEnchantments.ESSENCE_OF_ENCHANTMENT).ifPresent(holder -> {
             int totalLevel = 0;
-            var enchantments = stack.getTagEnchantments().entrySet();
+            var enchantments = ServerConfig.EnchantmentSettings.EssenceOfEnchantment.INCLUDE_OVERLOAD.getAsBoolean()?
+                    AEUtil.getAllEnchantments(stack).entrySet() : stack.getTagEnchantments().entrySet();
             for (var entry : enchantments) {
                 if (!entry.getKey().is(AEEnchantments.ESSENCE_OF_ENCHANTMENT)) {
                     totalLevel += entry.getIntValue();
                 }
-            }
-            if (ServerConfig.EnchantmentSettings.EssenceOfEnchantment.INCLUDE_OVERLOAD.getAsBoolean()) {
-                totalLevel += stack.getOrDefault(AEDataComponents.OVERLOAD, 0) * (enchantments.size() - 1);
             }
 
             var newId = ModUtils.loc("eoe_bonus_" + id.getPath() + "_" + slotName);
