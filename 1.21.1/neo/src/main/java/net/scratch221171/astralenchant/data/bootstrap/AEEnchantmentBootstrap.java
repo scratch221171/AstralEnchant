@@ -12,13 +12,16 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.registries.holdersets.AnyHolderSet;
+import net.scratch221171.astralenchant.common.condition.ConfigCondition;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 
 public class AEEnchantmentBootstrap {
 
     public static void applyConditions(BiConsumer<ResourceKey<?>, ICondition> consumer) {
-        /*consumer.accept(AEEnchantments.MITIGATION_PIERCING, new ConfigCondition(AEConfig.MITIGATION_PIERCING));
-        consumer.accept(AEEnchantments.LAST_STAND, new ConfigCondition(AEConfig.LAST_STAND));
+        consumer.accept(
+                AEEnchantments.NULLIFICATION,
+                new ConfigCondition(AEEnchantments.NULLIFICATION.location().getPath()));
+        /*consumer.accept(AEEnchantments.LAST_STAND, new ConfigCondition(AEConfig.LAST_STAND));
         consumer.accept(AEEnchantments.ESSENCE_OF_ENCHANTMENT, new ConfigCondition(AEConfig.ESSENCE_OF_ENCHANTMENT));
         consumer.accept(AEEnchantments.COOLDOWN_REDUCTION, new ConfigCondition(AEConfig.COOLDOWN_REDUCTION));
         consumer.accept(AEEnchantments.FEATHER_TOUCH, new ConfigCondition(AEConfig.FEATHER_TOUCH));

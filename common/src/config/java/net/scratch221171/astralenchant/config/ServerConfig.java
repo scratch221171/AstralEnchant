@@ -4,11 +4,14 @@ import net.scratch221171.astralenchant.mdk.config.ConfigEntries;
 import net.scratch221171.astralenchant.mdk.config.ConfigEntry;
 import net.scratch221171.astralenchant.mdk.config.ConfigEntryBuilder;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ServerConfig {
     private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
 
-    public static final ConfigEntries ENCHANTMENTS =
-            BUILDER.comment("Enchantment settings")
+    public static final ConfigEntries ENCHANTMENT_SETTINGS =
+            BUILDER.comment("Enchantment Settings")
                     .category("enchantment_settings", EnchantmentSettings.ENTRIES);
 
     public static final class EnchantmentSettings {
@@ -47,6 +50,32 @@ public class ServerConfig {
                     BUILDER.defineInRange("multiplier", 1.0, 0.0, Double.MAX_VALUE);
 
             public static final ConfigEntries ENTRIES = BUILDER.build();
+        }
+
+        public static final ConfigEntries ENTRIES = BUILDER.build();
+    }
+
+    private static final Map<String, ConfigEntry.BooleanEntry> list = new HashMap<>();
+
+    public static Map<String, ConfigEntry.BooleanEntry> getList() {
+        return list;
+    }
+
+    public static final ConfigEntries ENCHANTMENT_TOGGLING =
+            BUILDER.comment("Enchantment Toggling")
+                    .category("enchantment_toggling", EnchantmentToggling.ENTRIES);
+
+    public static final class EnchantmentToggling {
+        private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
+
+        public static final ConfigEntry.BooleanEntry NULLIFICATION = create("nullification");
+
+        public static final ConfigEntry.BooleanEntry LAST_STAND = create("last_stand");
+
+        private static ConfigEntry.BooleanEntry create(String key) {
+            var e = BUILDER.define(key, true);
+            list.put(key, e);
+            return e;
         }
 
         public static final ConfigEntries ENTRIES = BUILDER.build();
