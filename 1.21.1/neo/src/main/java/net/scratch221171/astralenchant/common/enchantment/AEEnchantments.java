@@ -3,6 +3,7 @@ package net.scratch221171.astralenchant.common.enchantment;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ModUtils;
 
 public class AEEnchantments {
@@ -14,7 +15,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> NULLIFICATION = create("nullification");
+    public static final ResourceKey<Enchantment> NULLIFICATION = create(Constants.ID.NULLIFICATION);
 
     /**
      * 経験値を消費して死亡イベントをキャンセルする。
@@ -23,7 +24,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> LAST_STAND = create("last_stand");
+    public static final ResourceKey<Enchantment> LAST_STAND = create(Constants.ID.LAST_STAND);
 
     /**
      * L2のDispellによるエンチャント無効化及びRagnarokによる封印を防ぐ
@@ -32,7 +33,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : {// @link DispellTraitMixin}, {// @link RagnarokTraitMixin}
      */
-    public static final ResourceKey<Enchantment> ITEM_PROTECTION = create("item_protection");
+    public static final ResourceKey<Enchantment> ITEM_PROTECTION = create(Constants.ID.ITEM_PROTECTION);
 
     /**
      * アイテムの合計エンチャントレベル(自身を除く)に応じて全てのAttributeModifierを上昇させる。
@@ -41,7 +42,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> ESSENCE_OF_ENCHANTMENT = create("essence_of_enchantment");
+    public static final ResourceKey<Enchantment> ESSENCE_OF_ENCHANTMENT = create(Constants.ID.ESSENCE_OF_ENCHANTMENT);
 
     /**
      * アイテム使用のクールダウンを短縮する。
@@ -50,7 +51,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : {// @link ItemCooldownsMixin}
      */
-    public static final ResourceKey<Enchantment> COOLDOWN_REDUCTION = create("cooldown_reduction");
+    public static final ResourceKey<Enchantment> COOLDOWN_REDUCTION = create(Constants.ID.COOLDOWN_REDUCTION);
 
     /**
      * ブロック破壊時に必ずドロップするようにし、スニーク時はBlockStateやBlockEntityのコンポーネントを保持したままアイテム化させる。
@@ -59,7 +60,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> FEATHER_TOUCH = create("feather_touch");
+    public static final ResourceKey<Enchantment> FEATHER_TOUCH = create(Constants.ID.FEATHER_TOUCH);
 
     /**
      * 総実績数に応じて運とブロック由来の経験値を増加させる。
@@ -68,7 +69,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> ADVENTURERS_LORE = create("adventurers_lore");
+    public static final ResourceKey<Enchantment> ADVENTURERS_LORE = create(Constants.ID.ADVENTURERS_LORE);
 
     /**
      * このエンチャントがついたバンドルに付けられたエンチャントが、競合などを無視して内部アイテムに付与される。
@@ -77,7 +78,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : {// @link IItemExtensionMixin}
      */
-    public static final ResourceKey<Enchantment> COMPATIBILITY = create("compatibility");
+    public static final ResourceKey<Enchantment> COMPATIBILITY = create(Constants.ID.COMPATIBILITY);
 
     /**
      * 溢れた満腹度分だけ回復し、自然治癒を加速し、常時食事可能にする。
@@ -86,7 +87,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : {// @link FoodDataMixin}, {// @link PlayerMixin}
      */
-    public static final ResourceKey<Enchantment> ENDLESS_APPETITE = create("endless_appetite");
+    public static final ResourceKey<Enchantment> ENDLESS_APPETITE = create(Constants.ID.ENDLESS_APPETITE);
 
     /**
      * 様々な移動速度低下効果を無効化する。
@@ -95,7 +96,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : {// @link LocalPlayerMixin}, {// @link PlayerMixin}, {// @link EntityMixin}
      */
-    public static final ResourceKey<Enchantment> MOMENTUM = create("momentum");
+    public static final ResourceKey<Enchantment> MOMENTUM = create(Constants.ID.MOMENTUM);
 
     /**
      * エンダーパール使用時、瞬時に視線の先に真っ直ぐテレポートする。スニーク時はブロックを貫通する。
@@ -104,7 +105,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> INSTANT_TELEPORT = create("instant_teleport");
+    public static final ResourceKey<Enchantment> INSTANT_TELEPORT = create(Constants.ID.INSTANT_TELEPORT);
 
     /**
      * {// @link net.scratch221171.astralenchant.common.registries.AEDataComponents#OVERLOAD} の値だけ全てのエンチャントのレベルを上昇させる。
@@ -113,7 +114,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : {// @link ItemStackMixin}, {// @link IItemExtensionMixin}, {// @link EnchantmentHelperMixin}
      */
-    public static final ResourceKey<Enchantment> OVERLOAD = create("overload");
+    public static final ResourceKey<Enchantment> OVERLOAD = create(Constants.ID.OVERLOAD);
 
     /**
      * Accessories連携：アイテムが装着されたスロットの数をエンチャントのレベルだけ増やす。
@@ -122,7 +123,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> SLOT_EXPANSION = create("slot_expansion");
+    public static final ResourceKey<Enchantment> SLOT_EXPANSION = create(Constants.ID.SLOT_EXPANSION);
 
     /**
      * 与えられた攻撃から防具貫通ダメージタイプタグを削除し、ダメージ貫通を無効化する。{@link #NULLIFICATION} より権限が低い。
@@ -131,7 +132,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> REACTIVE_ARMOR = create("reactive_armor");
+    public static final ResourceKey<Enchantment> REACTIVE_ARMOR = create(Constants.ID.REACTIVE_ARMOR);
 
     /**
      * 敵を倒した際に稀にエンチャントの本をドロップするようになる。
@@ -140,7 +141,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> MYSTIC_REMNANTS = create("mystic_remnants");
+    public static final ResourceKey<Enchantment> MYSTIC_REMNANTS = create(Constants.ID.MYSTIC_REMNANTS);
 
     /**
      * ツールチップが呪われた文字に置き換わる。
@@ -149,7 +150,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> CURSE_OF_IGNORANCE = create("curse_of_ignorance");
+    public static final ResourceKey<Enchantment> CURSE_OF_IGNORANCE = create(Constants.ID.CURSE_OF_IGNORANCE);
 
     /**
      * そのアイテムのエンチャントが変更できなくなる。
@@ -158,7 +159,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> CURSE_OF_ENCHANTMENT = create("curse_of_enchantment");
+    public static final ResourceKey<Enchantment> CURSE_OF_ENCHANTMENT = create(Constants.ID.CURSE_OF_ENCHANTMENT);
 
     /**
      * 攻撃時より大きい当たり判定を作り直し、照準があっていなくても攻撃が当たるようになる。
@@ -167,7 +168,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : {// @link MinecraftMixin}
      */
-    public static final ResourceKey<Enchantment> DISTORTION = create("distortion");
+    public static final ResourceKey<Enchantment> DISTORTION = create(Constants.ID.DISTORTION);
 
     /**
      * アイテムに経験値を注ぎ込み、最後に雷にあたり事でツールが不可壊になる。雷のダメージがデフォ16倍。
@@ -176,7 +177,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : none
      */
-    public static final ResourceKey<Enchantment> OVER_MENDING = create("over_mending");
+    public static final ResourceKey<Enchantment> OVER_MENDING = create(Constants.ID.OVER_MENDING);
 
     private static ResourceKey<Enchantment> create(String name) {
         return ResourceKey.create(Registries.ENCHANTMENT, ModUtils.loc(name));
