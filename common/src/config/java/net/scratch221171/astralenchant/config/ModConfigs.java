@@ -7,8 +7,9 @@ import java.util.List;
 
 public final class ModConfigs {
     public static final ConfigDeclaration SERVER = ConfigDeclaration.of(ConfigSide.SERVER, ServerConfig.ENTRIES);
+    public static final ConfigDeclaration COMMON = ConfigDeclaration.of(ConfigSide.COMMON, CommonConfig.ENTRIES);
 
-    public static final List<ConfigDeclaration> ALL = List.of(SERVER);
+    public static final List<ConfigDeclaration> ALL = List.of(SERVER, COMMON);
 
     private ModConfigs() {}
 }

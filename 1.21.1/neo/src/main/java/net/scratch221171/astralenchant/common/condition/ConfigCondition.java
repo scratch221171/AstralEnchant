@@ -3,51 +3,41 @@ package net.scratch221171.astralenchant.common.condition;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import java.util.HashMap;
-import java.util.Map;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.config.ModConfigEvent;
+import java.util.Optional;
 import net.neoforged.neoforge.common.conditions.ICondition;
-import net.scratch221171.astralenchant.Constants;
-import net.scratch221171.astralenchant.config.ServerConfig;
+import net.scratch221171.astralenchant.config.CommonConfig;
+import net.scratch221171.astralenchant.mdk.config.ConfigEntry;
 import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
-@EventBusSubscriber(modid = Constants.MODID)
-public record ConfigCondition(String key) implements ICondition {
+/**
+ * jsonのneoforge:conditionsから参照する、CommonConfigのbool設定でロード可否を切り替えるcondition。
+ * 例: {
+ *       "type": "astralenchant:config_condition",
+ *       "config_id": "nullification"
+ *     }
+ */
+public record ConfigCondition(String configId) implements ICondition {
+
     public static final MapCodec<ConfigCondition> CODEC = RecordCodecBuilder.mapCodec(
-            inst -> inst.group(Codec.STRING.fieldOf("key").forGetter(ConfigCondition::key))
+            inst -> inst.group(Codec.STRING.fieldOf("config_id").forGetter(ConfigCondition::configId))
                     .apply(inst, ConfigCondition::new));
-
-    private static final Map<String, Boolean> cache = new HashMap<>();
 
     @Override
     public boolean test(@NotNull IContext context) {
-        return cache.getOrDefault(key, true);
+        return Optional.ofNullable(CommonConfig.getConditionEntries().get(configId))
+                .map(ConfigEntry.BooleanEntry::getAsBoolean)
+                .orElseThrow(
+                        () -> new IllegalArgumentException("Unregistered config id for ConfigCondition: " + configId));
     }
-
-    //    public boolean test() {
-    //        try {
-    //            Constants.LOGGER.info(key);
-    //            Constants.LOGGER.info(String.valueOf(ServerConfig.isEnabled(key)));
-    //            return ServerConfig.isEnabled(key);
-    //        } catch (Exception e) {
-    //            Constants.LOGGER.error(e.getLocalizedMessage());
-    //            return true;
-    //        }
-    //    }
 
     @Override
     public @NotNull MapCodec<? extends ICondition> codec() {
         return CODEC;
     }
 
-    @SubscribeEvent
-    private static void onLoad(ModConfigEvent event) {
-        if (event.getConfig().getModId().equals(Constants.MODID)) {
-            ServerConfig.getList().forEach((key, value) -> {
-                cache.put(key, value.getAsBoolean());
-            });
-        }
+    @Override
+    public @NonNull String toString() {
+        return "astralenchant_config(\"" + configId + "\")";
     }
 }

@@ -12,27 +12,27 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.registries.holdersets.AnyHolderSet;
+import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 
 public class AEEnchantmentBootstrap {
 
     public static void applyConditions(BiConsumer<ResourceKey<?>, ICondition> consumer) {
+        consumer.accept(AEEnchantments.NULLIFICATION, new ConfigCondition(Constants.ID.NULLIFICATION));
+        consumer.accept(AEEnchantments.LAST_STAND, new ConfigCondition(Constants.ID.LAST_STAND));
         consumer.accept(
-                AEEnchantments.NULLIFICATION,
-                new ConfigCondition(AEEnchantments.NULLIFICATION.location().getPath()));
-        /*consumer.accept(AEEnchantments.LAST_STAND, new ConfigCondition(AEConfig.LAST_STAND));
-        consumer.accept(AEEnchantments.ESSENCE_OF_ENCHANTMENT, new ConfigCondition(AEConfig.ESSENCE_OF_ENCHANTMENT));
-        consumer.accept(AEEnchantments.COOLDOWN_REDUCTION, new ConfigCondition(AEConfig.COOLDOWN_REDUCTION));
+                AEEnchantments.ESSENCE_OF_ENCHANTMENT, new ConfigCondition(Constants.ID.ESSENCE_OF_ENCHANTMENT));
+        /*consumer.accept(AEEnchantments.COOLDOWN_REDUCTION, new ConfigCondition(AEConfig.COOLDOWN_REDUCTION));
         consumer.accept(AEEnchantments.FEATHER_TOUCH, new ConfigCondition(AEConfig.FEATHER_TOUCH));
         consumer.accept(AEEnchantments.ADVENTURERS_LORE, new ConfigCondition(AEConfig.ADVENTURERS_LORE));
         consumer.accept(AEEnchantments.COMPATIBILITY, new ConfigCondition(AEConfig.COMPATIBILITY));
         consumer.accept(AEEnchantments.ENDLESS_APPETITE, new ConfigCondition(AEConfig.ENDLESS_APPETITE));
         consumer.accept(AEEnchantments.MOMENTUM, new ConfigCondition(AEConfig.MOMENTUM));
-        consumer.accept(AEEnchantments.INSTANT_TELEPORT, new ConfigCondition(AEConfig.INSTANT_TELEPORT));
-        consumer.accept(AEEnchantments.OVERLOAD, new ConfigCondition(AEConfig.OVERLOAD));
-        consumer.accept(AEEnchantments.REACTIVE_ARMOR, new ConfigCondition(AEConfig.REACTIVE_ARMOR));
-        consumer.accept(AEEnchantments.MYSTIC_REMNANTS, new ConfigCondition(AEConfig.MYSTIC_REMNANTS));
+        consumer.accept(AEEnchantments.INSTANT_TELEPORT, new ConfigCondition(AEConfig.INSTANT_TELEPORT));*/
+        consumer.accept(AEEnchantments.OVERLOAD, new ConfigCondition(Constants.ID.OVERLOAD));
+        consumer.accept(AEEnchantments.REACTIVE_ARMOR, new ConfigCondition(Constants.ID.REACTIVE_ARMOR));
+        /*consumer.accept(AEEnchantments.MYSTIC_REMNANTS, new ConfigCondition(AEConfig.MYSTIC_REMNANTS));
         consumer.accept(AEEnchantments.CURSE_OF_IGNORANCE, new ConfigCondition(AEConfig.CURSE_OF_IGNORANCE));
         consumer.accept(AEEnchantments.CURSE_OF_ENCHANTMENT, new ConfigCondition(AEConfig.CURSE_OF_ENCHANTMENT));
         consumer.accept(AEEnchantments.DISTORTION, new ConfigCondition(AEConfig.DISTORTION));

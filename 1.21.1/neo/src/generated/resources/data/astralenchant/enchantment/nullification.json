@@ -2,7 +2,7 @@
   "neoforge:conditions": [
     {
       "type": "astralenchant:config_condition",
-      "key": "nullification"
+      "config_id": "nullification"
     }
   ],
   "anvil_cost": 32,
