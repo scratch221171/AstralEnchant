@@ -4,6 +4,8 @@
   "astralenchant.configuration.cost_rate": "レベル消費割合",
   "astralenchant.configuration.cost_rate.tooltip": "レベルnのとき、消費されるレベルは以下の計算式で表されます：(現在の経験値) * (消費割合) / √n + (消費基本値) / n",
   "astralenchant.configuration.enchantment_settings": "エンチャントの設定",
+  "astralenchant.configuration.enchantment_toggling": "エンチャントの切り替え",
+  "astralenchant.configuration.enchantment_toggling.tooltip": "注意：変更を適用するにはワールドを再起動する必要があります！",
   "astralenchant.configuration.essence_of_enchantment": "エンチャントの極意",
   "astralenchant.configuration.ignore_bypasses_invulnerability_tag": "無敵貫通を無視",
   "astralenchant.configuration.ignore_bypasses_invulnerability_tag.tooltip": "オフの場合、無敵貫通タグ（BYPASSES_INVULNERABILITY）を持つダメージ（/killや奈落など）ではラストスタンドは発動しません。",

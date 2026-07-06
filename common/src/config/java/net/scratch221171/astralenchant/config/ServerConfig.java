@@ -4,9 +4,6 @@ import net.scratch221171.astralenchant.mdk.config.ConfigEntries;
 import net.scratch221171.astralenchant.mdk.config.ConfigEntry;
 import net.scratch221171.astralenchant.mdk.config.ConfigEntryBuilder;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class ServerConfig {
     private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
 
@@ -25,13 +22,13 @@ public class ServerConfig {
             private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
 
             public static final ConfigEntry.BooleanEntry IGNORE_BYPASSES_INVULNERABILITY_TAG =
-                    BUILDER.define("ignore_bypasses_invulnerability_tag", true);
+                    BUILDER.define(ConfigID.IGNORE_BYPASSES_INVULNERABILITY_TAG, true);
 
             public static final ConfigEntry.DoubleEntry BASE_COST =
-                    BUILDER.defineInRange("base_cost", 10.0, 0.0, Double.MAX_VALUE);
+                    BUILDER.defineInRange(ConfigID.BASE_COST, 10.0, 0.0, Double.MAX_VALUE);
 
             public static final ConfigEntry.DoubleEntry COST_RATE =
-                    BUILDER.defineInRange("cost_rate", 0.9, 0, 1);
+                    BUILDER.defineInRange(ConfigID.COST_RATE, 0.9, 0, 1);
 
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }
@@ -44,10 +41,10 @@ public class ServerConfig {
             private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
 
             public static final ConfigEntry.BooleanEntry INCLUDE_OVERLOAD =
-                    BUILDER.define("include_overload", false);
+                    BUILDER.define(ConfigID.INCLUDE_OVERLOAD, false);
 
             public static final ConfigEntry.DoubleEntry MULTIPLIER =
-                    BUILDER.defineInRange("multiplier", 1.0, 0.0, Double.MAX_VALUE);
+                    BUILDER.defineInRange(ConfigID.MULTIPLIER, 1.0, 0.0, Double.MAX_VALUE);
 
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }

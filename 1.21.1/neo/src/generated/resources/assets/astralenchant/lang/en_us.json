@@ -4,6 +4,8 @@
   "astralenchant.configuration.cost_rate": "Level Cost Rate",
   "astralenchant.configuration.cost_rate.tooltip": "At level n, the consumed experience levels are calculated as: (Current Experience Levels) * (Cost Rate) / √n + (Base Cost) / n",
   "astralenchant.configuration.enchantment_settings": "Enchantment Settings",
+  "astralenchant.configuration.enchantment_toggling": "Enchantment Toggling",
+  "astralenchant.configuration.enchantment_toggling.tooltip": "Note: You must restart the world to apply the changes!",
   "astralenchant.configuration.essence_of_enchantment": "Essence of Enchantment",
   "astralenchant.configuration.ignore_bypasses_invulnerability_tag": "Ignore Invulnerability-Piercing Damage",
   "astralenchant.configuration.ignore_bypasses_invulnerability_tag.tooltip": "If disabled, Last Stand will not activate against damage with the BYPASSES_INVULNERABILITY tag (such as /kill or the void).",
