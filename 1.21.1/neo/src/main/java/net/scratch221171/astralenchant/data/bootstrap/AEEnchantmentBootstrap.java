@@ -22,9 +22,9 @@ public class AEEnchantmentBootstrap {
         consumer.accept(AEEnchantments.NULLIFICATION, new ConfigCondition(ConfigID.NULLIFICATION));
         consumer.accept(AEEnchantments.LAST_STAND, new ConfigCondition(ConfigID.LAST_STAND));
         consumer.accept(AEEnchantments.ESSENCE_OF_ENCHANTMENT, new ConfigCondition(ConfigID.ESSENCE_OF_ENCHANTMENT));
-        /*consumer.accept(AEEnchantments.COOLDOWN_REDUCTION, new ConfigCondition(ConfigID.COOLDOWN_REDUCTION));
+        //        consumer.accept(AEEnchantments.COOLDOWN_REDUCTION, new ConfigCondition(ConfigID.COOLDOWN_REDUCTION));
         consumer.accept(AEEnchantments.FEATHER_TOUCH, new ConfigCondition(ConfigID.FEATHER_TOUCH));
-        consumer.accept(AEEnchantments.ADVENTURERS_LORE, new ConfigCondition(ConfigID.ADVENTURERS_LORE));
+        /*consumer.accept(AEEnchantments.ADVENTURERS_LORE, new ConfigCondition(ConfigID.ADVENTURERS_LORE));
         consumer.accept(AEEnchantments.COMPATIBILITY, new ConfigCondition(ConfigID.COMPATIBILITY));
         consumer.accept(AEEnchantments.ENDLESS_APPETITE, new ConfigCondition(ConfigID.ENDLESS_APPETITE));
         consumer.accept(AEEnchantments.MOMENTUM, new ConfigCondition(ConfigID.MOMENTUM));
@@ -111,37 +111,37 @@ public class AEEnchantmentBootstrap {
                         32,
                         EquipmentSlotGroup.ANY)));
         /*
-                register(
-                        context,
-                        AEEnchantments.COOLDOWN_REDUCTION,
-                        Enchantment.enchantment(Enchantment.definition(
-                                        chestTag,
-                                        1,
-                                        3,
-                                        Enchantment.constantCost(Integer.MAX_VALUE),
-                                        Enchantment.constantCost(Integer.MAX_VALUE),
-                                        16,
-                                        EquipmentSlotGroup.CHEST))
-                                .withEffect(
-                                        EnchantmentEffectComponents.ATTRIBUTES,
-                                        new EnchantmentAttributeEffect(
-                                                ModUtils.loc("cr_bonus"),
-                                                AEAttributes.COOLDOWN_DURATION,
-                                                LevelBasedValue.perLevel(-0.15f),
-                                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE)));
-
-                register(
-                        context,
-                        AEEnchantments.FEATHER_TOUCH,
-                        Enchantment.enchantment(Enchantment.definition(
-                                miningTag,
-                                1,
-                                1,
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                16,
-                                EquipmentSlotGroup.MAINHAND)));
-
+                        register(
+                                context,
+                                AEEnchantments.COOLDOWN_REDUCTION,
+                                Enchantment.enchantment(Enchantment.definition(
+                                                chestTag,
+                                                1,
+                                                3,
+                                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                                16,
+                                                EquipmentSlotGroup.CHEST))
+                                        .withEffect(
+                                                EnchantmentEffectComponents.ATTRIBUTES,
+                                                new EnchantmentAttributeEffect(
+                                                        ModUtils.loc("cr_bonus"),
+                                                        AEAttributes.COOLDOWN_DURATION,
+                                                        LevelBasedValue.perLevel(-0.15f),
+                                                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE)));
+        */
+        register(
+                context,
+                AEEnchantments.FEATHER_TOUCH,
+                Enchantment.enchantment(Enchantment.definition(
+                        miningTag,
+                        1,
+                        1,
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        16,
+                        EquipmentSlotGroup.MAINHAND)));
+        /*
                 register(
                         context,
                         AEEnchantments.ADVENTURERS_LORE,
