@@ -179,6 +179,8 @@ public class AEEnchantments {
      */
     public static final ResourceKey<Enchantment> OVER_MENDING = create(ID.OVER_MENDING);
 
+    public static final ResourceKey<Enchantment> ALMIGHTY = create(ID.ALMIGHTY);
+
     private static ResourceKey<Enchantment> create(String name) {
         return ResourceKey.create(Registries.ENCHANTMENT, ModUtils.loc(name));
     }

@@ -10,6 +10,8 @@ public class ConfigID {
     // Essence of Enchantment
     public static final String INCLUDE_OVERLOAD = "include_overload";
     public static final String MULTIPLIER = "multiplier";
+    // Almighty
+    public static final String CORRECT_TOOL_FOR_ANY_BLOCK = "correct_tool_for_any_block";
 
     // Enchantment Toggling
     public static final String NULLIFICATION = "nullification";

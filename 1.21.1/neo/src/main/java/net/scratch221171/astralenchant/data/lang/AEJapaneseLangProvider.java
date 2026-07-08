@@ -32,6 +32,7 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 "通常採取できないものも含め、ブロックをアイテム化します。ブロックエンティティのデータも保存し、スニーク時はブロックステートも同様に保存します。");
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "オーバーロード", "既存のエンチャントのレベルをオーバーロードの値だけ増加させます。");
         addEnchantmentWithDesc(AEEnchantments.REACTIVE_ARMOR, "反応装甲", "一部のダメージタイプのアーマーおよびエンチャントを貫通する効果を無効化します。");
+        addEnchantmentWithDesc(AEEnchantments.ALMIGHTY, "オールマイティ", "ツールを全てのブロックに対して適正にします。破壊不能なブロックを採掘可能にします。");
 
         // 設定
         addConfig("enchantment_settings", "エンチャントの設定");

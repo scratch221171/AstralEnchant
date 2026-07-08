@@ -1,4 +1,5 @@
 {
+  "astralenchant.configuration.almighty": "Almighty",
   "astralenchant.configuration.base_cost": "Base Level Cost",
   "astralenchant.configuration.base_cost.tooltip": "At level n, the consumed experience levels are calculated as: (Current Experience Levels) * (Cost Rate) / √n + (Base Cost) / n",
   "astralenchant.configuration.cost_rate": "Level Cost Rate",
@@ -14,6 +15,8 @@
   "astralenchant.configuration.nullification": "Nullification",
   "astralenchant.configuration.overload": "Overload",
   "astralenchant.configuration.reactive_armor": "Reactive Armor",
+  "enchantment.astralenchant.almighty": "Almighty",
+  "enchantment.astralenchant.almighty.desc": "Makes the tool suitable for all blocks. Enables mining of indestructible blocks.",
   "enchantment.astralenchant.essence_of_enchantment": "Essence of Enchantment",
   "enchantment.astralenchant.essence_of_enchantment.desc": "Increases all item stats based on the total level of all enchantments other than this one.",
   "enchantment.astralenchant.feather_touch": "Feather Touch",

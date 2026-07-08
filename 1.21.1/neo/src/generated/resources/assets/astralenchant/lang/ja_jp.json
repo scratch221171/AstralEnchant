@@ -1,4 +1,5 @@
 {
+  "astralenchant.configuration.almighty": "オールマイティ",
   "astralenchant.configuration.base_cost": "レベル消費基本値",
   "astralenchant.configuration.base_cost.tooltip": "レベルnのとき、消費されるレベルは以下の計算式で表されます：(現在の経験値) * (消費割合) / √n + (消費基本値) / n",
   "astralenchant.configuration.cost_rate": "レベル消費割合",
@@ -14,6 +15,8 @@
   "astralenchant.configuration.nullification": "無効化",
   "astralenchant.configuration.overload": "オーバーロード",
   "astralenchant.configuration.reactive_armor": "反応装甲",
+  "enchantment.astralenchant.almighty": "オールマイティ",
+  "enchantment.astralenchant.almighty.desc": "ツールを全てのブロックに対して適正にします。破壊不能なブロックを採掘可能にします。",
   "enchantment.astralenchant.essence_of_enchantment": "エンチャントの極意",
   "enchantment.astralenchant.essence_of_enchantment.desc": "このエンチャント以外のエンチャントのレベルの合計に応じて、アイテムの全ステータスに補正を掛けます。",
   "enchantment.astralenchant.feather_touch": "フェザータッチ",

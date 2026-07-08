@@ -38,6 +38,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 AEEnchantments.REACTIVE_ARMOR,
                 "Reactive Armor",
                 "Negates effects that bypass armor and enchantments for certain types of damage.");
+        addEnchantmentWithDesc(
+                AEEnchantments.ALMIGHTY,
+                "Almighty",
+                "Makes the tool suitable for all blocks. Enables mining of indestructible blocks.");
 
         // 設定
         addConfig("enchantment_settings", "Enchantment Settings");

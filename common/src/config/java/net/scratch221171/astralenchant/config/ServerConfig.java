@@ -35,7 +35,7 @@ public class ServerConfig {
 
         public static final ConfigEntries ESSENCE_OF_ENCHANTMENT =
                 BUILDER.comment("Essence of Enchantment")
-                        .category("essence_of_enchant", EssenceOfEnchantment.ENTRIES);
+                        .category("essence_of_enchantment", EssenceOfEnchantment.ENTRIES);
 
         public static final class EssenceOfEnchantment {
             private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
@@ -45,6 +45,19 @@ public class ServerConfig {
 
             public static final ConfigEntry.DoubleEntry MULTIPLIER =
                     BUILDER.defineInRange(ConfigID.MULTIPLIER, 1.0, 0.0, Double.MAX_VALUE);
+
+            public static final ConfigEntries ENTRIES = BUILDER.build();
+        }
+
+        public static final ConfigEntries ALMIGHTY =
+                BUILDER.comment("Almighty")
+                        .category("almighty", Almighty.ENTRIES);
+
+        public static final class Almighty {
+            private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
+
+            public static final ConfigEntry.BooleanEntry CORRECT_TOOL_FOR_ANY_BLOCK
+                    = BUILDER.define(ConfigID.CORRECT_TOOL_FOR_ANY_BLOCK, true);
 
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }

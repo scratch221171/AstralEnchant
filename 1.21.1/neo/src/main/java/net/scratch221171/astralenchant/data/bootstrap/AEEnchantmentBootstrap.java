@@ -299,6 +299,17 @@ public class AEEnchantmentBootstrap {
                                     EquipmentSlotGroup.ANY))
                             .withEffect(EnchantmentEffectComponents.TICK, new OverMendingEffect()));
         */
+        register(
+                context,
+                AEEnchantments.ALMIGHTY,
+                Enchantment.enchantment(Enchantment.definition(
+                        miningTag,
+                        1,
+                        3,
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        16,
+                        EquipmentSlotGroup.MAINHAND)));
     }
 
     private static void register(
