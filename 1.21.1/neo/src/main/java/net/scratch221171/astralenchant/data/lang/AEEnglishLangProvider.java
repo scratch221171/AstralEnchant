@@ -23,16 +23,17 @@ public class AEEnglishLangProvider extends AELangProvider {
         addEnchantmentWithDesc(
                 AEEnchantments.NULLIFICATION,
                 "Nullification",
-                "Various damage reductions are negated, and attacks deal their full damage.");
+                "Negates various damage reductions, and makes attacks deal their full damage.");
         addEnchantmentWithDesc(AEEnchantments.LAST_STAND, "Last Stand", "Consumes experience points to avoid death.");
         addEnchantmentWithDesc(
                 AEEnchantments.ESSENCE_OF_ENCHANTMENT,
                 "Essence of Enchantment",
-                "All item stats increase based on the total level of all enchantments other than this one.");
+                "Increases all item stats based on the total level of all enchantments other than this one.");
         addEnchantmentWithDesc(
-                AEEnchantments.OVERLOAD,
-                "Overload",
-                "Increase the level of existing enchantments by the Overload value.");
+                AEEnchantments.FEATHER_TOUCH,
+                "Feather Touch",
+                "Collects even normally unobtainable blocks as an item. Preserves block entity data, and while sneaking, preserves block states as well.");
+        addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "Overload", "Increases the level of existing enchantments.");
         addEnchantmentWithDesc(
                 AEEnchantments.REACTIVE_ARMOR,
                 "Reactive Armor",

@@ -38,7 +38,7 @@ public class FeatherTouchHandler {
     @SubscribeEvent(priority = EventPriority.LOW)
     private static void onBreak(BlockEvent.BreakEvent event) {
         var player = event.getPlayer();
-        var level = (ServerLevel)player.level();
+        var level = (ServerLevel) player.level();
         var pos = event.getPos();
         var state = event.getState();
 
@@ -63,9 +63,9 @@ public class FeatherTouchHandler {
                         pos.getY() + 0.5,
                         pos.getZ() + 0.5,
                         20,
-                        0.4,
-                        0.4,
-                        0.4,
+                        0.3,
+                        0.3,
+                        0.3,
                         0);
             } else {
                 stack = new ItemStack(state.getBlock());
@@ -79,15 +79,15 @@ public class FeatherTouchHandler {
                 stack.set(DataComponents.BLOCK_STATE, properties);
 
                 level.sendParticles(
-                            ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS,
-                            pos.getX() + 0.5,
-                            pos.getY() + 0.5,
-                            pos.getZ() + 0.5,
-                            20,
-                            0.4,
-                            0.4,
-                            0.4,
-                            0);
+                        ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS,
+                        pos.getX() + 0.5,
+                        pos.getY() + 0.5,
+                        pos.getZ() + 0.5,
+                        20,
+                        0.3,
+                        0.3,
+                        0.3,
+                        0);
             }
 
             CACHE.put(new Key(level.dimension(), pos), stack);

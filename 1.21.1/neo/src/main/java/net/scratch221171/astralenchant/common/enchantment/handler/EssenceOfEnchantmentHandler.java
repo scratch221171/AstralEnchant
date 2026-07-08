@@ -23,6 +23,9 @@ public class EssenceOfEnchantmentHandler {
         if (stack.isEmpty()) return;
 
         AEUtil.getEnchantmentHolder(AEEnchantments.ESSENCE_OF_ENCHANTMENT).ifPresent(holder -> {
+            var level = stack.getEnchantmentLevel(holder);
+            if (level <= 0) return;
+
             int totalLevel = 0;
             var enchantments = ServerConfig.EnchantmentSettings.EssenceOfEnchantment.INCLUDE_OVERLOAD.getAsBoolean()
                     ? AEUtil.getAllEnchantments(stack).entrySet()
@@ -38,7 +41,6 @@ public class EssenceOfEnchantmentHandler {
                     ((IAttributeSentimentExtension) attribute.value()).astralenchant$getSentiment();
             AttributeModifier newModifier;
 
-            var level = stack.getEnchantmentLevel(holder);
             var multiplier = ServerConfig.EnchantmentSettings.EssenceOfEnchantment.MULTIPLIER.getAsDouble();
             switch (sentiment) {
                 // *(1 + a)
