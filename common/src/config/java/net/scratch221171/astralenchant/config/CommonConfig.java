@@ -29,7 +29,7 @@ public class CommonConfig {
         public static final ConfigEntry.BooleanEntry LAST_STAND = defineToggle(ConfigID.LAST_STAND);
         public static final ConfigEntry.BooleanEntry ITEM_PROTECTION = defineToggle(ConfigID.ITEM_PROTECTION);
         public static final ConfigEntry.BooleanEntry ESSENCE_OF_ENCHANTMENT = defineToggle(ConfigID.ESSENCE_OF_ENCHANTMENT);
-        public static final ConfigEntry.BooleanEntry COOLDOWN_REDUCTION = defineToggle(ConfigID.COOLDOWN_REDUCTION);
+        public static final ConfigEntry.BooleanEntry RESILIENCE = defineToggle(ConfigID.RESILIENCE);
         public static final ConfigEntry.BooleanEntry FEATHER_TOUCH = defineToggle(ConfigID.FEATHER_TOUCH);
         public static final ConfigEntry.BooleanEntry ADVENTURERS_LORE = defineToggle(ConfigID.ADVENTURERS_LORE);
         public static final ConfigEntry.BooleanEntry COMPATIBILITY = defineToggle(ConfigID.COMPATIBILITY);

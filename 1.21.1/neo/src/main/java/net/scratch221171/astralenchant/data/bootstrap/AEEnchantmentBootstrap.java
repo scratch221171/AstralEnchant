@@ -8,12 +8,18 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
+import net.minecraft.world.item.enchantment.LevelBasedValue;
+import net.minecraft.world.item.enchantment.effects.EnchantmentAttributeEffect;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.registries.holdersets.AnyHolderSet;
+import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.config.ConfigID;
 
 public class AEEnchantmentBootstrap {
@@ -22,7 +28,7 @@ public class AEEnchantmentBootstrap {
         consumer.accept(AEEnchantments.NULLIFICATION, new ConfigCondition(ConfigID.NULLIFICATION));
         consumer.accept(AEEnchantments.LAST_STAND, new ConfigCondition(ConfigID.LAST_STAND));
         consumer.accept(AEEnchantments.ESSENCE_OF_ENCHANTMENT, new ConfigCondition(ConfigID.ESSENCE_OF_ENCHANTMENT));
-        //        consumer.accept(AEEnchantments.COOLDOWN_REDUCTION, new ConfigCondition(ConfigID.COOLDOWN_REDUCTION));
+        consumer.accept(AEEnchantments.RESILIENCE, new ConfigCondition(ConfigID.RESILIENCE));
         consumer.accept(AEEnchantments.FEATHER_TOUCH, new ConfigCondition(ConfigID.FEATHER_TOUCH));
         /*consumer.accept(AEEnchantments.ADVENTURERS_LORE, new ConfigCondition(ConfigID.ADVENTURERS_LORE));
         consumer.accept(AEEnchantments.COMPATIBILITY, new ConfigCondition(ConfigID.COMPATIBILITY));
@@ -110,26 +116,26 @@ public class AEEnchantmentBootstrap {
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         32,
                         EquipmentSlotGroup.ANY)));
-        /*
-                        register(
-                                context,
-                                AEEnchantments.COOLDOWN_REDUCTION,
-                                Enchantment.enchantment(Enchantment.definition(
-                                                chestTag,
-                                                1,
-                                                3,
-                                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                                16,
-                                                EquipmentSlotGroup.CHEST))
-                                        .withEffect(
-                                                EnchantmentEffectComponents.ATTRIBUTES,
-                                                new EnchantmentAttributeEffect(
-                                                        ModUtils.loc("cr_bonus"),
-                                                        AEAttributes.COOLDOWN_DURATION,
-                                                        LevelBasedValue.perLevel(-0.15f),
-                                                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE)));
-        */
+
+        register(
+                context,
+                AEEnchantments.RESILIENCE,
+                Enchantment.enchantment(Enchantment.definition(
+                                chestTag,
+                                1,
+                                3,
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                Enchantment.constantCost(Integer.MAX_VALUE),
+                                16,
+                                EquipmentSlotGroup.CHEST))
+                        .withEffect(
+                                EnchantmentEffectComponents.ATTRIBUTES,
+                                new EnchantmentAttributeEffect(
+                                        ModUtils.loc("cr_bonus"),
+                                        AEAttributes.COOLDOWN_DURATION,
+                                        LevelBasedValue.perLevel(-0.15f),
+                                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE)));
+
         register(
                 context,
                 AEEnchantments.FEATHER_TOUCH,

@@ -6,7 +6,7 @@ public final class ID {
     public static final String LAST_STAND = "last_stand";
     public static final String ITEM_PROTECTION = "item_protection";
     public static final String ESSENCE_OF_ENCHANTMENT = "essence_of_enchantment";
-    public static final String COOLDOWN_REDUCTION = "cooldown_reduction";
+    public static final String RESILIENCE = "resilience";
     public static final String FEATHER_TOUCH = "feather_touch";
     public static final String ADVENTURERS_LORE = "adventurers_lore";
     public static final String COMPATIBILITY = "compatibility";
@@ -23,4 +23,7 @@ public final class ID {
     public static final String DISTORTION = "distortion";
     public static final String OVER_MENDING = "over_mending";
     public static final String ALMIGHTY = "almighty";
+
+    // Attribute
+    public static final String COOLDOWN_DURATION = "cooldown_duration";
 }

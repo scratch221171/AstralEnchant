@@ -51,7 +51,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : {// @link ItemCooldownsMixin}
      */
-    public static final ResourceKey<Enchantment> COOLDOWN_REDUCTION = create(ID.COOLDOWN_REDUCTION);
+    public static final ResourceKey<Enchantment> RESILIENCE = create(ID.RESILIENCE);
 
     /**
      * ブロック破壊時に必ずドロップするようにし、スニーク時はBlockStateやBlockEntityのコンポーネントを保持したままアイテム化させる。

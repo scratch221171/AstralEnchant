@@ -19,7 +19,7 @@ public class ConfigID {
     public static final String LAST_STAND = "last_stand";
     public static final String ITEM_PROTECTION = "item_protection";
     public static final String ESSENCE_OF_ENCHANTMENT = "essence_of_enchantment";
-    public static final String COOLDOWN_REDUCTION = "cooldown_reduction";
+    public static final String RESILIENCE = "resilience";
     public static final String FEATHER_TOUCH = "feather_touch";
     public static final String ADVENTURERS_LORE = "adventurers_lore";
     public static final String COMPATIBILITY = "compatibility";

@@ -7,6 +7,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEConditions;
 import net.scratch221171.astralenchant.common.registry.AEDataComponents;
 import net.scratch221171.astralenchant.common.registry.AEItems;
@@ -24,6 +25,7 @@ public class AstralEnchant {
         modEventBus.addListener(this::commonSetup);
         AEItems.register(modEventBus);
         AEDataComponents.register(modEventBus);
+        AEAttributes.register(modEventBus);
         AEConditions.register(modEventBus);
 
         NeoForge.EVENT_BUS.addListener(this::onAddReloadListeners);

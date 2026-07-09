@@ -7,7 +7,9 @@
     "AttributeMixin",
     "BlockBehaviourMixin",
     "DamageSourceMixin",
-    "ItemStackMixin"
+    "ItemCooldownsMixin",
+    "ItemStackMixin",
+    "PlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
