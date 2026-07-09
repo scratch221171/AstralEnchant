@@ -1,9 +1,12 @@
 package net.scratch221171.astralenchant.common.enchantment.handler;
 
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.enchanting.GetEnchantmentLevelEvent;
@@ -31,11 +34,14 @@ public class OverloadHandler {
         }
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     private static void modifyTooltip(ItemTooltipEvent event) {
         ItemStack stack = event.getItemStack();
-        int level = AEUtil.getEnchantmentLevel(AEEnchantments.OVERLOAD, stack);
-        if (level > 0) {
+        if (AEUtil.getEnchantmentLevel(AEEnchantments.OVERLOAD, stack) > 0
+                || AEUtil.getEnchantmentLevel(
+                                AEEnchantments.OVERLOAD,
+                                stack.getOrDefault(DataComponents.STORED_ENCHANTMENTS, ItemEnchantments.EMPTY))
+                        > 0) {
             AEUtil.modifyTooltip(
                     event.getToolTip(),
                     c -> c instanceof TranslatableContents t && t.getKey().equals("enchantment.astralenchant.overload"),

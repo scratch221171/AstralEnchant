@@ -71,7 +71,7 @@ public class FeatherTouchHandler {
                 stack = new ItemStack(state.getBlock());
             }
 
-            if (player.isCrouching()) {
+            if (player.isShiftKeyDown()) {
                 BlockItemStateProperties properties = BlockItemStateProperties.EMPTY;
                 for (Property<?> property : state.getProperties()) {
                     properties = properties.with(property, state);

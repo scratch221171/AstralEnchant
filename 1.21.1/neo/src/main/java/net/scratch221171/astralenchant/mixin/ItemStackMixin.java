@@ -9,10 +9,15 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.NeoForge;
+import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.enchantment.handler.AlmightyHandler;
 import net.scratch221171.astralenchant.common.enchantment.handler.EssenceOfEnchantmentHandler;
 import net.scratch221171.astralenchant.common.event.ItemSetEnchantmentEvent;
+import net.scratch221171.astralenchant.common.util.AEUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -62,5 +67,24 @@ public abstract class ItemStackMixin {
         if (NeoForge.EVENT_BUS.post(event).isCanceled()) {
             cir.setReturnValue((T) stack.get(DataComponents.ENCHANTMENTS));
         }
+    }
+
+    @Inject(method = "isCorrectToolForDrops", at = @At("HEAD"), cancellable = true)
+    private void astralenchant$forceCorrectTool(BlockState state, CallbackInfoReturnable<Boolean> cir) {
+        ItemStack self = (ItemStack) (Object) this;
+        if (AlmightyHandler.isAlmightyCorrectTool(self, state)) {
+            cir.setReturnValue(true);
+        }
+    }
+
+    @Inject(method = "getDestroySpeed", at = @At("RETURN"), cancellable = true)
+    private void astralenchant$virtualSpeed(BlockState state, CallbackInfoReturnable<Float> cir) {
+        var self = (ItemStack) (Object) this;
+        if (AEUtil.getEnchantmentLevel(AEEnchantments.ALMIGHTY, self) <= 0) return;
+
+        if (!(self.getItem() instanceof TieredItem tiered)) return;
+
+        float virtual = AlmightyHandler.getVirtualDestroySpeed(tiered.getTier(), state);
+        cir.setReturnValue(Math.max(cir.getReturnValue(), virtual));
     }
 }

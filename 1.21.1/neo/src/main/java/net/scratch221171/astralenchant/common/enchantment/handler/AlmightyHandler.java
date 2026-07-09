@@ -5,28 +5,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent;
-import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import net.scratch221171.astralenchant.config.ServerConfig;
 
-@EventBusSubscriber(modid = Constants.MODID)
 public class AlmightyHandler {
-
-    @SubscribeEvent
-    private static void check(PlayerEvent.HarvestCheck event) {
-        ItemStack tool = event.getEntity().getMainHandItem();
-        if (isAlmightyCorrectTool(tool, event.getTargetBlock())) {
-            event.setCanHarvest(true);
-        }
-    }
 
     // Almightyによる適正判定のエントリポイント
     // lv4は万能、lv1~3はティアのみ引き上げ
-    private static boolean isAlmightyCorrectTool(ItemStack tool, BlockState state) {
+    public static boolean isAlmightyCorrectTool(ItemStack tool, BlockState state) {
         int level = AEUtil.getEnchantmentLevel(AEEnchantments.ALMIGHTY, tool);
         if (level <= 0) return false;
         if (level >= 4) return true;
