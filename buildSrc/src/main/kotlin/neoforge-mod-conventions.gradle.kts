@@ -77,6 +77,7 @@ neoForge {
             server()
             programArgument("--nogui")
             systemProperty("neoforge.enabledGameTestNamespaces", modId)
+            gameDirectory = file("run-server")
         }
 
         if (minecraftVersion.supportsGameTestServer()) {

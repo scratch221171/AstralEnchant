@@ -305,7 +305,7 @@ public class AEEnchantmentBootstrap {
                 Enchantment.enchantment(Enchantment.definition(
                         miningTag,
                         1,
-                        3,
+                        4,
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         16,

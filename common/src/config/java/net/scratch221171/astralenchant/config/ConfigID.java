@@ -8,10 +8,11 @@ public class ConfigID {
     public static final String BASE_COST = "base_cost";
     public static final String COST_RATE = "cost_rate";
     // Essence of Enchantment
-    public static final String INCLUDE_OVERLOAD = "include_overload";
+    public static final String INCLUDE_OVERLOAD_IN_TOTAL = "include_overload_in_total";
     public static final String MULTIPLIER = "multiplier";
     // Almighty
-    public static final String CORRECT_TOOL_FOR_ANY_BLOCK = "correct_tool_for_any_block";
+    public static final String EFFECTIVE_FOR_ALL_BLOCKS = "effective_for_all_blocks";
+    public static final String UNBREAKABLE_BLOCK_HARDNESS = "unbreakable_block_hardness";
 
     // Enchantment Toggling
     public static final String NULLIFICATION = "nullification";

@@ -27,9 +27,10 @@ public class EssenceOfEnchantmentHandler {
             if (level <= 0) return;
 
             int totalLevel = 0;
-            var enchantments = ServerConfig.EnchantmentSettings.EssenceOfEnchantment.INCLUDE_OVERLOAD.getAsBoolean()
-                    ? AEUtil.getAllEnchantments(stack).entrySet()
-                    : stack.getTagEnchantments().entrySet();
+            var enchantments =
+                    ServerConfig.EnchantmentSettings.EssenceOfEnchantment.INCLUDE_OVERLOAD_IN_TOTAL.getAsBoolean()
+                            ? AEUtil.getAllEnchantments(stack).entrySet()
+                            : stack.getTagEnchantments().entrySet();
             for (var entry : enchantments) {
                 if (!entry.getKey().is(AEEnchantments.ESSENCE_OF_ENCHANTMENT)) {
                     totalLevel += entry.getIntValue();

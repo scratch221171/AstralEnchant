@@ -63,24 +63,24 @@ public class AEUtil {
     }
 
     // ServerLifecycleHooks.getCurrentServerからレジストリを取得し，エンチャントレベルを取得する
-    public static int getEnchantmentLevel(ItemStack stack, ResourceKey<Enchantment> key) {
+    public static int getEnchantmentLevel(ResourceKey<Enchantment> key, ItemStack stack) {
         return getRegistryAccess()
-                .map(access -> getEnchantmentLevel(stack, access, key))
+                .map(access -> getEnchantmentLevel(key, stack, access))
                 .orElse(0);
     }
 
-    public static int getEnchantmentLevel(ItemStack stack, Level level, ResourceKey<Enchantment> key) {
-        return getEnchantmentLevel(stack, level.registryAccess(), key);
+    public static int getEnchantmentLevel(ResourceKey<Enchantment> key, ItemStack stack, Level level) {
+        return getEnchantmentLevel(key, stack, level.registryAccess());
     }
 
     public static int getEnchantmentLevel(
-            ItemStack stack, HolderLookup.Provider provider, ResourceKey<Enchantment> key) {
-        return getEnchantmentLevel(stack, provider.lookupOrThrow(Registries.ENCHANTMENT), key);
+            ResourceKey<Enchantment> key, ItemStack stack, HolderLookup.Provider provider) {
+        return getEnchantmentLevel(key, stack, provider.lookupOrThrow(Registries.ENCHANTMENT));
     }
 
     // ItemStack.getAllEnchantmentsに基づいてエンチャントレベルを取得する
     public static int getEnchantmentLevel(
-            ItemStack stack, HolderLookup.RegistryLookup<Enchantment> lookup, ResourceKey<Enchantment> key) {
+            ResourceKey<Enchantment> key, ItemStack stack, HolderLookup.RegistryLookup<Enchantment> lookup) {
         return stack.getAllEnchantments(lookup).entrySet().stream()
                 .filter(entry -> entry.getKey().is(key))
                 .findFirst()
@@ -88,7 +88,7 @@ public class AEUtil {
                 .orElse(0);
     }
 
-    public static int getEnchantmentLevel(ItemEnchantments enchantments, ResourceKey<Enchantment> key) {
+    public static int getEnchantmentLevel(ResourceKey<Enchantment> key, ItemEnchantments enchantments) {
         return enchantments.entrySet().stream()
                 .filter(entry -> entry.getKey().is(key))
                 .findFirst()

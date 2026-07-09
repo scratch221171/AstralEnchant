@@ -40,8 +40,8 @@ public class ServerConfig {
         public static final class EssenceOfEnchantment {
             private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
 
-            public static final ConfigEntry.BooleanEntry INCLUDE_OVERLOAD =
-                    BUILDER.define(ConfigID.INCLUDE_OVERLOAD, false);
+            public static final ConfigEntry.BooleanEntry INCLUDE_OVERLOAD_IN_TOTAL =
+                    BUILDER.define(ConfigID.INCLUDE_OVERLOAD_IN_TOTAL, false);
 
             public static final ConfigEntry.DoubleEntry MULTIPLIER =
                     BUILDER.defineInRange(ConfigID.MULTIPLIER, 1.0, 0.0, Double.MAX_VALUE);
@@ -56,8 +56,11 @@ public class ServerConfig {
         public static final class Almighty {
             private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
 
-            public static final ConfigEntry.BooleanEntry CORRECT_TOOL_FOR_ANY_BLOCK
-                    = BUILDER.define(ConfigID.CORRECT_TOOL_FOR_ANY_BLOCK, true);
+            public static final ConfigEntry.BooleanEntry EFFECTIVE_FOR_ALL_BLOCKS
+                    = BUILDER.define(ConfigID.EFFECTIVE_FOR_ALL_BLOCKS, true);
+
+            public static final ConfigEntry.DoubleEntry UNBREAKABLE_BLOCK_HARDNESS
+                    = BUILDER.defineInRange(ConfigID.UNBREAKABLE_BLOCK_HARDNESS, 100.0, 0.0, Double.MAX_VALUE);
 
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }

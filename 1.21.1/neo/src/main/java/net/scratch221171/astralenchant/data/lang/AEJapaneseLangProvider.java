@@ -44,7 +44,14 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 ConfigID.BASE_COST, "レベル消費基本値", "レベルnのとき、消費されるレベルは以下の計算式で表されます：(現在の経験値) * (消費割合) / √n + (消費基本値) / n");
         addConfigWithDesc(
                 ConfigID.COST_RATE, "レベル消費割合", "レベルnのとき、消費されるレベルは以下の計算式で表されます：(現在の経験値) * (消費割合) / √n + (消費基本値) / n");
-
+        addConfigWithDesc(
+                ConfigID.INCLUDE_OVERLOAD_IN_TOTAL,
+                "オーバーロードレベルを含める",
+                "他のエンチャントに適用されるオーバーロードによるボーナスを総レベルに含めるかどうか。この設定に関係なく、エンチャントの極意自体にはオーバーロードは適用されます。");
+        addConfigWithDesc(ConfigID.MULTIPLIER, "レベルごとのモディファイア倍率（％）", "例：1に設定すると、合計20レベルのときモディファイア倍率が+20%になります。");
+        addConfigWithDesc(
+                ConfigID.EFFECTIVE_FOR_ALL_BLOCKS, "全てのブロックに対して適正", "ガラスなど、適正ツールが存在しないブロックにも採掘速度ボーナスが適用されるかどうか。");
+        addConfigWithDesc(ConfigID.UNBREAKABLE_BLOCK_HARDNESS, "破壊不能なブロックの硬さ", "岩盤など破壊不能なブロックを採掘する際に適用される硬さ。");
         addConfigWithDesc("enchantment_toggling", "エンチャントの切り替え", "注意：変更を適用するにはワールドを再起動する必要があります！");
     }
 }

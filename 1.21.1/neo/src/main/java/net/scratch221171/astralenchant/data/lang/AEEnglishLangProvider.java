@@ -57,6 +57,22 @@ public class AEEnglishLangProvider extends AELangProvider {
                 ConfigID.COST_RATE,
                 "Level Cost Rate",
                 "At level n, the consumed experience levels are calculated as: (Current Experience Levels) * (Cost Rate) / √n + (Base Cost) / n");
+        addConfigWithDesc(
+                ConfigID.INCLUDE_OVERLOAD_IN_TOTAL,
+                "Include Overload in total",
+                "Whether to include bonuses from overloading applied to other enchantments in the total level. Regardless of this setting, Overload levels are always applied to the level of Essence of Enchant itself.");
+        addConfigWithDesc(
+                ConfigID.MULTIPLIER,
+                "Modifier Bonus per Level (%)",
+                "Example: If set to 1, the modifier is increased by +20% at a total level of 20.");
+        addConfigWithDesc(
+                ConfigID.UNBREAKABLE_BLOCK_HARDNESS,
+                "Unbreakable Block Hardness",
+                "The hardness value applied when mining unbreakable blocks, such as bedrock.");
+        addConfigWithDesc(
+                ConfigID.EFFECTIVE_FOR_ALL_BLOCKS,
+                "Effective for All Blocks",
+                "Whether the mining speed bonus is applied to blocks that do not have a preferred tool, such as glass.");
 
         addConfigWithDesc(
                 "enchantment_toggling",
