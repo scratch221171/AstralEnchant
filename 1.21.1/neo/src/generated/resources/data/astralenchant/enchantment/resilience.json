@@ -14,8 +14,8 @@
       {
         "amount": {
           "type": "minecraft:linear",
-          "base": -0.15,
-          "per_level_above_first": -0.15
+          "base": -0.1,
+          "per_level_above_first": -0.1
         },
         "attribute": "astralenchant:cooldown_duration",
         "id": "astralenchant:cr_bonus",

@@ -133,7 +133,7 @@ public class AEEnchantmentBootstrap {
                                 new EnchantmentAttributeEffect(
                                         ModUtils.loc("cr_bonus"),
                                         AEAttributes.COOLDOWN_DURATION,
-                                        LevelBasedValue.perLevel(-0.15f),
+                                        LevelBasedValue.perLevel(-0.1f),
                                         AttributeModifier.Operation.ADD_MULTIPLIED_BASE)));
 
         register(
@@ -244,42 +244,42 @@ public class AEEnchantmentBootstrap {
                         16,
                         EquipmentSlotGroup.CHEST)));
         /*
-            register(
-                    context,
-                    AEEnchantments.MYSTIC_REMNANTS,
-                    Enchantment.enchantment(Enchantment.definition(
-                            weaponTag,
-                            1,
-                            3,
-                            Enchantment.constantCost(Integer.MAX_VALUE),
-                            Enchantment.constantCost(Integer.MAX_VALUE),
-                            4,
-                            EquipmentSlotGroup.MAINHAND)));
+                    register(
+                            context,
+                            AEEnchantments.MYSTIC_REMNANTS,
+                            Enchantment.enchantment(Enchantment.definition(
+                                    weaponTag,
+                                    1,
+                                    3,
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    4,
+                                    EquipmentSlotGroup.MAINHAND)));
+        */
+        register(
+                context,
+                AEEnchantments.CURSE_OF_IGNORANCE,
+                Enchantment.enchantment(Enchantment.definition(
+                        anyHolderSet,
+                        1,
+                        1,
+                        Enchantment.constantCost(25),
+                        Enchantment.constantCost(50),
+                        8,
+                        EquipmentSlotGroup.ANY)));
 
-            register(
-                    context,
-                    AEEnchantments.CURSE_OF_IGNORANCE,
-                    Enchantment.enchantment(Enchantment.definition(
-                            anyHolderSet,
-                            1,
-                            1,
-                            Enchantment.constantCost(25),
-                            Enchantment.constantCost(50),
-                            4,
-                            EquipmentSlotGroup.ANY)));
-
-            register(
-                    context,
-                    AEEnchantments.CURSE_OF_ENCHANTMENT,
-                    Enchantment.enchantment(Enchantment.definition(
-                            anyHolderSet,
-                            1,
-                            1,
-                            Enchantment.constantCost(25),
-                            Enchantment.constantCost(50),
-                            4,
-                            EquipmentSlotGroup.ANY)));
-
+        register(
+                context,
+                AEEnchantments.CURSE_OF_ENCHANTMENT,
+                Enchantment.enchantment(Enchantment.definition(
+                        anyHolderSet,
+                        1,
+                        1,
+                        Enchantment.constantCost(25),
+                        Enchantment.constantCost(50),
+                        8,
+                        EquipmentSlotGroup.ANY)));
+        /*
             register(
                     context,
                     AEEnchantments.DISTORTION,

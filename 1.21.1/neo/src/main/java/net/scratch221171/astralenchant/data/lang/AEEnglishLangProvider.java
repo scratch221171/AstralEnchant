@@ -2,6 +2,7 @@ package net.scratch221171.astralenchant.data.lang;
 
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.config.ConfigID;
 
@@ -29,6 +30,7 @@ public class AEEnglishLangProvider extends AELangProvider {
                 AEEnchantments.ESSENCE_OF_ENCHANTMENT,
                 "Essence of Enchantment",
                 "Increases all item stats based on the total level of all enchantments other than this one.");
+        addEnchantmentWithDesc(AEEnchantments.RESILIENCE, "Resilience", "Reduces the cooldown of all items.");
         addEnchantmentWithDesc(
                 AEEnchantments.FEATHER_TOUCH,
                 "Feather Touch",
@@ -39,9 +41,21 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Reactive Armor",
                 "Negates effects that bypass armor and enchantments for certain types of damage.");
         addEnchantmentWithDesc(
+                AEEnchantments.CURSE_OF_IGNORANCE, "Curse of Ignorance", "Replaces the tooltip with obscured text.");
+        addEnchantmentWithDesc(
+                AEEnchantments.CURSE_OF_ENCHANTMENT,
+                "Curse of Enchantment",
+                "Locks the item's enchantments, prevents them from being changed.");
+        addEnchantmentWithDesc(
                 AEEnchantments.ALMIGHTY,
                 "Almighty",
                 "Makes the tool suitable for all blocks. Enables mining of indestructible blocks.");
+
+        // attribute
+        addAttributeWithDesc(
+                AEAttributes.COOLDOWN_DURATION,
+                "Cooldown Duration",
+                "Multiplier applied to item use cooldown duration");
 
         // 設定
         addConfig("enchantment_settings", "Enchantment Settings");

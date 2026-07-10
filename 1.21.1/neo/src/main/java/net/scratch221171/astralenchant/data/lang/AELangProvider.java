@@ -1,10 +1,13 @@
 package net.scratch221171.astralenchant.data.lang;
 
+import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.common.util.AEUtil;
 
 public abstract class AELangProvider extends LanguageProvider {
     public AELangProvider(PackOutput output, String locale) {
@@ -12,9 +15,14 @@ public abstract class AELangProvider extends LanguageProvider {
     }
 
     protected void addEnchantmentWithDesc(ResourceKey<Enchantment> key, String name, String desc) {
-        add(key.location().toLanguageKey("enchantment"), name);
-        add(key.location().toLanguageKey("enchantment", "desc"), desc);
+        add(AEUtil.getLangKey(key), name);
+        add(AEUtil.getDescLangKey(key), desc);
         add(Constants.MODID + ".configuration." + key.location().getPath(), name);
+    }
+
+    protected void addAttributeWithDesc(Holder<Attribute> holder, String name, String desc) {
+        add(holder.unwrapKey().orElseThrow().location().toLanguageKey("attribute"), name);
+        add(holder.unwrapKey().orElseThrow().location().toLanguageKey("attribute", "desc"), desc);
     }
 
     protected void addConfig(String configID, String name) {

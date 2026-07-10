@@ -11,7 +11,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.ComponentContents;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.Entity;
@@ -135,12 +135,25 @@ public class AEUtil {
                 .orElse(ItemEnchantments.EMPTY);
     }
 
+    // EnhancedTooltip互換で、アイテムの名前は置き換えない
     public static void modifyTooltip(
-            List<Component> tooltip, Predicate<ComponentContents> filter, Function<Component, Component> function) {
+            List<Component> tooltip, Predicate<Component> filter, Function<Component, Component> function) {
         for (int i = 0; i < tooltip.size(); i++) {
             var entry = tooltip.get(i);
-            if (!filter.test(entry.getContents())) continue;
+            if (!filter.test(entry)) continue;
             tooltip.set(i, function.apply(entry));
         }
+    }
+
+    public static boolean isTranslationOf(Component c, String key) {
+        return c.getContents() instanceof TranslatableContents t && t.getKey().equals(key);
+    }
+
+    public static String getLangKey(ResourceKey<Enchantment> key) {
+        return key.location().toLanguageKey("enchantment");
+    }
+
+    public static String getDescLangKey(ResourceKey<Enchantment> key) {
+        return key.location().toLanguageKey("enchantment", "desc");
     }
 }

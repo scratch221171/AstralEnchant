@@ -2,6 +2,7 @@ package net.scratch221171.astralenchant.data.lang;
 
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.config.ConfigID;
 
@@ -26,13 +27,19 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 AEEnchantments.ESSENCE_OF_ENCHANTMENT,
                 "エンチャントの極意",
                 "このエンチャント以外のエンチャントのレベルの合計に応じて、アイテムの全ステータスに補正を掛けます。");
+        addEnchantmentWithDesc(AEEnchantments.RESILIENCE, "復調", "すべてのアイテムの使用クールダウンを短縮します。");
         addEnchantmentWithDesc(
                 AEEnchantments.FEATHER_TOUCH,
                 "フェザータッチ",
                 "通常採取できないものも含め、ブロックをアイテム化します。ブロックエンティティのデータも保存し、スニーク時はブロックステートも同様に保存します。");
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "オーバーロード", "既存のエンチャントのレベルをオーバーロードの値だけ増加させます。");
         addEnchantmentWithDesc(AEEnchantments.REACTIVE_ARMOR, "反応装甲", "一部のダメージタイプのアーマーおよびエンチャントを貫通する効果を無効化します。");
+        addEnchantmentWithDesc(AEEnchantments.CURSE_OF_IGNORANCE, "無知の呪い", "ツールチップを呪われた文字に置き換えます。");
+        addEnchantmentWithDesc(AEEnchantments.CURSE_OF_ENCHANTMENT, "エンチャントの呪い", "アイテムのエンチャントを固定し、変更できなくします。");
         addEnchantmentWithDesc(AEEnchantments.ALMIGHTY, "オールマイティ", "ツールを全てのブロックに対して適正にします。破壊不能なブロックを採掘可能にします。");
+
+        // attribute
+        addAttributeWithDesc(AEAttributes.COOLDOWN_DURATION, "クールダウン時間", "アイテム使用のクールダウン時間の倍率");
 
         // 設定
         addConfig("enchantment_settings", "エンチャントの設定");
