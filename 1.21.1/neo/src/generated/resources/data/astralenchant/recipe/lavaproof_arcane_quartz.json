@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "tag": "c:gems/arcane_quartz"
+    },
+    {
+      "tag": "c:gems/arcane_quartz"
+    },
+    {
+      "tag": "c:gems/arcane_quartz"
+    },
+    {
+      "tag": "c:gems/arcane_quartz"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "astralenchant:lavaproof_arcane_quartz"
+  }
+}

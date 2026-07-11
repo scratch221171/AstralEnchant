@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.data.bootstrap;
+package net.scratch221171.astralenchant.datagen.bootstrap;
 
 import java.util.function.BiConsumer;
 import net.minecraft.core.registries.Registries;

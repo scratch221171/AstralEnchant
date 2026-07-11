@@ -47,7 +47,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class AnvilBlockMixin {
 
     @Inject(at = @At("TAIL"), method = "onLand", require = 1, remap = false)
-    public void onLand(Level level, BlockPos pos, BlockState newState, BlockState oldState, FallingBlockEntity entity, CallbackInfo ci) {
+    public void onLand(
+            Level level,
+            BlockPos pos,
+            BlockState newState,
+            BlockState oldState,
+            FallingBlockEntity entity,
+            CallbackInfo ci) {
         NeoForge.EVENT_BUS.post(new AnvilLandEvent(level, pos, newState, oldState, entity));
     }
 }

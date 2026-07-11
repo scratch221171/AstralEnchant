@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dusts/arcane_quartz"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "astralenchant:arcane_quartz_tiny_dust"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:lava_bucket"
+    },
+    {
+      "item": "astralenchant:lavaproof_arcane_quartz"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "astralenchant:luminite"
+  }
+}

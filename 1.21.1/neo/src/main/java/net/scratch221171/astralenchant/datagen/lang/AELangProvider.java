@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.data.lang;
+package net.scratch221171.astralenchant.datagen.lang;
 
 import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;

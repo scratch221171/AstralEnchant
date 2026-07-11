@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.data.tag;
+package net.scratch221171.astralenchant.datagen.tag;
 
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;

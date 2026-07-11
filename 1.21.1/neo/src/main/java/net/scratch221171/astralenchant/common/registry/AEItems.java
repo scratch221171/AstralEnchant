@@ -25,9 +25,10 @@ public class AEItems {
             REGISTER.registerSimpleItem("arcane_quartz_tiny_dust");
 
     public static final DeferredItem<Item> LAVAPROOF_ARCANE_QUARTZ =
-            REGISTER.registerSimpleItem("lavaproof_arcane_quartz");
+            REGISTER.registerSimpleItem("lavaproof_arcane_quartz", new Item.Properties().fireResistant());
 
-    public static final DeferredItem<Item> LUMINITE = REGISTER.registerSimpleItem("luminite");
+    public static final DeferredItem<Item> LUMINITE =
+            REGISTER.registerSimpleItem("luminite", new Item.Properties().fireResistant());
 
     public static final DeferredItem<Item> ARCANIUM_INGOT = REGISTER.registerSimpleItem("arcanium_ingot");
 

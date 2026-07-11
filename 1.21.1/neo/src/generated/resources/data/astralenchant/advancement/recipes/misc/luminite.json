@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lavaproof_arcane_quartz": {
+      "conditions": {
+        "items": [
+          {
+            "items": "astralenchant:lavaproof_arcane_quartz"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "astralenchant:luminite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lavaproof_arcane_quartz"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "astralenchant:luminite"
+    ]
+  }
+}

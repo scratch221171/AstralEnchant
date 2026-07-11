@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:budding_amethyst"
+    },
+    "2": {
+      "tag": "c:ingots/arcanium"
+    },
+    "3": {
+      "tag": "c:gems/arcane_quartz"
+    },
+    "4": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    "324",
+    "212",
+    "423"
+  ],
+  "result": {
+    "count": 4,
+    "id": "astralenchant:budding_arcanium_ingot"
+  }
+}

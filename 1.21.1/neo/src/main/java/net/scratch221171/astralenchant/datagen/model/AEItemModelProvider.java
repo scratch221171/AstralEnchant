@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.data.model;
+package net.scratch221171.astralenchant.datagen.model;
 
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;

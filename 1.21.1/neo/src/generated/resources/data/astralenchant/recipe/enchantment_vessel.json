@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "minecraft:soul_sand"
+    },
+    {
+      "item": "astralenchant:arcane_quartz_dust"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "astralenchant:enchantment_vessel"
+  }
+}

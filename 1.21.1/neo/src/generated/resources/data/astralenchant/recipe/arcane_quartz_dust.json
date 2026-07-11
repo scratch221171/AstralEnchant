@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "astralenchant:arcane_quartz_tiny_dust"
+    },
+    {
+      "item": "astralenchant:arcane_quartz_tiny_dust"
+    },
+    {
+      "item": "astralenchant:arcane_quartz_tiny_dust"
+    },
+    {
+      "item": "astralenchant:arcane_quartz_tiny_dust"
+    },
+    {
+      "item": "astralenchant:arcane_quartz_tiny_dust"
+    },
+    {
+      "item": "astralenchant:arcane_quartz_tiny_dust"
+    },
+    {
+      "item": "astralenchant:arcane_quartz_tiny_dust"
+    },
+    {
+      "item": "astralenchant:arcane_quartz_tiny_dust"
+    },
+    {
+      "item": "astralenchant:arcane_quartz_tiny_dust"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "astralenchant:arcane_quartz_dust"
+  }
+}

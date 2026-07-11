@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.common.tag;
+package net.scratch221171.astralenchant.common.data;
 
 import java.io.InputStreamReader;
 import java.util.ArrayList;
