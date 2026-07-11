@@ -17,10 +17,24 @@ public class AEItems {
 
     public static final DeferredItem<Item> ARCANE_QUARTZ = REGISTER.registerSimpleItem("arcane_quartz");
 
+    public static final DeferredItem<Item> GROWN_ARCANE_QUARTZ = REGISTER.registerSimpleItem("grown_arcane_quartz");
+
+    public static final DeferredItem<Item> ARCANE_QUARTZ_DUST = REGISTER.registerSimpleItem("arcane_quartz_dust");
+
+    public static final DeferredItem<Item> ARCANE_QUARTZ_TINY_DUST =
+            REGISTER.registerSimpleItem("arcane_quartz_tiny_dust");
+
+    public static final DeferredItem<Item> LAVAPROOF_ARCANE_QUARTZ =
+            REGISTER.registerSimpleItem("lavaproof_arcane_quartz");
+
+    public static final DeferredItem<Item> LUMINITE = REGISTER.registerSimpleItem("luminite");
+
     public static final DeferredItem<Item> ARCANIUM_INGOT = REGISTER.registerSimpleItem("arcanium_ingot");
 
     public static final DeferredItem<Item> BUDDING_ARCANIUM_INGOT =
             REGISTER.registerSimpleItem("budding_arcanium_ingot");
+
+    public static final DeferredItem<Item> ENCHANTMENT_VESSEL = REGISTER.registerSimpleItem("enchantment_vessel");
 
     public static void register(IEventBus eventBus) {
         REGISTER.register(eventBus);

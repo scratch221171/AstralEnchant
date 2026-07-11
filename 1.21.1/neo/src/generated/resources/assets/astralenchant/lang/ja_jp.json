@@ -52,7 +52,13 @@
   "enchantment.astralenchant.resilience": "復調",
   "enchantment.astralenchant.resilience.desc": "すべてのアイテムの使用クールダウンを短縮します。",
   "item.astralenchant.arcane_quartz": "アーケインクォーツ",
+  "item.astralenchant.arcane_quartz_dust": "アーケインクォーツの粉",
+  "item.astralenchant.arcane_quartz_tiny_dust": "小さいアーケインクォーツの粉",
   "item.astralenchant.arcanium_ingot": "アルカニウムインゴット",
   "item.astralenchant.budding_arcanium_ingot": "芽生えたアルカニウムインゴット",
-  "item.astralenchant.enchantment_shard": "エンチャントの欠片"
+  "item.astralenchant.enchantment_shard": "エンチャントの欠片",
+  "item.astralenchant.enchantment_vessel": "エンチャントの依代",
+  "item.astralenchant.grown_arcane_quartz": "成長したアーケインクォーツ",
+  "item.astralenchant.lavaproof_arcane_quartz": "耐溶岩アーケインクォーツ",
+  "item.astralenchant.luminite": "ルミナイト"
 }

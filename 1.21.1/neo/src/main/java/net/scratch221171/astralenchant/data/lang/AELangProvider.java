@@ -14,6 +14,10 @@ public abstract class AELangProvider extends LanguageProvider {
         super(output, Constants.MODID, locale);
     }
 
+    //    protected void addItem(DeferredItem<?> holder, String name) {
+    //        add(holder.getKey().location().toLanguageKey("item"), name);
+    //    }
+
     protected void addEnchantmentWithDesc(ResourceKey<Enchantment> key, String name, String desc) {
         add(AEUtil.getLangKey(key), name);
         add(AEUtil.getDescLangKey(key), desc);

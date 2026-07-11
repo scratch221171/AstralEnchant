@@ -52,7 +52,13 @@
   "enchantment.astralenchant.resilience": "Resilience",
   "enchantment.astralenchant.resilience.desc": "Reduces the cooldown of all items.",
   "item.astralenchant.arcane_quartz": "Arcane Quartz",
+  "item.astralenchant.arcane_quartz_dust": "Arcane Quartz Dust",
+  "item.astralenchant.arcane_quartz_tiny_dust": "Arcane Quartz Tiny Dust",
   "item.astralenchant.arcanium_ingot": "Arcanium Ingot",
   "item.astralenchant.budding_arcanium_ingot": "Budding Arcanium Ingot",
-  "item.astralenchant.enchantment_shard": "Enchantment Shard"
+  "item.astralenchant.enchantment_shard": "Enchantment Shard",
+  "item.astralenchant.enchantment_vessel": "Enchantment Vessel",
+  "item.astralenchant.grown_arcane_quartz": "Grown Arcane Quartz Dust",
+  "item.astralenchant.lavaproof_arcane_quartz": "Lavaproof Arcane Quartz",
+  "item.astralenchant.luminite": "Luminite"
 }

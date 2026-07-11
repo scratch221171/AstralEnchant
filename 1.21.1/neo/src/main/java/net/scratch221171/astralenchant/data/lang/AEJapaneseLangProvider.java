@@ -15,10 +15,17 @@ public class AEJapaneseLangProvider extends AELangProvider {
     @Override
     protected void addTranslations() {
         // アイテム
-        add(AEItems.ENCHANTMENT_SHARD.getKey().location().toLanguageKey("item"), "エンチャントの欠片");
-        add(AEItems.ARCANE_QUARTZ.getKey().location().toLanguageKey("item"), "アーケインクォーツ");
-        add(AEItems.ARCANIUM_INGOT.getKey().location().toLanguageKey("item"), "アルカニウムインゴット");
-        add(AEItems.BUDDING_ARCANIUM_INGOT.getKey().location().toLanguageKey("item"), "芽生えたアルカニウムインゴット");
+
+        addItem(AEItems.ENCHANTMENT_SHARD, "エンチャントの欠片");
+        addItem(AEItems.ARCANE_QUARTZ, "アーケインクォーツ");
+        addItem(AEItems.GROWN_ARCANE_QUARTZ, "成長したアーケインクォーツ");
+        addItem(AEItems.ARCANE_QUARTZ_DUST, "アーケインクォーツの粉");
+        addItem(AEItems.ARCANE_QUARTZ_TINY_DUST, "小さいアーケインクォーツの粉");
+        addItem(AEItems.LAVAPROOF_ARCANE_QUARTZ, "耐溶岩アーケインクォーツ");
+        addItem(AEItems.LUMINITE, "ルミナイト");
+        addItem(AEItems.ARCANIUM_INGOT, "アルカニウムインゴット");
+        addItem(AEItems.BUDDING_ARCANIUM_INGOT, "芽生えたアルカニウムインゴット");
+        addItem(AEItems.ENCHANTMENT_VESSEL, "エンチャントの依代");
 
         // エンチャント
         addEnchantmentWithDesc(AEEnchantments.NULLIFICATION, "無効化", "様々なダメージ軽減効果を無視し、攻撃が真のダメージを与えるようにします。");

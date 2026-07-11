@@ -15,7 +15,13 @@ public class AEItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(AEItems.ENCHANTMENT_SHARD.get());
         basicItem(AEItems.ARCANE_QUARTZ.get());
+        basicItem(AEItems.GROWN_ARCANE_QUARTZ.get());
+        basicItem(AEItems.ARCANE_QUARTZ_DUST.get());
+        basicItem(AEItems.ARCANE_QUARTZ_TINY_DUST.get());
+        basicItem(AEItems.LAVAPROOF_ARCANE_QUARTZ.get());
+        basicItem(AEItems.LUMINITE.get());
         basicItem(AEItems.ARCANIUM_INGOT.get());
         basicItem(AEItems.BUDDING_ARCANIUM_INGOT.get());
+        basicItem(AEItems.ENCHANTMENT_VESSEL.get());
     }
 }
