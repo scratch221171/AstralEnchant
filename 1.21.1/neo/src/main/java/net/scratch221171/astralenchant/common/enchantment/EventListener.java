@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.common.enchantment.handler;
+package net.scratch221171.astralenchant.common.enchantment;
 
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -13,6 +13,7 @@ import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.common.enchantment.handler.*;
 import net.scratch221171.astralenchant.common.event.ItemSetEnchantmentEvent;
 
 @EventBusSubscriber(modid = Constants.MODID)

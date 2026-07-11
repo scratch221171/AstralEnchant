@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.client;
+package net.scratch221171.astralenchant.client.enchantment;
 
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
