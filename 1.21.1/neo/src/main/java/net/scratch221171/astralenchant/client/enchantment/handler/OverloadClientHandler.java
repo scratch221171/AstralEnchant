@@ -18,10 +18,10 @@ public class OverloadClientHandler {
                                 AEEnchantments.OVERLOAD,
                                 stack.getOrDefault(DataComponents.STORED_ENCHANTMENTS, ItemEnchantments.EMPTY))
                         > 0) {
-                        AEUtil.modifyTooltip(
-                                event.getToolTip(),
-                                c -> AEUtil.isTranslationOf(c, AEUtil.getLangKey(AEEnchantments.OVERLOAD)),
-                                c -> createRainbowGradient(c.getString()));
+            AEUtil.modifyTooltip(
+                    event.getToolTip(),
+                    c -> AEUtil.isTranslationOf(c, AEUtil.getLangKey(AEEnchantments.OVERLOAD)),
+                    c -> createRainbowGradient(c.getString()));
         }
     }
 

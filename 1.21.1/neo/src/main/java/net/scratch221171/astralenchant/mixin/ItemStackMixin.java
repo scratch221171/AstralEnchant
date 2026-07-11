@@ -61,7 +61,7 @@ public abstract class ItemStackMixin {
             DataComponentType<? super T> type, T value, CallbackInfoReturnable<T> cir) {
         if (!(type == DataComponents.ENCHANTMENTS && value instanceof ItemEnchantments enchantments)) return;
 
-        ItemStack stack = (ItemStack) (Object) this;
+        var stack = (ItemStack) (Object) this;
 
         var event = new ItemSetEnchantmentEvent(stack, enchantments);
         if (NeoForge.EVENT_BUS.post(event).isCanceled()) {
@@ -71,7 +71,7 @@ public abstract class ItemStackMixin {
 
     @Inject(method = "isCorrectToolForDrops", at = @At("HEAD"), cancellable = true)
     private void astralenchant$forceCorrectTool(BlockState state, CallbackInfoReturnable<Boolean> cir) {
-        ItemStack self = (ItemStack) (Object) this;
+        var self = (ItemStack) (Object) this;
         if (AlmightyHandler.isAlmightyCorrectTool(self, state)) {
             cir.setReturnValue(true);
         }

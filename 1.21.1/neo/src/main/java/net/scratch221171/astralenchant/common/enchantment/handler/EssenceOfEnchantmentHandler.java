@@ -38,10 +38,8 @@ public class EssenceOfEnchantmentHandler {
             }
 
             var newId = ModUtils.loc("eoe_bonus_" + id.getPath() + "_" + slotName);
-            Attribute.Sentiment sentiment =
-                    ((IAttributeSentimentExtension) attribute.value()).astralenchant$getSentiment();
+            var sentiment = ((IAttributeSentimentExtension) attribute.value()).astralenchant$getSentiment();
             AttributeModifier newModifier;
-
             var multiplier = ServerConfig.EnchantmentSettings.EssenceOfEnchantment.MULTIPLIER.getAsDouble();
             switch (sentiment) {
                 // *(1 + a)

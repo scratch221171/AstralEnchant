@@ -4,9 +4,13 @@
   "package": "net.scratch221171.astralenchant.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AnvilMenuMixin",
     "AttributeMixin",
     "BlockBehaviourMixin",
     "DamageSourceMixin",
+    "EnchantCommandMixin",
+    "EnchantmentMixin",
+    "IItemExtensionMixin",
     "ItemCooldownsMixin",
     "ItemStackMixin",
     "PlayerMixin"

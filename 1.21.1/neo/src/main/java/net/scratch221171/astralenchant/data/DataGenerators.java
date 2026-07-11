@@ -10,18 +10,19 @@ import net.scratch221171.astralenchant.data.bootstrap.AEEnchantmentBootstrap;
 import net.scratch221171.astralenchant.data.lang.AEEnglishLangProvider;
 import net.scratch221171.astralenchant.data.lang.AEJapaneseLangProvider;
 import net.scratch221171.astralenchant.data.model.AEItemModelProvider;
+import net.scratch221171.astralenchant.data.tag.AEEnchantmentTagsProvider;
 
 @EventBusSubscriber(modid = Constants.MODID)
 public final class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         Constants.LOGGER.info("Loading DataGenerators");
-        var lookupProvider = event.getLookupProvider();
         var fileHelper = event.getExistingFileHelper();
 
         event.createDatapackRegistryObjects(
                 new RegistrySetBuilder().add(Registries.ENCHANTMENT, AEEnchantmentBootstrap::bootstrap),
                 AEEnchantmentBootstrap::applyConditions);
+        event.createProvider(AEEnchantmentTagsProvider::new);
 
         event.createProvider(AEEnglishLangProvider::new);
         event.createProvider(AEJapaneseLangProvider::new);

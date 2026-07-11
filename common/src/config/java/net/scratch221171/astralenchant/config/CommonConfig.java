@@ -32,7 +32,7 @@ public class CommonConfig {
         public static final ConfigEntry.BooleanEntry RESILIENCE = defineToggle(ConfigID.RESILIENCE);
         public static final ConfigEntry.BooleanEntry FEATHER_TOUCH = defineToggle(ConfigID.FEATHER_TOUCH);
         public static final ConfigEntry.BooleanEntry ADVENTURERS_LORE = defineToggle(ConfigID.ADVENTURERS_LORE);
-        public static final ConfigEntry.BooleanEntry COMPATIBILITY = defineToggle(ConfigID.COMPATIBILITY);
+        public static final ConfigEntry.BooleanEntry AFFINITY = defineToggle(ConfigID.AFFINITY);
         public static final ConfigEntry.BooleanEntry ENDLESS_APPETITE = defineToggle(ConfigID.ENDLESS_APPETITE);
         public static final ConfigEntry.BooleanEntry MOMENTUM = defineToggle(ConfigID.MOMENTUM);
         public static final ConfigEntry.BooleanEntry INSTANT_TELEPORT = defineToggle(ConfigID.INSTANT_TELEPORT);

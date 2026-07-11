@@ -7,19 +7,14 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
-import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import net.scratch221171.astralenchant.config.ServerConfig;
 
-@EventBusSubscriber(modid = Constants.MODID)
 public class LastStandHandler {
 
-    @SubscribeEvent
-    private static void onLivingDeath(LivingDeathEvent event) {
+    public static void revivePlayer(LivingDeathEvent event) {
         if (!(event.getEntity() instanceof Player player)) return;
         if (event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)
                 && !ServerConfig.EnchantmentSettings.LastStand.IGNORE_BYPASSES_INVULNERABILITY_TAG.getAsBoolean())

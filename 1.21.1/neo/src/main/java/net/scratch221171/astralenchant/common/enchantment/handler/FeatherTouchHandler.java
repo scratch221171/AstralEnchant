@@ -20,23 +20,17 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.bus.api.EventPriority;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
-import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 
-@EventBusSubscriber(modid = Constants.MODID)
 public class FeatherTouchHandler {
 
     private static final Map<Key, ItemStack> CACHE = new HashMap<>();
 
-    @SubscribeEvent(priority = EventPriority.LOW)
-    private static void onBreak(BlockEvent.BreakEvent event) {
+    public static void createStack(BlockEvent.BreakEvent event) {
         var player = event.getPlayer();
         var level = (ServerLevel) player.level();
         var pos = event.getPos();
@@ -52,7 +46,7 @@ public class FeatherTouchHandler {
             ItemStack stack;
             BlockEntity be = level.getBlockEntity(pos);
             if (be != null) {
-                BlockHitResult hitResult = new BlockHitResult(Vec3.atCenterOf(pos), Direction.UP, pos, false);
+                var hitResult = new BlockHitResult(Vec3.atCenterOf(pos), Direction.UP, pos, false);
                 stack = state.getCloneItemStack(hitResult, level, pos, player);
                 be.saveToItem(stack, level.registryAccess());
                 be.setRemoved();
@@ -72,8 +66,8 @@ public class FeatherTouchHandler {
             }
 
             if (player.isShiftKeyDown()) {
-                BlockItemStateProperties properties = BlockItemStateProperties.EMPTY;
-                for (Property<?> property : state.getProperties()) {
+                var properties = BlockItemStateProperties.EMPTY;
+                for (var property : state.getProperties()) {
                     properties = properties.with(property, state);
                 }
                 stack.set(DataComponents.BLOCK_STATE, properties);
@@ -94,9 +88,8 @@ public class FeatherTouchHandler {
         });
     }
 
-    @SubscribeEvent(priority = EventPriority.HIGH)
-    private static void onDrops(BlockDropsEvent event) {
-        ItemStack cached = CACHE.remove(new Key(event.getLevel().dimension(), event.getPos()));
+    public static void setDrop(BlockDropsEvent event) {
+        var cached = CACHE.remove(new Key(event.getLevel().dimension(), event.getPos()));
         if (cached == null) return;
 
         event.getDrops().clear();
@@ -111,8 +104,7 @@ public class FeatherTouchHandler {
     }
 
     // 何らかの理由でBlockDropsEventが発火しなかった場合の保険(メモリリーク防止)
-    @SubscribeEvent
-    private static void onTick(ServerTickEvent.Post event) {
+    public static void clearCache(ServerTickEvent.Post event) {
         CACHE.clear();
     }
 

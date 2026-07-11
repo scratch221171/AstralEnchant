@@ -1,4 +1,5 @@
 {
+  "astralenchant.configuration.affinity": "親和",
   "astralenchant.configuration.almighty": "オールマイティ",
   "astralenchant.configuration.base_cost": "レベル消費基本値",
   "astralenchant.configuration.base_cost.tooltip": "レベルnのとき、消費されるレベルは以下の計算式で表されます：(現在の経験値) * (消費割合) / √n + (消費基本値) / n",
@@ -10,7 +11,7 @@
   "astralenchant.configuration.effective_for_all_blocks.tooltip": "ガラスなど、適正ツールが存在しないブロックにも採掘速度ボーナスが適用されるかどうか。",
   "astralenchant.configuration.enchantment_settings": "エンチャントの設定",
   "astralenchant.configuration.enchantment_toggling": "エンチャントの切り替え",
-  "astralenchant.configuration.enchantment_toggling.tooltip": "注意：変更を適用するにはワールドを再起動する必要があります！",
+  "astralenchant.configuration.enchantment_toggling.tooltip": "サーバーの再起動が必要です！",
   "astralenchant.configuration.essence_of_enchantment": "エンチャントの極意",
   "astralenchant.configuration.feather_touch": "フェザータッチ",
   "astralenchant.configuration.ignore_bypasses_invulnerability_tag": "無敵貫通を無視",
@@ -28,6 +29,8 @@
   "astralenchant.configuration.unbreakable_block_hardness.tooltip": "岩盤など破壊不能なブロックを採掘する際に適用される硬さ。",
   "attribute.astralenchant.cooldown_duration": "クールダウン時間",
   "attribute.astralenchant.cooldown_duration.desc": "アイテム使用のクールダウン時間の倍率",
+  "enchantment.astralenchant.affinity": "親和",
+  "enchantment.astralenchant.affinity.desc": "すべての制限を無視して、あらゆるエンチャントを付与できるようにします。",
   "enchantment.astralenchant.almighty": "オールマイティ",
   "enchantment.astralenchant.almighty.desc": "ツールを全てのブロックに対して適正にします。破壊不能なブロックを採掘可能にします。",
   "enchantment.astralenchant.curse_of_enchantment": "エンチャントの呪い",

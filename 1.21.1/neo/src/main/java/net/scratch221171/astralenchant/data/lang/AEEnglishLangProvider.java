@@ -35,6 +35,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 AEEnchantments.FEATHER_TOUCH,
                 "Feather Touch",
                 "Collects even normally unobtainable blocks as an item. Preserves block entity data, and while sneaking, preserves block states as well.");
+        addEnchantmentWithDesc(
+                AEEnchantments.AFFINITY,
+                "Affinity",
+                "Ignores all restrictions and allows any enchantment to be applied.");
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "Overload", "Increases the level of existing enchantments.");
         addEnchantmentWithDesc(
                 AEEnchantments.REACTIVE_ARMOR,
@@ -88,9 +92,6 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Effective for All Blocks",
                 "Whether the mining speed bonus is applied to blocks that do not have a preferred tool, such as glass.");
 
-        addConfigWithDesc(
-                "enchantment_toggling",
-                "Enchantment Toggling",
-                "Note: You must restart the world to apply the changes!");
+        addConfigWithDesc("enchantment_toggling", "Enchantment Toggling", "REQUIRE SERVER RESTART!");
     }
 }

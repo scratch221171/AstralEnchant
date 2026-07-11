@@ -1,15 +1,12 @@
 package net.scratch221171.astralenchant.data.bootstrap;
 
 import java.util.function.BiConsumer;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.LevelBasedValue;
@@ -30,9 +27,9 @@ public class AEEnchantmentBootstrap {
         consumer.accept(AEEnchantments.ESSENCE_OF_ENCHANTMENT, new ConfigCondition(ConfigID.ESSENCE_OF_ENCHANTMENT));
         consumer.accept(AEEnchantments.RESILIENCE, new ConfigCondition(ConfigID.RESILIENCE));
         consumer.accept(AEEnchantments.FEATHER_TOUCH, new ConfigCondition(ConfigID.FEATHER_TOUCH));
-        /*consumer.accept(AEEnchantments.ADVENTURERS_LORE, new ConfigCondition(ConfigID.ADVENTURERS_LORE));
-        consumer.accept(AEEnchantments.COMPATIBILITY, new ConfigCondition(ConfigID.COMPATIBILITY));
-        consumer.accept(AEEnchantments.ENDLESS_APPETITE, new ConfigCondition(ConfigID.ENDLESS_APPETITE));
+        // consumer.accept(AEEnchantments.ADVENTURERS_LORE, new ConfigCondition(ConfigID.ADVENTURERS_LORE));
+        consumer.accept(AEEnchantments.AFFINITY, new ConfigCondition(ConfigID.AFFINITY));
+        /*consumer.accept(AEEnchantments.ENDLESS_APPETITE, new ConfigCondition(ConfigID.ENDLESS_APPETITE));
         consumer.accept(AEEnchantments.MOMENTUM, new ConfigCondition(ConfigID.MOMENTUM));
         consumer.accept(AEEnchantments.INSTANT_TELEPORT, new ConfigCondition(ConfigID.INSTANT_TELEPORT));*/
         consumer.accept(AEEnchantments.OVERLOAD, new ConfigCondition(ConfigID.OVERLOAD));
@@ -56,18 +53,17 @@ public class AEEnchantmentBootstrap {
     }
 
     public static void bootstrap(BootstrapContext<Enchantment> context) {
-        HolderLookup.RegistryLookup<Item> itemLookup =
-                context.registryLookup(Registries.ITEM).orElseThrow();
+        var itemLookup = context.registryLookup(Registries.ITEM).orElseThrow();
 
-        HolderSet<Item> anyHolderSet = new AnyHolderSet<>(itemLookup);
-        HolderSet<Item> armorTag = itemLookup.getOrThrow(ItemTags.ARMOR_ENCHANTABLE);
-        HolderSet<Item> headTag = itemLookup.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE);
-        HolderSet<Item> chestTag = itemLookup.getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE);
-        HolderSet<Item> footTag = itemLookup.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE);
-        HolderSet<Item> weaponTag = itemLookup.getOrThrow(ItemTags.WEAPON_ENCHANTABLE);
-        HolderSet<Item> miningTag = itemLookup.getOrThrow(ItemTags.MINING_LOOT_ENCHANTABLE);
-        //        HolderSet<Item> bundleTag = itemLookup.getOrThrow(AstralEnchantmentTags.Items.BUNDLE);
-        HolderSet<Item> durabilityTag = itemLookup.getOrThrow(ItemTags.DURABILITY_ENCHANTABLE);
+        var anyHolderSet = new AnyHolderSet<>(itemLookup);
+        var armorTag = itemLookup.getOrThrow(ItemTags.ARMOR_ENCHANTABLE);
+        var headTag = itemLookup.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE);
+        var chestTag = itemLookup.getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE);
+        var footTag = itemLookup.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE);
+        var weaponTag = itemLookup.getOrThrow(ItemTags.WEAPON_ENCHANTABLE);
+        var miningTag = itemLookup.getOrThrow(ItemTags.MINING_LOOT_ENCHANTABLE);
+        //        var bundleTag = itemLookup.getOrThrow(AstralEnchantmentTags.Items.BUNDLE);
+        var durabilityTag = itemLookup.getOrThrow(ItemTags.DURABILITY_ENCHANTABLE);
 
         register(
                 context,
@@ -148,30 +144,30 @@ public class AEEnchantmentBootstrap {
                         16,
                         EquipmentSlotGroup.MAINHAND)));
         /*
-                register(
-                        context,
-                        AEEnchantments.ADVENTURERS_LORE,
-                        Enchantment.enchantment(Enchantment.definition(
-                                footTag,
-                                1,
-                                3,
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                8,
-                                EquipmentSlotGroup.FEET)));
-
-                register(
-                        context,
-                        AEEnchantments.COMPATIBILITY,
-                        Enchantment.enchantment(Enchantment.definition(
-                                bundleTag,
-                                1,
-                                1,
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                32,
-                                EquipmentSlotGroup.ANY)));
-
+                        register(
+                                context,
+                                AEEnchantments.ADVENTURERS_LORE,
+                                Enchantment.enchantment(Enchantment.definition(
+                                        footTag,
+                                        1,
+                                        3,
+                                        Enchantment.constantCost(Integer.MAX_VALUE),
+                                        Enchantment.constantCost(Integer.MAX_VALUE),
+                                        8,
+                                        EquipmentSlotGroup.FEET)));
+        */
+        register(
+                context,
+                AEEnchantments.AFFINITY,
+                Enchantment.enchantment(Enchantment.definition(
+                        anyHolderSet,
+                        1,
+                        1,
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        16,
+                        EquipmentSlotGroup.ANY)));
+        /*
                 register(
                         context,
                         AEEnchantments.ENDLESS_APPETITE,

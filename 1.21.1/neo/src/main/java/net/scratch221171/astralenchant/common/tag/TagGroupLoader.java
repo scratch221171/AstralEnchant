@@ -1,7 +1,5 @@
 package net.scratch221171.astralenchant.common.tag;
 
-import com.google.gson.JsonElement;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,11 +44,11 @@ public class TagGroupLoader implements ResourceManagerReloadListener {
     }
 
     private static void loadTagsInto(Resource resource, List<TagKey<DamageType>> loadedTags) {
-        try (InputStream stream = resource.open()) {
+        try (var stream = resource.open()) {
             var json = GsonHelper.parse(new InputStreamReader(stream));
             var tags = json.getAsJsonArray("tags");
 
-            for (JsonElement element : tags) {
+            for (var element : tags) {
                 var tagId = ResourceLocation.tryParse(element.getAsString());
                 if (tagId != null) {
                     loadedTags.add(TagKey.create(Registries.DAMAGE_TYPE, tagId));

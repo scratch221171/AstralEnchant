@@ -22,7 +22,7 @@ public class ConfigID {
     public static final String RESILIENCE = "resilience";
     public static final String FEATHER_TOUCH = "feather_touch";
     public static final String ADVENTURERS_LORE = "adventurers_lore";
-    public static final String COMPATIBILITY = "compatibility";
+    public static final String AFFINITY = "affinity";
     public static final String ENDLESS_APPETITE = "endless_appetite";
     public static final String MOMENTUM = "momentum";
     public static final String INSTANT_TELEPORT = "instant_teleport";

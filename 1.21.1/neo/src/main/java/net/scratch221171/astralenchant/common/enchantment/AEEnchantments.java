@@ -78,7 +78,7 @@ public class AEEnchantments {
      *
      * <p>Mixin : {// @link IItemExtensionMixin}
      */
-    public static final ResourceKey<Enchantment> COMPATIBILITY = create(ID.COMPATIBILITY);
+    public static final ResourceKey<Enchantment> AFFINITY = create(ID.AFFINITY);
 
     /**
      * 溢れた満腹度分だけ回復し、自然治癒を加速し、常時食事可能にする。

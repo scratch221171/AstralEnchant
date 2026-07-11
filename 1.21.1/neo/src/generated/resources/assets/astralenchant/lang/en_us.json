@@ -1,4 +1,5 @@
 {
+  "astralenchant.configuration.affinity": "Affinity",
   "astralenchant.configuration.almighty": "Almighty",
   "astralenchant.configuration.base_cost": "Base Level Cost",
   "astralenchant.configuration.base_cost.tooltip": "At level n, the consumed experience levels are calculated as: (Current Experience Levels) * (Cost Rate) / √n + (Base Cost) / n",
@@ -10,7 +11,7 @@
   "astralenchant.configuration.effective_for_all_blocks.tooltip": "Whether the mining speed bonus is applied to blocks that do not have a preferred tool, such as glass.",
   "astralenchant.configuration.enchantment_settings": "Enchantment Settings",
   "astralenchant.configuration.enchantment_toggling": "Enchantment Toggling",
-  "astralenchant.configuration.enchantment_toggling.tooltip": "Note: You must restart the world to apply the changes!",
+  "astralenchant.configuration.enchantment_toggling.tooltip": "REQUIRE SERVER RESTART!",
   "astralenchant.configuration.essence_of_enchantment": "Essence of Enchantment",
   "astralenchant.configuration.feather_touch": "Feather Touch",
   "astralenchant.configuration.ignore_bypasses_invulnerability_tag": "Ignore Invulnerability-Piercing Damage",
@@ -28,6 +29,8 @@
   "astralenchant.configuration.unbreakable_block_hardness.tooltip": "The hardness value applied when mining unbreakable blocks, such as bedrock.",
   "attribute.astralenchant.cooldown_duration": "Cooldown Duration",
   "attribute.astralenchant.cooldown_duration.desc": "Multiplier applied to item use cooldown duration",
+  "enchantment.astralenchant.affinity": "Affinity",
+  "enchantment.astralenchant.affinity.desc": "Ignores all restrictions and allows any enchantment to be applied.",
   "enchantment.astralenchant.almighty": "Almighty",
   "enchantment.astralenchant.almighty.desc": "Makes the tool suitable for all blocks. Enables mining of indestructible blocks.",
   "enchantment.astralenchant.curse_of_enchantment": "Curse of Enchantment",

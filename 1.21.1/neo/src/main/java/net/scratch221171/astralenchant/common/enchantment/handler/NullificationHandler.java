@@ -2,24 +2,18 @@ package net.scratch221171.astralenchant.common.enchantment.handler;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
-import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.tag.TagGroupLoader;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import net.scratch221171.astralenchant.common.util.IDamageSourceExtension;
 
-@EventBusSubscriber(modid = Constants.MODID)
 public class NullificationHandler {
 
-    @SubscribeEvent
-    private static void addDamageTag(EntityInvulnerabilityCheckEvent event) {
-        Entity entity = event.getEntity();
+    public static void addDamageTag(EntityInvulnerabilityCheckEvent event) {
+        var entity = event.getEntity();
         if (entity.level().isClientSide) return;
         var source = event.getSource();
         if (source.getEntity() instanceof LivingEntity attacker) {
@@ -35,8 +29,7 @@ public class NullificationHandler {
     }
 
     // パーティクル
-    @SubscribeEvent
-    private static void onDamage(LivingIncomingDamageEvent event) {
+    public static void spawnParticles(LivingIncomingDamageEvent event) {
         var entity = event.getEntity();
         AEUtil.getEnchantmentHolder(AEEnchantments.NULLIFICATION, entity).ifPresent(holder -> {
             var weapon = event.getSource().getWeaponItem();
