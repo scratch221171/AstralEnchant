@@ -1,11 +1,17 @@
 package net.scratch221171.astralenchant.datagen;
 
+import java.util.List;
+import java.util.Set;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.common.registry.AEBlockLootTableProvider;
+import net.scratch221171.astralenchant.common.registry.AEBlockStateProvider;
 import net.scratch221171.astralenchant.datagen.bootstrap.AEEnchantmentBootstrap;
 import net.scratch221171.astralenchant.datagen.lang.AEEnglishLangProvider;
 import net.scratch221171.astralenchant.datagen.lang.AEJapaneseLangProvider;
@@ -23,15 +29,24 @@ public final class DataGenerators {
         var lookup = event.getLookupProvider();
         var fileHelper = event.getExistingFileHelper();
 
+        // Server
         event.createDatapackRegistryObjects(
                 new RegistrySetBuilder().add(Registries.ENCHANTMENT, AEEnchantmentBootstrap::bootstrap),
                 AEEnchantmentBootstrap::applyConditions);
 
-        event.createProvider(output -> new AERecipeProvider(output, lookup));
+        event.createProvider((output, future) -> new LootTableProvider(
+                output,
+                Set.of(),
+                List.of(new LootTableProvider.SubProviderEntry(
+                        AEBlockLootTableProvider::new, LootContextParamSets.BLOCK)),
+                future));
 
-        event.createBlockAndItemTags(AEBlockTagsProvider::new, AEItemTagsProvider::new);
+        event.createProvider(AERecipeProvider::new);
+
         event.createProvider(AEEnchantmentTagsProvider::new);
-
+        event.createBlockAndItemTags(AEBlockTagsProvider::new, AEItemTagsProvider::new);
+        // Client
+        event.createProvider(output -> new AEBlockStateProvider(output, fileHelper));
         event.createProvider(output -> new AEItemModelProvider(output, fileHelper));
 
         event.createProvider(AEEnglishLangProvider::new);

@@ -19,6 +19,7 @@ public class AEBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider lookupProvider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AEBlocks.ARCANIUM_BLOCK.get());
+        tag(BlockTags.NEEDS_IRON_TOOL).add(AEBlocks.ARCANIUM_BLOCK.get());
 
         tag(AETags.Blocks.STORAGE_BLOCKS_ARCANIUM).add(AEBlocks.ARCANIUM_BLOCK.get());
         tag(Tags.Blocks.STORAGE_BLOCKS).addTag(AETags.Blocks.STORAGE_BLOCKS_ARCANIUM);

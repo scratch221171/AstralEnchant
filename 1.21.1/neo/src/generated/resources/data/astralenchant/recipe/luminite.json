@@ -7,10 +7,19 @@
     },
     {
       "item": "astralenchant:lavaproof_arcane_quartz"
+    },
+    {
+      "item": "astralenchant:lavaproof_arcane_quartz"
+    },
+    {
+      "item": "astralenchant:lavaproof_arcane_quartz"
+    },
+    {
+      "item": "astralenchant:lavaproof_arcane_quartz"
     }
   ],
   "result": {
-    "count": 1,
+    "count": 4,
     "id": "astralenchant:luminite"
   }
 }

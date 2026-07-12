@@ -25,6 +25,7 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.scratch221171.astralenchant.ModUtils;
+import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.common.tag.AETags;
 import org.jetbrains.annotations.NotNull;
@@ -56,7 +57,7 @@ public class AERecipeProvider extends RecipeProvider {
                 .save(output, ModUtils.loc("enchantment_shard_blasting"));
 
         // 素材
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ARCANE_QUARTZ)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ARCANE_QUARTZ, 2)
                 .requires(AEItems.ENCHANTMENT_SHARD)
                 .requires(Items.QUARTZ)
                 .requires(Items.AMETHYST_SHARD)
@@ -72,8 +73,11 @@ public class AERecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(AEItems.ARCANE_QUARTZ), has(AEItems.ARCANE_QUARTZ))
                 .save(output);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.LUMINITE)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.LUMINITE, 4)
                 .requires(Items.LAVA_BUCKET)
+                .requires(AEItems.LAVAPROOF_ARCANE_QUARTZ)
+                .requires(AEItems.LAVAPROOF_ARCANE_QUARTZ)
+                .requires(AEItems.LAVAPROOF_ARCANE_QUARTZ)
                 .requires(AEItems.LAVAPROOF_ARCANE_QUARTZ)
                 .unlockedBy(getHasName(AEItems.LAVAPROOF_ARCANE_QUARTZ), has(AEItems.LAVAPROOF_ARCANE_QUARTZ))
                 .save(output);
@@ -104,19 +108,18 @@ public class AERecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(AEItems.ARCANE_QUARTZ_TINY_DUST), has(AEItems.ARCANE_QUARTZ_TINY_DUST))
                 .save(output, ModUtils.loc("arcanium_ingot_from_arcane_quartz"));
 
-        //        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEBlocks.ARCANIUM_BLOCK)
-        //                .pattern("111")
-        //                .pattern("121")
-        //                .pattern("111")
-        //                .define('1', AETags.Items.INGOTS_ARCANIUM)
-        //                .define('2', AEItems.ARCANIUM_INGOT)
-        //                .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
-        //                .save(output, ModUtils.loc("arcanium_block_from_ingot"));
-        //        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ARCANIUM_INGOT, 9)
-        //                .requires(AETags.Items.STORAGE_BLOCKS_ARCANIUM)
-        //                .unlockedBy(
-        //                        getHasName(AEBlocks.ARCANIUM_BLOCK), has(AETags.Items.STORAGE_BLOCKS_ARCANIUM))
-        //                .save(output, ModUtils.loc("arcanium_ingot_from_block"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEBlocks.ARCANIUM_BLOCK)
+                .pattern("111")
+                .pattern("121")
+                .pattern("111")
+                .define('1', AETags.Items.INGOTS_ARCANIUM)
+                .define('2', AEItems.ARCANIUM_INGOT)
+                .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
+                .save(output, ModUtils.loc("arcanium_block_from_ingot"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ARCANIUM_INGOT, 9)
+                .requires(AETags.Items.STORAGE_BLOCKS_ARCANIUM)
+                .unlockedBy(getHasName(AEBlocks.ARCANIUM_BLOCK), has(AETags.Items.STORAGE_BLOCKS_ARCANIUM))
+                .save(output, ModUtils.loc("arcanium_ingot_from_block"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(AEItems.BUDDING_ARCANIUM_INGOT.get(), 4))
                 .pattern("324")
