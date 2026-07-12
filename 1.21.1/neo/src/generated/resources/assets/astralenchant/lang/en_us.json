@@ -29,6 +29,7 @@
   "astralenchant.configuration.unbreakable_block_hardness.tooltip": "The hardness value applied when mining unbreakable blocks, such as bedrock.",
   "attribute.astralenchant.cooldown_duration": "Cooldown Duration",
   "attribute.astralenchant.cooldown_duration.desc": "Multiplier applied to item use cooldown duration",
+  "block.astralenchant.arcanium_block": "Arcanium Block",
   "enchantment.astralenchant.affinity": "Affinity",
   "enchantment.astralenchant.affinity.desc": "Ignores all restrictions and allows any enchantment to be applied.",
   "enchantment.astralenchant.almighty": "Almighty",
@@ -60,5 +61,7 @@
   "item.astralenchant.enchantment_vessel": "Enchantment Vessel",
   "item.astralenchant.grown_arcane_quartz": "Grown Arcane Quartz Dust",
   "item.astralenchant.lavaproof_arcane_quartz": "Lavaproof Arcane Quartz",
-  "item.astralenchant.luminite": "Luminite"
+  "item.astralenchant.luminite": "Luminite",
+  "itemGroup.astralenchant.enchantment": "Astral Enchant - Enchantment",
+  "itemGroup.astralenchant.item": "Astral Enchant - Item"
 }

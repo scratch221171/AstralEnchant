@@ -1,12 +1,17 @@
 package net.scratch221171.astralenchant.common.enchantment;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
+import org.jetbrains.annotations.NotNull;
 
 public class AEEnchantments {
+
+    public static final Set<ResourceKey<Enchantment>> LIST = new LinkedHashSet<>();
 
     /**
      * 与えた攻撃に様々なダメージタイプタグを付与し、ダメージ軽減を貫通する。
@@ -181,7 +186,9 @@ public class AEEnchantments {
 
     public static final ResourceKey<Enchantment> ALMIGHTY = create(ID.ALMIGHTY);
 
-    private static ResourceKey<Enchantment> create(String name) {
-        return ResourceKey.create(Registries.ENCHANTMENT, ModUtils.loc(name));
+    private static ResourceKey<Enchantment> create(@NotNull String name) {
+        var key = ResourceKey.create(Registries.ENCHANTMENT, ModUtils.loc(name));
+        LIST.add(key);
+        return key;
     }
 }

@@ -23,6 +23,7 @@ public class AstralEnchant {
         AEItems.register(modEventBus);
         AEBlocks.register(modEventBus);
         AEDataComponents.register(modEventBus);
+        AECreativeTabs.register(modEventBus);
         AEAttributes.register(modEventBus);
         AEConditions.register(modEventBus);
 

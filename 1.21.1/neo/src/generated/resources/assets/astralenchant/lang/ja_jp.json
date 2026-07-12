@@ -29,6 +29,7 @@
   "astralenchant.configuration.unbreakable_block_hardness.tooltip": "岩盤など破壊不能なブロックを採掘する際に適用される硬さ。",
   "attribute.astralenchant.cooldown_duration": "クールダウン時間",
   "attribute.astralenchant.cooldown_duration.desc": "アイテム使用のクールダウン時間の倍率",
+  "block.astralenchant.arcanium_block": "アルカニウムブロック",
   "enchantment.astralenchant.affinity": "親和",
   "enchantment.astralenchant.affinity.desc": "すべての制限を無視して、あらゆるエンチャントを付与できるようにします。",
   "enchantment.astralenchant.almighty": "オールマイティ",
@@ -52,13 +53,15 @@
   "enchantment.astralenchant.resilience": "復調",
   "enchantment.astralenchant.resilience.desc": "すべてのアイテムの使用クールダウンを短縮します。",
   "item.astralenchant.arcane_quartz": "アーケインクォーツ",
-  "item.astralenchant.arcane_quartz_dust": "アーケインクォーツの粉",
-  "item.astralenchant.arcane_quartz_tiny_dust": "小さいアーケインクォーツの粉",
+  "item.astralenchant.arcane_quartz_dust": "アーケインクォーツダスト",
+  "item.astralenchant.arcane_quartz_tiny_dust": "小さいアーケインクォーツダスト",
   "item.astralenchant.arcanium_ingot": "アルカニウムインゴット",
   "item.astralenchant.budding_arcanium_ingot": "芽生えたアルカニウムインゴット",
   "item.astralenchant.enchantment_shard": "エンチャントの欠片",
   "item.astralenchant.enchantment_vessel": "エンチャントの依代",
   "item.astralenchant.grown_arcane_quartz": "成長したアーケインクォーツ",
-  "item.astralenchant.lavaproof_arcane_quartz": "耐溶岩アーケインクォーツ",
-  "item.astralenchant.luminite": "ルミナイト"
+  "item.astralenchant.lavaproof_arcane_quartz": "耐熱処理済みアーケインクォーツ",
+  "item.astralenchant.luminite": "ルミナイト",
+  "itemGroup.astralenchant.enchantment": "Astral Enchant - エンチャント",
+  "itemGroup.astralenchant.item": "Astral Enchant - アイテム"
 }

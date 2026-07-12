@@ -3,6 +3,7 @@ package net.scratch221171.astralenchant.datagen.lang;
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
+import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.config.ConfigID;
 
@@ -25,6 +26,9 @@ public class AEEnglishLangProvider extends AELangProvider {
         addItem(AEItems.ARCANIUM_INGOT, "Arcanium Ingot");
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "Budding Arcanium Ingot");
         addItem(AEItems.ENCHANTMENT_VESSEL, "Enchantment Vessel");
+
+        // ブロック
+        addBlock(AEBlocks.ARCANIUM_BLOCK, "Arcanium Block");
 
         // エンチャント
         addEnchantmentWithDesc(
@@ -66,6 +70,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 AEAttributes.COOLDOWN_DURATION,
                 "Cooldown Duration",
                 "Multiplier applied to item use cooldown duration");
+
+        // クリエタブ
+        add("itemGroup.astralenchant.item", "Astral Enchant - Item");
+        add("itemGroup.astralenchant.enchantment", "Astral Enchant - Enchantment");
 
         // 設定
         addConfig("enchantment_settings", "Enchantment Settings");

@@ -1,0 +1,52 @@
+package net.scratch221171.astralenchant.common.registry;
+
+import java.util.Comparator;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.EnchantedBookItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.util.AEUtil;
+
+public class AECreativeTabs {
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Constants.MODID);
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ITEM =
+            CREATIVE_MODE_TABS.register("item", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.astralenchant.item"))
+                    .icon(() -> new ItemStack(AEItems.GROWN_ARCANE_QUARTZ.get()))
+                    .displayItems((parameters, output) -> {
+                        AEItems.REGISTER.getEntries().forEach(e -> {
+                            output.accept(e.get());
+                        });
+                    })
+                    .build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ENCHANTMENT =
+            CREATIVE_MODE_TABS.register("enchantment", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.astralenchant.enchantment"))
+                    .icon(() -> new ItemStack(AEItems.ENCHANTMENT_VESSEL.get()))
+                    .displayItems((parameters, output) -> {
+                        AEEnchantments.LIST.stream()
+                                .sorted(Comparator.comparing(
+                                        key -> key.location().getPath()))
+                                .forEach(e -> {
+                                    AEUtil.getEnchantmentHolder(e).ifPresent(h -> {
+                                        output.accept(EnchantedBookItem.createForEnchantment(new EnchantmentInstance(
+                                                h.getDelegate(), h.value().getMaxLevel())));
+                                    });
+                                });
+                    })
+                    .build());
+
+    public static void register(IEventBus eventBus) {
+        CREATIVE_MODE_TABS.register(eventBus);
+    }
+}

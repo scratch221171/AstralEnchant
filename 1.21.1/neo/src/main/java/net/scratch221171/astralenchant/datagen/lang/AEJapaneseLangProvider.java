@@ -3,6 +3,7 @@ package net.scratch221171.astralenchant.datagen.lang;
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
+import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.config.ConfigID;
 
@@ -15,17 +16,19 @@ public class AEJapaneseLangProvider extends AELangProvider {
     @Override
     protected void addTranslations() {
         // アイテム
-
         addItem(AEItems.ENCHANTMENT_SHARD, "エンチャントの欠片");
         addItem(AEItems.ARCANE_QUARTZ, "アーケインクォーツ");
         addItem(AEItems.GROWN_ARCANE_QUARTZ, "成長したアーケインクォーツ");
-        addItem(AEItems.ARCANE_QUARTZ_DUST, "アーケインクォーツの粉");
-        addItem(AEItems.ARCANE_QUARTZ_TINY_DUST, "小さいアーケインクォーツの粉");
-        addItem(AEItems.LAVAPROOF_ARCANE_QUARTZ, "耐溶岩アーケインクォーツ");
+        addItem(AEItems.ARCANE_QUARTZ_DUST, "アーケインクォーツダスト");
+        addItem(AEItems.ARCANE_QUARTZ_TINY_DUST, "小さいアーケインクォーツダスト");
+        addItem(AEItems.LAVAPROOF_ARCANE_QUARTZ, "耐熱処理済みアーケインクォーツ");
         addItem(AEItems.LUMINITE, "ルミナイト");
         addItem(AEItems.ARCANIUM_INGOT, "アルカニウムインゴット");
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "芽生えたアルカニウムインゴット");
         addItem(AEItems.ENCHANTMENT_VESSEL, "エンチャントの依代");
+
+        // ブロック
+        addBlock(AEBlocks.ARCANIUM_BLOCK, "アルカニウムブロック");
 
         // エンチャント
         addEnchantmentWithDesc(AEEnchantments.NULLIFICATION, "無効化", "様々なダメージ軽減効果を無視し、攻撃が真のダメージを与えるようにします。");
@@ -49,6 +52,10 @@ public class AEJapaneseLangProvider extends AELangProvider {
 
         // attribute
         addAttributeWithDesc(AEAttributes.COOLDOWN_DURATION, "クールダウン時間", "アイテム使用のクールダウン時間の倍率");
+
+        // クリエタブ
+        add("itemGroup.astralenchant.item", "Astral Enchant - アイテム");
+        add("itemGroup.astralenchant.enchantment", "Astral Enchant - エンチャント");
 
         // 設定
         addConfig("enchantment_settings", "エンチャントの設定");
