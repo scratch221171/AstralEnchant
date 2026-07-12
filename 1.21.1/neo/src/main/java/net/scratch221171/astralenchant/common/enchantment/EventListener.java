@@ -3,6 +3,7 @@ package net.scratch221171.astralenchant.common.enchantment;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.AnvilUpdateEvent;
 import net.neoforged.neoforge.event.GrindstoneEvent;
 import net.neoforged.neoforge.event.enchanting.GetEnchantmentLevelEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
@@ -68,5 +69,10 @@ public class EventListener {
     @SubscribeEvent
     private static void onAttributeModification(EntityAttributeModificationEvent e) {
         ResilienceHandler.modifyDefaultAttributes(e);
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
+    private static void onAnvilUpdate(AnvilUpdateEvent e) {
+        AffinityHandler.forceUncanceled(e);
     }
 }

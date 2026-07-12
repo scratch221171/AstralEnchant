@@ -8,7 +8,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.server.commands.EnchantCommand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.scratch221171.astralenchant.common.enchantment.handler.CompatibilityHandler;
+import net.scratch221171.astralenchant.common.enchantment.handler.AffinityHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -27,11 +27,11 @@ public abstract class EnchantCommandMixin {
             Holder<Enchantment> candidate,
             Operation<Boolean> original,
             @Local ItemStack stack) {
-        CompatibilityHandler.Context.push(stack);
+        AffinityHandler.Context.push(stack);
         try {
             return original.call(existing, candidate);
         } finally {
-            CompatibilityHandler.Context.pop();
+            AffinityHandler.Context.pop();
         }
     }
 }

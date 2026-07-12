@@ -56,6 +56,24 @@ public class AERecipeProvider extends RecipeProvider {
                 .unlockedBy("has_enchanted_book", has(Items.ENCHANTED_BOOK))
                 .save(output, ModUtils.loc("enchantment_shard_blasting"));
 
+        SimpleCookingRecipeBuilder.smelting(
+                        Ingredient.of(AEItems.BUDDING_ARCANIUM_INGOT),
+                        RecipeCategory.MISC,
+                        AEItems.GROWN_ARCANE_QUARTZ.toStack(1),
+                        1,
+                        200 * 16)
+                .unlockedBy(getHasName(AEItems.BUDDING_ARCANIUM_INGOT), has(AEItems.BUDDING_ARCANIUM_INGOT))
+                .save(output, ModUtils.loc("grown_arcane_quartz_smelting"));
+
+        SimpleCookingRecipeBuilder.blasting(
+                        Ingredient.of(AEItems.BUDDING_ARCANIUM_INGOT),
+                        RecipeCategory.MISC,
+                        AEItems.GROWN_ARCANE_QUARTZ.toStack(1),
+                        1,
+                        200 * 16 / 2)
+                .unlockedBy(getHasName(AEItems.BUDDING_ARCANIUM_INGOT), has(AEItems.BUDDING_ARCANIUM_INGOT))
+                .save(output, ModUtils.loc("grown_arcane_quartz_blasting"));
+
         // 素材
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ARCANE_QUARTZ, 2)
                 .requires(AEItems.ENCHANTMENT_SHARD)

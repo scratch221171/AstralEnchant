@@ -10,14 +10,18 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.extensions.IItemStackExtension;
+import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.enchantment.handler.AlmightyHandler;
 import net.scratch221171.astralenchant.common.enchantment.handler.EssenceOfEnchantmentHandler;
 import net.scratch221171.astralenchant.common.event.ItemSetEnchantmentEvent;
 import net.scratch221171.astralenchant.common.util.AEUtil;
+import org.jspecify.annotations.NonNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -25,7 +29,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ItemStack.class)
-public abstract class ItemStackMixin {
+public abstract class ItemStackMixin implements IItemStackExtension {
 
     // 実際のステータス計算に関わる方
     @ModifyVariable(
@@ -35,7 +39,7 @@ public abstract class ItemStackMixin {
     private BiConsumer<Holder<Attribute>, AttributeModifier> wrap(
             BiConsumer<Holder<Attribute>, AttributeModifier> original, EquipmentSlot slot) {
         return (attr, mod) -> {
-            EssenceOfEnchantmentHandler.handle(
+            EssenceOfEnchantmentHandler.addModifier(
                     (ItemStack) (Object) this, attr, original, mod.id(), slot.getSerializedName());
             original.accept(attr, mod);
         };
@@ -49,7 +53,7 @@ public abstract class ItemStackMixin {
     private BiConsumer<Holder<Attribute>, AttributeModifier> wrap(
             BiConsumer<Holder<Attribute>, AttributeModifier> original, EquipmentSlotGroup slotGroup) {
         return (attr, mod) -> {
-            EssenceOfEnchantmentHandler.handle(
+            EssenceOfEnchantmentHandler.addModifier(
                     (ItemStack) (Object) this, attr, original, mod.id(), slotGroup.getSerializedName());
             original.accept(attr, mod);
         };
@@ -86,5 +90,42 @@ public abstract class ItemStackMixin {
 
         float virtual = AlmightyHandler.getVirtualDestroySpeed(tiered.getTier(), state);
         cir.setReturnValue(Math.max(cir.getReturnValue(), virtual));
+    }
+
+    @Override
+    public boolean supportsEnchantment(Holder<Enchantment> enchantment) {
+        ItemStack self = (ItemStack) (Object) this;
+        Constants.LOGGER.info(self.toString());
+        Constants.LOGGER.info(enchantment.toString());
+        if (enchantment.is(AEEnchantments.AFFINITY)) {
+            Constants.LOGGER.info("true 1");
+            return true;
+        }
+
+        if (AEUtil.getEnchantmentLevel(AEEnchantments.AFFINITY, self) > 0) {
+            Constants.LOGGER.info("true 2");
+            return true;
+        }
+
+        return IItemStackExtension.super.supportsEnchantment(enchantment);
+    }
+
+    @Override
+    public boolean isBookEnchantable(@NonNull ItemStack book) {
+        ItemStack self = (ItemStack) (Object) this;
+        if (AEUtil.getEnchantmentLevel(
+                        AEEnchantments.AFFINITY,
+                        book.getOrDefault(DataComponents.STORED_ENCHANTMENTS, ItemEnchantments.EMPTY))
+                > 0) {
+            Constants.LOGGER.info("true 3");
+            return true;
+        }
+
+        if (AEUtil.getEnchantmentLevel(AEEnchantments.AFFINITY, self) > 0) {
+            Constants.LOGGER.info("true 4");
+            return true;
+        }
+
+        return IItemStackExtension.super.isBookEnchantable(book);
     }
 }
