@@ -65,7 +65,7 @@ public class CurseOfIgnoranceClientHandler {
                 result.append(Component.literal(String.valueOf(c)).withStyle(ChatFormatting.OBFUSCATED));
             } else {
                 int width = font.width(String.valueOf(c));
-                result.append(Component.literal("|".repeat(width / 2)));
+                result.append(Component.literal("|".repeat(width / font.width("|"))));
             }
         }
     }

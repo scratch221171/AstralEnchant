@@ -8,33 +8,34 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 
-public class OverloadClientHandler {
+public class EssenceOfEnchantmentClientHandler {
 
-    public static void rainbowColor(ItemTooltipEvent event) {
+    public static void shine(ItemTooltipEvent event) {
         ItemStack stack = event.getItemStack();
-        if (AEUtil.getEnchantmentLevel(AEEnchantments.OVERLOAD, stack) > 0
+        if (AEUtil.getEnchantmentLevel(AEEnchantments.ESSENCE_OF_ENCHANTMENT, stack) > 0
                 || AEUtil.getEnchantmentLevel(
-                                AEEnchantments.OVERLOAD,
+                                AEEnchantments.ESSENCE_OF_ENCHANTMENT,
                                 stack.getOrDefault(DataComponents.STORED_ENCHANTMENTS, ItemEnchantments.EMPTY))
                         > 0) {
             AEUtil.modifyTooltip(
                     event.getToolTip(),
-                    c -> AEUtil.isTranslationOf(c, AEUtil.getLangKey(AEEnchantments.OVERLOAD)),
-                    OverloadClientHandler::createRainbowGradient);
+                    c -> AEUtil.isTranslationOf(c, AEUtil.getLangKey(AEEnchantments.ESSENCE_OF_ENCHANTMENT)),
+                    EssenceOfEnchantmentClientHandler::createShine);
         }
     }
 
-    private static Component createRainbowGradient(Component component) {
+    private static Component createShine(Component component) {
         String text = component.getString();
         var result = Component.empty();
         long time = System.currentTimeMillis();
-        float baseHue = (time % 4000) / 4000f;
-        int length = text.length();
-        for (int i = 0; i < length; i++) {
-            float hue = (baseHue - (float) i / length) % 1f;
-            int color = java.awt.Color.HSBtoRGB(hue, 1f, 1f) & 0xFFFFFF;
-            result.append(Component.literal(String.valueOf(text.charAt(i))).withColor(color));
-        }
+        float t = (time % 2000L) / 2000f;
+        float pulse = 0.5f - 0.5f * (float) Math.cos(t * Math.PI * 2);
+        pulse = (float) Math.pow(pulse, 6); // 数字を大きくすると光る時間が短くなる
+
+        float saturation = 0.3f * pulse;
+        int color = java.awt.Color.HSBtoRGB(0.85f, 0.5f - saturation, 1f) & 0xFFFFFF;
+        result.append(Component.literal(text).withColor(color));
+
         return result;
     }
 }

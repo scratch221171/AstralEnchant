@@ -14,7 +14,7 @@ import net.scratch221171.astralenchant.config.ServerConfig;
 
 public class EssenceOfEnchantmentHandler {
 
-    public static void handle(
+    public static void addModifier(
             ItemStack stack,
             Holder<Attribute> attribute,
             BiConsumer<Holder<Attribute>, AttributeModifier> consumer,

@@ -96,39 +96,6 @@ public class AEUtil {
                 .orElse(0);
     }
 
-    public static ItemEnchantments removeEnchantment(ItemEnchantments enchantments, ResourceKey<Enchantment> key) {
-        ItemEnchantments.Mutable newEnchantments = new ItemEnchantments.Mutable(enchantments);
-        newEnchantments.removeIf(holder -> holder.is(key));
-        return newEnchantments.toImmutable();
-    }
-
-    public static ItemEnchantments mergeItemEnchants(ItemEnchantments a, ItemEnchantments b) {
-        ItemEnchantments.Mutable result = new ItemEnchantments.Mutable(ItemEnchantments.EMPTY);
-
-        a.entrySet().forEach(entry -> result.set(entry.getKey(), entry.getIntValue()));
-
-        for (Object2IntMap.Entry<Holder<Enchantment>> entry : b.entrySet()) {
-            Holder<Enchantment> enchant = entry.getKey();
-            int levelB = entry.getIntValue();
-
-            if (!result.keySet().contains(enchant)) {
-                result.set(enchant, levelB);
-                continue;
-            }
-
-            int levelA = result.getLevel(enchant);
-            if (levelB > levelA) {
-                result.set(enchant, levelB);
-            } else if (levelA == levelB) {
-                if (levelA < enchant.value().getMaxLevel()) {
-                    result.set(enchant, levelA + 1);
-                }
-            }
-        }
-
-        return result.toImmutable();
-    }
-
     public static ItemEnchantments getAllEnchantments(ItemStack stack) {
         return getRegistryAccess()
                 .map(access -> stack.getAllEnchantments(access.lookupOrThrow(Registries.ENCHANTMENT)))
