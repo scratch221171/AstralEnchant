@@ -16,6 +16,7 @@ import net.scratch221171.astralenchant.datagen.bootstrap.AEEnchantmentBootstrap;
 import net.scratch221171.astralenchant.datagen.lang.AEEnglishLangProvider;
 import net.scratch221171.astralenchant.datagen.lang.AEJapaneseLangProvider;
 import net.scratch221171.astralenchant.datagen.model.AEItemModelProvider;
+import net.scratch221171.astralenchant.datagen.recipe.AECrushingRecipeGen;
 import net.scratch221171.astralenchant.datagen.recipe.AERecipeProvider;
 import net.scratch221171.astralenchant.datagen.tag.AEBlockTagsProvider;
 import net.scratch221171.astralenchant.datagen.tag.AEEnchantmentTagsProvider;
@@ -42,6 +43,7 @@ public final class DataGenerators {
                 future));
 
         event.createProvider(AERecipeProvider::new);
+        event.createProvider(AECrushingRecipeGen::new);
 
         event.createProvider(AEEnchantmentTagsProvider::new);
         event.createBlockAndItemTags(AEBlockTagsProvider::new, AEItemTagsProvider::new);

@@ -1,0 +1,14 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "c:gems/arcane_quartz"
+    }
+  ],
+  "processing_time": 250,
+  "results": [
+    {
+      "id": "astralenchant:arcane_quartz_tiny_dust"
+    }
+  ]
+}

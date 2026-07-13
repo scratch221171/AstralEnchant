@@ -29,8 +29,8 @@ public class AEEnchantmentBootstrap {
         consumer.accept(AEEnchantments.FEATHER_TOUCH, new ConfigCondition(ConfigID.FEATHER_TOUCH));
         // consumer.accept(AEEnchantments.ADVENTURERS_LORE, new ConfigCondition(ConfigID.ADVENTURERS_LORE));
         consumer.accept(AEEnchantments.AFFINITY, new ConfigCondition(ConfigID.AFFINITY));
-        /*consumer.accept(AEEnchantments.ENDLESS_APPETITE, new ConfigCondition(ConfigID.ENDLESS_APPETITE));
-        consumer.accept(AEEnchantments.MOMENTUM, new ConfigCondition(ConfigID.MOMENTUM));
+        consumer.accept(AEEnchantments.CURSE_OF_HUNGER, new ConfigCondition(ConfigID.CURSE_OF_HUNGER));
+        /*consumer.accept(AEEnchantments.MOMENTUM, new ConfigCondition(ConfigID.MOMENTUM));
         consumer.accept(AEEnchantments.INSTANT_TELEPORT, new ConfigCondition(ConfigID.INSTANT_TELEPORT));*/
         consumer.accept(AEEnchantments.OVERLOAD, new ConfigCondition(ConfigID.OVERLOAD));
         consumer.accept(AEEnchantments.REACTIVE_ARMOR, new ConfigCondition(ConfigID.REACTIVE_ARMOR));
@@ -169,19 +169,19 @@ public class AEEnchantmentBootstrap {
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         16,
                         EquipmentSlotGroup.ANY)));
-        /*
-                register(
-                        context,
-                        AEEnchantments.ENDLESS_APPETITE,
-                        Enchantment.enchantment(Enchantment.definition(
-                                chestTag,
-                                1,
-                                1,
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                32,
-                                EquipmentSlotGroup.CHEST)));
 
+        register(
+                context,
+                AEEnchantments.CURSE_OF_HUNGER,
+                Enchantment.enchantment(Enchantment.definition(
+                        chestTag,
+                        1,
+                        1,
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        8,
+                        EquipmentSlotGroup.CHEST)));
+        /*
                 register(
                         context,
                         AEEnchantments.MOMENTUM,

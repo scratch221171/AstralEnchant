@@ -1,8 +1,11 @@
 package net.scratch221171.astralenchant.datagen.recipe;
 
+import appeng.recipes.handlers.InscriberRecipeBuilder;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
+import mekanism.api.datagen.recipe.builder.ItemStackToItemStackRecipeBuilder;
+import mekanism.api.recipes.ingredients.ItemStackIngredient;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.Holder;
@@ -24,11 +27,16 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
+import net.neoforged.neoforge.common.crafting.SizedIngredient;
+import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.common.tag.AETags;
 import org.jspecify.annotations.NonNull;
+import rearth.oritech.api.recipe.FoundryRecipeBuilder;
+import rearth.oritech.api.recipe.GrinderRecipeBuilder;
+import rearth.oritech.api.recipe.PulverizerRecipeBuilder;
 
 public class AERecipeProvider extends RecipeProvider {
     public AERecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -194,6 +202,31 @@ public class AERecipeProvider extends RecipeProvider {
                 .define('1', AETags.Items.INGOTS_ARCANIUM)
                 .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
                 .save(output);
+
+        InscriberRecipeBuilder.inscribe(AETags.Items.GEMS_ARCANE_QUARTZ, AEItems.ARCANE_QUARTZ_TINY_DUST, 1)
+                .save(output, ModUtils.loc("arcane_quartz_inscribing"));
+        InscriberRecipeBuilder.inscribe(AEItems.GROWN_ARCANE_QUARTZ, AEItems.ARCANE_QUARTZ_DUST, 1)
+                .save(output, ModUtils.loc("grown_arcane_quartz_inscribing"));
+        ItemStackToItemStackRecipeBuilder.crushing(
+                        ItemStackIngredient.of(SizedIngredient.of(AETags.Items.GEMS_ARCANE_QUARTZ, 1)),
+                        new ItemStack(AEItems.ARCANE_QUARTZ_TINY_DUST.get()))
+                .build(output, ModUtils.loc("arcane_quartz_crushing"));
+        ItemStackToItemStackRecipeBuilder.crushing(
+                        ItemStackIngredient.of(SizedIngredient.of(AEItems.GROWN_ARCANE_QUARTZ, 1)),
+                        new ItemStack(AEItems.ARCANE_QUARTZ_DUST.get()))
+                .build(output, ModUtils.loc("grown_arcane_quartz_crushing"));
+        PulverizerRecipeBuilder.build()
+                .input(AETags.Items.GEMS_ARCANE_QUARTZ)
+                .result(AEItems.ARCANE_QUARTZ_TINY_DUST.get())
+                .export(output, ID.ARCANE_QUARTZ);
+        GrinderRecipeBuilder.build()
+                .input(AETags.Items.GEMS_ARCANE_QUARTZ)
+                .result(AEItems.ARCANE_QUARTZ_TINY_DUST.get())
+                .export(output, ID.ARCANE_QUARTZ);
+        GrinderRecipeBuilder.build()
+                .input(AEItems.GROWN_ARCANE_QUARTZ)
+                .result(AEItems.ARCANE_QUARTZ_DUST.get())
+                .export(output, ID.GROWN_ARCANE_QUARTZ);
     }
 
     //    Ingredient    //

@@ -1,0 +1,15 @@
+{
+  "type": "oritech:pulverizer",
+  "ingredients": [
+    {
+      "tag": "c:gems/arcane_quartz"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "astralenchant:arcane_quartz_tiny_dust"
+    }
+  ],
+  "time": 100
+}
