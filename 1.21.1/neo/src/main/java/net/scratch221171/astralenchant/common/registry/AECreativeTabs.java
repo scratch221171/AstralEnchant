@@ -19,7 +19,7 @@ public class AECreativeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Constants.MODID);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN =
-            REGISTER.register("main", () -> CreativeModeTab.builder()
+            REGISTER.register("astralenchant_main", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.astralenchant.main"))
                     .icon(() -> new ItemStack(AEItems.GROWN_ARCANE_QUARTZ.get()))
                     .displayItems((parameters, output) ->
@@ -27,7 +27,7 @@ public class AECreativeTabs {
                     .build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ENCHANTMENT =
-            REGISTER.register("enchantment", () -> CreativeModeTab.builder()
+            REGISTER.register("astralenchant_enchantment", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.astralenchant.enchantment"))
                     .icon(() -> new ItemStack(AEItems.ENCHANTMENT_VESSEL.get()))
                     .displayItems((parameters, output) -> AEEnchantments.LIST.stream()

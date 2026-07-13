@@ -20,12 +20,13 @@ public class AEJapaneseLangProvider extends AELangProvider {
         addItemWithDesc(AEItems.ARCANE_QUARTZ, "アーケインクォーツ", "古来よりその輝きは数々のエンチャンターを魅了した。");
         addItem(AEItems.GROWN_ARCANE_QUARTZ, "成長したアーケインクォーツ");
         addItem(AEItems.ARCANE_QUARTZ_DUST, "アーケインクォーツダスト");
-        addItem(AEItems.ARCANE_QUARTZ_TINY_DUST, "小さいアーケインクォーツダスト");
+        addItemWithDesc(AEItems.ARCANE_QUARTZ_TINY_DUST, "小さいアーケインクォーツダスト", "金床を落としてアーケインクォーツを粉砕することで得られます。");
         addItemWithDesc(AEItems.LAVAPROOF_ARCANE_QUARTZ, "耐熱処理済みアーケインクォーツ", "うわぁ！ベトベトだぁ！");
         addItem(AEItems.LUMINITE, "ルミナイト");
         addItem(AEItems.ARCANIUM_INGOT, "アルカニウムインゴット");
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "芽生えたアルカニウムインゴット");
         addItem(AEItems.ENCHANTMENT_VESSEL, "エンチャントの依代");
+        addItem(AEItems.RESONANT_VESSEL, "残響の依代");
 
         addItemWithDesc(AEItems.ARCANIUM_HELMET, "アルカニウムのヘルメット", "アイテムが壊れると、付いていたエンチャントが本としてドロップします。");
         addItemWithDesc(AEItems.ARCANIUM_CHESTPLATE, "アルカニウムのチェストプレート", "アイテムが壊れると、付いていたエンチャントが本としてドロップします。");

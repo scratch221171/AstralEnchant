@@ -12,6 +12,7 @@ public final class ID {
     public static final String ARCANIUM_INGOT = "arcanium_ingot";
     public static final String BUDDING_ARCANIUM_INGOT = "budding_arcanium_ingot";
     public static final String ENCHANTMENT_VESSEL = "enchantment_vessel";
+    public static final String RESONANT_VESSEL = "resonant_vessel";
     public static final String ARCANIUM_HELMET = "arcanium_helmet";
     public static final String ARCANIUM_CHESTPLATE = "arcanium_chestplate";
     public static final String ARCANIUM_LEGGINGS = "arcanium_leggings";

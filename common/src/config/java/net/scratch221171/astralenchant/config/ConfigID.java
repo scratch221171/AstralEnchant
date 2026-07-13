@@ -35,4 +35,5 @@ public class ConfigID {
     //        public static final String CURSE_OF_EFFECT = "curse_of_effect";
     public static final String DISTORTION = "distortion";
     public static final String OVER_MENDING = "over_mending";
+    public static final String ALMIGHTY = "almighty";
 }

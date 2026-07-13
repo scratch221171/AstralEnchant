@@ -156,6 +156,44 @@ public class AERecipeProvider extends RecipeProvider {
                 .requires(AEItems.ARCANE_QUARTZ_DUST)
                 .unlockedBy(getHasName(Items.BOOK), has(Items.BOOK))
                 .save(output);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.RESONANT_VESSEL)
+                .requires(AEItems.ENCHANTMENT_VESSEL)
+                .requires(AEItems.GROWN_ARCANE_QUARTZ)
+                .requires(Items.SCULK_CATALYST)
+                .requires(Items.PHANTOM_MEMBRANE)
+                .unlockedBy(getHasName(AEItems.ENCHANTMENT_VESSEL), has(AEItems.ENCHANTMENT_VESSEL))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ARCANIUM_HELMET)
+                .pattern("111")
+                .pattern("1 1")
+                .define('1', AETags.Items.INGOTS_ARCANIUM)
+                .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ARCANIUM_CHESTPLATE)
+                .pattern("1 1")
+                .pattern("111")
+                .pattern("111")
+                .define('1', AETags.Items.INGOTS_ARCANIUM)
+                .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ARCANIUM_LEGGINGS)
+                .pattern("111")
+                .pattern("1 1")
+                .pattern("1 1")
+                .define('1', AETags.Items.INGOTS_ARCANIUM)
+                .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ARCANIUM_BOOTS)
+                .pattern("1 1")
+                .pattern("1 1")
+                .define('1', AETags.Items.INGOTS_ARCANIUM)
+                .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
+                .save(output);
     }
 
     //    Ingredient    //

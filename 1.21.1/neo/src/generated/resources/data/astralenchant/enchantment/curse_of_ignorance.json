@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "curse_of_ignorance"
+    }
+  ],
   "anvil_cost": 8,
   "description": {
     "translate": "enchantment.astralenchant.curse_of_ignorance"

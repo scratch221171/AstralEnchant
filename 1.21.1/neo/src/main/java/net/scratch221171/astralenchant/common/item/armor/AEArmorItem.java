@@ -1,6 +1,5 @@
 package net.scratch221171.astralenchant.common.item.armor;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.ArmorItem;
@@ -12,13 +11,21 @@ import org.jspecify.annotations.Nullable;
 public class AEArmorItem extends ArmorItem implements IAEDescribable {
     @Nullable private final String descKey;
 
+    @Nullable private final Style style;
+
     public AEArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties) {
-        this(material, type, properties, null);
+        this(material, type, properties, null, null);
     }
 
-    public AEArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties, @Nullable String descKey) {
+    public AEArmorItem(
+            Holder<ArmorMaterial> material,
+            Type type,
+            Properties properties,
+            @Nullable String descKey,
+            @Nullable Style style) {
         super(material, type, properties);
         this.descKey = descKey;
+        this.style = style;
     }
 
     @Override
@@ -28,6 +35,6 @@ public class AEArmorItem extends ArmorItem implements IAEDescribable {
 
     @Override
     public Style getDescStyle(ItemStack stack) {
-        return Style.EMPTY.withColor(ChatFormatting.GRAY);
+        return style;
     }
 }

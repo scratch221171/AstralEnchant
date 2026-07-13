@@ -56,6 +56,7 @@
   "item.astralenchant.arcane_quartz.desc": "Its radiance has enthralled countless enchanters since ancient times.",
   "item.astralenchant.arcane_quartz_dust": "Arcane Quartz Dust",
   "item.astralenchant.arcane_quartz_tiny_dust": "Arcane Quartz Tiny Dust",
+  "item.astralenchant.arcane_quartz_tiny_dust.desc": "Obtained by crushing Arcane Quartz using a falling anvil.",
   "item.astralenchant.arcanium_boots": "Arcanium Boots",
   "item.astralenchant.arcanium_boots.desc": "When the item breaks, its enchantments are dropped as enchanted books.",
   "item.astralenchant.arcanium_chestplate": "Arcanium Chestplate",
@@ -72,6 +73,7 @@
   "item.astralenchant.lavaproof_arcane_quartz": "Lavaproof Arcane Quartz",
   "item.astralenchant.lavaproof_arcane_quartz.desc": "Whoa! It's all sticky!",
   "item.astralenchant.luminite": "Luminite",
+  "item.astralenchant.resonant_vessel": "Resonant Vessel",
   "itemGroup.astralenchant.enchantment": "Astral Enchant - Enchantment",
   "itemGroup.astralenchant.main": "Astral Enchant"
 }

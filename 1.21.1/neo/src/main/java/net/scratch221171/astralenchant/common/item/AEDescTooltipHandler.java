@@ -1,5 +1,6 @@
 package net.scratch221171.astralenchant.common.item;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -19,7 +20,8 @@ public class AEDescTooltipHandler {
         if (key == null || key.isEmpty()) return;
 
         var style = describable.getDescStyle(stack);
-        if (style == null) style = Style.EMPTY;
+        if (style == null)
+            style = Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(true);
 
         var line = Component.translatable(key, describable.getDescArgs(stack)).setStyle(style);
 

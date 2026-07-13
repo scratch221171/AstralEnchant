@@ -44,6 +44,7 @@ public class CommonConfig {
         public static final ConfigEntry.BooleanEntry CURSE_OF_ENCHANTMENT = defineToggle(ConfigID.CURSE_OF_ENCHANTMENT);
         public static final ConfigEntry.BooleanEntry DISTORTION = defineToggle(ConfigID.DISTORTION);
         public static final ConfigEntry.BooleanEntry OVER_MENDING = defineToggle(ConfigID.OVER_MENDING);
+        public static final ConfigEntry.BooleanEntry ALMIGHTY = defineToggle(ConfigID.ALMIGHTY);
 
         private static ConfigEntry.BooleanEntry defineToggle(String configId) {
             ConfigEntry.BooleanEntry entry = BUILDER.define(configId, true);

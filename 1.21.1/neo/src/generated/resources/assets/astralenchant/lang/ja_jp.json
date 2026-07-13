@@ -56,6 +56,7 @@
   "item.astralenchant.arcane_quartz.desc": "古来よりその輝きは数々のエンチャンターを魅了した。",
   "item.astralenchant.arcane_quartz_dust": "アーケインクォーツダスト",
   "item.astralenchant.arcane_quartz_tiny_dust": "小さいアーケインクォーツダスト",
+  "item.astralenchant.arcane_quartz_tiny_dust.desc": "金床を落としてアーケインクォーツを粉砕することで得られます。",
   "item.astralenchant.arcanium_boots": "アルカニウムのブーツ",
   "item.astralenchant.arcanium_boots.desc": "アイテムが壊れると、付いていたエンチャントが本としてドロップします。",
   "item.astralenchant.arcanium_chestplate": "アルカニウムのチェストプレート",
@@ -72,6 +73,7 @@
   "item.astralenchant.lavaproof_arcane_quartz": "耐熱処理済みアーケインクォーツ",
   "item.astralenchant.lavaproof_arcane_quartz.desc": "うわぁ！ベトベトだぁ！",
   "item.astralenchant.luminite": "ルミナイト",
+  "item.astralenchant.resonant_vessel": "残響の依代",
   "itemGroup.astralenchant.enchantment": "Astral Enchant - エンチャント",
   "itemGroup.astralenchant.main": "Astral Enchant"
 }

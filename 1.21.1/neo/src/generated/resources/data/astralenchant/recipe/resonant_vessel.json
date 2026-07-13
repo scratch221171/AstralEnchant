@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "astralenchant:enchantment_vessel"
+    },
+    {
+      "item": "astralenchant:grown_arcane_quartz"
+    },
+    {
+      "item": "minecraft:sculk_catalyst"
+    },
+    {
+      "item": "minecraft:phantom_membrane"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "astralenchant:resonant_vessel"
+  }
+}

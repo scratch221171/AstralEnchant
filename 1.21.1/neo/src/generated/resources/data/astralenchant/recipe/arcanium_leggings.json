@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "c:ingots/arcanium"
+    }
+  },
+  "pattern": [
+    "111",
+    "1 1",
+    "1 1"
+  ],
+  "result": {
+    "count": 1,
+    "id": "astralenchant:arcanium_leggings"
+  }
+}

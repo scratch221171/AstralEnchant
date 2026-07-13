@@ -23,12 +23,16 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Its radiance has enthralled countless enchanters since ancient times.");
         addItem(AEItems.GROWN_ARCANE_QUARTZ, "Grown Arcane Quartz Dust");
         addItem(AEItems.ARCANE_QUARTZ_DUST, "Arcane Quartz Dust");
-        addItem(AEItems.ARCANE_QUARTZ_TINY_DUST, "Arcane Quartz Tiny Dust");
+        addItemWithDesc(
+                AEItems.ARCANE_QUARTZ_TINY_DUST,
+                "Arcane Quartz Tiny Dust",
+                "Obtained by crushing Arcane Quartz using a falling anvil.");
         addItemWithDesc(AEItems.LAVAPROOF_ARCANE_QUARTZ, "Lavaproof Arcane Quartz", "Whoa! It's all sticky!");
         addItem(AEItems.LUMINITE, "Luminite");
         addItem(AEItems.ARCANIUM_INGOT, "Arcanium Ingot");
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "Budding Arcanium Ingot");
         addItem(AEItems.ENCHANTMENT_VESSEL, "Enchantment Vessel");
+        addItem(AEItems.RESONANT_VESSEL, "Resonant Vessel");
 
         addItemWithDesc(
                 AEItems.ARCANIUM_HELMET,

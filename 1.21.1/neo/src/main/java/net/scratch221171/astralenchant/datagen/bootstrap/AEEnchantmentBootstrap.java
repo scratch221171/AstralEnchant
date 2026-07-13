@@ -34,12 +34,14 @@ public class AEEnchantmentBootstrap {
         consumer.accept(AEEnchantments.INSTANT_TELEPORT, new ConfigCondition(ConfigID.INSTANT_TELEPORT));*/
         consumer.accept(AEEnchantments.OVERLOAD, new ConfigCondition(ConfigID.OVERLOAD));
         consumer.accept(AEEnchantments.REACTIVE_ARMOR, new ConfigCondition(ConfigID.REACTIVE_ARMOR));
-        /*consumer.accept(AEEnchantments.MYSTIC_REMNANTS, new ConfigCondition(ConfigID.MYSTIC_REMNANTS));
+        /*consumer.accept(AEEnchantments.MYSTIC_REMNANTS, new ConfigCondition(ConfigID.MYSTIC_REMNANTS));*/
         consumer.accept(AEEnchantments.CURSE_OF_IGNORANCE, new ConfigCondition(ConfigID.CURSE_OF_IGNORANCE));
         consumer.accept(AEEnchantments.CURSE_OF_ENCHANTMENT, new ConfigCondition(ConfigID.CURSE_OF_ENCHANTMENT));
-        consumer.accept(AEEnchantments.DISTORTION, new ConfigCondition(ConfigID.DISTORTION));
+        /*consumer.accept(AEEnchantments.DISTORTION, new ConfigCondition(ConfigID.DISTORTION));
         consumer.accept(AEEnchantments.OVER_MENDING, new ConfigCondition(ConfigID.OVER_MENDING));
-        ;
+        */
+        consumer.accept(AEEnchantments.ALMIGHTY, new ConfigCondition(ConfigID.ALMIGHTY));
+        /*
         // Compat
         consumer.accept(
                 AEEnchantments.SLOT_EXPANSION,

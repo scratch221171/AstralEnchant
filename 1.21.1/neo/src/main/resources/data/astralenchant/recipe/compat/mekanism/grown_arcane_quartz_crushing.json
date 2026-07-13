@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "item": "astralenchant:grown_arcane_quartz"
+  },
+  "output": {
+    "count": 1,
+    "id": "astralenchant:arcane_quartz_dust"
+  }
+}
