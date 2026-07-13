@@ -21,6 +21,7 @@ public class AstralEnchant {
 
         modEventBus.addListener(this::commonSetup);
         AEItems.register(modEventBus);
+        AEArmorMaterials.register(modEventBus);
         AEBlocks.register(modEventBus);
         AEDataComponents.register(modEventBus);
         AECreativeTabs.register(modEventBus);

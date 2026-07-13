@@ -14,8 +14,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -100,6 +104,36 @@ public class AEUtil {
         return getRegistryAccess()
                 .map(access -> stack.getAllEnchantments(access.lookupOrThrow(Registries.ENCHANTMENT)))
                 .orElse(ItemEnchantments.EMPTY);
+    }
+
+    public static void tryAddItem(Entity entity, ItemStack stack) {
+        if (entity instanceof Player player) {
+            if (player.addItem(stack)) {
+                player.level()
+                        .playSound(
+                                null,
+                                player.getX(),
+                                player.getY(),
+                                player.getZ(),
+                                SoundEvents.ITEM_PICKUP,
+                                SoundSource.PLAYERS,
+                                0.2F,
+                                ((player.getRandom().nextFloat()
+                                                                - player.getRandom()
+                                                                        .nextFloat())
+                                                        * 0.7F
+                                                + 1.0F)
+                                        * 2.0F);
+            } else {
+                ItemEntity itementity = player.drop(stack, false);
+                if (itementity != null) {
+                    itementity.setNoPickUpDelay();
+                    itementity.setTarget(player.getUUID());
+                }
+            }
+        } else {
+            entity.spawnAtLocation(stack);
+        }
     }
 
     // EnhancedTooltip互換で、アイテムの名前は置き換えない

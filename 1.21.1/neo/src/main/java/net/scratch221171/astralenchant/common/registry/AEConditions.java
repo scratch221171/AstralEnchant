@@ -10,13 +10,13 @@ import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
 
 public class AEConditions {
-    public static final DeferredRegister<MapCodec<? extends ICondition>> CONDITION_CODECS =
+    public static final DeferredRegister<MapCodec<? extends ICondition>> REGISTER =
             DeferredRegister.create(NeoForgeRegistries.Keys.CONDITION_CODECS, Constants.MODID);
 
     public static final Supplier<MapCodec<ConfigCondition>> CONFIG_CONDITION =
-            CONDITION_CODECS.register("config_condition", () -> ConfigCondition.CODEC);
+            REGISTER.register("config_condition", () -> ConfigCondition.CODEC);
 
     public static void register(IEventBus eventBus) {
-        CONDITION_CODECS.register(eventBus);
+        REGISTER.register(eventBus);
     }
 }

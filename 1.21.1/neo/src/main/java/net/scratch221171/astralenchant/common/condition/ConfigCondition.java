@@ -7,7 +7,6 @@ import java.util.Optional;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import net.scratch221171.astralenchant.config.CommonConfig;
 import net.scratch221171.astralenchant.mdk.config.ConfigEntry;
-import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.NonNull;
 
 /**
@@ -24,7 +23,7 @@ public record ConfigCondition(String configId) implements ICondition {
                     .apply(inst, ConfigCondition::new));
 
     @Override
-    public boolean test(@NotNull IContext context) {
+    public boolean test(@NonNull IContext context) {
         return Optional.ofNullable(CommonConfig.getConditionEntries().get(configId))
                 .map(ConfigEntry.BooleanEntry::getAsBoolean)
                 .orElseThrow(
@@ -32,7 +31,7 @@ public record ConfigCondition(String configId) implements ICondition {
     }
 
     @Override
-    public @NotNull MapCodec<? extends ICondition> codec() {
+    public @NonNull MapCodec<? extends ICondition> codec() {
         return CODEC;
     }
 

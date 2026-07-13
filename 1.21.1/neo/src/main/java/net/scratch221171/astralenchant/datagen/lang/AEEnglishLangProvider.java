@@ -17,15 +17,35 @@ public class AEEnglishLangProvider extends AELangProvider {
     protected void addTranslations() {
         // アイテム
         addItem(AEItems.ENCHANTMENT_SHARD, "Enchantment Shard");
-        addItem(AEItems.ARCANE_QUARTZ, "Arcane Quartz");
+        addItemWithDesc(
+                AEItems.ARCANE_QUARTZ,
+                "Arcane Quartz",
+                "Its radiance has enthralled countless enchanters since ancient times.");
         addItem(AEItems.GROWN_ARCANE_QUARTZ, "Grown Arcane Quartz Dust");
         addItem(AEItems.ARCANE_QUARTZ_DUST, "Arcane Quartz Dust");
         addItem(AEItems.ARCANE_QUARTZ_TINY_DUST, "Arcane Quartz Tiny Dust");
-        addItem(AEItems.LAVAPROOF_ARCANE_QUARTZ, "Lavaproof Arcane Quartz");
+        addItemWithDesc(AEItems.LAVAPROOF_ARCANE_QUARTZ, "Lavaproof Arcane Quartz", "Whoa! It's all sticky!");
         addItem(AEItems.LUMINITE, "Luminite");
         addItem(AEItems.ARCANIUM_INGOT, "Arcanium Ingot");
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "Budding Arcanium Ingot");
         addItem(AEItems.ENCHANTMENT_VESSEL, "Enchantment Vessel");
+
+        addItemWithDesc(
+                AEItems.ARCANIUM_HELMET,
+                "Arcanium Helmet",
+                "When the item breaks, its enchantments are dropped as enchanted books.");
+        addItemWithDesc(
+                AEItems.ARCANIUM_CHESTPLATE,
+                "Arcanium Chestplate",
+                "When the item breaks, its enchantments are dropped as enchanted books.");
+        addItemWithDesc(
+                AEItems.ARCANIUM_LEGGINGS,
+                "Arcanium Leggings",
+                "When the item breaks, its enchantments are dropped as enchanted books.");
+        addItemWithDesc(
+                AEItems.ARCANIUM_BOOTS,
+                "Arcanium Boots",
+                "When the item breaks, its enchantments are dropped as enchanted books.");
 
         // ブロック
         addBlock(AEBlocks.ARCANIUM_BLOCK, "Arcanium Block");
@@ -72,7 +92,7 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Multiplier applied to item use cooldown duration");
 
         // クリエタブ
-        add("itemGroup.astralenchant.item", "Astral Enchant - Item");
+        add("itemGroup.astralenchant.main", "Astral Enchant");
         add("itemGroup.astralenchant.enchantment", "Astral Enchant - Enchantment");
 
         // 設定

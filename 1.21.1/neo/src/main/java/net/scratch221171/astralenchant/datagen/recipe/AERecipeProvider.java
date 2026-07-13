@@ -28,7 +28,7 @@ import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.common.tag.AETags;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 public class AERecipeProvider extends RecipeProvider {
     public AERecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -36,7 +36,7 @@ public class AERecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildRecipes(@NotNull RecipeOutput output, HolderLookup.@NotNull Provider holderLookup) {
+    protected void buildRecipes(@NonNull RecipeOutput output, HolderLookup.@NonNull Provider holderLookup) {
         // 精錬
         SimpleCookingRecipeBuilder.smelting(
                         Ingredient.of(Items.ENCHANTED_BOOK),
@@ -184,16 +184,16 @@ public class AERecipeProvider extends RecipeProvider {
     //    Builder    //
 
     private void enchantedBookRecipe(
-            @NotNull RecipeOutput output,
-            HolderLookup.@NotNull Provider provider,
+            RecipeOutput output,
+            HolderLookup.Provider provider,
             ResourceKey<Enchantment> key,
             Consumer<ShapedRecipeBuilder> consumer) {
         enchantedBookRecipe(output, provider, key, 1, consumer);
     }
 
     private void enchantedBookRecipe(
-            @NotNull RecipeOutput output,
-            HolderLookup.@NotNull Provider provider,
+            RecipeOutput output,
+            HolderLookup.Provider provider,
             ResourceKey<Enchantment> key,
             int level,
             Consumer<ShapedRecipeBuilder> consumer) {

@@ -34,22 +34,22 @@ package net.scratch221171.astralenchant.common.recipe.handler;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
-import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.event.AnvilLandEvent;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 
 public class AnvilCrushingRecipeHandler {
 
     public static void anvilCrushing(AnvilLandEvent event) {
-        Constants.LOGGER.info("crush");
         var level = event.getLevel();
         var pos = event.getPos();
         var items = level.getEntitiesOfClass(ItemEntity.class, new AABB(pos));
         for (var e : items) {
-            Constants.LOGGER.info(e.toString());
             var stack = e.getItem();
             if (stack.is(AEItems.ARCANE_QUARTZ)) {
                 e.setItem(new ItemStack(AEItems.ARCANE_QUARTZ_TINY_DUST.get(), stack.getCount()));
+            }
+            if (stack.is(AEItems.GROWN_ARCANE_QUARTZ.get())) {
+                e.setItem(new ItemStack(AEItems.ARCANE_QUARTZ_DUST.get(), stack.getCount()));
             }
         }
     }

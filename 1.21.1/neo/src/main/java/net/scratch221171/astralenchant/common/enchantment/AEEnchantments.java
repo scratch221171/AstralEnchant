@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
-import org.jetbrains.annotations.NotNull;
 
 public class AEEnchantments {
 
@@ -186,7 +185,7 @@ public class AEEnchantments {
 
     public static final ResourceKey<Enchantment> ALMIGHTY = create(ID.ALMIGHTY);
 
-    private static ResourceKey<Enchantment> create(@NotNull String name) {
+    private static ResourceKey<Enchantment> create(String name) {
         var key = ResourceKey.create(Registries.ENCHANTMENT, ModUtils.loc(name));
         LIST.add(key);
         return key;

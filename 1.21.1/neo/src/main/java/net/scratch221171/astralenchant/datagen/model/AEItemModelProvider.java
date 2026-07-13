@@ -1,6 +1,7 @@
 package net.scratch221171.astralenchant.datagen.model;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.BlockItem;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.scratch221171.astralenchant.Constants;
@@ -13,15 +14,8 @@ public class AEItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(AEItems.ENCHANTMENT_SHARD.get());
-        basicItem(AEItems.ARCANE_QUARTZ.get());
-        basicItem(AEItems.GROWN_ARCANE_QUARTZ.get());
-        basicItem(AEItems.ARCANE_QUARTZ_DUST.get());
-        basicItem(AEItems.ARCANE_QUARTZ_TINY_DUST.get());
-        basicItem(AEItems.LAVAPROOF_ARCANE_QUARTZ.get());
-        basicItem(AEItems.LUMINITE.get());
-        basicItem(AEItems.ARCANIUM_INGOT.get());
-        basicItem(AEItems.BUDDING_ARCANIUM_INGOT.get());
-        basicItem(AEItems.ENCHANTMENT_VESSEL.get());
+        AEItems.REGISTER.getEntries().forEach(entry -> {
+            if (!(entry.get() instanceof BlockItem)) basicItem(entry.get());
+        });
     }
 }

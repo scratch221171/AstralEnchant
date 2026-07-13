@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 
@@ -14,9 +15,10 @@ public abstract class AELangProvider extends LanguageProvider {
         super(output, Constants.MODID, locale);
     }
 
-    //    protected void addItem(DeferredItem<?> holder, String name) {
-    //        add(holder.getKey().location().toLanguageKey("item"), name);
-    //    }
+    protected void addItemWithDesc(DeferredItem<?> holder, String name, String desc) {
+        addItem(holder, name);
+        add(holder.get().getDescriptionId() + ".desc", desc);
+    }
 
     protected void addEnchantmentWithDesc(ResourceKey<Enchantment> key, String name, String desc) {
         add(AEUtil.getLangKey(key), name);

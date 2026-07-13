@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.scratch221171.astralenchant.Constants;
 
 public class AEDataComponents {
-    public static final DeferredRegister<DataComponentType<?>> DATA_COMPONENT_TYPES =
+    public static final DeferredRegister<DataComponentType<?>> REGISTER =
             DeferredRegister.create(Registries.DATA_COMPONENT_TYPE, Constants.MODID);
 
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> OVERLOAD =
@@ -21,11 +21,11 @@ public class AEDataComponents {
 
     private static <T> DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(
             String name, UnaryOperator<DataComponentType.Builder<T>> builderOperator) {
-        return DATA_COMPONENT_TYPES.register(
+        return REGISTER.register(
                 name, () -> builderOperator.apply(DataComponentType.builder()).build());
     }
 
     public static void register(IEventBus eventBus) {
-        DATA_COMPONENT_TYPES.register(eventBus);
+        REGISTER.register(eventBus);
     }
 }

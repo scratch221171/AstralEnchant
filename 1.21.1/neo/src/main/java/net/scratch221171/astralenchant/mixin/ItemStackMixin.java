@@ -1,16 +1,23 @@
 package net.scratch221171.astralenchant.mixin;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.sugar.Local;
 import java.util.function.BiConsumer;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.NeoForge;
@@ -20,8 +27,10 @@ import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.enchantment.handler.AlmightyHandler;
 import net.scratch221171.astralenchant.common.enchantment.handler.EssenceOfEnchantmentHandler;
 import net.scratch221171.astralenchant.common.event.ItemSetEnchantmentEvent;
+import net.scratch221171.astralenchant.common.item.armor.AEArmorItem;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -127,5 +136,25 @@ public abstract class ItemStackMixin implements IItemStackExtension {
         }
 
         return IItemStackExtension.super.isBookEnchantable(book);
+    }
+
+    @WrapOperation(
+            method =
+                    "hurtAndBreak(ILnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;Ljava/util/function/Consumer;)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;shrink(I)V"))
+    private void astralenchant$dropBooksOnBreak(
+            ItemStack stack,
+            int amount,
+            Operation<Void> original,
+            @Local(argsOnly = true) ServerLevel level,
+            @Local(argsOnly = true) @Nullable LivingEntity entity) {
+
+        if (stack.getItem() instanceof AEArmorItem && EnchantmentHelper.hasAnyEnchantments(stack) && entity != null) {
+            var book = new ItemStack(Items.ENCHANTED_BOOK);
+            EnchantmentHelper.setEnchantments(book, stack.getTagEnchantments());
+            AEUtil.tryAddItem(entity, book);
+        }
+
+        original.call(stack, amount); // ここでshrink(1)が実際に実行される
     }
 }

@@ -9,7 +9,7 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.tag.AETags;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 public class AEBlockTagsProvider extends BlockTagsProvider {
     public AEBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
@@ -17,7 +17,7 @@ public class AEBlockTagsProvider extends BlockTagsProvider {
     }
 
     @Override
-    protected void addTags(@NotNull HolderLookup.Provider lookupProvider) {
+    protected void addTags(HolderLookup.@NonNull Provider lookupProvider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(AEBlocks.ARCANIUM_BLOCK.get());
         tag(BlockTags.NEEDS_IRON_TOOL).add(AEBlocks.ARCANIUM_BLOCK.get());
 
