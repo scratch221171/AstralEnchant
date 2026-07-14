@@ -1,0 +1,70 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "curse_of_enchantment"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "c:chains"
+    },
+    "2": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "astralenchant:curse_of_ignorance": 1
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "3": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:vanishing_curse": 1
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "4": {
+      "tag": "c:obsidians/crying"
+    },
+    "5": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:binding_curse": 1
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "6": {
+      "item": "astralenchant:resonant_vessel"
+    }
+  },
+  "pattern": [
+    "121",
+    "345",
+    "161"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:curse_of_enchantment": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}

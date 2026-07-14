@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "nullification"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_resonant_vessel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "astralenchant:resonant_vessel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "astralenchant:enchanted_book_nullification"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_resonant_vessel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "astralenchant:enchanted_book_nullification"
+    ]
+  }
+}

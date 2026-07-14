@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "feather_touch"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "c:feathers"
+    },
+    "2": {
+      "item": "minecraft:amethyst_block"
+    },
+    "3": {
+      "item": "minecraft:deepslate"
+    },
+    "4": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:silk_touch": 1
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "5": {
+      "item": "minecraft:echo_shard"
+    },
+    "6": {
+      "item": "astralenchant:enchantment_vessel"
+    }
+  },
+  "pattern": [
+    "121",
+    "343",
+    "565"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:feather_touch": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}

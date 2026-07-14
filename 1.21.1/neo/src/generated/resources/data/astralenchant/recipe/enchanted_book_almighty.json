@@ -1,0 +1,57 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "almighty"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "minecraft:pickaxes"
+    },
+    "2": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:efficiency": 5
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "3": {
+      "tag": "minecraft:axes"
+    },
+    "4": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    },
+    "5": {
+      "tag": "minecraft:shovels"
+    },
+    "6": {
+      "item": "astralenchant:enchantment_vessel"
+    },
+    "7": {
+      "tag": "minecraft:hoes"
+    }
+  },
+  "pattern": [
+    "123",
+    "242",
+    "567"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:almighty": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}

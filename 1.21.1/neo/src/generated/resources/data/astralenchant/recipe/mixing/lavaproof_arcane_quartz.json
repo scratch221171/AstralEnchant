@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "astralenchant:lavaproof_arcane_quartz"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:lava"
+    }
+  ],
+  "processing_time": 250,
+  "results": [
+    {
+      "id": "astralenchant:luminite"
+    }
+  ]
+}

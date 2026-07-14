@@ -1,0 +1,87 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "reactive_armor"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:protection": 4
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "2": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "minecraft:turtle_master"
+        }
+      },
+      "items": "minecraft:potion"
+    },
+    "3": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:projectile_protection": 4
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "4": {
+      "item": "minecraft:sculk_catalyst"
+    },
+    "5": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:blast_protection": 4
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "6": {
+      "item": "astralenchant:enchantment_vessel"
+    },
+    "7": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:fire_protection": 4
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    }
+  },
+  "pattern": [
+    "123",
+    "242",
+    "567"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:reactive_armor": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}

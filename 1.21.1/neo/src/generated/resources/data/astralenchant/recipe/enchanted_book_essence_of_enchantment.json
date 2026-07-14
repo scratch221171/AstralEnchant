@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "essence_of_enchantment"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:bookshelf"
+    },
+    "2": {
+      "item": "minecraft:enchanting_table"
+    },
+    "3": {
+      "tag": "neoforge:enchanting_fuels"
+    },
+    "4": {
+      "item": "astralenchant:resonant_vessel"
+    }
+  },
+  "pattern": [
+    "111",
+    "121",
+    "343"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:essence_of_enchantment": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}
