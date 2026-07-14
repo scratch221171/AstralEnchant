@@ -9,6 +9,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.registry.AEItems;
@@ -21,6 +22,8 @@ public class TransformRecipeHandler {
 
     public static void handle(EntityTickEvent event) {
         if (event.getEntity().level().isClientSide) return;
+        // ae2があればそっちのレシピを使ってもらおう
+        if (ModList.get().isLoaded("ae2")) return;
         if (!(event.getEntity() instanceof ItemEntity itemEntity)) return;
         var stack = itemEntity.getItem();
         if (!stack.is(AEItems.LAVAPROOF_ARCANE_QUARTZ)) return;

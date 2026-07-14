@@ -29,8 +29,7 @@ public class AEItems {
     public static final DeferredItem<AEItem> ARCANE_QUARTZ =
             registerAEItem(ID.ARCANE_QUARTZ, "item.astralenchant.arcane_quartz.desc", null);
 
-    public static final DeferredItem<AEItem> GROWN_ARCANE_QUARTZ =
-            registerAEItem(ID.GROWN_ARCANE_QUARTZ, new Item.Properties().rarity(Rarity.UNCOMMON));
+    public static final DeferredItem<AEItem> GROWN_ARCANE_QUARTZ = registerAEItem(ID.GROWN_ARCANE_QUARTZ);
 
     public static final DeferredItem<AEItem> ARCANE_QUARTZ_DUST = registerAEItem(ID.ARCANE_QUARTZ_DUST);
 
@@ -52,11 +51,11 @@ public class AEItems {
 
     public static final DeferredItem<AEItem> BUDDING_ARCANIUM_INGOT = registerAEItem(ID.BUDDING_ARCANIUM_INGOT);
 
-    public static final DeferredItem<AEItem> ENCHANTMENT_VESSEL =
-            registerAEItem(ID.ENCHANTMENT_VESSEL, new Item.Properties().stacksTo(1));
+    public static final DeferredItem<AEItem> ENCHANTMENT_VESSEL = registerAEItem(
+            ID.ENCHANTMENT_VESSEL, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
 
     public static final DeferredItem<AEItem> RESONANT_VESSEL =
-            registerAEItem(ID.RESONANT_VESSEL, new Item.Properties().stacksTo(1));
+            registerAEItem(ID.RESONANT_VESSEL, new Item.Properties().stacksTo(1).rarity(Rarity.RARE));
 
     public static final DeferredItem<AEArmorItem> ARCANIUM_HELMET = registerAEArmorItem(
             ID.ARCANIUM_HELMET,

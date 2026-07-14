@@ -2,7 +2,7 @@ package net.scratch221171.astralenchant.mixin;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemCooldowns;
-import net.scratch221171.astralenchant.common.util.IItemCooldownsExtension;
+import net.scratch221171.astralenchant.common.util.IPlayerAccessor;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,6 +17,7 @@ public abstract class PlayerMixin {
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void init(CallbackInfo ci) {
-        ((IItemCooldownsExtension) this.getCooldowns()).astralenchant$setPlayer((Player) (Object) this);
+        var self = (Player) (Object) this;
+        ((IPlayerAccessor) this.getCooldowns()).astralenchant$setPlayer(self);
     }
 }

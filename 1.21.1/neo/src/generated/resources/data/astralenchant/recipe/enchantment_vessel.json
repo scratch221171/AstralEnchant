@@ -6,10 +6,16 @@
       "item": "minecraft:book"
     },
     {
+      "item": "astralenchant:arcane_quartz_dust"
+    },
+    {
       "item": "minecraft:soul_sand"
     },
     {
-      "item": "astralenchant:arcane_quartz_dust"
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:ink_sac"
     }
   ],
   "result": {

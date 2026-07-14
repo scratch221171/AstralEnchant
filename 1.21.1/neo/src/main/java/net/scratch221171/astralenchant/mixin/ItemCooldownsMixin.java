@@ -5,14 +5,14 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemCooldowns;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
-import net.scratch221171.astralenchant.common.util.IItemCooldownsExtension;
+import net.scratch221171.astralenchant.common.util.IPlayerAccessor;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(ItemCooldowns.class)
-public abstract class ItemCooldownsMixin implements IItemCooldownsExtension {
+public abstract class ItemCooldownsMixin implements IPlayerAccessor {
 
     @Unique private Player astralenchant$player;
 

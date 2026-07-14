@@ -22,7 +22,6 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.extensions.IItemStackExtension;
-import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.enchantment.handler.AlmightyHandler;
 import net.scratch221171.astralenchant.common.enchantment.handler.EssenceOfEnchantmentHandler;
@@ -104,15 +103,11 @@ public abstract class ItemStackMixin implements IItemStackExtension {
     @Override
     public boolean supportsEnchantment(Holder<Enchantment> enchantment) {
         ItemStack self = (ItemStack) (Object) this;
-        Constants.LOGGER.info(self.toString());
-        Constants.LOGGER.info(enchantment.toString());
         if (enchantment.is(AEEnchantments.AFFINITY)) {
-            Constants.LOGGER.info("true 1");
             return true;
         }
 
         if (AEUtil.getEnchantmentLevel(AEEnchantments.AFFINITY, self) > 0) {
-            Constants.LOGGER.info("true 2");
             return true;
         }
 
@@ -126,12 +121,10 @@ public abstract class ItemStackMixin implements IItemStackExtension {
                         AEEnchantments.AFFINITY,
                         book.getOrDefault(DataComponents.STORED_ENCHANTMENTS, ItemEnchantments.EMPTY))
                 > 0) {
-            Constants.LOGGER.info("true 3");
             return true;
         }
 
         if (AEUtil.getEnchantmentLevel(AEEnchantments.AFFINITY, self) > 0) {
-            Constants.LOGGER.info("true 4");
             return true;
         }
 
