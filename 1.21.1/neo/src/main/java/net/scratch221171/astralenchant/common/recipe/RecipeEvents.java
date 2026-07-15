@@ -9,7 +9,7 @@ import net.scratch221171.astralenchant.common.recipe.handler.AnvilCrushingRecipe
 import net.scratch221171.astralenchant.common.recipe.handler.TransformRecipeHandler;
 
 @EventBusSubscriber(modid = Constants.MODID)
-public class EventListener {
+public class RecipeEvents {
 
     @SubscribeEvent
     private static void onAnvilLand(AnvilLandEvent e) {

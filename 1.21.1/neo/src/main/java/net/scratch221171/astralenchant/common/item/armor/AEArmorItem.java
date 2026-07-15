@@ -2,10 +2,14 @@ package net.scratch221171.astralenchant.common.item.armor;
 
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Style;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.scratch221171.astralenchant.common.item.IAEDescribable;
+import net.scratch221171.astralenchant.common.util.AEUtil;
 import org.jspecify.annotations.Nullable;
 
 public class AEArmorItem extends ArmorItem implements IAEDescribable {
@@ -36,5 +40,12 @@ public class AEArmorItem extends ArmorItem implements IAEDescribable {
     @Override
     public Style getDescStyle(ItemStack stack) {
         return style;
+    }
+
+    public static void dropBookOnBreak(ItemStack stack, Entity entity) {
+        if (EnchantmentHelper.hasAnyEnchantments(stack) || entity == null) return;
+        var book = new ItemStack(Items.ENCHANTED_BOOK);
+        EnchantmentHelper.setEnchantments(book, stack.getTagEnchantments());
+        AEUtil.tryAddItem(entity, book);
     }
 }

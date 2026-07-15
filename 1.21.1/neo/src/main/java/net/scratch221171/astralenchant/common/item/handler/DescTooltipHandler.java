@@ -1,18 +1,14 @@
-package net.scratch221171.astralenchant.common.item;
+package net.scratch221171.astralenchant.common.item.handler;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
-import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.common.item.IAEDescribable;
 
-@EventBusSubscriber(modid = Constants.MODID)
-public class AEDescTooltipHandler {
+public class DescTooltipHandler {
 
-    @SubscribeEvent
-    public static void onTooltip(ItemTooltipEvent event) {
+    public static void addDesc(ItemTooltipEvent event) {
         var stack = event.getItemStack();
         if (!(stack.getItem() instanceof IAEDescribable describable)) return;
 

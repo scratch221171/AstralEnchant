@@ -180,7 +180,7 @@ public class AERecipeProvider extends RecipeProvider {
 
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ENCHANTMENT_VESSEL)
                     .requires(Items.BOOK)
-                    .requires(AEItems.ARCANE_QUARTZ_DUST)
+                    .requires(AETags.Items.DUSTS_ARCANE_QUARTZ)
                     .requires(Items.SOUL_SAND)
                     .requires(Items.GHAST_TEAR)
                     .requires(Items.INK_SAC)
@@ -325,8 +325,8 @@ public class AERecipeProvider extends RecipeProvider {
                             .pattern("121")
                             .pattern("232")
                             .pattern("141")
-                            .define('1', Items.ANVIL)
-                            .define('2', Items.BEDROCK)
+                            .define('1', AETags.Items.GEMS_LUMINITE)
+                            .define('2', Items.ANVIL)
                             .define('3', Items.HEART_OF_THE_SEA)
                             .define('4', AEItems.RESONANT_VESSEL));
 

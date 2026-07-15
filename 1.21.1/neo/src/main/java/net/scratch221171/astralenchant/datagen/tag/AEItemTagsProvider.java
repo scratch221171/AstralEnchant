@@ -25,6 +25,9 @@ public class AEItemTagsProvider extends ItemTagsProvider {
         tag(AETags.Items.GEMS_ARCANE_QUARTZ).add(AEItems.ARCANE_QUARTZ.get());
         tag(Tags.Items.GEMS).addTag(AETags.Items.GEMS_ARCANE_QUARTZ);
 
+        tag(AETags.Items.GEMS_LUMINITE).add(AEItems.LUMINITE.get());
+        tag(Tags.Items.GEMS).addTag(AETags.Items.GEMS_LUMINITE);
+
         tag(AETags.Items.DUSTS_ARCANE_QUARTZ).add(AEItems.ARCANE_QUARTZ_DUST.get());
         tag(Tags.Items.DUSTS).addTag(AETags.Items.DUSTS_ARCANE_QUARTZ);
 

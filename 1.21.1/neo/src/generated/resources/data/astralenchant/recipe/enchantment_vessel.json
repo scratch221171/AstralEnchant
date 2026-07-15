@@ -6,7 +6,7 @@
       "item": "minecraft:book"
     },
     {
-      "item": "astralenchant:arcane_quartz_dust"
+      "tag": "c:dusts/arcane_quartz"
     },
     {
       "item": "minecraft:soul_sand"

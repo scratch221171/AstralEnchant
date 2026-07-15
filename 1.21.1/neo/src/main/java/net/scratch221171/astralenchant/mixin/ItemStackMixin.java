@@ -7,17 +7,14 @@ import java.util.function.BiConsumer;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.NeoForge;
@@ -103,14 +100,8 @@ public abstract class ItemStackMixin implements IItemStackExtension {
     @Override
     public boolean supportsEnchantment(Holder<Enchantment> enchantment) {
         ItemStack self = (ItemStack) (Object) this;
-        if (enchantment.is(AEEnchantments.AFFINITY)) {
+        if (enchantment.is(AEEnchantments.AFFINITY) || AEUtil.getEnchantmentLevel(AEEnchantments.AFFINITY, self) > 0)
             return true;
-        }
-
-        if (AEUtil.getEnchantmentLevel(AEEnchantments.AFFINITY, self) > 0) {
-            return true;
-        }
-
         return IItemStackExtension.super.supportsEnchantment(enchantment);
     }
 
@@ -118,15 +109,10 @@ public abstract class ItemStackMixin implements IItemStackExtension {
     public boolean isBookEnchantable(@NonNull ItemStack book) {
         ItemStack self = (ItemStack) (Object) this;
         if (AEUtil.getEnchantmentLevel(
-                        AEEnchantments.AFFINITY,
-                        book.getOrDefault(DataComponents.STORED_ENCHANTMENTS, ItemEnchantments.EMPTY))
-                > 0) {
-            return true;
-        }
-
-        if (AEUtil.getEnchantmentLevel(AEEnchantments.AFFINITY, self) > 0) {
-            return true;
-        }
+                                AEEnchantments.AFFINITY,
+                                book.getOrDefault(DataComponents.STORED_ENCHANTMENTS, ItemEnchantments.EMPTY))
+                        > 0
+                || AEUtil.getEnchantmentLevel(AEEnchantments.AFFINITY, self) > 0) return true;
 
         return IItemStackExtension.super.isBookEnchantable(book);
     }
@@ -139,14 +125,8 @@ public abstract class ItemStackMixin implements IItemStackExtension {
             ItemStack stack,
             int amount,
             Operation<Void> original,
-            @Local(argsOnly = true) ServerLevel level,
             @Local(argsOnly = true) @Nullable LivingEntity entity) {
-
-        if (stack.getItem() instanceof AEArmorItem && EnchantmentHelper.hasAnyEnchantments(stack) && entity != null) {
-            var book = new ItemStack(Items.ENCHANTED_BOOK);
-            EnchantmentHelper.setEnchantments(book, stack.getTagEnchantments());
-            AEUtil.tryAddItem(entity, book);
-        }
+        if (stack.getItem() instanceof AEArmorItem) AEArmorItem.dropBookOnBreak(stack, entity);
 
         original.call(stack, amount); // ここでshrink(1)が実際に実行される
     }

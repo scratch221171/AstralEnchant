@@ -36,6 +36,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 import net.scratch221171.astralenchant.common.event.AnvilLandEvent;
 import net.scratch221171.astralenchant.common.registry.AEItems;
+import net.scratch221171.astralenchant.common.tag.AETags;
 
 public class AnvilCrushingRecipeHandler {
 
@@ -45,7 +46,7 @@ public class AnvilCrushingRecipeHandler {
         var items = level.getEntitiesOfClass(ItemEntity.class, new AABB(pos));
         for (var e : items) {
             var stack = e.getItem();
-            if (stack.is(AEItems.ARCANE_QUARTZ)) {
+            if (stack.is(AETags.Items.GEMS_ARCANE_QUARTZ)) {
                 e.setItem(new ItemStack(AEItems.ARCANE_QUARTZ_TINY_DUST.get(), stack.getCount()));
             }
             if (stack.is(AEItems.GROWN_ARCANE_QUARTZ.get())) {

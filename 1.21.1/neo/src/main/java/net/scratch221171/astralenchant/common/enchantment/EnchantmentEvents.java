@@ -18,7 +18,7 @@ import net.scratch221171.astralenchant.common.enchantment.handler.*;
 import net.scratch221171.astralenchant.common.event.ItemSetEnchantmentEvent;
 
 @EventBusSubscriber(modid = Constants.MODID)
-public class EventListener {
+public class EnchantmentEvents {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     private static void onEnchantmentChange(ItemSetEnchantmentEvent e) {

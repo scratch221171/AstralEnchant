@@ -9,10 +9,10 @@
   "category": "misc",
   "key": {
     "1": {
-      "item": "minecraft:anvil"
+      "tag": "c:gems/luminite"
     },
     "2": {
-      "item": "minecraft:bedrock"
+      "item": "minecraft:anvil"
     },
     "3": {
       "item": "minecraft:heart_of_the_sea"
