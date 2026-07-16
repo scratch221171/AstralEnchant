@@ -16,6 +16,8 @@ public class AEJapaneseLangProvider extends AELangProvider {
 
     @Override
     protected void addTranslations() {
+        add("modmenu.descriptionTranslation." + Constants.MODID, "エンチャントであなたを、驚かせたい");
+
         // アイテム
         addItem(AEItems.ENCHANTMENT_SHARD, "エンチャントの欠片");
         addItemWithDesc(AEItems.ARCANE_QUARTZ, "アーケインクォーツ", "古来よりその輝きは数々のエンチャンターを魅了した。");
@@ -71,6 +73,7 @@ public class AEJapaneseLangProvider extends AELangProvider {
 
         // 設定
         addConfig("enchantment_settings", "エンチャントの設定");
+        addConfigWithDesc(ConfigID.EXTRA_TAG, "適用されるダメージタグ", "攻撃に適用されるタグを管理します。無効な値が存在する場合はデフォルト値が使用されます。");
         addConfigWithDesc(
                 ConfigID.IGNORE_BYPASSES_INVULNERABILITY_TAG,
                 "無敵貫通を無視",
@@ -79,17 +82,24 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 ConfigID.BASE_COST, "レベル消費基本値", "レベルnのとき、消費されるレベルは以下の計算式で表されます：(現在の経験値) * (消費割合) / √n + (消費基本値) / n");
         addConfigWithDesc(
                 ConfigID.COST_RATE, "レベル消費割合", "レベルnのとき、消費されるレベルは以下の計算式で表されます：(現在の経験値) * (消費割合) / √n + (消費基本値) / n");
+        addConfigWithDesc(ConfigID.MAX_COST, "消費上限", "上二つの設定にかかわらず、これ以上の経験値は消費されません。");
+        addConfigWithDesc(ConfigID.RECOVER_HEALTH, "蘇生後の体力", "効果が発動し、プレイヤーが蘇生されたときの体力。0だと次tickに再度死亡します。");
         addConfigWithDesc(
                 ConfigID.INCLUDE_OVERLOAD_IN_TOTAL,
                 "オーバーロードレベルを含める",
                 "他のエンチャントに適用されるオーバーロードによるボーナスを総レベルに含めるかどうか。この設定に関係なく、エンチャントの極意自体にはオーバーロードは適用されます。");
         addConfigWithDesc(ConfigID.MULTIPLIER, "レベルごとのモディファイア倍率（％）", "例：1に設定すると、合計20レベルのときモディファイア倍率が+20%になります。");
+        addConfigWithDesc(ConfigID.MAX_TOTAL_LEVEL, "レベル合計の上限", "大量にエンチャントを乗せることでステータスを際限なく増やさせないための上限。");
+        addConfigWithDesc(ConfigID.SAVE_BLOCK_ENTITY, "ブロックエンティティを保存", "チェストのようなブロックエンティティの中身を含めてアイテム化します。");
+        addConfigWithDesc(ConfigID.SAVE_BLOCK_STATE, "ブロック状態を保存", "向きなどのブロックの状態を含めてアイテム化します。");
+        addConfigWithDesc(ConfigID.DISABLED_TAG, "消去されるダメージタグ", "地震への攻撃から消去されるタグを管理します。無効な値が存在する場合はデフォルト値が使用されます。");
+        addConfigWithDesc(ConfigID.HIDE_NAME, "アイテムの名前を隠す", "オフにすると、一部のツールチップ装飾modとの互換性が向上する場合があります。");
         addConfigWithDesc(
-                ConfigID.ANGLE_PER_LEVEL,
-                "レベルあたりの角度",
-                "レベルnのとき、エンティティへの向きと視線の角度差の許容量は以下の計算式で表されます：n * (角度) * π / 180");
+                ConfigID.ANGLE_PER_LEVEL, "レベルあたりの角度", "レベルnのとき、エンティティへの向きと視線の角度差の許容量は以下の計算式で表されます：n * (角度) * π / 180");
         addConfigWithDesc(
                 ConfigID.EFFECTIVE_FOR_ALL_BLOCKS, "全てのブロックに対して適正", "ガラスなど、適正ツールが存在しないブロックにも採掘速度ボーナスが適用されるかどうか。");
+        addConfigWithDesc(
+                ConfigID.CAN_BREAK_UNBREAKABLE, "破壊不能ブロックを破壊可能", "レベル4で岩盤などを破壊できます。プレイヤー以外が使ったときの効果は保証できません。");
         addConfigWithDesc(ConfigID.UNBREAKABLE_BLOCK_HARDNESS, "破壊不能なブロックの硬さ", "岩盤など破壊不能なブロックを採掘する際に適用される硬さ。");
         addConfigWithDesc("enchantment_toggling", "エンチャントの切り替え", "サーバーの再起動が必要です！");
     }

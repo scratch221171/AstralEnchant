@@ -27,13 +27,12 @@ public class LastStandHandler {
             }
             if (sum == 0) return;
 
-            var baseCost = ServerConfig.EnchantmentSettings.LastStand.BASE_COST.getAsDouble();
-            var costRate = ServerConfig.EnchantmentSettings.LastStand.COST_RATE.getAsDouble();
-            var remaining = player.experienceLevel * (1 - costRate / Math.pow(sum, 0.5)) - baseCost / sum;
-            if (remaining >= 0) {
-                player.giveExperienceLevels((int) Math.floor(remaining) - player.experienceLevel);
+            double consumed = getConsumed(player.experienceLevel, sum);
+
+            if (player.experienceLevel - consumed >= 0) {
+                player.giveExperienceLevels((int) Math.floor(-consumed));
                 event.setCanceled(true);
-                player.setHealth(1f);
+                player.setHealth((float) ServerConfig.EnchantmentSettings.LastStand.RECOVER_HEALTH.getAsDouble());
 
                 if (player.level() instanceof ServerLevel serverLevel) {
                     serverLevel.sendParticles(
@@ -51,5 +50,13 @@ public class LastStandHandler {
                 }
             }
         });
+    }
+
+    private static double getConsumed(int currentXPLevel, int enchantmentLevel) {
+        double baseCost = ServerConfig.EnchantmentSettings.LastStand.BASE_COST.getAsDouble();
+        double costRate = ServerConfig.EnchantmentSettings.LastStand.COST_RATE.getAsDouble();
+        double maxCost = ServerConfig.EnchantmentSettings.LastStand.MAX_COST.getAsDouble();
+        return Math.min(
+                maxCost, currentXPLevel * (costRate / Math.pow(enchantmentLevel, 0.5)) + baseCost / enchantmentLevel);
     }
 }

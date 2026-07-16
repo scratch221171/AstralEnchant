@@ -19,6 +19,7 @@ public class BlockBehaviourMixin {
     @ModifyVariable(method = "getDestroyProgress", at = @At("STORE"), ordinal = 0)
     private float astralenchant$modifyDestroySpeed(
             float hardness, BlockState state, Player player, BlockGetter getter, BlockPos pos) {
+        if (!ServerConfig.EnchantmentSettings.Almighty.CAN_BREAK_UNBREAKABLE.getAsBoolean()) return hardness;
         if (state.getBlock() instanceof GameMasterBlock) return hardness;
         if (hardness >= 0) return hardness;
 

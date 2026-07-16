@@ -3,17 +3,30 @@ package net.scratch221171.astralenchant.config;
 public class ConfigID {
 
     // Enchantment Settings
+    // Nullification
+    public static final String EXTRA_TAG = "extra_tag";
     // Last Stand
     public static final String IGNORE_BYPASSES_INVULNERABILITY_TAG = "ignore_bypasses_invulnerability_tag";
     public static final String BASE_COST = "base_cost";
     public static final String COST_RATE = "cost_rate";
+    public static final String MAX_COST = "max_cost";
+    public static final String RECOVER_HEALTH = "recover_health";
     // Essence of Enchantment
     public static final String INCLUDE_OVERLOAD_IN_TOTAL = "include_overload_in_total";
     public static final String MULTIPLIER = "multiplier";
+    public static final String MAX_TOTAL_LEVEL = "max_total_level";
+    // Feather Touch
+    public static final String SAVE_BLOCK_ENTITY = "save_block_entity";
+    public static final String SAVE_BLOCK_STATE = "save_block_state";
+    // Reactive Armor
+    public static final String DISABLED_TAG = "disabled_tag";
+    // Curse Of Ignorance
+    public static final String HIDE_NAME = "hide_name";
     // Distortion
     public static final String ANGLE_PER_LEVEL = "angle_per_level";
     // Almighty
     public static final String EFFECTIVE_FOR_ALL_BLOCKS = "effective_for_all_blocks";
+    public static final String CAN_BREAK_UNBREAKABLE = "can_break_unbreakable";
     public static final String UNBREAKABLE_BLOCK_HARDNESS = "unbreakable_block_hardness";
 
     // Enchantment Toggling

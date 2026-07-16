@@ -16,6 +16,7 @@ public class AEEnglishLangProvider extends AELangProvider {
 
     @Override
     protected void addTranslations() {
+        add("modmenu.descriptionTranslation." + Constants.MODID, "Adds enchantments you've never seen before.");
         // アイテム
         addItem(AEItems.ENCHANTMENT_SHARD, "Enchantment Shard");
         addItemWithDesc(
@@ -111,6 +112,10 @@ public class AEEnglishLangProvider extends AELangProvider {
         // 設定
         addConfig("enchantment_settings", "Enchantment Settings");
         addConfigWithDesc(
+                ConfigID.EXTRA_TAG,
+                "Applied Tags",
+                "Manages the tags applied to attacks. If any invalid values are present, the default values will be used.");
+        addConfigWithDesc(
                 ConfigID.IGNORE_BYPASSES_INVULNERABILITY_TAG,
                 "Ignore Invulnerability-Piercing Damage",
                 "If disabled, Last Stand will not activate against damage with the BYPASSES_INVULNERABILITY tag (such as /kill or the void).");
@@ -123,6 +128,14 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Level Cost Rate",
                 "At level n, the consumed experience levels are calculated as: (Current Experience Levels) * (Cost Rate) / √n + (Base Cost) / n");
         addConfigWithDesc(
+                ConfigID.MAX_COST,
+                "Maximum Cost",
+                "Regardless of the two settings above, no more experience than this amount will be consumed.");
+        addConfigWithDesc(
+                ConfigID.RECOVER_HEALTH,
+                "Health After Revival",
+                "The player's health after being revived by the effect. If set to 0, the player will die again on the next tick.");
+        addConfigWithDesc(
                 ConfigID.INCLUDE_OVERLOAD_IN_TOTAL,
                 "Include Overload in total",
                 "Whether to include bonuses from overloading applied to other enchantments in the total level. Regardless of this setting, Overload levels are always applied to the level of Essence of Enchant itself.");
@@ -131,18 +144,41 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Modifier Bonus per Level (%)",
                 "Example: If set to 1, the modifier is increased by +20% at a total level of 20.");
         addConfigWithDesc(
+                ConfigID.MAX_TOTAL_LEVEL,
+                "Maximum Total Level",
+                "Caps the total enchantment level used to prevent unlimited stat scaling from stacking excessive enchantments.");
+        addConfigWithDesc(
+                ConfigID.SAVE_BLOCK_ENTITY,
+                "Preserve Block Entity",
+                "Converts blocks into items while preserving their block entity data, such as the contents of a chest.");
+        addConfigWithDesc(
+                ConfigID.SAVE_BLOCK_STATE,
+                "Preserve Block State",
+                "Converts blocks into items while preserving their block state, such as orientation.");
+        addConfigWithDesc(
+                ConfigID.DISABLED_TAG,
+                "Removed Tags",
+                "Manages the tags removed from attacks. If any invalid values are present, the default values will be used.");
+        addConfigWithDesc(
+                ConfigID.HIDE_NAME,
+                "Hide Item Name",
+                "Disabling this may improve compatibility with certain tooltip decoration mods.");
+        addConfigWithDesc(
                 ConfigID.ANGLE_PER_LEVEL,
                 "Angle Per Level",
                 "At level n, the allowable difference between the orientation toward an entity and the viewing angle is expressed by the following formula: n * (angle) * π / 180");
         addConfigWithDesc(
-                ConfigID.UNBREAKABLE_BLOCK_HARDNESS,
-                "Unbreakable Block Hardness",
-                "The hardness value applied when mining unbreakable blocks, such as bedrock.");
-        addConfigWithDesc(
                 ConfigID.EFFECTIVE_FOR_ALL_BLOCKS,
                 "Effective for All Blocks",
                 "Whether the mining speed bonus is applied to blocks that do not have a preferred tool, such as glass.");
-
+        addConfigWithDesc(
+                ConfigID.CAN_BREAK_UNBREAKABLE,
+                "Break Unbreakable Blocks",
+                "At level 4, allows breaking normally unbreakable blocks such as Bedrock. Behavior is not guaranteed when used by non-player entities.");
+        addConfigWithDesc(
+                ConfigID.UNBREAKABLE_BLOCK_HARDNESS,
+                "Unbreakable Block Hardness",
+                "The hardness value applied when mining unbreakable blocks, such as bedrock.");
         addConfigWithDesc("enchantment_toggling", "Enchantment Toggling", "REQUIRE SERVER RESTART!");
     }
 }

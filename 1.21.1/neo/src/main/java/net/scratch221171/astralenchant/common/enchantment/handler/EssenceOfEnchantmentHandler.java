@@ -36,6 +36,8 @@ public class EssenceOfEnchantmentHandler {
                     totalLevel += entry.getIntValue();
                 }
             }
+            totalLevel = Math.min(
+                    ServerConfig.EnchantmentSettings.EssenceOfEnchantment.MAX_TOTAL_LEVEL.getAsInt(), totalLevel);
 
             var newId = ModUtils.loc("eoe_bonus_" + id.getPath() + "_" + slotName);
             var sentiment = ((IAttributeSentimentExtension) attribute.value()).astralenchant$getSentiment();

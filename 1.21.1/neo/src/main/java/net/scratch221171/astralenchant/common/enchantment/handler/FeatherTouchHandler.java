@@ -25,6 +25,7 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
+import net.scratch221171.astralenchant.config.ServerConfig;
 
 public class FeatherTouchHandler {
 
@@ -45,7 +46,8 @@ public class FeatherTouchHandler {
 
             ItemStack stack;
             BlockEntity be = level.getBlockEntity(pos);
-            if (be != null) {
+            boolean saveBlockEntity = ServerConfig.EnchantmentSettings.FeatherTouch.SAVE_BLOCK_ENTITY.getAsBoolean();
+            if (be != null && saveBlockEntity) {
                 var hitResult = new BlockHitResult(Vec3.atCenterOf(pos), Direction.UP, pos, false);
                 stack = state.getCloneItemStack(hitResult, level, pos, player);
                 be.saveToItem(stack, level.registryAccess());
@@ -65,7 +67,8 @@ public class FeatherTouchHandler {
                 stack = new ItemStack(state.getBlock());
             }
 
-            if (player.isShiftKeyDown()) {
+            boolean saveBlockState = ServerConfig.EnchantmentSettings.FeatherTouch.SAVE_BLOCK_STATE.getAsBoolean();
+            if (player.isShiftKeyDown() && saveBlockState) {
                 var properties = BlockItemStateProperties.EMPTY;
                 for (var property : state.getProperties()) {
                     properties = properties.with(property, state);
