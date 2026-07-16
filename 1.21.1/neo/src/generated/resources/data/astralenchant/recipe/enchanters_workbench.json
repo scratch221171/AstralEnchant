@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "c:gems/luminite"
+    },
+    "2": {
+      "item": "minecraft:purple_carpet"
+    },
+    "3": {
+      "tag": "c:obsidians"
+    },
+    "4": {
+      "item": "minecraft:enchanting_table"
+    },
+    "5": {
+      "tag": "c:bookshelves"
+    }
+  },
+  "pattern": [
+    "121",
+    "343",
+    "555"
+  ],
+  "result": {
+    "count": 1,
+    "id": "astralenchant:enchanters_workbench"
+  }
+}

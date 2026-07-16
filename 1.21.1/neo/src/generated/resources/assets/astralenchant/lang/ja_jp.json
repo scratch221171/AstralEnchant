@@ -32,7 +32,7 @@
   "block.astralenchant.arcanium_block": "アルカニウムブロック",
   "block.astralenchant.enchanters_workbench": "エンチャンターのワークベンチ",
   "container.astralenchant.enchanters_workbench": "エンチャントの切り替え",
-  "container.enchanters_workbench.cost": "変更コスト：%1$s",
+  "container.enchanters_workbench.cost": "エンチャント変更コスト：%1$s",
   "enchantment.astralenchant.affinity": "親和",
   "enchantment.astralenchant.affinity.desc": "すべての制限を無視して、あらゆるエンチャントを付与できるようにします。",
   "enchantment.astralenchant.almighty": "オールマイティ",

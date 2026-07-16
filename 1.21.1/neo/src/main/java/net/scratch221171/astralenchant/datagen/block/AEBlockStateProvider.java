@@ -6,6 +6,7 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 
 public class AEBlockStateProvider extends BlockStateProvider {
@@ -16,7 +17,13 @@ public class AEBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         addFullBlock(AEBlocks.ARCANIUM_BLOCK);
-        addFullBlock(AEBlocks.ENCHANTERS_WORKBENCH);
+        simpleBlockWithItem(
+                AEBlocks.ENCHANTERS_WORKBENCH.get(),
+                models().cubeBottomTop(
+                                ID.ENCHANTERS_WORKBENCH,
+                                modLoc("block/enchanters_workbench_side"),
+                                mcLoc("block/oak_planks"),
+                                modLoc("block/enchanters_workbench_top")));
     }
 
     private void addFullBlock(DeferredBlock<? extends Block> block) {

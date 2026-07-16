@@ -25,6 +25,7 @@ import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEDataComponents;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.common.registry.AEMenuTypes;
+import net.scratch221171.astralenchant.common.tag.AETags;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import org.jspecify.annotations.NonNull;
 
@@ -84,7 +85,7 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
         this.addSlot(new Slot(inputSlots, FUEL_SLOT, FUEL_X, ROW_Y) {
             @Override
             public boolean mayPlace(@NonNull ItemStack stack) {
-                return stack.is(AEItems.LUMINITE.get());
+                return stack.is(AETags.Items.GEMS_LUMINITE);
             }
         });
         this.addSlot(new Slot(inputSlots, INPUT_SLOT, INPUT_X, ROW_Y));
@@ -299,7 +300,7 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
         }
 
         this.access.execute(
-                (level, pos) -> level.playSound(null, pos, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1.0F, 1.0F));
+                (level, pos) -> level.playSound(null, pos, SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1.0F, 1.0F));
 
         this.inputSlots.setItem(INPUT_SLOT, ItemStack.EMPTY);
         this.pendingToggles.clear();
@@ -371,7 +372,7 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
                 if (!this.moveItemStackTo(stackInSlot, INV_SLOT_START, USE_ROW_SLOT_END, true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (stackInSlot.is(AEItems.LUMINITE.get())) {
+            } else if (stackInSlot.is(AETags.Items.GEMS_LUMINITE)) {
                 if (!this.moveItemStackTo(stackInSlot, FUEL_SLOT, FUEL_SLOT + 1, false)
                         && !this.moveItemStackTo(stackInSlot, INPUT_SLOT, INPUT_SLOT + 1, false)) {
                     return ItemStack.EMPTY;

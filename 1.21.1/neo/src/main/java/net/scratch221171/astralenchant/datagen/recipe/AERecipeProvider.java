@@ -225,6 +225,18 @@ public class AERecipeProvider extends RecipeProvider {
                     .define('1', AETags.Items.INGOTS_ARCANIUM)
                     .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
                     .save(output);
+
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEBlocks.ENCHANTERS_WORKBENCH)
+                    .pattern("121")
+                    .pattern("343")
+                    .pattern("555")
+                    .define('1', AETags.Items.GEMS_LUMINITE)
+                    .define('2', Items.PURPLE_CARPET)
+                    .define('3', Tags.Items.OBSIDIANS)
+                    .define('4', Items.ENCHANTING_TABLE)
+                    .define('5', Tags.Items.BOOKSHELVES)
+                    .unlockedBy(getHasName(AEItems.LUMINITE), has(AEItems.LUMINITE))
+                    .save(output);
         }
 
         // エンチャント本

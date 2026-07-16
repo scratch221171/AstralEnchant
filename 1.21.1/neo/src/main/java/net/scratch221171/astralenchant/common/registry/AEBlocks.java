@@ -24,13 +24,9 @@ public class AEBlocks {
                     .strength(5.0F, 6.0F)
                     .sound(SoundType.METAL));
 
-    // 仕様: 作業台(Blocks.CRAFTING_TABLE)と全く同じプロパティ(硬度・爆破耐性・適正ツール等)を踏襲する。
-    // 【要検証】BlockBehaviour.Properties.ofFullCopy(Block) が使用中のNeoForge/MC 1.21.1バージョンに
-    // 実在するか確認してください。存在しない場合は Properties.of().strength(2.5F).sound(SoundType.WOOD) 等を
-    // 手動で作業台の値に合わせて設定してください。
     public static final DeferredBlock<EnchantersWorkbenchBlock> ENCHANTERS_WORKBENCH = registerBlock(
             ID.ENCHANTERS_WORKBENCH,
-            () -> new EnchantersWorkbenchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
+            () -> new EnchantersWorkbenchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ENCHANTING_TABLE)));
 
     private static DeferredBlock<Block> registerSimpleBlock(String name, BlockBehaviour.Properties props) {
         var holder = REGISTER.registerSimpleBlock(name, props);

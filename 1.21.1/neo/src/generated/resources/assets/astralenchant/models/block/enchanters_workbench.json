@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "astralenchant:block/enchanters_workbench"
+    "bottom": "minecraft:block/oak_planks",
+    "side": "astralenchant:block/enchanters_workbench_side",
+    "top": "astralenchant:block/enchanters_workbench_top"
   }
 }
