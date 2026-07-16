@@ -1,6 +1,7 @@
 package net.scratch221171.astralenchant.datagen.lang;
 
 import net.minecraft.data.PackOutput;
+import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
@@ -22,7 +23,7 @@ public class AEJapaneseLangProvider extends AELangProvider {
         addItem(AEItems.ARCANE_QUARTZ_DUST, "アーケインクォーツダスト");
         addItemWithDesc(AEItems.ARCANE_QUARTZ_TINY_DUST, "小さいアーケインクォーツダスト", "金床を落としてアーケインクォーツを粉砕することで得られます。");
         addItemWithDesc(AEItems.LAVAPROOF_ARCANE_QUARTZ, "耐熱処理済みアーケインクォーツ", "うわぁ！ベトベトだぁ！");
-        addItem(AEItems.LUMINITE, "ルミナイト");
+        addItemWithDesc(AEItems.LUMINITE, "ルミナイト", "エンチャンターのワークベンチの動力源として使えます。");
         addItem(AEItems.ARCANIUM_INGOT, "アルカニウムインゴット");
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "芽生えたアルカニウムインゴット");
         addItem(AEItems.ENCHANTMENT_VESSEL, "エンチャントの依代");
@@ -35,6 +36,11 @@ public class AEJapaneseLangProvider extends AELangProvider {
 
         // ブロック
         addBlock(AEBlocks.ARCANIUM_BLOCK, "アルカニウムブロック");
+        addBlock(AEBlocks.ENCHANTERS_WORKBENCH, "エンチャンターのワークベンチ");
+        add("container." + Constants.MODID + ".enchanters_workbench", "エンチャントの切り替え");
+        add("gui.astralenchant.enchanters_workbench.locked_curse", "呪いは切り替えられません！");
+        add("gui.astralenchant.enchanters_workbench.locked_conflict", "他のエンチャントと競合しているため有効化できません！");
+        add("container.enchanters_workbench.cost", "エンチャント変更コスト：%1$s");
 
         // エンチャント
         addEnchantmentWithDesc(AEEnchantments.NULLIFICATION, "無効化", "様々なダメージ軽減効果を無視し、攻撃が真のダメージを与えるようにします。");

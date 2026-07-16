@@ -44,8 +44,11 @@ public class AEItems {
             "item.astralenchant.lavaproof_arcane_quartz.desc",
             null);
 
-    public static final DeferredItem<AEItem> LUMINITE =
-            registerAEItem(ID.LUMINITE, new Item.Properties().fireResistant());
+    public static final DeferredItem<AEItem> LUMINITE = registerAEItem(
+            ID.LUMINITE,
+            new Item.Properties().fireResistant(),
+            "item.astralenchant.luminite.desc",
+            Style.EMPTY.withColor(ChatFormatting.GRAY));
 
     public static final DeferredItem<AEItem> ARCANIUM_INGOT = registerAEItem(ID.ARCANIUM_INGOT);
 

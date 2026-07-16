@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "astralenchant:block/enchanters_workbench"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 package net.scratch221171.astralenchant.datagen.lang;
 
 import net.minecraft.data.PackOutput;
+import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
@@ -28,7 +29,7 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Arcane Quartz Tiny Dust",
                 "Obtained by crushing Arcane Quartz using a falling anvil.");
         addItemWithDesc(AEItems.LAVAPROOF_ARCANE_QUARTZ, "Lavaproof Arcane Quartz", "Whoa! It's all sticky!");
-        addItem(AEItems.LUMINITE, "Luminite");
+        addItemWithDesc(AEItems.LUMINITE, "Luminite", "Can be used as fuel for the Enchanter's Workbench.");
         addItem(AEItems.ARCANIUM_INGOT, "Arcanium Ingot");
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "Budding Arcanium Ingot");
         addItem(AEItems.ENCHANTMENT_VESSEL, "Enchantment Vessel");
@@ -53,6 +54,13 @@ public class AEEnglishLangProvider extends AELangProvider {
 
         // ブロック
         addBlock(AEBlocks.ARCANIUM_BLOCK, "Arcanium Block");
+        addBlock(AEBlocks.ENCHANTERS_WORKBENCH, "Enchanter's Workbench");
+        add("container." + Constants.MODID + ".enchanters_workbench", "Switch Enchantments");
+        add("gui.astralenchant.enchanters_workbench.locked_curse", "This curse can't be toggled!");
+        add(
+                "gui.astralenchant.enchanters_workbench.locked_conflict",
+                "Can't be enabled because it conflicts with another enchantment!");
+        add("container.enchanters_workbench.cost", "Switching Cost: %1$s");
 
         // エンチャント
         addEnchantmentWithDesc(

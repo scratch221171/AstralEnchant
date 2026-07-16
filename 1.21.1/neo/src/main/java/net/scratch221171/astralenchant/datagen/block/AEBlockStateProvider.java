@@ -16,9 +16,10 @@ public class AEBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         addFullBlock(AEBlocks.ARCANIUM_BLOCK);
+        addFullBlock(AEBlocks.ENCHANTERS_WORKBENCH);
     }
 
-    private void addFullBlock(DeferredBlock<Block> block) {
+    private void addFullBlock(DeferredBlock<? extends Block> block) {
         simpleBlockWithItem(block.get(), cubeAll(block.get()));
     }
 }

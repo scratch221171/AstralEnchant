@@ -18,6 +18,10 @@ public final class ID {
     public static final String ARCANIUM_LEGGINGS = "arcanium_leggings";
     public static final String ARCANIUM_BOOTS = "arcanium_boots";
 
+    // Blocks
+    public static final String ARCANIUM_BLOCK = "arcanium_block";
+    public static final String ENCHANTERS_WORKBENCH = "enchanters_workbench";
+
     // Enchantments
     public static final String NULLIFICATION = "nullification";
     public static final String LAST_STAND = "last_stand";

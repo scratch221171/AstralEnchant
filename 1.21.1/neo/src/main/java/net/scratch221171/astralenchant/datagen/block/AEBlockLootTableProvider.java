@@ -17,6 +17,7 @@ public class AEBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(AEBlocks.ARCANIUM_BLOCK.get());
+        dropSelf(AEBlocks.ENCHANTERS_WORKBENCH.get());
     }
 
     @Override
