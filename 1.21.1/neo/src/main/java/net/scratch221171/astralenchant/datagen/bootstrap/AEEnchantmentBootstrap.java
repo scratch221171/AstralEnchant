@@ -37,9 +37,9 @@ public class AEEnchantmentBootstrap {
         /*consumer.accept(AEEnchantments.MYSTIC_REMNANTS, new ConfigCondition(ConfigID.MYSTIC_REMNANTS));*/
         consumer.accept(AEEnchantments.CURSE_OF_IGNORANCE, new ConfigCondition(ConfigID.CURSE_OF_IGNORANCE));
         consumer.accept(AEEnchantments.CURSE_OF_ENCHANTMENT, new ConfigCondition(ConfigID.CURSE_OF_ENCHANTMENT));
-        /*consumer.accept(AEEnchantments.DISTORTION, new ConfigCondition(ConfigID.DISTORTION));
-        consumer.accept(AEEnchantments.OVER_MENDING, new ConfigCondition(ConfigID.OVER_MENDING));
-        */
+        consumer.accept(AEEnchantments.DISTORTION, new ConfigCondition(ConfigID.DISTORTION));
+        /* consumer.accept(AEEnchantments.OVER_MENDING, new ConfigCondition(ConfigID.OVER_MENDING));
+         */
         consumer.accept(AEEnchantments.ALMIGHTY, new ConfigCondition(ConfigID.ALMIGHTY));
         /*
         // Compat
@@ -277,20 +277,20 @@ public class AEEnchantmentBootstrap {
                         Enchantment.constantCost(50),
                         8,
                         EquipmentSlotGroup.ANY)));
-        /*
-            register(
-                    context,
-                    AEEnchantments.DISTORTION,
-                    Enchantment.enchantment(Enchantment.definition(
-                            anyHolderSet,
-                            1,
-                            3,
-                            Enchantment.constantCost(Integer.MAX_VALUE),
-                            Enchantment.constantCost(Integer.MAX_VALUE),
-                            16,
-                            EquipmentSlotGroup.HAND)));
 
-            register(
+        register(
+                context,
+                AEEnchantments.DISTORTION,
+                Enchantment.enchantment(Enchantment.definition(
+                        anyHolderSet,
+                        1,
+                        3,
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        16,
+                        EquipmentSlotGroup.HAND)));
+
+        /* register(
                     context,
                     AEEnchantments.OVER_MENDING,
                     Enchantment.enchantment(Enchantment.definition(

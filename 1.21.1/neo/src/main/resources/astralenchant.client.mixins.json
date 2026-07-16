@@ -4,6 +4,7 @@
   "package": "net.scratch221171.astralenchant.mixin.client",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1

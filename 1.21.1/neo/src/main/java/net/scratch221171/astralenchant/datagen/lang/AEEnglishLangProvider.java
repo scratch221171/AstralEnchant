@@ -92,6 +92,7 @@ public class AEEnglishLangProvider extends AELangProvider {
                 AEEnchantments.CURSE_OF_ENCHANTMENT,
                 "Curse of Enchantment",
                 "Locks the item's enchantments, prevents them from being changed.");
+        addEnchantmentWithDesc(AEEnchantments.DISTORTION, "Distortion", "Deflects missed attacks to nearby enemies.");
         addEnchantmentWithDesc(
                 AEEnchantments.ALMIGHTY,
                 "Almighty",
@@ -129,6 +130,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 ConfigID.MULTIPLIER,
                 "Modifier Bonus per Level (%)",
                 "Example: If set to 1, the modifier is increased by +20% at a total level of 20.");
+        addConfigWithDesc(
+                ConfigID.ANGLE_PER_LEVEL,
+                "Angle Per Level",
+                "At level n, the allowable difference between the orientation toward an entity and the viewing angle is expressed by the following formula: n * (angle) * π / 180");
         addConfigWithDesc(
                 ConfigID.UNBREAKABLE_BLOCK_HARDNESS,
                 "Unbreakable Block Hardness",

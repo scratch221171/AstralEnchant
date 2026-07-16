@@ -49,6 +49,18 @@ public class ServerConfig {
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }
 
+        public static final ConfigEntries DISTORTION =
+                BUILDER.comment("Distortion")
+                        .category("distortion", Distortion.ENTRIES);
+
+                public static final class Distortion {
+            private  static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
+
+            public static final ConfigEntry.DoubleEntry ANGLE_PER_LEVEL = BUILDER.defineInRange(ConfigID.ANGLE_PER_LEVEL, 7.5, 0.0, Double.MAX_VALUE);
+
+            public static final ConfigEntries ENTRIES = BUILDER.build();
+        }
+
         public static final ConfigEntries ALMIGHTY =
                 BUILDER.comment("Almighty")
                         .category("almighty", Almighty.ENTRIES);

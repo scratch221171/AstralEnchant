@@ -23,7 +23,6 @@ import net.scratch221171.astralenchant.common.component.DisabledEnchantments;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEDataComponents;
-import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.common.registry.AEMenuTypes;
 import net.scratch221171.astralenchant.common.tag.AETags;
 import net.scratch221171.astralenchant.common.util.AEUtil;
@@ -299,8 +298,8 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
             fuel.shrink(cost);
         }
 
-        this.access.execute(
-                (level, pos) -> level.playSound(null, pos, SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1.0F, 1.0F));
+        this.access.execute((level, pos) ->
+                level.playSound(null, pos, SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1.0F, 1.0F));
 
         this.inputSlots.setItem(INPUT_SLOT, ItemStack.EMPTY);
         this.pendingToggles.clear();

@@ -415,6 +415,22 @@ public class AERecipeProvider extends RecipeProvider {
                     });
 
             enchantedBookRecipe(
+                    output.withConditions(new ConfigCondition(ConfigID.DISTORTION)),
+                    holderLookup,
+                    AEEnchantments.DISTORTION,
+                    builder -> {
+                        var sweeping = holderLookup.holderOrThrow(Enchantments.SWEEPING_EDGE);
+                        builder.unlockedBy(getHasName(AEItems.ENCHANTMENT_VESSEL), has(AEItems.ENCHANTMENT_VESSEL))
+                                .pattern("121")
+                                .pattern("232")
+                                .pattern("141")
+                                .define('1', Tags.Items.TOOLS_FISHING_ROD)
+                                .define('2', enchantedBook(sweeping, 3))
+                                .define('3', Tags.Items.ENDER_PEARLS)
+                                .define('4', AEItems.RESONANT_VESSEL);
+                    });
+
+            enchantedBookRecipe(
                     output.withConditions(new ConfigCondition(ConfigID.ALMIGHTY)),
                     holderLookup,
                     AEEnchantments.ALMIGHTY,

@@ -55,11 +55,11 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 "フェザータッチ",
                 "通常採取できないものも含め、ブロックをアイテム化します。ブロックエンティティのデータも保存し、スニーク時はブロックステートも同様に保存します。");
         addEnchantmentWithDesc(AEEnchantments.AFFINITY, "親和", "すべての制限を無視して、あらゆるエンチャントを付与できるようにします。");
-
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "オーバーロード", "既存のエンチャントのレベルをオーバーロードの値だけ増加させます。");
         addEnchantmentWithDesc(AEEnchantments.REACTIVE_ARMOR, "反応装甲", "一部のダメージタイプのアーマーおよびエンチャントを貫通する効果を無効化します。");
         addEnchantmentWithDesc(AEEnchantments.CURSE_OF_IGNORANCE, "無知の呪い", "ツールチップを呪われた文字に置き換えます。");
         addEnchantmentWithDesc(AEEnchantments.CURSE_OF_ENCHANTMENT, "エンチャントの呪い", "アイテムのエンチャントを固定し、変更できなくします。");
+        addEnchantmentWithDesc(AEEnchantments.DISTORTION, "歪曲", "外れた攻撃の判定を近くの敵へが歪めます。");
         addEnchantmentWithDesc(AEEnchantments.ALMIGHTY, "オールマイティ", "ツールを全てのブロックに対して適正にします。破壊不能なブロックを採掘可能にします。");
 
         // attribute
@@ -84,6 +84,10 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 "オーバーロードレベルを含める",
                 "他のエンチャントに適用されるオーバーロードによるボーナスを総レベルに含めるかどうか。この設定に関係なく、エンチャントの極意自体にはオーバーロードは適用されます。");
         addConfigWithDesc(ConfigID.MULTIPLIER, "レベルごとのモディファイア倍率（％）", "例：1に設定すると、合計20レベルのときモディファイア倍率が+20%になります。");
+        addConfigWithDesc(
+                ConfigID.ANGLE_PER_LEVEL,
+                "レベルあたりの角度",
+                "レベルnのとき、エンティティへの向きと視線の角度差の許容量は以下の計算式で表されます：n * (角度) * π / 180");
         addConfigWithDesc(
                 ConfigID.EFFECTIVE_FOR_ALL_BLOCKS, "全てのブロックに対して適正", "ガラスなど、適正ツールが存在しないブロックにも採掘速度ボーナスが適用されるかどうか。");
         addConfigWithDesc(ConfigID.UNBREAKABLE_BLOCK_HARDNESS, "破壊不能なブロックの硬さ", "岩盤など破壊不能なブロックを採掘する際に適用される硬さ。");

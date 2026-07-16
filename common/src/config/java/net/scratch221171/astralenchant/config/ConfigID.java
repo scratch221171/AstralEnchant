@@ -10,6 +10,8 @@ public class ConfigID {
     // Essence of Enchantment
     public static final String INCLUDE_OVERLOAD_IN_TOTAL = "include_overload_in_total";
     public static final String MULTIPLIER = "multiplier";
+    // Distortion
+    public static final String ANGLE_PER_LEVEL = "angle_per_level";
     // Almighty
     public static final String EFFECTIVE_FOR_ALL_BLOCKS = "effective_for_all_blocks";
     public static final String UNBREAKABLE_BLOCK_HARDNESS = "unbreakable_block_hardness";
@@ -32,7 +34,6 @@ public class ConfigID {
     public static final String MYSTIC_REMNANTS = "mystic_remnants";
     public static final String CURSE_OF_IGNORANCE = "curse_of_ignorance";
     public static final String CURSE_OF_ENCHANTMENT = "curse_of_enchantment";
-    //        public static final String CURSE_OF_EFFECT = "curse_of_effect";
     public static final String DISTORTION = "distortion";
     public static final String OVER_MENDING = "over_mending";
     public static final String ALMIGHTY = "almighty";

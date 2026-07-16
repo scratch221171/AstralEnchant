@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "distortion"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "c:tools/fishing_rod"
+    },
+    "2": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:sweeping_edge": 3
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "3": {
+      "tag": "c:ender_pearls"
+    },
+    "4": {
+      "item": "astralenchant:resonant_vessel"
+    }
+  },
+  "pattern": [
+    "121",
+    "232",
+    "141"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:distortion": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}
