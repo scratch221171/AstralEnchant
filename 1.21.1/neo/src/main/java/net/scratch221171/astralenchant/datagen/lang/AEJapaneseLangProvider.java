@@ -2,6 +2,7 @@ package net.scratch221171.astralenchant.datagen.lang;
 
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
@@ -73,6 +74,13 @@ public class AEJapaneseLangProvider extends AELangProvider {
         // クリエタブ
         add("itemGroup.astralenchant.main", "Astral Enchant");
         add("itemGroup.astralenchant.enchantment", "Astral Enchant - エンチャント");
+
+        // 進捗
+        addAdvancementWithDesc(ID.ROOT, "Astral Enchant", "あなたも今日からエンチャンター！");
+        addAdvancementWithDesc(ID.ENCHANTMENT_VESSEL, "奇妙な魔導書", "エンチャントの依代を手に入れる。素晴らしいエンチャントを作ろう！");
+        addAdvancementWithDesc(ID.BUDDING_ARCANIUM_INGOT, "成長する結晶", "芽生えたアメジストブロックを回収し、アルカニウムインゴットに埋め込む。");
+        addAdvancementWithDesc(ID.RESONANT_VESSEL, "神秘的な魔導書", "残響の依代を手に入れる。より素晴らしいエンチャントを作ろう！");
+        addAdvancementWithDesc(ID.ENCHANTERS_WORKBENCH, "こいつを待ってたぜ", "エンチャンターのワークベンチを作る。自由に切り替えよう！");
 
         // 設定
         addConfig("enchantment_settings", "エンチャントの設定");

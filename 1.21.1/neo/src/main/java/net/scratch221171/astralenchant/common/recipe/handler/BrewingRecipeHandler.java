@@ -21,12 +21,15 @@ public class BrewingRecipeHandler {
         builder.addRecipe(processingIngredient(0f), potion(Potions.LONG_REGENERATION), processingStack(0.25f));
         builder.addRecipe(processingIngredient(0.25f), potion(Potions.STRONG_HEALING), processingStack(0.5f));
         builder.addRecipe(processingIngredient(0.5f), potion(Potions.LONG_FIRE_RESISTANCE), processingStack(0.75f));
-        builder.addRecipe(processingIngredient(0.75f), potion(Potions.LONG_STRENGTH), new ItemStack(AEItems.GROWN_ARCANE_QUARTZ.get()));
-
+        builder.addRecipe(
+                processingIngredient(0.75f),
+                potion(Potions.LONG_STRENGTH),
+                new ItemStack(AEItems.GROWN_ARCANE_QUARTZ.get()));
     }
 
     private static Ingredient potion(Holder<Potion> potion) {
-        return DataComponentIngredient.of(false, DataComponents.POTION_CONTENTS, new PotionContents(potion), Items.POTION);
+        return DataComponentIngredient.of(
+                false, DataComponents.POTION_CONTENTS, new PotionContents(potion), Items.POTION);
     }
 
     private static Ingredient processingIngredient(float progress) {

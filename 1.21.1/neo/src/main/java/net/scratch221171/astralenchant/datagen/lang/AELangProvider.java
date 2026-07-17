@@ -31,6 +31,11 @@ public abstract class AELangProvider extends LanguageProvider {
         add(holder.unwrapKey().orElseThrow().location().toLanguageKey("attribute", "desc"), desc);
     }
 
+    protected void addAdvancementWithDesc(String id, String name, String desc) {
+        add("advancements." + Constants.MODID + "." + id + ".title", name);
+        add("advancements." + Constants.MODID + "." + id + ".description", desc);
+    }
+
     protected void addConfig(String configID, String name) {
         add(Constants.MODID + ".configuration." + configID, name);
     }

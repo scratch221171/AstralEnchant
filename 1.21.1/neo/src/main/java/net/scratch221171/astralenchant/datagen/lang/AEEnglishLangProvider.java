@@ -2,6 +2,7 @@ package net.scratch221171.astralenchant.datagen.lang;
 
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
@@ -111,6 +112,25 @@ public class AEEnglishLangProvider extends AELangProvider {
         // クリエタブ
         add("itemGroup.astralenchant.main", "Astral Enchant");
         add("itemGroup.astralenchant.enchantment", "Astral Enchant - Enchantment");
+
+        // 進捗
+        addAdvancementWithDesc(ID.ROOT, "Astral Enchant", "You're an enchanter starting today!");
+        addAdvancementWithDesc(
+                ID.ENCHANTMENT_VESSEL,
+                "A Curious Tome",
+                "Obtain an Enchantment Vessel. Let's craft some magnificent enchantments!");
+        addAdvancementWithDesc(
+                ID.BUDDING_ARCANIUM_INGOT,
+                "Growing Crystals",
+                "Harvest a Budding Amethyst block and embed it into an Arcanium Ingot.");
+        addAdvancementWithDesc(
+                ID.RESONANT_VESSEL,
+                "Mystical Grimoire",
+                "Obtain a Resonant Vessel. Let's craft even greater enchantments!");
+        addAdvancementWithDesc(
+                ID.ENCHANTERS_WORKBENCH,
+                "Just What I Needed!",
+                "Craft an Enchanter's Workbench. Swap your enchantments at will!");
 
         // 設定
         addConfig("enchantment_settings", "Enchantment Settings");

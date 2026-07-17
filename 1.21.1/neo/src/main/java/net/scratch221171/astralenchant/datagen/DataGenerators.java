@@ -10,6 +10,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.datagen.advancement.AEAdvancementProvider;
 import net.scratch221171.astralenchant.datagen.block.AEBlockLootTableProvider;
 import net.scratch221171.astralenchant.datagen.block.AEBlockStateProvider;
 import net.scratch221171.astralenchant.datagen.bootstrap.AEEnchantmentBootstrap;
@@ -46,6 +47,8 @@ public final class DataGenerators {
         event.createProvider(AERecipeProvider::new);
         event.createProvider(AECrushingRecipeGen::new);
         event.createProvider(AEMixingRecipeGen::new);
+
+        event.createProvider((output, future) -> new AEAdvancementProvider(output, future, fileHelper));
 
         event.createProvider(AEEnchantmentTagsProvider::new);
         event.createBlockAndItemTags(AEBlockTagsProvider::new, AEItemTagsProvider::new);

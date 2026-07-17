@@ -22,14 +22,18 @@ public class AECreativeTabs {
             REGISTER.register("astralenchant_main", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.astralenchant.main"))
                     .icon(() -> new ItemStack(AEItems.ARCANE_QUARTZ.get()))
-                    .displayItems((parameters, output) ->
-                    {
-                        AEItems.REGISTER.getEntries().forEach(e -> output.accept(e.get()));
-                        for (float progress = 0.0f; progress < 1.0f; progress += 0.25f) {
-                            ItemStack stack = new  ItemStack(AEItems.BUDDING_ARCANIUM_INGOT.get());
-                            stack.set(AEDataComponents.PROCESSING_PROGRESS, progress);
-                            output.accept(stack);
-                        }
+                    .displayItems((parameters, output) -> {
+                        AEItems.REGISTER.getEntries().forEach(e -> {
+                            if (e == AEItems.BUDDING_ARCANIUM_INGOT) {
+                                for (float progress = 0.0f; progress < 1.0f; progress += 0.25f) {
+                                    ItemStack stack = new ItemStack(AEItems.BUDDING_ARCANIUM_INGOT.get());
+                                    stack.set(AEDataComponents.PROCESSING_PROGRESS, progress);
+                                    output.accept(stack);
+                                }
+                            } else {
+                                output.accept(e.get());
+                            }
+                        });
                     })
                     .build());
 

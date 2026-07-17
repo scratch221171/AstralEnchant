@@ -412,7 +412,7 @@ public class AERecipeProvider extends RecipeProvider {
                                 .define('1', Tags.Items.TOOLS_FISHING_ROD)
                                 .define('2', enchantedBook(sweeping, 3))
                                 .define('3', Tags.Items.ENDER_PEARLS)
-                                .define('4', AEItems.RESONANT_VESSEL);
+                                .define('4', AEItems.ENCHANTMENT_VESSEL);
                     });
 
             enchantedBookRecipe(

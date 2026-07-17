@@ -1,0 +1,34 @@
+{
+  "parent": "astralenchant:budding_arcanium_ingot",
+  "criteria": {
+    "requirement": {
+      "conditions": {
+        "items": [
+          {
+            "items": "astralenchant:resonant_vessel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.astralenchant.resonant_vessel.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "astralenchant:resonant_vessel"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.astralenchant.resonant_vessel.title"
+    }
+  },
+  "requirements": [
+    [
+      "requirement"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
