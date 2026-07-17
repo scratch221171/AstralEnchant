@@ -105,6 +105,9 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Cooldown Duration",
                 "Multiplier applied to item use cooldown duration");
 
+        // データコンポーネント
+        add("astralenchant.item.disabled_enchantments", "disabled enchantment(s): %s");
+
         // クリエタブ
         add("itemGroup.astralenchant.main", "Astral Enchant");
         add("itemGroup.astralenchant.enchantment", "Astral Enchant - Enchantment");

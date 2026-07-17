@@ -21,6 +21,9 @@
     "423"
   ],
   "result": {
+    "components": {
+      "astralenchant:processing_progress": 0.0
+    },
     "count": 4,
     "id": "astralenchant:budding_arcanium_ingot"
   }

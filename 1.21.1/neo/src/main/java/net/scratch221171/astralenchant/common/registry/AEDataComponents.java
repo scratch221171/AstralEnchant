@@ -22,8 +22,10 @@ public class AEDataComponents {
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> OVER_MENDING =
             register("over_mending", builder -> builder.persistent(Codec.INT));
 
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Float>> PROCESSING_PROGRESS =
+            register("processing_progress", builder -> builder.persistent(Codec.floatRange(0.0f, 1.0f)));
+
     // エンチャンターの作業台で無効化されたエンチャント(ID+レベル)を保持する
-    // TODO: ツールチップに表示
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<DisabledEnchantments>>
             DISABLED_ENCHANTMENTS =
                     register("disabled_enchantments", builder -> builder.persistent(DisabledEnchantments.CODEC));

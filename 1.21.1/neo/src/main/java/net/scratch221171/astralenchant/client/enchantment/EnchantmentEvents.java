@@ -10,7 +10,7 @@ import net.scratch221171.astralenchant.client.enchantment.handler.EssenceOfEncha
 import net.scratch221171.astralenchant.client.enchantment.handler.OverloadClientHandler;
 
 @EventBusSubscriber(modid = Constants.MODID)
-public class ClientEventListener {
+public class EnchantmentEvents {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     private static void onItemTooltip(ItemTooltipEvent event) {

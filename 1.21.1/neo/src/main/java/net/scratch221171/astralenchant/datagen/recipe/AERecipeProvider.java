@@ -44,6 +44,7 @@ import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
+import net.scratch221171.astralenchant.common.registry.AEDataComponents;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.common.tag.AETags;
 import net.scratch221171.astralenchant.config.ConfigID;
@@ -78,24 +79,6 @@ public class AERecipeProvider extends RecipeProvider {
                             200)
                     .unlockedBy("has_enchanted_book", has(Items.ENCHANTED_BOOK))
                     .save(output, ModUtils.loc("enchantment_shard_blasting"));
-
-            SimpleCookingRecipeBuilder.smelting(
-                            Ingredient.of(AEItems.BUDDING_ARCANIUM_INGOT),
-                            RecipeCategory.MISC,
-                            AEItems.GROWN_ARCANE_QUARTZ.toStack(1),
-                            1,
-                            200 * 16)
-                    .unlockedBy(getHasName(AEItems.BUDDING_ARCANIUM_INGOT), has(AEItems.BUDDING_ARCANIUM_INGOT))
-                    .save(output, ModUtils.loc("grown_arcane_quartz_smelting"));
-
-            SimpleCookingRecipeBuilder.blasting(
-                            Ingredient.of(AEItems.BUDDING_ARCANIUM_INGOT),
-                            RecipeCategory.MISC,
-                            AEItems.GROWN_ARCANE_QUARTZ.toStack(1),
-                            1,
-                            200 * 16 / 2)
-                    .unlockedBy(getHasName(AEItems.BUDDING_ARCANIUM_INGOT), has(AEItems.BUDDING_ARCANIUM_INGOT))
-                    .save(output, ModUtils.loc("grown_arcane_quartz_blasting"));
         }
 
         // 素材
@@ -167,7 +150,9 @@ public class AERecipeProvider extends RecipeProvider {
                     .unlockedBy(getHasName(AEBlocks.ARCANIUM_BLOCK), has(AETags.Items.STORAGE_BLOCKS_ARCANIUM))
                     .save(output, ModUtils.loc("arcanium_ingot_from_block"));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(AEItems.BUDDING_ARCANIUM_INGOT.get(), 4))
+            var budding = new ItemStack(AEItems.BUDDING_ARCANIUM_INGOT.get(), 4);
+            budding.set(AEDataComponents.PROCESSING_PROGRESS, 0f);
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, budding)
                     .pattern("324")
                     .pattern("212")
                     .pattern("423")

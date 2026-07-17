@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.common.item.handler;
+package net.scratch221171.astralenchant.client.item.handler;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

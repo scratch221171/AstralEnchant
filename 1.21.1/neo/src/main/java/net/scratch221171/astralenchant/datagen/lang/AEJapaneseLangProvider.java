@@ -45,7 +45,7 @@ public class AEJapaneseLangProvider extends AELangProvider {
         add("container.enchanters_workbench.cost", "エンチャント変更コスト：%1$s");
 
         // エンチャント
-        addEnchantmentWithDesc(AEEnchantments.NULLIFICATION, "無効化", "様々なダメージ軽減効果を無視し、攻撃が真のダメージを与えるようにします。");
+        addEnchantmentWithDesc(AEEnchantments.NULLIFICATION, "帰無", "様々なダメージ軽減効果を無視し、攻撃が真のダメージを与えるようにします。");
         addEnchantmentWithDesc(AEEnchantments.LAST_STAND, "ラストスタンド", "経験値を消費して死を回避します。");
         addEnchantmentWithDesc(
                 AEEnchantments.ESSENCE_OF_ENCHANTMENT,
@@ -66,6 +66,9 @@ public class AEJapaneseLangProvider extends AELangProvider {
 
         // attribute
         addAttributeWithDesc(AEAttributes.COOLDOWN_DURATION, "クールダウン時間", "アイテム使用のクールダウン時間の倍率");
+
+        // データコンポーネント
+        add("astralenchant.item.disabled_enchantments", "無効化されたエンチャント: %s");
 
         // クリエタブ
         add("itemGroup.astralenchant.main", "Astral Enchant");

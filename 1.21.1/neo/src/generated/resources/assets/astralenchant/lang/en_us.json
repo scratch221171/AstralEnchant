@@ -48,6 +48,7 @@
   "astralenchant.configuration.save_block_state.tooltip": "Converts blocks into items while preserving their block state, such as orientation.",
   "astralenchant.configuration.unbreakable_block_hardness": "Unbreakable Block Hardness",
   "astralenchant.configuration.unbreakable_block_hardness.tooltip": "The hardness value applied when mining unbreakable blocks, such as bedrock.",
+  "astralenchant.item.disabled_enchantments": "disabled enchantment(s): %s",
   "attribute.astralenchant.cooldown_duration": "Cooldown Duration",
   "attribute.astralenchant.cooldown_duration.desc": "Multiplier applied to item use cooldown duration",
   "block.astralenchant.arcanium_block": "Arcanium Block",

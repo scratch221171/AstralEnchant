@@ -7,9 +7,9 @@ import org.jspecify.annotations.Nullable;
 
 public class AEItem extends Item implements IAEDescribable {
 
-    @Nullable private final String descKey;
+    @Nullable protected final String descKey;
 
-    @Nullable private final Style style;
+    @Nullable protected final Style style;
 
     /** REGISTER.registerSimpleItem相当(説明なし) */
     public AEItem(Properties properties) {
