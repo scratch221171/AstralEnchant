@@ -44,8 +44,10 @@ public abstract class ItemStackMixin implements IItemStackExtension {
     private BiConsumer<Holder<Attribute>, AttributeModifier> wrap(
             BiConsumer<Holder<Attribute>, AttributeModifier> original, EquipmentSlot slot) {
         return (attr, mod) -> {
+            ItemStack self = (ItemStack) (Object) this;
+            int totalLevel = EssenceOfEnchantmentHandler.getTotalEnchantmentLevel(self);
             EssenceOfEnchantmentHandler.addModifier(
-                    (ItemStack) (Object) this, attr, original, mod.id(), slot.getSerializedName());
+                    self, totalLevel, attr, original, mod.id(), slot.getSerializedName());
             original.accept(attr, mod);
         };
     }
@@ -58,8 +60,10 @@ public abstract class ItemStackMixin implements IItemStackExtension {
     private BiConsumer<Holder<Attribute>, AttributeModifier> wrap(
             BiConsumer<Holder<Attribute>, AttributeModifier> original, EquipmentSlotGroup slotGroup) {
         return (attr, mod) -> {
+            ItemStack self = (ItemStack) (Object) this;
+            int totalLevel = EssenceOfEnchantmentHandler.getTotalEnchantmentLevel(self);
             EssenceOfEnchantmentHandler.addModifier(
-                    (ItemStack) (Object) this, attr, original, mod.id(), slotGroup.getSerializedName());
+                    self, totalLevel, attr, original, mod.id(), slotGroup.getSerializedName());
             original.accept(attr, mod);
         };
     }

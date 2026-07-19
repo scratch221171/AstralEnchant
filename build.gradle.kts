@@ -166,6 +166,11 @@ subprojects {
 //            name = "ModMaven"
 //            url = uri("https://modmaven.dev/")
 //        }
+
+        maven {
+            name = "Illusive Soulworks maven"
+            url = uri("https://maven.theillusivec4.top/")
+        }
     }
 
     tasks.withType<JavaCompile>().configureEach {

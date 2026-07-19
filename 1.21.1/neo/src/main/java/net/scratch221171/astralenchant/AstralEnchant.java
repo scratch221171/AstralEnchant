@@ -2,10 +2,12 @@ package net.scratch221171.astralenchant;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.scratch221171.astralenchant.common.registry.*;
+import net.scratch221171.astralenchant.compat.curios.CuriosCompat;
 import net.scratch221171.astralenchant.config.ModConfigs;
 import net.scratch221171.astralenchant.mdk.config.PlatformConfigRegistrar;
 import net.scratch221171.astralenchant.mdk.config.VersionedConfigSpec;
@@ -25,6 +27,10 @@ public class AstralEnchant {
         AECreativeTabs.register(modEventBus);
         AEAttributes.register(modEventBus);
         AEConditions.register(modEventBus);
+
+        if (ModList.get().isLoaded("curios")) {
+            CuriosCompat.registerCuriosEvents();
+        }
 
         NeoForgeMod.enableMergedAttributeTooltips();
     }

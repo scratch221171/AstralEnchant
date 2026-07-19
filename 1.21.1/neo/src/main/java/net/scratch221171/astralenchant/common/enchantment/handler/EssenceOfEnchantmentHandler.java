@@ -16,6 +16,7 @@ public class EssenceOfEnchantmentHandler {
 
     public static void addModifier(
             ItemStack stack,
+            int totalLevel,
             Holder<Attribute> attribute,
             BiConsumer<Holder<Attribute>, AttributeModifier> consumer,
             ResourceLocation id,
@@ -26,20 +27,7 @@ public class EssenceOfEnchantmentHandler {
             var level = stack.getEnchantmentLevel(holder);
             if (level <= 0) return;
 
-            int totalLevel = 0;
-            var enchantments =
-                    ServerConfig.EnchantmentSettings.EssenceOfEnchantment.INCLUDE_OVERLOAD_IN_TOTAL.getAsBoolean()
-                            ? AEUtil.getAllEnchantments(stack).entrySet()
-                            : stack.getTagEnchantments().entrySet();
-            for (var entry : enchantments) {
-                if (!entry.getKey().is(AEEnchantments.ESSENCE_OF_ENCHANTMENT)) {
-                    totalLevel += entry.getIntValue();
-                }
-            }
-            totalLevel = Math.min(
-                    ServerConfig.EnchantmentSettings.EssenceOfEnchantment.MAX_TOTAL_LEVEL.getAsInt(), totalLevel);
-
-            var newId = ModUtils.loc("eoe_bonus_" + id.getPath() + "_" + slotName);
+            var newId = ModUtils.loc("eoe_bonus_" + id.getNamespace() + "_" + id.getPath() + "_" + slotName);
             var sentiment = ((IAttributeSentimentExtension) attribute.value()).astralenchant$getSentiment();
             AttributeModifier newModifier;
             var multiplier = ServerConfig.EnchantmentSettings.EssenceOfEnchantment.MULTIPLIER.getAsDouble();
@@ -63,5 +51,19 @@ public class EssenceOfEnchantmentHandler {
 
             consumer.accept(attribute, newModifier);
         });
+    }
+
+    public static int getTotalEnchantmentLevel(ItemStack stack) {
+        int totalLevel = 0;
+        var enchantments =
+                ServerConfig.EnchantmentSettings.EssenceOfEnchantment.INCLUDE_OVERLOAD_IN_TOTAL.getAsBoolean()
+                        ? AEUtil.getAllEnchantments(stack).entrySet()
+                        : stack.getTagEnchantments().entrySet();
+        for (var entry : enchantments) {
+            if (!entry.getKey().is(AEEnchantments.ESSENCE_OF_ENCHANTMENT)) {
+                totalLevel += entry.getIntValue();
+            }
+        }
+        return Math.min(ServerConfig.EnchantmentSettings.EssenceOfEnchantment.MAX_TOTAL_LEVEL.getAsInt(), totalLevel);
     }
 }

@@ -15,6 +15,8 @@ val athenaVersion: String by project
 val geckolibVersion: String by project
 val architecturyApiVersion: String by project
 
+val curiosVersion: String by project
+
 // Mod Dependencies
 dependencies {
     implementation(libs.guideme, req(guidemeVersion))
@@ -39,6 +41,13 @@ dependencies {
 
     implementation(libs.architectury.api, req(architecturyApiVersion))
     ciRuntimeMods(libs.architectury.api, req(architecturyApiVersion))
+
+    compileOnly(libs.curios) {
+        version { require(curiosVersion) }
+        artifact { classifier = "api" }
+    }
+    runtimeOnly(libs.curios, req(curiosVersion))
+    ciRuntimeMods(libs.curios, req(curiosVersion))
 }
 
 spotless {

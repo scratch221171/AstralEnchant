@@ -32,3 +32,5 @@ oritech = { module = "maven.modrinth:oritech" }
 athena = { module = "maven.modrinth:athena-ctm" }
 geckolib = { module = "maven.modrinth:geckolib" }
 architectury-api = { module = "maven.modrinth:architectury-api" }
+
+curios = { module = "top.theillusivec4.curios:curios-neoforge" }
