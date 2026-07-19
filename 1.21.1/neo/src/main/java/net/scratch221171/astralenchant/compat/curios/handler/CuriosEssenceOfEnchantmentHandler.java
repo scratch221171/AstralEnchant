@@ -4,7 +4,7 @@ import net.minecraft.world.item.ItemStack;
 import net.scratch221171.astralenchant.common.enchantment.handler.EssenceOfEnchantmentHandler;
 import top.theillusivec4.curios.api.event.CurioAttributeModifierEvent;
 
-public class EssenceOfEnchantmentCuriosHandler {
+public class CuriosEssenceOfEnchantmentHandler {
 
     public static void addCurioAttribute(CurioAttributeModifierEvent event) {
         ItemStack stack = event.getItemStack();
@@ -13,7 +13,12 @@ public class EssenceOfEnchantmentCuriosHandler {
 
         for (var entry : event.getOriginalModifiers().entries()) {
             EssenceOfEnchantmentHandler.addModifier(
-                    stack, totalLevel, entry.getKey(), event::addModifier, entry.getValue().id(), slotId);
+                    stack,
+                    totalLevel,
+                    entry.getKey(),
+                    event::addModifier,
+                    entry.getValue().id(),
+                    slotId);
         }
     }
 }

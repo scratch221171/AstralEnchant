@@ -35,7 +35,7 @@ public final class ID {
 //    public static final String MOMENTUM = "momentum";
 //    public static final String INSTANT_TELEPORT = "instant_teleport";
     public static final String OVERLOAD = "overload";
-//    public static final String SLOT_EXPANSION = "slot_expansion";
+    public static final String EXPANSE = "expanse";
     public static final String REACTIVE_ARMOR = "reactive_armor";
 //    public static final String MYSTIC_REMNANTS = "mystic_remnants";
     public static final String CURSE_OF_IGNORANCE = "curse_of_ignorance";

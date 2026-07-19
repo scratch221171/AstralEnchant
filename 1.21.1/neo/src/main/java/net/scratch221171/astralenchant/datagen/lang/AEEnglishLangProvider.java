@@ -85,6 +85,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Ignores all restrictions and allows any enchantment to be applied.");
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "Overload", "Increases the level of existing enchantments.");
         addEnchantmentWithDesc(
+                AEEnchantments.EXPANSE,
+                "Expanse",
+                "Increases the number of curio slots the item currently occupies by the enchantment level.");
+        addEnchantmentWithDesc(
                 AEEnchantments.REACTIVE_ARMOR,
                 "Reactive Armor",
                 "Negates effects that bypass armor and enchantments for certain types of damage.");

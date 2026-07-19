@@ -59,6 +59,7 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 "通常採取できないものも含め、ブロックをアイテム化します。ブロックエンティティのデータも保存し、スニーク時はブロックステートも同様に保存します。");
         addEnchantmentWithDesc(AEEnchantments.AFFINITY, "親和", "すべての制限を無視して、あらゆるエンチャントを付与できるようにします。");
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "オーバーロード", "既存のエンチャントのレベルをオーバーロードの値だけ増加させます。");
+        addEnchantmentWithDesc(AEEnchantments.EXPANSE, "拡張", "アイテムが現在装着されているキュリオスロットの数を、エンチャントのレベル分だけ増加させます。");
         addEnchantmentWithDesc(AEEnchantments.REACTIVE_ARMOR, "反応装甲", "一部のダメージタイプのアーマーおよびエンチャントを貫通する効果を無効化します。");
         addEnchantmentWithDesc(AEEnchantments.CURSE_OF_IGNORANCE, "無知の呪い", "ツールチップを呪われた文字に置き換えます。");
         addEnchantmentWithDesc(AEEnchantments.CURSE_OF_ENCHANTMENT, "エンチャントの呪い", "アイテムのエンチャントを固定し、変更できなくします。");

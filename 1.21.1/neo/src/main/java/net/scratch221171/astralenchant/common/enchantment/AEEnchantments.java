@@ -36,7 +36,7 @@ public class AEEnchantments {
 
     public static final ResourceKey<Enchantment> OVERLOAD = create(ID.OVERLOAD);
 
-    //    public static final ResourceKey<Enchantment> SLOT_EXPANSION = create(ID.SLOT_EXPANSION);
+    public static final ResourceKey<Enchantment> EXPANSE = create(ID.EXPANSE);
 
     public static final ResourceKey<Enchantment> REACTIVE_ARMOR = create(ID.REACTIVE_ARMOR);
 

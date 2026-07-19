@@ -1,5 +1,6 @@
 package net.scratch221171.astralenchant.datagen.bootstrap;
 
+import java.util.List;
 import java.util.function.BiConsumer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -11,7 +12,9 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.LevelBasedValue;
 import net.minecraft.world.item.enchantment.effects.EnchantmentAttributeEffect;
+import net.neoforged.neoforge.common.conditions.AndCondition;
 import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.registries.holdersets.AnyHolderSet;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
@@ -41,13 +44,13 @@ public class AEEnchantmentBootstrap {
         /* consumer.accept(AEEnchantments.OVER_MENDING, new ConfigCondition(ConfigID.OVER_MENDING));
          */
         consumer.accept(AEEnchantments.ALMIGHTY, new ConfigCondition(ConfigID.ALMIGHTY));
-        /*
+
         // Compat
         consumer.accept(
-                AEEnchantments.SLOT_EXPANSION,
+                AEEnchantments.EXPANSE,
                 new AndCondition(
                         List.of(new ModLoadedCondition("accessories"), new ConfigCondition(ConfigID.SLOT_EXPANSION))));
-        consumer.accept(
+        /*consumer.accept(
                 AEEnchantments.ITEM_PROTECTION,
                 new AndCondition(
                         List.of(new ModLoadedCondition("l2hostility"), new ConfigCondition(ConfigID.ITEM_PROTECTION))));
@@ -64,7 +67,6 @@ public class AEEnchantmentBootstrap {
         var footTag = itemLookup.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE);
         var weaponTag = itemLookup.getOrThrow(ItemTags.WEAPON_ENCHANTABLE);
         var miningTag = itemLookup.getOrThrow(ItemTags.MINING_LOOT_ENCHANTABLE);
-        //        var bundleTag = itemLookup.getOrThrow(AstralEnchantmentTags.Items.BUNDLE);
         var durabilityTag = itemLookup.getOrThrow(ItemTags.DURABILITY_ENCHANTABLE);
 
         register(
@@ -217,19 +219,19 @@ public class AEEnchantmentBootstrap {
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         32,
                         EquipmentSlotGroup.ANY)));
-        /*
-                register(
-                        context,
-                        AEEnchantments.SLOT_EXPANSION,
-                        Enchantment.enchantment(Enchantment.definition(
-                                anyHolderSet,
-                                1,
-                                3,
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                Enchantment.constantCost(Integer.MAX_VALUE),
-                                16,
-                                EquipmentSlotGroup.ANY)));
-        */
+
+        register(
+                context,
+                AEEnchantments.EXPANSE,
+                Enchantment.enchantment(Enchantment.definition(
+                        anyHolderSet,
+                        1,
+                        2,
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        Enchantment.constantCost(Integer.MAX_VALUE),
+                        16,
+                        EquipmentSlotGroup.ANY)));
+
         register(
                 context,
                 AEEnchantments.REACTIVE_ARMOR,
