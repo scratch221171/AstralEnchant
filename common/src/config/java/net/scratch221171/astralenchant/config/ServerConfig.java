@@ -77,6 +77,8 @@ public class ServerConfig {
             public static final ConfigEntry.IntEntry MAX_TOTAL_LEVEL =
                     BUILDER.defineInRange(ConfigID.MAX_TOTAL_LEVEL, Integer.MAX_VALUE, 0, Integer.MAX_VALUE);
 
+            public static final ConfigEntry.BooleanEntry CURIOS_COMPAT = BUILDER.define(ConfigID.CURIOS_COMPAT, true);
+
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }
 
@@ -94,9 +96,17 @@ public class ServerConfig {
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }
 
-        public static final ConfigEntries REACTIVE_ARMOR =
-                BUILDER.comment("Reactive Armor")
-                        .category(ConfigID.REACTIVE_ARMOR, ReactiveArmor.ENTRIES);
+        public static final ConfigEntries EXPANSE =
+                BUILDER.comment("Expanse")
+                        .category(ConfigID.EXPANSE, Expanse.ENTRIES);
+
+        public static final class Expanse {
+            private  static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
+
+            public static final ConfigEntry.BooleanEntry STACKABLE = BUILDER.define(ConfigID.STACKABLE, false);
+
+            public static final ConfigEntries ENTRIES = BUILDER.build();
+        }
 
         public static final class ReactiveArmor {
             private  static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();

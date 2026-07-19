@@ -102,8 +102,10 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 "他のエンチャントに適用されるオーバーロードによるボーナスを総レベルに含めるかどうか。この設定に関係なく、エンチャントの極意自体にはオーバーロードは適用されます。");
         addConfigWithDesc(ConfigID.MULTIPLIER, "レベルごとのモディファイア倍率（％）", "例：1に設定すると、合計20レベルのときモディファイア倍率が+20%になります。");
         addConfigWithDesc(ConfigID.MAX_TOTAL_LEVEL, "レベル合計の上限", "大量にエンチャントを乗せることでステータスを際限なく増やさせないための上限。");
+        addConfigWithDesc(ConfigID.CURIOS_COMPAT, "Curiosアイテム互換性", "Curiosアイテムのモディファイアにもボーナスが適用されます。");
         addConfigWithDesc(ConfigID.SAVE_BLOCK_ENTITY, "ブロックエンティティを保存", "チェストのようなブロックエンティティの中身を含めてアイテム化します。");
         addConfigWithDesc(ConfigID.SAVE_BLOCK_STATE, "ブロック状態を保存", "向きなどのブロックの状態を含めてアイテム化します。");
+        addConfigWithDesc(ConfigID.STACKABLE, "重複可能", "入れ子状態にすることでスロットを際限なく増やせます。");
         addConfigWithDesc(ConfigID.DISABLED_TAG, "消去されるダメージタグ", "地震への攻撃から消去されるタグを管理します。無効な値が存在する場合はデフォルト値が使用されます。");
         addConfigWithDesc(ConfigID.HIDE_NAME, "アイテムの名前を隠す", "オフにすると、一部のツールチップ装飾modとの互換性が向上する場合があります。");
         addConfigWithDesc(

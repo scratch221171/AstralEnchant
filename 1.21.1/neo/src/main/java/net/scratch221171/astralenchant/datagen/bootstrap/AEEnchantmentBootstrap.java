@@ -48,8 +48,7 @@ public class AEEnchantmentBootstrap {
         // Compat
         consumer.accept(
                 AEEnchantments.EXPANSE,
-                new AndCondition(
-                        List.of(new ModLoadedCondition("accessories"), new ConfigCondition(ConfigID.SLOT_EXPANSION))));
+                new AndCondition(List.of(new ModLoadedCondition("curios"), new ConfigCondition(ConfigID.EXPANSE))));
         /*consumer.accept(
                 AEEnchantments.ITEM_PROTECTION,
                 new AndCondition(

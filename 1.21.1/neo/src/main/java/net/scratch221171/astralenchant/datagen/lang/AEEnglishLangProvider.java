@@ -175,6 +175,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Maximum Total Level",
                 "Caps the total enchantment level used to prevent unlimited stat scaling from stacking excessive enchantments.");
         addConfigWithDesc(
+                ConfigID.CURIOS_COMPAT,
+                "Curios Item Compatibility",
+                "Bonuses also apply to modifiers on Curios items.");
+        addConfigWithDesc(
                 ConfigID.SAVE_BLOCK_ENTITY,
                 "Preserve Block Entity",
                 "Converts blocks into items while preserving their block entity data, such as the contents of a chest.");
@@ -182,6 +186,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 ConfigID.SAVE_BLOCK_STATE,
                 "Preserve Block State",
                 "Converts blocks into items while preserving their block state, such as orientation.");
+        addConfigWithDesc(
+                ConfigID.STACKABLE,
+                "Can be stacked",
+                "You can increase the number of slots indefinitely by nesting them.");
         addConfigWithDesc(
                 ConfigID.DISABLED_TAG,
                 "Removed Tags",

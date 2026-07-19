@@ -345,6 +345,20 @@ public class AERecipeProvider extends RecipeProvider {
                     });
 
             enchantedBookRecipe(
+                    output.withConditions(new ConfigCondition(ConfigID.EXPANSE)),
+                    holderLookup,
+                    AEEnchantments.EXPANSE,
+                    builder -> builder.unlockedBy(getHasName(AEItems.RESONANT_VESSEL), has(AEItems.RESONANT_VESSEL))
+                            .pattern("123")
+                            .pattern("242")
+                            .pattern("351")
+                            .define('1', Tags.Items.CHAINS)
+                            .define('2', ItemTags.WOOL)
+                            .define('3', Items.PHANTOM_MEMBRANE)
+                            .define('4', Tags.Items.CHESTS_ENDER)
+                            .define('5', AEItems.RESONANT_VESSEL));
+
+            enchantedBookRecipe(
                     output.withConditions(new ConfigCondition(ConfigID.REACTIVE_ARMOR)),
                     holderLookup,
                     AEEnchantments.REACTIVE_ARMOR,

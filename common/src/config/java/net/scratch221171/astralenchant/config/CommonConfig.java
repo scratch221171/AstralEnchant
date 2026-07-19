@@ -37,7 +37,7 @@ public class CommonConfig {
         public static final ConfigEntry.BooleanEntry MOMENTUM = defineToggle(ConfigID.MOMENTUM);
         public static final ConfigEntry.BooleanEntry INSTANT_TELEPORT = defineToggle(ConfigID.INSTANT_TELEPORT);
         public static final ConfigEntry.BooleanEntry OVERLOAD = defineToggle(ConfigID.OVERLOAD);
-        public static final ConfigEntry.BooleanEntry SLOT_EXPANSION = defineToggle(ConfigID.SLOT_EXPANSION);
+        public static final ConfigEntry.BooleanEntry EXPANSE = defineToggle(ConfigID.EXPANSE);
         public static final ConfigEntry.BooleanEntry REACTIVE_ARMOR = defineToggle(ConfigID.REACTIVE_ARMOR);
         public static final ConfigEntry.BooleanEntry MYSTIC_REMNANTS = defineToggle(ConfigID.MYSTIC_REMNANTS);
         public static final ConfigEntry.BooleanEntry CURSE_OF_IGNORANCE = defineToggle(ConfigID.CURSE_OF_IGNORANCE);

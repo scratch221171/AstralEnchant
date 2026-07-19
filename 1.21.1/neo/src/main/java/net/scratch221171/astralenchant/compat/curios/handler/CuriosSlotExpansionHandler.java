@@ -8,6 +8,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
 import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
+import net.scratch221171.astralenchant.config.ServerConfig;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.event.CurioAttributeModifierEvent;
@@ -22,10 +23,12 @@ public final class CuriosSlotExpansionHandler {
         SlotContext slotContext = event.getSlotContext();
         String slotId = slotContext.identifier();
 
-        int baseSize = CuriosApi.getSlot(slotId, slotContext.entity().level())
-                .map(ISlotType::getSize)
-                .orElse(0);
-        if (slotContext.index() >= baseSize) return;
+        if (!ServerConfig.EnchantmentSettings.Expanse.STACKABLE.getAsBoolean()) {
+            int baseSize = CuriosApi.getSlot(slotId, slotContext.entity().level())
+                    .map(ISlotType::getSize)
+                    .orElse(0);
+            if (slotContext.index() >= baseSize) return;
+        }
 
         AEUtil.getEnchantmentHolder(AEEnchantments.EXPANSE, slotContext.entity())
                 .map(stack::getEnchantmentLevel)

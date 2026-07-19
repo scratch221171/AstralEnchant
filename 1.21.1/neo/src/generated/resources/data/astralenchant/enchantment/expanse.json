@@ -5,11 +5,11 @@
       "values": [
         {
           "type": "neoforge:mod_loaded",
-          "modid": "accessories"
+          "modid": "curios"
         },
         {
           "type": "astralenchant:config_condition",
-          "config_id": "slot_expansion"
+          "config_id": "expanse"
         }
       ]
     }

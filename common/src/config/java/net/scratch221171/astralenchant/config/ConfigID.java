@@ -15,9 +15,12 @@ public class ConfigID {
     public static final String INCLUDE_OVERLOAD_IN_TOTAL = "include_overload_in_total";
     public static final String MULTIPLIER = "multiplier";
     public static final String MAX_TOTAL_LEVEL = "max_total_level";
+    public static final String CURIOS_COMPAT = "curios_compat";
     // Feather Touch
     public static final String SAVE_BLOCK_ENTITY = "save_block_entity";
     public static final String SAVE_BLOCK_STATE = "save_block_state";
+    //Expanse
+    public static final String STACKABLE = "stackable";
     // Reactive Armor
     public static final String DISABLED_TAG = "disabled_tag";
     // Curse Of Ignorance
@@ -42,7 +45,7 @@ public class ConfigID {
     public static final String MOMENTUM = "momentum";
     public static final String INSTANT_TELEPORT = "instant_teleport";
     public static final String OVERLOAD = "overload";
-    public static final String SLOT_EXPANSION = "slot_expansion";
+    public static final String EXPANSE = "expanse";
     public static final String REACTIVE_ARMOR = "reactive_armor";
     public static final String MYSTIC_REMNANTS = "mystic_remnants";
     public static final String CURSE_OF_IGNORANCE = "curse_of_ignorance";
