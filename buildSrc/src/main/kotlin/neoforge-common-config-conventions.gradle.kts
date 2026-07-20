@@ -3,7 +3,7 @@ import net.scratch221171.mdk.build.configureVersionCommonConfigSourceSet
 import net.scratch221171.mdk.build.module
 import net.scratch221171.mdk.build.versionCatalog
 
-val forgeConfigApiPortVersion: String by project
+val forgeConfigApiPortVersion = project.property("forgeConfigApiPortVersion").toString()
 
 plugins.withId("java-library") {
     val config = configureVersionCommonConfigSourceSet("neoforge-common-config-conventions")

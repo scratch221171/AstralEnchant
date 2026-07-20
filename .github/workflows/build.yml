@@ -11,6 +11,10 @@ on:
       - 'docs/**'
       - '*.md'
 
+concurrency:
+  group: build-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   detect:
     runs-on: ubuntu-latest
@@ -20,7 +24,7 @@ jobs:
       count: ${{ steps.detect.outputs.count }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           fetch-tags: true
@@ -60,7 +64,7 @@ jobs:
         include: ${{ fromJson(needs.detect.outputs.matrix) }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           fetch-tags: true
@@ -75,6 +79,8 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-read-only: true
 
       - name: Build with Gradle
         run: chmod u+x ./gradlew && ./gradlew ":${{ matrix.subproject }}:build"
@@ -130,7 +136,7 @@ jobs:
       - name: Run MC runtime test client
         if: ${{ matrix.run_mc_runtime_test }}
         timeout-minutes: 10
-        uses: headlesshq/mc-runtime-test@4.4.0
+        uses: headlesshq/mc-runtime-test@4.5.1
         with:
           mc: ${{ matrix.minecraft }}
           modloader: ${{ matrix.modloader }}

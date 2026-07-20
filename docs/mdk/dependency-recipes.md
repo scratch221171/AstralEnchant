@@ -21,11 +21,12 @@ when the external runtime test in CI needs a physical jar next to the built mod.
 
 - `fabric-api-conventions` already adds Fabric API with the correct Fabric
   configuration for the selected Loom plugin.
-- `fabric-config-conventions` already adds Forge Config API Port to compile
-  classpaths, `ciRuntimeMods`, and generated Fabric metadata.
+- `fabric-config-conventions` and `fabric-legacy-config-conventions` already add
+  the matching Forge Config API Port dependency to compile classpaths,
+  `ciRuntimeMods`, and generated Fabric metadata.
 - Existing Fabric Mod Menu dependencies are local runtime UI helpers; they are
   not staged through `ciRuntimeMods`.
-- Existing Legacy Forge Configured dependencies are local runtime UI helpers.
+- Existing LexForge Legacy Configured dependencies are local runtime UI helpers.
 - Prefer the configurations documented in `docs/README.md`; do not introduce
   seldom-used configurations unless a loader plugin requires them for the
   concrete dependency.
@@ -37,7 +38,7 @@ Gradle dependencies and production loader metadata are separate.
 - Add Fabric metadata through `fabricModMetadata.depend(...)` for systematic
   convention-owned dependencies.
 - Add target-specific Fabric metadata in `src/main/templates/fabric.mod.json`.
-- Add Legacy Forge production dependencies in
+- Add LexForge production dependencies in
   `src/main/templates/META-INF/mods.toml`.
 - Add NeoForge production dependencies in
   `src/main/templates/META-INF/neoforge.mods.toml`.
