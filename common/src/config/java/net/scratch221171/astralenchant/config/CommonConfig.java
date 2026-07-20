@@ -23,7 +23,7 @@ public class CommonConfig {
                     .category("enchantment_toggling", EnchantmentToggling.ENTRIES);
 
     public static final class EnchantmentToggling {
-        private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
+        private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder().worldRestart();
 
         public static final ConfigEntry.BooleanEntry NULLIFICATION = defineToggle(ConfigID.NULLIFICATION);
         public static final ConfigEntry.BooleanEntry LAST_STAND = defineToggle(ConfigID.LAST_STAND);
@@ -33,7 +33,7 @@ public class CommonConfig {
         public static final ConfigEntry.BooleanEntry FEATHER_TOUCH = defineToggle(ConfigID.FEATHER_TOUCH);
         public static final ConfigEntry.BooleanEntry ADVENTURERS_LORE = defineToggle(ConfigID.ADVENTURERS_LORE);
         public static final ConfigEntry.BooleanEntry AFFINITY = defineToggle(ConfigID.AFFINITY);
-        public static final ConfigEntry.BooleanEntry CURSE_OF_HUNGER = defineToggle(ConfigID.CURSE_OF_HUNGER);
+        public static final ConfigEntry.BooleanEntry ENDLESS_APPETITE = defineToggle(ConfigID.ENDLESS_APPETITE);
         public static final ConfigEntry.BooleanEntry MOMENTUM = defineToggle(ConfigID.MOMENTUM);
         public static final ConfigEntry.BooleanEntry INSTANT_TELEPORT = defineToggle(ConfigID.INSTANT_TELEPORT);
         public static final ConfigEntry.BooleanEntry OVERLOAD = defineToggle(ConfigID.OVERLOAD);

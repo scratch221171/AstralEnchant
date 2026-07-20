@@ -69,6 +69,7 @@ public class EnchantmentEvents {
     @SubscribeEvent
     private static void onAttributeModification(EntityAttributeModificationEvent e) {
         ResilienceHandler.modifyDefaultAttributes(e);
+        EndlessAppetiteHandler.modifyDefaultAttributes(e);
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)

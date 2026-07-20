@@ -58,6 +58,7 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 "フェザータッチ",
                 "通常採取できないものも含め、ブロックをアイテム化します。ブロックエンティティのデータも保存し、スニーク時はブロックステートも同様に保存します。");
         addEnchantmentWithDesc(AEEnchantments.AFFINITY, "親和", "すべての制限を無視して、あらゆるエンチャントを付与できるようにします。");
+        addEnchantmentWithDesc(AEEnchantments.ENDLESS_APPETITE, "果てしない食欲", "満腹度および隠し満腹度の上限を引き上げます。");
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "オーバーロード", "既存のエンチャントのレベルをオーバーロードの値だけ増加させます。");
         addEnchantmentWithDesc(AEEnchantments.EXPANSE, "拡張", "アイテムが現在装着されているキュリオスロットの数を、エンチャントのレベル分だけ増加させます。");
         addEnchantmentWithDesc(AEEnchantments.REACTIVE_ARMOR, "反応装甲", "一部のダメージタイプのアーマーおよびエンチャントを貫通する効果を無効化します。");
@@ -68,6 +69,8 @@ public class AEJapaneseLangProvider extends AELangProvider {
 
         // attribute
         addAttributeWithDesc(AEAttributes.COOLDOWN_DURATION, "クールダウン時間", "アイテム使用のクールダウン時間の倍率");
+        addAttributeWithDesc(AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER, "満腹度上限", "満腹度の上限の倍率");
+        addAttributeWithDesc(AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER, "隠し満腹度上限", "隠し満腹度の上限の倍率");
 
         // データコンポーネント
         add("astralenchant.item.disabled_enchantments", "無効化されたエンチャント: %s");

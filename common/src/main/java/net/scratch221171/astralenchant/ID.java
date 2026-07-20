@@ -31,7 +31,7 @@ public final class ID {
     public static final String FEATHER_TOUCH = "feather_touch";
 //    public static final String ADVENTURERS_LORE = "adventurers_lore";
     public static final String AFFINITY = "affinity";
-//    public static final String CURSE_OF_HUNGER = "curse_of_hunger";
+    public static final String ENDLESS_APPETITE = "endless_appetite";
 //    public static final String MOMENTUM = "momentum";
 //    public static final String INSTANT_TELEPORT = "instant_teleport";
     public static final String OVERLOAD = "overload";
@@ -47,6 +47,8 @@ public final class ID {
 
     // Attribute
     public static final String COOLDOWN_DURATION = "cooldown_duration";
+    public static final String FOOD_LEVEL_CAP_MULTIPLIER = "food_level_cap_multiplier";
+    public static final String SATURATION_LEVEL_CAP_MULTIPLIER = "saturation_level_cap_multiplier";
 
     // Advancement
     public static final String ROOT = "root";

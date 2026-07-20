@@ -80,6 +80,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Feather Touch",
                 "Collects even normally unobtainable blocks as an item. Preserves block entity data, and while sneaking, preserves block states as well.");
         addEnchantmentWithDesc(
+                AEEnchantments.ENDLESS_APPETITE,
+                "Endless Appetite",
+                "Increase the maximum FoodLevel and SaturationLevel.");
+        addEnchantmentWithDesc(
                 AEEnchantments.AFFINITY,
                 "Affinity",
                 "Ignores all restrictions and allows any enchantment to be applied.");
@@ -109,6 +113,8 @@ public class AEEnglishLangProvider extends AELangProvider {
                 AEAttributes.COOLDOWN_DURATION,
                 "Cooldown Duration",
                 "Multiplier applied to item use cooldown duration");
+        addAttributeWithDesc(AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER, "Food Level Cap", "Multiplier for the Food Level Cap");
+        addAttributeWithDesc(AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER, "Saturation Level Cap", "Multiplier for the Saturation Level Cap");
 
         // データコンポーネント
         add("astralenchant.item.disabled_enchantments", "disabled enchantment(s): %s");

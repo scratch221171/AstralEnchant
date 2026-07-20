@@ -18,7 +18,7 @@
           "per_level_above_first": -0.1
         },
         "attribute": "astralenchant:cooldown_duration",
-        "id": "astralenchant:cr_bonus",
+        "id": "astralenchant:resilience",
         "operation": "add_multiplied_base"
       }
     ]

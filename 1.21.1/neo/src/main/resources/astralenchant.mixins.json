@@ -11,6 +11,7 @@
     "DamageSourceMixin",
     "EnchantCommandMixin",
     "EnchantmentMixin",
+    "FoodDataMixin",
     "ItemCooldownsMixin",
     "ItemStackMixin",
     "PlayerMixin"

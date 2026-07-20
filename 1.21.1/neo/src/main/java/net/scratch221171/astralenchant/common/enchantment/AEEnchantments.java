@@ -28,7 +28,7 @@ public class AEEnchantments {
 
     public static final ResourceKey<Enchantment> AFFINITY = create(ID.AFFINITY);
 
-    //    public static final ResourceKey<Enchantment> CURSE_OF_HUNGER = create(ID.CURSE_OF_HUNGER);
+    public static final ResourceKey<Enchantment> ENDLESS_APPETITE = create(ID.ENDLESS_APPETITE);
 
     //    public static final ResourceKey<Enchantment> MOMENTUM = create(ID.MOMENTUM);
 

@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "endless_appetite"
+    }
+  ],
+  "anvil_cost": 8,
+  "description": {
+    "translate": "enchantment.astralenchant.endless_appetite"
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:levels_squared",
+          "added": 0.0
+        },
+        "attribute": "astralenchant:food_level_cap_multiplier",
+        "id": "astralenchant:endless_appetite",
+        "operation": "add_multiplied_base"
+      },
+      {
+        "amount": {
+          "type": "minecraft:levels_squared",
+          "added": 0.0
+        },
+        "attribute": "astralenchant:saturation_level_cap_multiplier",
+        "id": "astralenchant:endless_appetite",
+        "operation": "add_multiplied_total"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 2147483647,
+    "per_level_above_first": 0
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 2147483647,
+    "per_level_above_first": 0
+  },
+  "slots": [
+    "chest"
+  ],
+  "supported_items": "#minecraft:enchantable/chest_armor",
+  "weight": 1
+}
