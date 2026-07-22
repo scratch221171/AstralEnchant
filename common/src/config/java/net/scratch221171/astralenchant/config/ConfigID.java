@@ -2,7 +2,6 @@ package net.scratch221171.astralenchant.config;
 
 public class ConfigID {
 
-
     public static final String
             // Enchantment Settings
             // Nullification
@@ -21,7 +20,7 @@ public class ConfigID {
             // Feather Touch
             SAVE_BLOCK_ENTITY = "save_block_entity",
             SAVE_BLOCK_STATE = "save_block_state",
-            //Expanse
+            // Expanse
             STACKABLE = "stackable",
             // Reactive Armor
             DISABLED_TAG = "disabled_tag",

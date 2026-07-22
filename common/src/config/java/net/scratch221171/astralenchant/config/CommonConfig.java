@@ -1,12 +1,11 @@
 package net.scratch221171.astralenchant.config;
 
-import net.scratch221171.astralenchant.mdk.config.ConfigEntries;
-import net.scratch221171.astralenchant.mdk.config.ConfigEntry;
-import net.scratch221171.astralenchant.mdk.config.ConfigEntryBuilder;
-
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import net.scratch221171.astralenchant.mdk.config.ConfigEntries;
+import net.scratch221171.astralenchant.mdk.config.ConfigEntry;
+import net.scratch221171.astralenchant.mdk.config.ConfigEntryBuilder;
 
 public class CommonConfig {
     private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
@@ -19,14 +18,12 @@ public class CommonConfig {
     }
 
     public static final ConfigEntries ENCHANTMENT_TOGGLING =
-            BUILDER.comment("Enchantment Toggling")
-                    .category("enchantment_toggling", EnchantmentToggling.ENTRIES);
+            BUILDER.comment("Enchantment Toggling").category("enchantment_toggling", EnchantmentToggling.ENTRIES);
 
     public static final class EnchantmentToggling {
         private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder().worldRestart();
 
-        public static final ConfigEntry.BooleanEntry
-                NULLIFICATION = defineToggle(ConfigID.NULLIFICATION),
+        public static final ConfigEntry.BooleanEntry NULLIFICATION = defineToggle(ConfigID.NULLIFICATION),
                 LAST_STAND = defineToggle(ConfigID.LAST_STAND),
                 ESSENCE_OF_ENCHANTMENT = defineToggle(ConfigID.ESSENCE_OF_ENCHANTMENT),
                 RESILIENCE = defineToggle(ConfigID.RESILIENCE),
