@@ -23,6 +23,7 @@ public class AEJapaneseLangProvider extends AELangProvider {
         addItem(AEItems.ENCHANTMENT_SHARD, "エンチャントの欠片");
         addItemWithDesc(AEItems.ARCANE_QUARTZ, "アーケインクォーツ", "古来よりその輝きは数々のエンチャンターを魅了した。");
         addItem(AEItems.GROWN_ARCANE_QUARTZ, "成長したアーケインクォーツ");
+        addItem(AEItems.RESONANT_ARCANE_QUARTZ, "残響のアーケインクォーツ");
         addItem(AEItems.ARCANE_QUARTZ_DUST, "アーケインクォーツダスト");
         addItemWithDesc(AEItems.ARCANE_QUARTZ_TINY_DUST, "小さいアーケインクォーツダスト", "金床を落としてアーケインクォーツを粉砕することで得られます。");
         addItemWithDesc(AEItems.LAVAPROOF_ARCANE_QUARTZ, "耐熱処理済みアーケインクォーツ", "うわぁ！ベトベトだぁ！");

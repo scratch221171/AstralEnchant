@@ -136,7 +136,6 @@ public class AEUtil {
         }
     }
 
-    // EnhancedTooltip互換で、アイテムの名前は置き換えない
     public static void modifyTooltip(
             List<Component> tooltip, Predicate<Component> filter, Function<Component, Component> function) {
         for (int i = 0; i < tooltip.size(); i++) {

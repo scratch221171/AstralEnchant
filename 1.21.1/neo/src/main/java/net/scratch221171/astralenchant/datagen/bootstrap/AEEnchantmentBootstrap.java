@@ -169,7 +169,7 @@ public class AEEnchantmentBootstrap {
                         1,
                         Enchantment.constantCost(Integer.MAX_VALUE),
                         Enchantment.constantCost(Integer.MAX_VALUE),
-                        16,
+                        32,
                         EquipmentSlotGroup.ANY)));
 
         register(
@@ -181,7 +181,7 @@ public class AEEnchantmentBootstrap {
                                 3,
                                 Enchantment.constantCost(Integer.MAX_VALUE),
                                 Enchantment.constantCost(Integer.MAX_VALUE),
-                                8,
+                                32,
                                 EquipmentSlotGroup.CHEST))
                         .withEffect(
                                 EnchantmentEffectComponents.ATTRIBUTES,

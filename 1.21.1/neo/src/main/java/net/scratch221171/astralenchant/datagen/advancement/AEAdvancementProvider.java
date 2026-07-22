@@ -112,6 +112,6 @@ public class AEAdvancementProvider extends AdvancementProvider {
                         true,
                         false)
                 .addCriterion("requirement", criterion) // 条件を設定
-                .save(saver, ResourceLocation.fromNamespaceAndPath(Constants.MODID, id), existingFileHelper);
+                .save(saver, ModUtils.loc(id), existingFileHelper);
     }
 }

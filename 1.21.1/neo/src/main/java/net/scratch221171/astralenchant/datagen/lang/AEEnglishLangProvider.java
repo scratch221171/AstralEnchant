@@ -25,6 +25,7 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Arcane Quartz",
                 "Its radiance has enthralled countless enchanters since ancient times.");
         addItem(AEItems.GROWN_ARCANE_QUARTZ, "Grown Arcane Quartz Dust");
+        addItem(AEItems.RESONANT_ARCANE_QUARTZ, "Resonant Arcane Quartz");
         addItem(AEItems.ARCANE_QUARTZ_DUST, "Arcane Quartz Dust");
         addItemWithDesc(
                 AEItems.ARCANE_QUARTZ_TINY_DUST,
@@ -113,8 +114,12 @@ public class AEEnglishLangProvider extends AELangProvider {
                 AEAttributes.COOLDOWN_DURATION,
                 "Cooldown Duration",
                 "Multiplier applied to item use cooldown duration");
-        addAttributeWithDesc(AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER, "Food Level Cap", "Multiplier for the Food Level Cap");
-        addAttributeWithDesc(AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER, "Saturation Level Cap", "Multiplier for the Saturation Level Cap");
+        addAttributeWithDesc(
+                AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER, "Food Level Cap", "Multiplier for the Food Level Cap");
+        addAttributeWithDesc(
+                AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER,
+                "Saturation Level Cap",
+                "Multiplier for the Saturation Level Cap");
 
         // データコンポーネント
         add("astralenchant.item.disabled_enchantments", "disabled enchantment(s): %s");

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:sculk"
+    },
+    "2": {
+      "item": "astralenchant:grown_arcane_quartz"
+    }
+  },
+  "pattern": [
+    "111",
+    "121",
+    "111"
+  ],
+  "result": {
+    "count": 1,
+    "id": "astralenchant:resonant_arcane_quartz"
+  }
+}

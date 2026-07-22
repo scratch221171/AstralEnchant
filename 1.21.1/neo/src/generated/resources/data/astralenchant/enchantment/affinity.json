@@ -5,7 +5,7 @@
       "config_id": "affinity"
     }
   ],
-  "anvil_cost": 16,
+  "anvil_cost": 32,
   "description": {
     "translate": "enchantment.astralenchant.affinity"
   },

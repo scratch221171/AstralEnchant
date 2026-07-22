@@ -111,6 +111,15 @@ public class AERecipeProvider extends RecipeProvider {
                             new ModLoadedCondition("create"),
                             new ModLoadedCondition("oritech"))))));
 
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.RESONANT_ARCANE_QUARTZ)
+                    .pattern("111")
+                    .pattern("121")
+                    .pattern("111")
+                    .define('1', Items.SCULK)
+                    .define('2', AEItems.GROWN_ARCANE_QUARTZ)
+                    .unlockedBy(getHasName(AEItems.GROWN_ARCANE_QUARTZ), has(AEItems.GROWN_ARCANE_QUARTZ))
+                    .save(output);
+
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ARCANE_QUARTZ_DUST)
                     .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
                     .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
@@ -174,8 +183,8 @@ public class AERecipeProvider extends RecipeProvider {
 
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.RESONANT_VESSEL)
                     .requires(AEItems.ENCHANTMENT_VESSEL)
-                    .requires(AEItems.GROWN_ARCANE_QUARTZ)
-                    .requires(Items.SCULK_CATALYST)
+                    .requires(AEItems.RESONANT_ARCANE_QUARTZ)
+                    .requires(Items.REINFORCED_DEEPSLATE)
                     .requires(Items.PHANTOM_MEMBRANE)
                     .requires(Items.GLOW_INK_SAC)
                     .unlockedBy(getHasName(AEItems.ENCHANTMENT_VESSEL), has(AEItems.ENCHANTMENT_VESSEL))
@@ -326,6 +335,24 @@ public class AERecipeProvider extends RecipeProvider {
                             .define('2', Items.ANVIL)
                             .define('3', Items.HEART_OF_THE_SEA)
                             .define('4', AEItems.RESONANT_VESSEL));
+
+            enchantedBookRecipe(
+                    output.withConditions(new ConfigCondition(ConfigID.ENDLESS_APPETITE)),
+                    holderLookup,
+                    AEEnchantments.ENDLESS_APPETITE,
+                    builder -> builder.unlockedBy(getHasName(AEItems.RESONANT_VESSEL), has(AEItems.RESONANT_VESSEL))
+                            .pattern("123")
+                            .pattern("456")
+                            .pattern("789")
+                            .define('1', Items.BAKED_POTATO)
+                            .define('2', Items.GOLDEN_CARROT)
+                            .define('3', Items.GLOW_BERRIES)
+                            .define('4', Items.GOLDEN_APPLE)
+                            .define('5', Items.GLISTERING_MELON_SLICE)
+                            .define('6', Items.ENCHANTED_GOLDEN_APPLE)
+                            .define('7', Items.RABBIT_STEW)
+                            .define('8', AEItems.RESONANT_VESSEL)
+                            .define('9', Items.MUSHROOM_STEW));
 
             enchantedBookRecipe(
                     output.withConditions(new ConfigCondition(ConfigID.OVERLOAD)),

@@ -51,6 +51,10 @@ java.toolchain {
     vendor = JvmVendorSpec.JETBRAINS
 }
 
+java {
+    withSourcesJar()
+}
+
 configurations {
     val localRuntime = create("localRuntime")
     runtimeClasspath.get().extendsFrom(localRuntime)

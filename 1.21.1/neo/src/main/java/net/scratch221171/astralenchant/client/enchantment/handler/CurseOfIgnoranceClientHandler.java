@@ -24,9 +24,7 @@ public class CurseOfIgnoranceClientHandler {
         AEUtil.modifyTooltip(
                 tooltip,
                 c -> (hideName || tooltip.getFirst() != c)
-                        && !(AEUtil.isTranslationOf(c, IGNORANCE_KEY)
-                                || c.getSiblings().stream()
-                                        .anyMatch(e -> AEUtil.isTranslationOf(e, IGNORANCE_DESC_KEY))),
+                        && !(AEUtil.isTranslationOf(c, IGNORANCE_KEY) || AEUtil.isTranslationOf(c, IGNORANCE_DESC_KEY)),
                 CurseOfIgnoranceClientHandler::scramble);
     }
 

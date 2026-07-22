@@ -31,6 +31,8 @@ public class AEItems {
                                     .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)),
             ARCANE_QUARTZ = registerAEItem(ID.ARCANE_QUARTZ, "item.astralenchant.arcane_quartz.desc", null),
             GROWN_ARCANE_QUARTZ = registerAEItem(ID.GROWN_ARCANE_QUARTZ),
+            RESONANT_ARCANE_QUARTZ =
+                    registerAEItem(ID.RESONANT_ARCANE_QUARTZ, new Item.Properties().rarity(Rarity.UNCOMMON)),
             ARCANE_QUARTZ_DUST = registerAEItem(ID.ARCANE_QUARTZ_DUST),
             ARCANE_QUARTZ_TINY_DUST =
                     registerAEItem(

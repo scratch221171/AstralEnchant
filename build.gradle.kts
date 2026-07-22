@@ -179,6 +179,7 @@ subprojects {
 //            url = uri("https://modmaven.dev/")
 //        }
 
+        // curios
         maven {
             name = "Illusive Soulworks maven"
             url = uri("https://maven.theillusivec4.top/")
