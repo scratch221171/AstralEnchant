@@ -130,8 +130,10 @@ public abstract class ItemStackMixin implements IItemStackExtension {
             int amount,
             Operation<Void> original,
             @Local(argsOnly = true) @Nullable LivingEntity entity) {
-        if (stack.getItem() instanceof AEArmorItem) AEArmorItem.dropBookOnBreak(stack, entity);
+        if (stack.getItem() instanceof AEArmorItem) {
+            AEArmorItem.dropBookOnBreak(stack, entity);
+        }
 
-        original.call(stack, amount); // ここでshrink(1)が実際に実行される
+        original.call(stack, amount);
     }
 }

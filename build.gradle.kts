@@ -184,6 +184,16 @@ subprojects {
             name = "Illusive Soulworks maven"
             url = uri("https://maven.theillusivec4.top/")
         }
+
+        // Shadows_of_Fire's Maven
+        maven {
+            url  = uri("https://maven.shadowsoffire.dev/releases")
+        }
+
+        // patchouli
+        maven {
+            url = uri("https://maven.blamejared.com")
+        }
     }
 
     tasks.withType<JavaCompile>().configureEach {

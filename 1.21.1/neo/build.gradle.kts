@@ -14,6 +14,12 @@ val oritechVersion: String by project
 val athenaVersion: String by project
 val geckolibVersion: String by project
 val architecturyApiVersion: String by project
+val placeboVersion: String by project
+val apothAttribsVersion: String by project
+val apothSpawnersVersion: String by project
+val apothEnchVersion: String by project
+val apothVersion: String by project
+val patchouliVersion: String by project
 
 val curiosVersion: String by project
 
@@ -41,6 +47,13 @@ dependencies {
 
     implementation(libs.architectury.api, req(architecturyApiVersion))
     ciRuntimeMods(libs.architectury.api, req(architecturyApiVersion))
+
+    runtimeOnly(libs.patchouli, req(patchouliVersion))
+    runtimeOnly(libs.placebo, req(placeboVersion))
+    runtimeOnly(libs.apothic.attributes, req(apothAttribsVersion))
+    runtimeOnly(libs.apothic.spawner, req(apothSpawnersVersion))
+    runtimeOnly(libs.apothic.enchanting, req(apothEnchVersion))
+    runtimeOnly(libs.apotheosis, req(apothVersion))
 
     compileOnly(libs.curios) {
         version { require(curiosVersion) }

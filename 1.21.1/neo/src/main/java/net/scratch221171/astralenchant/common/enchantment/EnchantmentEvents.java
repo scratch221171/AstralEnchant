@@ -75,5 +75,6 @@ public class EnchantmentEvents {
     @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
     private static void onAnvilUpdate(AnvilUpdateEvent e) {
         AffinityHandler.forceUncanceled(e);
+        CurseOfEnchantmentHandler.forceCancel(e);
     }
 }

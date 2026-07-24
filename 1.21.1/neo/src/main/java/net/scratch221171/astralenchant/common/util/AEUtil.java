@@ -106,36 +106,6 @@ public class AEUtil {
                 .orElse(ItemEnchantments.EMPTY);
     }
 
-    public static void tryAddItem(Entity entity, ItemStack stack) {
-        if (entity instanceof Player player) {
-            if (player.addItem(stack)) {
-                player.level()
-                        .playSound(
-                                null,
-                                player.getX(),
-                                player.getY(),
-                                player.getZ(),
-                                SoundEvents.ITEM_PICKUP,
-                                SoundSource.PLAYERS,
-                                0.2F,
-                                ((player.getRandom().nextFloat()
-                                                                - player.getRandom()
-                                                                        .nextFloat())
-                                                        * 0.7F
-                                                + 1.0F)
-                                        * 2.0F);
-            } else {
-                ItemEntity itementity = player.drop(stack, false);
-                if (itementity != null) {
-                    itementity.setNoPickUpDelay();
-                    itementity.setTarget(player.getUUID());
-                }
-            }
-        } else {
-            entity.spawnAtLocation(stack);
-        }
-    }
-
     public static void modifyTooltip(
             List<Component> tooltip, Predicate<Component> filter, Function<Component, Component> function) {
         for (int i = 0; i < tooltip.size(); i++) {

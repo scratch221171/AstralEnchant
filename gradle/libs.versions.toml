@@ -38,4 +38,11 @@ athena = { module = "maven.modrinth:athena-ctm" }
 geckolib = { module = "maven.modrinth:geckolib" }
 architectury-api = { module = "maven.modrinth:architectury-api" }
 
+placebo = { module = "dev.shadowsoffire:Placebo" }
+apothic-attributes = { module = "dev.shadowsoffire:ApothicAttributes" }
+apothic-spawner = { module = "dev.shadowsoffire:ApothicSpawners" }
+apothic-enchanting = { module = "dev.shadowsoffire:ApothicEnchanting" }
+apotheosis = { module = "dev.shadowsoffire:Apotheosis" }
+patchouli = { module = "vazkii.patchouli:Patchouli" }
+
 curios = { module = "top.theillusivec4.curios:curios-neoforge" }

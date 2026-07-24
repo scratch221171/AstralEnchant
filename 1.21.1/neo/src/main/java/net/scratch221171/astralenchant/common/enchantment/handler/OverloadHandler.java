@@ -7,7 +7,6 @@ import net.scratch221171.astralenchant.common.util.AEUtil;
 public class OverloadHandler {
 
     public static void modifyLevels(GetEnchantmentLevelEvent event) {
-        //        int overload = event.getStack().getOrDefault(AEDataComponents.OVERLOAD, 0);
         int overload = AEUtil.getEnchantmentLevel(
                 AEEnchantments.OVERLOAD, event.getEnchantments().toImmutable());
         if (overload <= 0) return;
