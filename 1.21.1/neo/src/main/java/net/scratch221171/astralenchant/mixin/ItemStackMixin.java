@@ -23,7 +23,7 @@ import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.enchantment.handler.AlmightyHandler;
 import net.scratch221171.astralenchant.common.enchantment.handler.EssenceOfEnchantmentHandler;
 import net.scratch221171.astralenchant.common.event.ItemSetEnchantmentEvent;
-import net.scratch221171.astralenchant.common.item.armor.AEArmorItem;
+import net.scratch221171.astralenchant.common.item.AEArmorItem;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;

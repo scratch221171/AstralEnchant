@@ -194,6 +194,18 @@ subprojects {
         maven {
             url = uri("https://maven.blamejared.com")
         }
+
+        // modonomicon
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://dl.cloudsmith.io/public/klikli-dev/mods/maven/")
+                }
+            }
+            filter {
+                includeGroup("com.klikli_dev")
+            }
+        }
     }
 
     tasks.withType<JavaCompile>().configureEach {

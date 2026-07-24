@@ -1,5 +1,6 @@
 package net.scratch221171.astralenchant.datagen.lang;
 
+import com.klikli_dev.modonomicon.api.datagen.ModonomiconLanguageProvider;
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ID;
@@ -9,7 +10,7 @@ import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.config.ConfigID;
 
-public class AEJapaneseLangProvider extends AELangProvider {
+public class AEJapaneseLangProvider extends AELangProvider implements ModonomiconLanguageProvider {
 
     public AEJapaneseLangProvider(PackOutput output) {
         super(output, "ja_jp");
@@ -120,5 +121,10 @@ public class AEJapaneseLangProvider extends AELangProvider {
                 ConfigID.CAN_BREAK_UNBREAKABLE, "破壊不能ブロックを破壊可能", "レベル4で岩盤などを破壊できます。プレイヤー以外が使ったときの効果は保証できません。");
         addConfigWithDesc(ConfigID.UNBREAKABLE_BLOCK_HARDNESS, "破壊不能なブロックの硬さ", "岩盤など破壊不能なブロックを採掘する際に適用される硬さ。");
         addConfigWithDesc("enchantment_toggling", "エンチャントの切り替え", "サーバーの再起動が必要です！");
+    }
+
+    @Override
+    public void accept(String s, String s2) {
+        add(s, s2);
     }
 }

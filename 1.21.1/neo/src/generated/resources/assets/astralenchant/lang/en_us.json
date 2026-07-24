@@ -73,6 +73,17 @@
   "attribute.astralenchant.saturation_level_cap_multiplier.desc": "Multiplier for the Saturation Level Cap",
   "block.astralenchant.arcanium_block": "Arcanium Block",
   "block.astralenchant.enchanters_workbench": "Enchanter's Workbench",
+  "book.astralenchant.enchanters_guide.features.name": "Features Category",
+  "book.astralenchant.enchanters_guide.features.recipe.crafting.text": "A sample recipe page.",
+  "book.astralenchant.enchanters_guide.features.recipe.description": "An entry showcasing recipe pages.",
+  "book.astralenchant.enchanters_guide.features.recipe.intro.text": "Recipe pages allow to show recipes in the book.\n",
+  "book.astralenchant.enchanters_guide.features.recipe.intro.title": "Recipe Entry",
+  "book.astralenchant.enchanters_guide.features.recipe.name": "Recipe Entry",
+  "book.astralenchant.enchanters_guide.features.recipe.smelting.text": "A sample smelting recipe page.",
+  "book.astralenchant.enchanters_guide.features.recipe.smithing.title": "1.20+ Smithing Recipe",
+  "book.astralenchant.enchanters_guide.features.recipe.smoking.text": "A smoking recipe page with one recipe and some text.",
+  "book.astralenchant.enchanters_guide.name": "Enchanter's Guide",
+  "book.astralenchant.enchanters_guide.tooltip": "A must-read for first-year students!",
   "container.astralenchant.enchanters_workbench": "Switch Enchantments",
   "container.enchanters_workbench.cost": "Switching Cost: %1$s",
   "enchantment.astralenchant.affinity": "Affinity",
@@ -131,5 +142,6 @@
   "item.astralenchant.resonant_vessel": "Resonant Vessel",
   "itemGroup.astralenchant.enchantment": "Astral Enchant - Enchantment",
   "itemGroup.astralenchant.main": "Astral Enchant",
-  "modmenu.descriptionTranslation.astralenchant": "Adds enchantments you've never seen before."
+  "modmenu.descriptionTranslation.astralenchant": "Adds enchantments you've never seen before.",
+  "test.test.test": "Book of Binding: Afrit (Bound)"
 }

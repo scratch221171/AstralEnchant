@@ -46,3 +46,5 @@ apotheosis = { module = "dev.shadowsoffire:Apotheosis" }
 patchouli = { module = "vazkii.patchouli:Patchouli" }
 
 curios = { module = "top.theillusivec4.curios:curios-neoforge" }
+modonomicon-common = { module = "com.klikli_dev:modonomicon-1.21.1-common" }
+modonomicon-neoforge = { module = "com.klikli_dev:modonomicon-1.21.1-neoforge" }

@@ -20,6 +20,7 @@ public final class ID {
             ARCANIUM_CHESTPLATE = "arcanium_chestplate",
             ARCANIUM_LEGGINGS = "arcanium_leggings",
             ARCANIUM_BOOTS = "arcanium_boots",
+            ENCHANTERS_GUIDE = "enchanters_guide",
 
             // Blocks
             ARCANIUM_BLOCK = "arcanium_block",

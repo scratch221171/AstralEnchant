@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.common.item.armor;
+package net.scratch221171.astralenchant.common.item;
 
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Style;
@@ -9,7 +9,6 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.scratch221171.astralenchant.common.item.IAEDescribable;
 import org.jspecify.annotations.Nullable;
 
 public class AEArmorItem extends ArmorItem implements IAEDescribable {

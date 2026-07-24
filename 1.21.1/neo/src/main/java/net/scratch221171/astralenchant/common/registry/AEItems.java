@@ -2,21 +2,21 @@ package net.scratch221171.astralenchant.common.registry;
 
 import static net.scratch221171.astralenchant.common.registry.AEArmorMaterials.ARCANIUM;
 
+import com.klikli_dev.modonomicon.item.ModonomiconItem;
+import com.klikli_dev.modonomicon.registry.DataComponentRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Style;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ID;
+import net.scratch221171.astralenchant.ModUtils;
+import net.scratch221171.astralenchant.common.item.AEArmorItem;
 import net.scratch221171.astralenchant.common.item.AEItem;
-import net.scratch221171.astralenchant.common.item.armor.AEArmorItem;
 import org.jspecify.annotations.Nullable;
 
 public class AEItems {
@@ -94,6 +94,11 @@ public class AEItems {
                             new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(15)),
                             "item.astralenchant.arcanium_boots.desc",
                             Style.EMPTY.withColor(ChatFormatting.GRAY));
+    public static final DeferredItem<ModonomiconItem> ENCHANTERS_GUIDE = REGISTER.register(
+            ID.ENCHANTERS_GUIDE,
+            () -> new ModonomiconItem(new Item.Properties()
+                    .stacksTo(1)
+                    .component(DataComponentRegistry.BOOK_ID.get(), ModUtils.loc(ID.ENCHANTERS_GUIDE))));
 
     private static DeferredItem<AEItem> registerAEItem(String name) {
         return registerAEItem(name, new Item.Properties());

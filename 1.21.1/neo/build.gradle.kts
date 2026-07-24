@@ -22,6 +22,7 @@ val apothVersion: String by project
 val patchouliVersion: String by project
 
 val curiosVersion: String by project
+val modonomiconVersion: String by project
 
 // Mod Dependencies
 dependencies {
@@ -48,19 +49,22 @@ dependencies {
     implementation(libs.architectury.api, req(architecturyApiVersion))
     ciRuntimeMods(libs.architectury.api, req(architecturyApiVersion))
 
-    runtimeOnly(libs.patchouli, req(patchouliVersion))
-    runtimeOnly(libs.placebo, req(placeboVersion))
-    runtimeOnly(libs.apothic.attributes, req(apothAttribsVersion))
-    runtimeOnly(libs.apothic.spawner, req(apothSpawnersVersion))
-    runtimeOnly(libs.apothic.enchanting, req(apothEnchVersion))
-    runtimeOnly(libs.apotheosis, req(apothVersion))
+//    runtimeOnly(libs.patchouli, req(patchouliVersion))
+//    runtimeOnly(libs.placebo, req(placeboVersion))
+//    runtimeOnly(libs.apothic.attributes, req(apothAttribsVersion))
+//    runtimeOnly(libs.apothic.spawner, req(apothSpawnersVersion))
+//    runtimeOnly(libs.apothic.enchanting, req(apothEnchVersion))
+//    runtimeOnly(libs.apotheosis, req(apothVersion))
 
     compileOnly(libs.curios) {
         version { require(curiosVersion) }
         artifact { classifier = "api" }
     }
-    runtimeOnly(libs.curios, req(curiosVersion))
+    implementation(libs.curios, req(curiosVersion))
     ciRuntimeMods(libs.curios, req(curiosVersion))
+
+    implementation(libs.modonomicon.neoforge, req(modonomiconVersion))
+    ciRuntimeMods(libs.modonomicon.neoforge, req(modonomiconVersion))
 }
 
 spotless {

@@ -1,5 +1,6 @@
 package net.scratch221171.astralenchant.datagen.lang;
 
+import com.klikli_dev.modonomicon.api.datagen.ModonomiconLanguageProvider;
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ID;
@@ -9,7 +10,7 @@ import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 import net.scratch221171.astralenchant.config.ConfigID;
 
-public class AEEnglishLangProvider extends AELangProvider {
+public class AEEnglishLangProvider extends AELangProvider implements ModonomiconLanguageProvider {
 
     public AEEnglishLangProvider(PackOutput output) {
         super(output, "en_us");
@@ -226,5 +227,10 @@ public class AEEnglishLangProvider extends AELangProvider {
                 "Unbreakable Block Hardness",
                 "The hardness value applied when mining unbreakable blocks, such as bedrock.");
         addConfigWithDesc("enchantment_toggling", "Enchantment Toggling", "REQUIRE SERVER RESTART!");
+    }
+
+    @Override
+    public void accept(String s, String s2) {
+        this.add(s, s2);
     }
 }

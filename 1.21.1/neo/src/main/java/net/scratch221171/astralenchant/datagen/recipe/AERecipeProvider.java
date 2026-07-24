@@ -90,6 +90,12 @@ public class AERecipeProvider extends RecipeProvider {
                     .unlockedBy(getHasName(AEItems.ENCHANTMENT_SHARD), has(AEItems.ENCHANTMENT_SHARD))
                     .save(output);
 
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ENCHANTERS_GUIDE)
+                    .requires(Items.BOOK)
+                    .requires(AEItems.ENCHANTMENT_SHARD)
+                    .unlockedBy(getHasName(AEItems.ENCHANTMENT_SHARD), has(AEItems.ENCHANTMENT_SHARD))
+                    .save(output);
+
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.LAVAPROOF_ARCANE_QUARTZ, 4)
                     .requires(Items.MAGMA_CREAM)
                     .requires(AETags.Items.GEMS_ARCANE_QUARTZ)
