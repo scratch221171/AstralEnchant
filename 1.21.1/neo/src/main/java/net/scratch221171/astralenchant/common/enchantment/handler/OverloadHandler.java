@@ -1,7 +1,7 @@
 package net.scratch221171.astralenchant.common.enchantment.handler;
 
 import net.neoforged.neoforge.event.enchanting.GetEnchantmentLevelEvent;
-import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 
 public class OverloadHandler {

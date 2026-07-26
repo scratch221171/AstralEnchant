@@ -12,7 +12,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.scratch221171.astralenchant.Constants;
-import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import net.scratch221171.astralenchant.common.util.IDamageSourceExtension;
 import net.scratch221171.astralenchant.config.ServerConfig;

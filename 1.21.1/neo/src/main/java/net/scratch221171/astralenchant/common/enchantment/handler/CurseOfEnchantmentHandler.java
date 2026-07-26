@@ -2,8 +2,8 @@ package net.scratch221171.astralenchant.common.enchantment.handler;
 
 import net.neoforged.neoforge.event.AnvilUpdateEvent;
 import net.neoforged.neoforge.event.GrindstoneEvent;
-import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
 import net.scratch221171.astralenchant.common.event.ItemSetEnchantmentEvent;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 
 public class CurseOfEnchantmentHandler {

@@ -4,7 +4,7 @@ import com.klikli_dev.modonomicon.api.datagen.ModonomiconLanguageProvider;
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ID;
-import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;

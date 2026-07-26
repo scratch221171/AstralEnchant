@@ -114,12 +114,4 @@ public class AEUtil {
     public static boolean isTranslationOf(Component c, String key) {
         return c.getContents() instanceof TranslatableContents t && t.getKey().equals(key);
     }
-
-    public static String getLangKey(ResourceKey<Enchantment> key) {
-        return key.location().toLanguageKey("enchantment");
-    }
-
-    public static String getDescLangKey(ResourceKey<Enchantment> key) {
-        return key.location().toLanguageKey("enchantment", "desc");
-    }
 }

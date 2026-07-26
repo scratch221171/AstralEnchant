@@ -5,7 +5,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.block.state.BlockState;
-import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import net.scratch221171.astralenchant.config.ServerConfig;
 

@@ -5,8 +5,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
-import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
+import net.scratch221171.astralenchant.datagen.util.CommonUtil;
 
 public class EssenceOfEnchantmentClientHandler {
 
@@ -19,7 +20,7 @@ public class EssenceOfEnchantmentClientHandler {
                         > 0) {
             AEUtil.modifyTooltip(
                     event.getToolTip(),
-                    c -> AEUtil.isTranslationOf(c, AEUtil.getLangKey(AEEnchantments.ESSENCE_OF_ENCHANTMENT)),
+                    c -> AEUtil.isTranslationOf(c, CommonUtil.getLangKey(AEEnchantments.ESSENCE_OF_ENCHANTMENT)),
                     EssenceOfEnchantmentClientHandler::createShine);
         }
     }

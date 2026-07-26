@@ -8,7 +8,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.scratch221171.astralenchant.Constants;
-import net.scratch221171.astralenchant.common.util.AEUtil;
+import net.scratch221171.astralenchant.datagen.util.CommonUtil;
 
 public abstract class AELangProvider extends LanguageProvider {
     public AELangProvider(PackOutput output, String locale) {
@@ -21,8 +21,8 @@ public abstract class AELangProvider extends LanguageProvider {
     }
 
     protected void addEnchantmentWithDesc(ResourceKey<Enchantment> key, String name, String desc) {
-        add(AEUtil.getLangKey(key), name);
-        add(AEUtil.getDescLangKey(key), desc);
+        add(CommonUtil.getLangKey(key), name);
+        add(CommonUtil.getDescLangKey(key), desc);
         add(Constants.MODID + ".configuration." + key.location().getPath(), name);
     }
 

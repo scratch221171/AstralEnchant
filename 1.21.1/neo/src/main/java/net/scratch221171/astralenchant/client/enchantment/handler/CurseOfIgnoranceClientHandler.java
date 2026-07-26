@@ -7,14 +7,15 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.RandomSource;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
-import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import net.scratch221171.astralenchant.config.ServerConfig;
+import net.scratch221171.astralenchant.datagen.util.CommonUtil;
 
 public class CurseOfIgnoranceClientHandler {
 
-    private static final String IGNORANCE_KEY = AEUtil.getLangKey(AEEnchantments.CURSE_OF_IGNORANCE);
-    private static final String IGNORANCE_DESC_KEY = AEUtil.getDescLangKey(AEEnchantments.CURSE_OF_IGNORANCE);
+    private static final String IGNORANCE_KEY = CommonUtil.getLangKey(AEEnchantments.CURSE_OF_IGNORANCE);
+    private static final String IGNORANCE_DESC_KEY = CommonUtil.getDescLangKey(AEEnchantments.CURSE_OF_IGNORANCE);
 
     public static void makeUnreadable(ItemTooltipEvent event) {
         if (AEUtil.getEnchantmentLevel(AEEnchantments.CURSE_OF_IGNORANCE, event.getItemStack()) <= 0) return;

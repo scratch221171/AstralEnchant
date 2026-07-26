@@ -11,7 +11,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.scratch221171.astralenchant.Constants;
-import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 
 public class AECreativeTabs {
@@ -41,10 +41,10 @@ public class AECreativeTabs {
                     REGISTER.register("astralenchant_enchantment", () -> CreativeModeTab.builder()
                             .title(Component.translatable("itemGroup.astralenchant.enchantment"))
                             .icon(() -> new ItemStack(AEItems.ENCHANTMENT_VESSEL.get()))
-                            .displayItems((parameters, output) -> AEEnchantments.LIST.stream()
+                            .displayItems((parameters, output) -> AEEnchantments.getAll().stream()
                                     .sorted(Comparator.comparing(
                                             key -> key.location().getPath()))
-                                    .forEach(e -> AEUtil.getEnchantmentHolder(e)
+                                    .forEach(key -> AEUtil.getEnchantmentHolder(key)
                                             .ifPresent(h -> output.accept(
                                                     EnchantedBookItem.createForEnchantment(new EnchantmentInstance(
                                                             h.getDelegate(),

@@ -42,7 +42,7 @@ import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
-import net.scratch221171.astralenchant.common.enchantment.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEDataComponents;
 import net.scratch221171.astralenchant.common.registry.AEItems;
