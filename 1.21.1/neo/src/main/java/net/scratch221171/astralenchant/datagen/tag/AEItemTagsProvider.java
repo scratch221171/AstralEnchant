@@ -8,8 +8,8 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.common.key.AETags;
 import net.scratch221171.astralenchant.common.registry.AEItems;
-import net.scratch221171.astralenchant.common.tag.AETags;
 import org.jspecify.annotations.NonNull;
 
 public class AEItemTagsProvider extends ItemTagsProvider {
@@ -30,6 +30,9 @@ public class AEItemTagsProvider extends ItemTagsProvider {
 
         tag(AETags.Items.DUSTS_ARCANE_QUARTZ).add(AEItems.ARCANE_QUARTZ_DUST.get());
         tag(Tags.Items.DUSTS).addTag(AETags.Items.DUSTS_ARCANE_QUARTZ);
+
+        tag(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ).add(AEItems.ARCANE_QUARTZ_TINY_DUST.get());
+        tag(AETags.Items.TINY_DUSTS).addTag(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ);
 
         tag(AETags.Items.INGOTS_ARCANIUM).add(AEItems.ARCANIUM_INGOT.get());
         tag(Tags.Items.INGOTS).addTag(AETags.Items.INGOTS_ARCANIUM);

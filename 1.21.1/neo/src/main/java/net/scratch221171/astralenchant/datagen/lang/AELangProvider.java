@@ -8,7 +8,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.scratch221171.astralenchant.Constants;
-import net.scratch221171.astralenchant.datagen.util.CommonUtil;
+import net.scratch221171.astralenchant.common.util.CommonUtil;
 
 public abstract class AELangProvider extends LanguageProvider {
     public AELangProvider(PackOutput output, String locale) {

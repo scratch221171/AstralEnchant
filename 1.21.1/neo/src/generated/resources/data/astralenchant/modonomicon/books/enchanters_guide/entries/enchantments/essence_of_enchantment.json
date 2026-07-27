@@ -27,7 +27,7 @@
         "type": "modonomicon:none"
       },
       "recipe_id_1": "astralenchant:enchanted_book_essence_of_enchantment",
-      "text": "book.astralenchant.enchanters_guide.enchantments.essence_of_enchantment.crafting.text",
+      "text": "book.astralenchant.enchanters_guide.enchantments.essence_of_enchantment.detail.text",
       "title1": "",
       "title2": ""
     }
@@ -35,5 +35,5 @@
   "show_when_any_parent_unlocked": false,
   "sort_number": 2,
   "x": 2,
-  "y": 0
+  "y": -1
 }

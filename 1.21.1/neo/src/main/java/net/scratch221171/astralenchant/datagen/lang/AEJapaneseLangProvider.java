@@ -33,11 +33,14 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "芽生えたアルカニウムインゴット");
         addItem(AEItems.ENCHANTMENT_VESSEL, "エンチャントの依代");
         addItem(AEItems.RESONANT_VESSEL, "残響の依代");
+        addItem(AEItems.ROTTEN_BONE, "朽ちた骨");
+        addItemWithDesc(AEItems.ALLAY_WING, "アレイの羽", "なんと非人道的な！");
 
-        addItemWithDesc(AEItems.ARCANIUM_HELMET, "アルカニウムのヘルメット", "アイテムが壊れると、付いていたエンチャントが本としてドロップします。");
-        addItemWithDesc(AEItems.ARCANIUM_CHESTPLATE, "アルカニウムのチェストプレート", "アイテムが壊れると、付いていたエンチャントが本としてドロップします。");
-        addItemWithDesc(AEItems.ARCANIUM_LEGGINGS, "アルカニウムのレギンス", "アイテムが壊れると、付いていたエンチャントが本としてドロップします。");
-        addItemWithDesc(AEItems.ARCANIUM_BOOTS, "アルカニウムのブーツ", "アイテムが壊れると、付いていたエンチャントが本としてドロップします。");
+        addItem(AEItems.ARCANIUM_HELMET, "アルカニウムのヘルメット");
+        addItem(AEItems.ARCANIUM_CHESTPLATE, "アルカニウムのチェストプレート");
+        addItem(AEItems.ARCANIUM_LEGGINGS, "アルカニウムのレギンス");
+        addItem(AEItems.ARCANIUM_BOOTS, "アルカニウムのブーツ");
+        add("armorMaterial.astralenchant.arcanium.desc", "アイテムが壊れると、付いていたエンチャントが本としてドロップします。");
 
         // ブロック
         addBlock(AEBlocks.ARCANIUM_BLOCK, "アルカニウムブロック");

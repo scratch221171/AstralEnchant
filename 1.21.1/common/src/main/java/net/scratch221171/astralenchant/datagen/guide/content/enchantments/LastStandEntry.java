@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.common.key.AEEnchantments;
-import net.scratch221171.astralenchant.datagen.util.CommonUtil;
+import net.scratch221171.astralenchant.common.util.CommonUtil;
 import net.scratch221171.astralenchant.datagen.util.EnchantmentEntry;
 
 public class LastStandEntry extends EnchantmentEntry {
@@ -37,7 +37,7 @@ public class LastStandEntry extends EnchantmentEntry {
                         防具にラストスタンドを付けることで、経験値を消費して死亡をキャンセルできます。
                         \\
                         消費経験値は**全ての防具のレベルの合計**に応じて変動します。
-                        現在のレベル(N)及び設定で変更できる基本値(B)、割合(R)、最大値(M)を用いて、消費されるコストは
+                        *現在のレベル*(N)及び設定で変更できる*基本値*(B)、*割合*(R)、*最大値*(M)を用いて、消費されるコストは
                         \\
                         min(M,N\\*R/√L+B/L)
                         \\
@@ -46,6 +46,6 @@ public class LastStandEntry extends EnchantmentEntry {
                         デフォルトでは、/killなど無敵を貫通するダメージによる死亡もキャンセルします。
                         """)));
 
-        addRecipePage(AEEnchantments.getDefinition(key(), lookups));
+        addDetails(lookups);
     }
 }

@@ -17,6 +17,7 @@ import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.item.AEArmorItem;
 import net.scratch221171.astralenchant.common.item.AEItem;
+import net.scratch221171.astralenchant.common.util.CommonUtil;
 import org.jspecify.annotations.Nullable;
 
 public class AEItems {
@@ -29,27 +30,22 @@ public class AEItems {
                             new AEItem.Properties()
                                     .rarity(Rarity.UNCOMMON)
                                     .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)),
-            ARCANE_QUARTZ = registerAEItem(ID.ARCANE_QUARTZ, "item.astralenchant.arcane_quartz.desc", null),
+            ARCANE_QUARTZ = registerAEItem(ID.ARCANE_QUARTZ, Desc.defaultKey(), null),
             GROWN_ARCANE_QUARTZ = registerAEItem(ID.GROWN_ARCANE_QUARTZ),
             RESONANT_ARCANE_QUARTZ =
                     registerAEItem(ID.RESONANT_ARCANE_QUARTZ, new Item.Properties().rarity(Rarity.UNCOMMON)),
             ARCANE_QUARTZ_DUST = registerAEItem(ID.ARCANE_QUARTZ_DUST),
             ARCANE_QUARTZ_TINY_DUST =
                     registerAEItem(
-                            ID.ARCANE_QUARTZ_TINY_DUST,
-                            "item.astralenchant.arcane_quartz_tiny_dust.desc",
-                            Style.EMPTY.withColor(ChatFormatting.GRAY)),
+                            ID.ARCANE_QUARTZ_TINY_DUST, Desc.defaultKey(), Style.EMPTY.withColor(ChatFormatting.GRAY)),
             LAVAPROOF_ARCANE_QUARTZ =
                     registerAEItem(
-                            ID.LAVAPROOF_ARCANE_QUARTZ,
-                            new Item.Properties().fireResistant(),
-                            "item.astralenchant.lavaproof_arcane_quartz.desc",
-                            null),
+                            ID.LAVAPROOF_ARCANE_QUARTZ, new Item.Properties().fireResistant(), Desc.defaultKey(), null),
             LUMINITE =
                     registerAEItem(
                             ID.LUMINITE,
                             new Item.Properties().fireResistant(),
-                            "item.astralenchant.luminite.desc",
+                            Desc.defaultKey(),
                             Style.EMPTY.withColor(ChatFormatting.GRAY)),
             ARCANIUM_INGOT = registerAEItem(ID.ARCANIUM_INGOT),
             BUDDING_ARCANIUM_INGOT = registerAEItem(ID.BUDDING_ARCANIUM_INGOT),
@@ -60,7 +56,9 @@ public class AEItems {
             RESONANT_VESSEL =
                     registerAEItem(
                             ID.RESONANT_VESSEL,
-                            new Item.Properties().stacksTo(1).rarity(Rarity.RARE));
+                            new Item.Properties().stacksTo(1).rarity(Rarity.RARE)),
+            ROTTEN_BONE = registerAEItem(ID.ROTTEN_BONE),
+            ALLAY_WING = registerAEItem(ID.ALLAY_WING, Desc.defaultKey(), null);
     public static final DeferredItem<AEArmorItem>
             ARCANIUM_HELMET =
                     registerAEArmorItem(
@@ -68,7 +66,7 @@ public class AEItems {
                             ARCANIUM,
                             ArmorItem.Type.HELMET,
                             new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(15)),
-                            "item.astralenchant.arcanium_helmet.desc",
+                            Desc.key("armorMaterial.astralenchant.arcanium.desc"),
                             Style.EMPTY.withColor(ChatFormatting.GRAY)),
             ARCANIUM_CHESTPLATE =
                     registerAEArmorItem(
@@ -76,7 +74,7 @@ public class AEItems {
                             ARCANIUM,
                             ArmorItem.Type.CHESTPLATE,
                             new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(15)),
-                            "item.astralenchant.arcanium_chestplate.desc",
+                            Desc.key("armorMaterial.astralenchant.arcanium.desc"),
                             Style.EMPTY.withColor(ChatFormatting.GRAY)),
             ARCANIUM_LEGGINGS =
                     registerAEArmorItem(
@@ -84,7 +82,7 @@ public class AEItems {
                             ARCANIUM,
                             ArmorItem.Type.LEGGINGS,
                             new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(15)),
-                            "item.astralenchant.arcanium_leggings.desc",
+                            Desc.key("armorMaterial.astralenchant.arcanium.desc"),
                             Style.EMPTY.withColor(ChatFormatting.GRAY)),
             ARCANIUM_BOOTS =
                     registerAEArmorItem(
@@ -92,8 +90,9 @@ public class AEItems {
                             ARCANIUM,
                             ArmorItem.Type.BOOTS,
                             new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(15)),
-                            "item.astralenchant.arcanium_boots.desc",
+                            Desc.key("armorMaterial.astralenchant.arcanium.desc"),
                             Style.EMPTY.withColor(ChatFormatting.GRAY));
+
     public static final DeferredItem<ModonomiconItem> ENCHANTERS_GUIDE = REGISTER.register(
             ID.ENCHANTERS_GUIDE,
             () -> new ModonomiconItem(new Item.Properties()
@@ -104,17 +103,21 @@ public class AEItems {
         return registerAEItem(name, new Item.Properties());
     }
 
-    private static DeferredItem<AEItem> registerAEItem(String name, @Nullable String descKey, @Nullable Style style) {
-        return registerAEItem(name, new Item.Properties(), descKey, style);
+    private static DeferredItem<AEItem> registerAEItem(String name, Desc key, @Nullable Style style) {
+        return registerAEItem(name, new Item.Properties(), key, style);
     }
 
     private static DeferredItem<AEItem> registerAEItem(String name, Item.Properties properties) {
-        return REGISTER.registerItem(name, AEItem::new, properties);
+        return registerAEItem(name, properties, Desc.none(), null);
     }
 
     private static DeferredItem<AEItem> registerAEItem(
-            String name, Item.Properties properties, @Nullable String descKey, @Nullable Style style) {
-        return REGISTER.registerItem(name, p -> new AEItem(p, descKey, style), properties);
+            String name, Item.Properties properties, Desc desc, @Nullable Style style) {
+        return switch (desc.mode) {
+            case NONE -> REGISTER.registerItem(name, p -> new AEItem(p, null, style), properties);
+            case DEFAULT -> REGISTER.registerItem(name, p -> new AEItem(p, CommonUtil.getAEItemLangKey(name) + ".desc", style), properties);
+            case CUSTOM -> REGISTER.registerItem(name, p -> new AEItem(p, desc.key, style), properties);
+        };
     }
 
     private static DeferredItem<AEArmorItem> registerAEArmorItem(
@@ -122,12 +125,39 @@ public class AEItems {
             Holder<ArmorMaterial> material,
             ArmorItem.Type type,
             Item.Properties properties,
-            @Nullable String descriptionKey,
+            Desc desc,
             @Nullable Style style) {
-        return REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, descriptionKey, style), properties);
+        return switch (desc.mode) {
+            case NONE -> REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, null, style), properties);
+            case DEFAULT ->
+                REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, CommonUtil.getAEItemLangKey(name) + ".desc", style), properties);
+            case CUSTOM ->
+                REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, desc.key, style), properties);
+        };
     }
 
     public static void register(IEventBus eventBus) {
         REGISTER.register(eventBus);
+    }
+
+    // DescKeyを指定するためのもの
+    private record Desc(Mode mode, @Nullable String key) {
+        enum Mode {
+            DEFAULT,
+            NONE,
+            CUSTOM
+        }
+
+        static Desc key(String key) {
+            return new Desc(Mode.CUSTOM, key);
+        }
+
+        static Desc defaultKey() {
+            return new Desc(Mode.DEFAULT, null);
+        }
+
+        static Desc none() {
+            return new Desc(Mode.NONE, null);
+        }
     }
 }

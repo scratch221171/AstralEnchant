@@ -32,6 +32,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
@@ -43,10 +44,10 @@ import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
 import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AETags;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEDataComponents;
 import net.scratch221171.astralenchant.common.registry.AEItems;
-import net.scratch221171.astralenchant.common.tag.AETags;
 import net.scratch221171.astralenchant.config.ConfigID;
 import org.jspecify.annotations.NonNull;
 import rearth.oritech.api.recipe.CentrifugeFluidRecipeBuilder;
@@ -128,14 +129,14 @@ public class AERecipeProvider extends RecipeProvider {
 
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ARCANE_QUARTZ_DUST)
                     .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
-                    .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
-                    .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
-                    .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
-                    .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
-                    .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
-                    .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
-                    .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
-                    .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
+                    .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
+                    .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
+                    .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
+                    .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
+                    .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
+                    .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
+                    .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
+                    .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
                     .unlockedBy(getHasName(AEItems.ARCANE_QUARTZ_TINY_DUST), has(AEItems.ARCANE_QUARTZ_TINY_DUST))
                     .save(output);
 
@@ -148,7 +149,7 @@ public class AERecipeProvider extends RecipeProvider {
                     .requires(Items.IRON_INGOT)
                     .requires(Items.AMETHYST_SHARD)
                     .requires(Items.GOLD_NUGGET)
-                    .requires(AEItems.ARCANE_QUARTZ_TINY_DUST)
+                    .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
                     .unlockedBy(getHasName(AEItems.ARCANE_QUARTZ_TINY_DUST), has(AEItems.ARCANE_QUARTZ_TINY_DUST))
                     .save(output, ModUtils.loc("arcanium_ingot_from_arcane_quartz"));
 
@@ -196,14 +197,14 @@ public class AERecipeProvider extends RecipeProvider {
                     .unlockedBy(getHasName(AEItems.ENCHANTMENT_VESSEL), has(AEItems.ENCHANTMENT_VESSEL))
                     .save(output);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ARCANIUM_HELMET)
+            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AEItems.ARCANIUM_HELMET)
                     .pattern("111")
                     .pattern("1 1")
                     .define('1', AETags.Items.INGOTS_ARCANIUM)
                     .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
                     .save(output);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ARCANIUM_CHESTPLATE)
+            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AEItems.ARCANIUM_CHESTPLATE)
                     .pattern("1 1")
                     .pattern("111")
                     .pattern("111")
@@ -211,7 +212,7 @@ public class AERecipeProvider extends RecipeProvider {
                     .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
                     .save(output);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ARCANIUM_LEGGINGS)
+            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AEItems.ARCANIUM_LEGGINGS)
                     .pattern("111")
                     .pattern("1 1")
                     .pattern("1 1")
@@ -219,7 +220,7 @@ public class AERecipeProvider extends RecipeProvider {
                     .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
                     .save(output);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ARCANIUM_BOOTS)
+            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AEItems.ARCANIUM_BOOTS)
                     .pattern("1 1")
                     .pattern("1 1")
                     .define('1', AETags.Items.INGOTS_ARCANIUM)
@@ -236,6 +237,27 @@ public class AERecipeProvider extends RecipeProvider {
                     .define('4', Items.ENCHANTING_TABLE)
                     .define('5', Tags.Items.BOOKSHELVES)
                     .unlockedBy(getHasName(AEItems.LUMINITE), has(AEItems.LUMINITE))
+                    .save(output);
+
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.REINFORCED_DEEPSLATE)
+                    .pattern("121")
+                    .pattern("232")
+                    .pattern("121")
+                    .define('1', AEItems.ROTTEN_BONE)
+                    .define('2', Items.DEEPSLATE)
+                    .define('3', Items.POLISHED_BASALT)
+                    .unlockedBy(getHasName(AEItems.ROTTEN_BONE), has(AEItems.ROTTEN_BONE))
+                    .save(output);
+
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.BUDDING_AMETHYST)
+                    .pattern("123")
+                    .pattern("242")
+                    .pattern("321")
+                    .define('1', Items.AMETHYST_SHARD)
+                    .define('2', Blocks.AMETHYST_BLOCK)
+                    .define('3', AEItems.GROWN_ARCANE_QUARTZ)
+                    .define('4', AEItems.ALLAY_WING)
+                    .unlockedBy(getHasName(AEItems.ALLAY_WING), has(AEItems.ALLAY_WING))
                     .save(output);
         }
 

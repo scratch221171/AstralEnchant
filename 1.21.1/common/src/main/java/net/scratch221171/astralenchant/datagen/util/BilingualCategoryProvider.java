@@ -16,7 +16,10 @@ public abstract class BilingualCategoryProvider extends CategoryProvider {
         this.add(this.lang(JA_JP), key, jaJp);
     }
 
-    protected abstract String categoryNameJa();
+    protected String categoryNameJa() {
+        return "";
+    }
+    ;
 
     protected String categoryDescriptionJa() {
         return "";

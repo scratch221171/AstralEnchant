@@ -27,7 +27,7 @@
         "type": "modonomicon:none"
       },
       "recipe_id_1": "astralenchant:enchanted_book_nullification",
-      "text": "book.astralenchant.enchanters_guide.enchantments.nullification.crafting.text",
+      "text": "book.astralenchant.enchanters_guide.enchantments.nullification.detail.text",
       "title1": "",
       "title2": ""
     }
@@ -35,5 +35,5 @@
   "show_when_any_parent_unlocked": false,
   "sort_number": 0,
   "x": -2,
-  "y": 0
+  "y": -1
 }

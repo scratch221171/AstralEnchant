@@ -7,7 +7,7 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
-import net.scratch221171.astralenchant.datagen.util.CommonUtil;
+import net.scratch221171.astralenchant.common.util.CommonUtil;
 
 public class OverloadClientHandler {
 

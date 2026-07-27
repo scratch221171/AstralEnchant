@@ -12,7 +12,7 @@
       "item": "minecraft:gold_nugget"
     },
     {
-      "item": "astralenchant:arcane_quartz_tiny_dust"
+      "tag": "c:tiny_dusts/arcane_quartz"
     }
   ],
   "result": {

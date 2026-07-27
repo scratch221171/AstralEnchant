@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "1": {
+      "item": "astralenchant:rotten_bone"
+    },
+    "2": {
+      "item": "minecraft:deepslate"
+    },
+    "3": {
+      "item": "minecraft:polished_basalt"
+    }
+  },
+  "pattern": [
+    "121",
+    "232",
+    "121"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:reinforced_deepslate"
+  }
+}

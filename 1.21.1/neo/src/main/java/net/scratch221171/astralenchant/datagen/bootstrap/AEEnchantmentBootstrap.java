@@ -57,9 +57,7 @@ public class AEEnchantmentBootstrap {
             }
         };
 
-        AEEnchantments.getAll().forEach(key -> {
-            register(context, key, AEEnchantments.getBuilder(key, lookups));
-        });
+        AEEnchantments.getAll().forEach(key -> context.register(key, AEEnchantments.getEnchantment(key, lookups)));
     }
 
     private static void register(

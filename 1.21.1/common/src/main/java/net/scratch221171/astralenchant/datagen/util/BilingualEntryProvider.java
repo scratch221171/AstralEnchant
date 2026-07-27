@@ -50,7 +50,6 @@ public abstract class BilingualEntryProvider extends EntryProvider {
     protected String entryNameJa() {
         return "";
     }
-    ;
 
     protected String entryDescJa() {
         return "";

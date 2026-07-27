@@ -29,9 +29,8 @@ public class AEEnchantments {
         return LIST.get(enchantment).apply(lookups);
     }
 
-    public static Enchantment.EnchantmentDefinition getDefinition(
-            ResourceKey<Enchantment> key, EnchantmentLookups lookups) {
-        return getBuilder(key, lookups).build(key.location()).definition();
+    public static Enchantment getEnchantment(ResourceKey<Enchantment> key, EnchantmentLookups lookups) {
+        return getBuilder(key, lookups).build(key.location());
     }
 
     public static final ResourceKey<Enchantment>

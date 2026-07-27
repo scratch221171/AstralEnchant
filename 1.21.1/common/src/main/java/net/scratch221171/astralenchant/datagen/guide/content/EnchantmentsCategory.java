@@ -1,6 +1,5 @@
 package net.scratch221171.astralenchant.datagen.guide.content;
 
-import com.klikli_dev.modonomicon.api.datagen.CategoryProvider;
 import com.klikli_dev.modonomicon.api.datagen.ModonomiconProviderBase;
 import com.klikli_dev.modonomicon.api.datagen.book.BookCategoryModel;
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel;
@@ -8,11 +7,10 @@ import com.klikli_dev.modonomicon.book.BookCategoryBackgroundParallaxLayer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
-import net.scratch221171.astralenchant.datagen.guide.content.enchantments.EssenceOfEnchantmentEntry;
-import net.scratch221171.astralenchant.datagen.guide.content.enchantments.LastStandEntry;
-import net.scratch221171.astralenchant.datagen.guide.content.enchantments.NullificationEntry;
+import net.scratch221171.astralenchant.datagen.guide.content.enchantments.*;
+import net.scratch221171.astralenchant.datagen.util.BilingualCategoryProvider;
 
-public class EnchantmentsCategory extends CategoryProvider {
+public class EnchantmentsCategory extends BilingualCategoryProvider {
 
     public static final String CATEGORY_ID = "enchantments";
 
@@ -22,7 +20,7 @@ public class EnchantmentsCategory extends CategoryProvider {
 
     @Override
     protected String[] generateEntryMap() {
-        return new String[] {"_______", "_n_l_e_", "_______"};
+        return new String[] {"_n_l_e_", "", "r_f____"};
     }
 
     @Override
@@ -30,11 +28,12 @@ public class EnchantmentsCategory extends CategoryProvider {
         add(new NullificationEntry(this).generate('n'));
         add(new LastStandEntry(this).generate('l'));
         add(new EssenceOfEnchantmentEntry(this).generate('e'));
-        ;
+        add(new ResilienceEntry(this).generate('r'));
+        add(new FeatherTouchEntry(this).generate('f'));
     }
 
     @Override
-    protected BookCategoryModel additionalSetup(BookCategoryModel category) {
+    protected BookCategoryModel wrappedAdditionalSetup(BookCategoryModel category) {
         return category.withBackgroundParallaxLayers(
                 new BookCategoryBackgroundParallaxLayer(modLoc("textures/gui/parallax/starfield/1.png"), 0.7f, -1),
                 new BookCategoryBackgroundParallaxLayer(modLoc("textures/gui/parallax/starfield/2.png"), 1f, -1),
@@ -44,6 +43,11 @@ public class EnchantmentsCategory extends CategoryProvider {
     @Override
     protected String categoryName() {
         return "Enchantments";
+    }
+
+    @Override
+    protected String categoryNameJa() {
+        return "エンチャント";
     }
 
     @Override

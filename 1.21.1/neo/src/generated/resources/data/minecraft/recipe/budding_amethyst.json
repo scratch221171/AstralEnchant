@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "2": {
+      "item": "minecraft:amethyst_block"
+    },
+    "3": {
+      "item": "astralenchant:grown_arcane_quartz"
+    },
+    "4": {
+      "item": "astralenchant:allay_wing"
+    }
+  },
+  "pattern": [
+    "123",
+    "242",
+    "321"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:budding_amethyst"
+  }
+}

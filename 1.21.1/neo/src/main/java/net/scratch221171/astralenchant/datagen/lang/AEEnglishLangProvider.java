@@ -38,6 +38,8 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "Budding Arcanium Ingot");
         addItem(AEItems.ENCHANTMENT_VESSEL, "Enchantment Vessel");
         addItem(AEItems.RESONANT_VESSEL, "Resonant Vessel");
+        addItem(AEItems.ROTTEN_BONE, "Rotten Bone");
+        addItemWithDesc(AEItems.ALLAY_WING, "Allay Wing", "How inhumane!");
 
         addItemWithDesc(
                 AEItems.ARCANIUM_HELMET,

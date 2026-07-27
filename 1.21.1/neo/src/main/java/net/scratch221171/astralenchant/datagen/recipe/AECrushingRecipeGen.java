@@ -6,8 +6,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ID;
+import net.scratch221171.astralenchant.common.key.AETags;
 import net.scratch221171.astralenchant.common.registry.AEItems;
-import net.scratch221171.astralenchant.common.tag.AETags;
 
 public class AECrushingRecipeGen extends CrushingRecipeGen {
     public AECrushingRecipeGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

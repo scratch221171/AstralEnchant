@@ -21,10 +21,10 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.scratch221171.astralenchant.common.component.DisabledEnchantments;
 import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.key.AETags;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEDataComponents;
 import net.scratch221171.astralenchant.common.registry.AEMenuTypes;
-import net.scratch221171.astralenchant.common.tag.AETags;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import org.jspecify.annotations.NonNull;
 

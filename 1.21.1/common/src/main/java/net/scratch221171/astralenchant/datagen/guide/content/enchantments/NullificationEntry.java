@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.common.key.AEEnchantments;
-import net.scratch221171.astralenchant.datagen.util.CommonUtil;
+import net.scratch221171.astralenchant.common.util.CommonUtil;
 import net.scratch221171.astralenchant.datagen.util.EnchantmentEntry;
 
 public class NullificationEntry extends EnchantmentEntry {
@@ -35,7 +35,6 @@ public class NullificationEntry extends EnchantmentEntry {
                         New line   \s
                         """, """
                         帰無を付けることによって、攻撃は以下の様々なダメージ軽減＆無効を貫通します。
-
                         - 防御力、防具強度
                         - 無敵フレーム
                         - エフェクト
@@ -46,6 +45,6 @@ public class NullificationEntry extends EnchantmentEntry {
                         帰無が付いた武器で攻撃すると、白いパーティクルが発生します。
                         """)));
 
-        addRecipePage(AEEnchantments.getDefinition(key(), lookups));
+        addDetails(lookups);
     }
 }

@@ -4,6 +4,7 @@ import com.klikli_dev.modonomicon.api.datagen.CategoryProvider;
 import com.klikli_dev.modonomicon.api.datagen.book.BookEntryModel;
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel;
 import com.klikli_dev.modonomicon.api.datagen.book.page.BookCraftingRecipePageModel;
+import java.util.List;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -15,7 +16,12 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
+import net.minecraft.world.item.enchantment.effects.EnchantmentAttributeEffect;
+import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ModUtils;
+import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.util.CommonUtil;
 import net.scratch221171.astralenchant.common.util.EnchantmentLookups;
 
 public abstract class EnchantmentEntry extends BilingualEntryProvider {
@@ -43,33 +49,71 @@ public abstract class EnchantmentEntry extends BilingualEntryProvider {
 
     protected abstract ResourceKey<Enchantment> key();
 
-    protected void addRecipePage(Enchantment.EnchantmentDefinition definition) {
-        page("crafting", () -> BookCraftingRecipePageModel.create()
-                .withRecipeId1(ModUtils.loc("enchanted_book_" + id()))
-                .withText(pageText(
-                        "Desc in English",
-                        """
-                        最大レベル：{0}
-                        \\
-                        金床コスト：{1}
-                        \\
-                        対応アイテム：{2}
-                        \\
-                        スロット：{3}
-                        """,
-                        definition.maxLevel(),
-                        definition.anvilCost(),
-                        definition
-                                .supportedItems()
-                                .unwrapKey()
-                                .map(TagKey::location)
-                                .map(ResourceLocation::toString)
-                                .orElse("任意のアイテム"),
-                        String.join(
-                                ", ",
-                                definition.slots().stream()
-                                        .map(EquipmentSlotGroup::getSerializedName)
-                                        .toList()))));
+    protected void addDetails(EnchantmentLookups lookups) {
+        var enchantment = AEEnchantments.getEnchantment(key(), lookups);
+        var definition = enchantment.definition();
+        List<EnchantmentAttributeEffect> effects =
+                enchantment.effects().getOrDefault(EnchantmentEffectComponents.ATTRIBUTES, List.of());
+        if (effects.isEmpty()) {
+            page("detail", () -> BookCraftingRecipePageModel.create()
+                    .withRecipeId1(ModUtils.loc("enchanted_book_" + id()))
+                    .withText(pageText(
+                            "Desc in English",
+                            """
+                            [最大レベル]{0}
+                            \\
+                            [金床コスト]{1}
+                            \\
+                            [対応アイテム]{2}
+                            \\
+                            [スロット]{3}
+                            """,
+                            definition.maxLevel(),
+                            definition.anvilCost(),
+                            definition
+                                    .supportedItems()
+                                    .unwrapKey()
+                                    .map(TagKey::location)
+                                    .map(ResourceLocation::toString)
+                                    .orElse("任意のアイテム"),
+                            String.join(
+                                    ", ",
+                                    definition.slots().stream()
+                                            .map(EquipmentSlotGroup::getSerializedName)
+                                            .toList()))));
+        } else {
+            Constants.LOGGER.info("enchantment effect!!!");
+            Constants.LOGGER.info(enchantment.effects().toString());
+            page("detail", () -> BookCraftingRecipePageModel.create()
+                    .withRecipeId1(ModUtils.loc("enchanted_book_" + id()))
+                    .withText(pageText(
+                            "Desc in English",
+                            """
+                            [最大レベル]{0}
+                            \\
+                            [金床コスト]{1}
+                            \\
+                            [対応アイテム]{2}
+                            \\
+                            [スロット]{3}
+                            \\
+                            [属性効果]{4}
+                            """,
+                            definition.maxLevel(),
+                            definition.anvilCost(),
+                            definition
+                                    .supportedItems()
+                                    .unwrapKey()
+                                    .map(TagKey::location)
+                                    .map(ResourceLocation::getPath)
+                                    .orElse("任意のアイテム"),
+                            String.join(
+                                    ", ",
+                                    definition.slots().stream()
+                                            .map(EquipmentSlotGroup::getSerializedName)
+                                            .toList()),
+                            EnchantmentEffectTextUtil.formatAttributeEffects(effects))));
+        }
     }
 
     @Override
@@ -80,7 +124,7 @@ public abstract class EnchantmentEntry extends BilingualEntryProvider {
 
     @Override
     protected String entryName() {
-        return "";
+        return id().replace('_', ' ');
     }
 
     @Override

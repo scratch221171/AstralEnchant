@@ -16,7 +16,6 @@ public class AEItem extends Item implements IAEDescribable {
         this(properties, null, null);
     }
 
-    /** 説明キー付き */
     public AEItem(Properties properties, @Nullable String descKey, @Nullable Style style) {
         super(properties);
         this.descKey = descKey;
