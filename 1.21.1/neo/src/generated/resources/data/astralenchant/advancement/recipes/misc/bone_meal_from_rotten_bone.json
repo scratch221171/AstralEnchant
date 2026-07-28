@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bone_meal"
+        "recipe": "astralenchant:bone_meal_from_rotten_bone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bone_meal"
+      "astralenchant:bone_meal_from_rotten_bone"
     ]
   }
 }

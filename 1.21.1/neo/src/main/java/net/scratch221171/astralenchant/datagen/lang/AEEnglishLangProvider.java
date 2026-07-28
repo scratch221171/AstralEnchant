@@ -100,7 +100,8 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 AEEnchantments.REACTIVE_ARMOR,
                 "Reactive Armor",
                 "Negates effects that bypass armor and enchantments for certain types of damage.");
-        addEnchantmentWithDesc(AEEnchantments.MYSTIC_REMNANTS, "Mystic Remnants", "Adds special drops to certain mobs.");
+        addEnchantmentWithDesc(
+                AEEnchantments.MYSTIC_REMNANTS, "Mystic Remnants", "Adds special drops to certain mobs.");
         addEnchantmentWithDesc(
                 AEEnchantments.CURSE_OF_IGNORANCE, "Curse of Ignorance", "Replaces the tooltip with obscured text.");
         addEnchantmentWithDesc(

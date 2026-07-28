@@ -20,7 +20,7 @@ public class EnchantmentsCategory extends BilingualCategoryProvider {
 
     @Override
     protected String[] generateEntryMap() {
-        return new String[] {"_n_l_e_", "", "r_f____"};
+        return new String[] {"_n_l_e_", "", "r_f_a_E", "", "_o_x_R_", "", "m"};
     }
 
     @Override
@@ -30,6 +30,12 @@ public class EnchantmentsCategory extends BilingualCategoryProvider {
         add(new EssenceOfEnchantmentEntry(this).generate('e'));
         add(new ResilienceEntry(this).generate('r'));
         add(new FeatherTouchEntry(this).generate('f'));
+        add(new AffinityEntry(this).generate('a'));
+        add(new EndlessAppetiteEntry(this).generate('E'));
+        add(new OverloadEntry(this).generate('o'));
+        add(new ExpanseEntry(this).generate('x'));
+        add(new ReactiveArmorEntry(this).generate('R'));
+        add(new MysticRemnantsEntry(this).generate('m'));
     }
 
     @Override

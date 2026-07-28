@@ -21,13 +21,22 @@ public class AELootModifierProvider extends GlobalLootModifierProvider {
     @Override
     protected void start() {
         add(
+                "wither_wither_skeleton_skull",
+                new AddTableLootModifier(
+                        new LootItemCondition[] {is(EntityType.WITHER)},
+                        AEEntityLootTableProvider.WITHER_SKELETON_SKULL));
+        add(
+                "warden_echo_shard",
+                new AddTableLootModifier(
+                        new LootItemCondition[] {is(EntityType.WARDEN)}, AEEntityLootTableProvider.ECHO_SHARD));
+        add(
                 "bogged_rotten_bone",
                 new AddTableLootModifier(
-                        new LootItemCondition[] {is(EntityType.BOGGED)}, AEEntityLootTableProvider.ROTTEN_BONE_TABLE));
+                        new LootItemCondition[] {is(EntityType.BOGGED)}, AEEntityLootTableProvider.ROTTEN_BONE));
         add(
                 "allay_allay_wing",
                 new AddTableLootModifier(
-                        new LootItemCondition[] {is(EntityType.ALLAY)}, AEEntityLootTableProvider.ALLAY_WING_TABLE));
+                        new LootItemCondition[] {is(EntityType.ALLAY)}, AEEntityLootTableProvider.ALLAY_WING));
     }
 
     private static LootItemCondition is(EntityType<?> type) {

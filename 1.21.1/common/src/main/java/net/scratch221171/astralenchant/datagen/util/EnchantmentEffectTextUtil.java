@@ -31,6 +31,11 @@ public final class EnchantmentEffectTextUtil {
             if (perLevelAboveFirst == 0f) return base;
             return base + "+(" + format(perLevelAboveFirst, isPercent) + ")\\*レベル";
         }
+        if (value instanceof LevelBasedValue.LevelsSquared(float added1)) {
+            var added = format(added1, isPercent);
+            return added + "+(レベル^2)*100%%";
+        }
+
         // Clamped/Fraction/Lookup等は未対応
         return value.toString();
     }

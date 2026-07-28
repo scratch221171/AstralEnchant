@@ -15,11 +15,11 @@ import net.scratch221171.astralenchant.datagen.advancement.AEAdvancementProvider
 import net.scratch221171.astralenchant.datagen.block.AEBlockLootTableProvider;
 import net.scratch221171.astralenchant.datagen.block.AEBlockStateProvider;
 import net.scratch221171.astralenchant.datagen.bootstrap.AEEnchantmentBootstrap;
+import net.scratch221171.astralenchant.datagen.entity.AEEntityLootTableProvider;
+import net.scratch221171.astralenchant.datagen.glm.AELootModifierProvider;
 import net.scratch221171.astralenchant.datagen.guide.EnchantersGuideBook;
 import net.scratch221171.astralenchant.datagen.lang.AEEnglishLangProvider;
 import net.scratch221171.astralenchant.datagen.lang.AEJapaneseLangProvider;
-import net.scratch221171.astralenchant.datagen.entity.AEEntityLootTableProvider;
-import net.scratch221171.astralenchant.datagen.glm.AELootModifierProvider;
 import net.scratch221171.astralenchant.datagen.model.AEItemModelProvider;
 import net.scratch221171.astralenchant.datagen.recipe.AECrushingRecipeGen;
 import net.scratch221171.astralenchant.datagen.recipe.AEMixingRecipeGen;

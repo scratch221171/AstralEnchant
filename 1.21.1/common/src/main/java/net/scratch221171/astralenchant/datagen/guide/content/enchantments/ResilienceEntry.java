@@ -37,9 +37,9 @@ public class ResilienceEntry extends EnchantmentEntry {
                         New line   \s
                         """,
                         """
-                        復調を付けていると、全てのアイテムのクールダウン時間が短縮されます。
+                        　復調を付けていると、全てのアイテムのクールダウン時間が短縮されます。
                         \\
-                        バニラで恩恵を受けるのは{0}、{1}、{2}、{3}だけですが、modアイテムにも効果があります。
+                        　バニラで恩恵を受けるのは{0}、{1}、{2}、{3}だけですが、modアイテムにも効果があります。
                         """,
                         itemLink(Items.ENDER_PEARL),
                         itemLink(Items.CHORUS_FRUIT),

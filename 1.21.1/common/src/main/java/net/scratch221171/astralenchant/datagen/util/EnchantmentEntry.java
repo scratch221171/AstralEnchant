@@ -60,12 +60,9 @@ public abstract class EnchantmentEntry extends BilingualEntryProvider {
                     .withText(pageText(
                             "Desc in English",
                             """
-                            [最大レベル]{0}
-                            \\
-                            [金床コスト]{1}
-                            \\
-                            [対応アイテム]{2}
-                            \\
+                            [最大レベル]{0}   \s
+                            [金床コスト]{1}   \s
+                            [対応アイテム]{2}   \s
                             [スロット]{3}
                             """,
                             definition.maxLevel(),
@@ -74,7 +71,7 @@ public abstract class EnchantmentEntry extends BilingualEntryProvider {
                                     .supportedItems()
                                     .unwrapKey()
                                     .map(TagKey::location)
-                                    .map(ResourceLocation::toString)
+                                    .map(ResourceLocation::getPath)
                                     .orElse("任意のアイテム"),
                             String.join(
                                     ", ",
@@ -89,14 +86,10 @@ public abstract class EnchantmentEntry extends BilingualEntryProvider {
                     .withText(pageText(
                             "Desc in English",
                             """
-                            [最大レベル]{0}
-                            \\
-                            [金床コスト]{1}
-                            \\
-                            [対応アイテム]{2}
-                            \\
-                            [スロット]{3}
-                            \\
+                            [最大レベル]{0}   \s
+                            [金床コスト]{1}   \s
+                            [対応アイテム]{2}   \s
+                            [スロット]{3}   \s
                             [属性効果]{4}
                             """,
                             definition.maxLevel(),

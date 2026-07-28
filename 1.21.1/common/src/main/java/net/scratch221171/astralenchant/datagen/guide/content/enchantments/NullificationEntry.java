@@ -34,7 +34,7 @@ public class NullificationEntry extends EnchantmentEntry {
                         This is English!   \s
                         New line   \s
                         """, """
-                        帰無を付けることによって、攻撃は以下の様々なダメージ軽減＆無効を貫通します。
+                        　帰無を付けることによって、攻撃は以下の様々なダメージ軽減＆無効を貫通します。
                         - 防御力、防具強度
                         - 無敵フレーム
                         - エフェクト
@@ -42,7 +42,7 @@ public class NullificationEntry extends EnchantmentEntry {
                         - 無敵状態
                         - 盾
 
-                        帰無が付いた武器で攻撃すると、白いパーティクルが発生します。
+                        　帰無が付いた武器で攻撃すると、白いパーティクルが発生します。
                         """)));
 
         addDetails(lookups);
