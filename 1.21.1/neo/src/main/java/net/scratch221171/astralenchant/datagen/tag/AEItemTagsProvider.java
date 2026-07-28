@@ -37,6 +37,8 @@ public class AEItemTagsProvider extends ItemTagsProvider {
         tag(AETags.Items.INGOTS_ARCANIUM).add(AEItems.ARCANIUM_INGOT.get());
         tag(Tags.Items.INGOTS).addTag(AETags.Items.INGOTS_ARCANIUM);
 
+        tag(Tags.Items.BONES).add(AEItems.ROTTEN_BONE.get());
+
         copy(AETags.Blocks.STORAGE_BLOCKS_ARCANIUM, AETags.Items.STORAGE_BLOCKS_ARCANIUM);
         tag(Tags.Items.STORAGE_BLOCKS).addTag(AETags.Items.STORAGE_BLOCKS_ARCANIUM);
 

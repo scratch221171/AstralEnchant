@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance_with_enchanted_bonus",
+          "enchanted_chance": {
+            "type": "minecraft:linear",
+            "base": 0.05,
+            "per_level_above_first": 0.05
+          },
+          "enchantment": "astralenchant:mystic_remnants",
+          "unenchanted_chance": 0.0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "astralenchant:allay_wing"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:binomial",
+        "n": 2.0,
+        "p": 0.5
+      }
+    }
+  ],
+  "random_sequence": "astralenchant:entities/allay_wing"
+}

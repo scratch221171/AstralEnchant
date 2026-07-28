@@ -67,6 +67,7 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "オーバーロード", "既存のエンチャントのレベルをオーバーロードの値だけ増加させます。");
         addEnchantmentWithDesc(AEEnchantments.EXPANSE, "拡張", "アイテムが現在装着されているキュリオスロットの数を、エンチャントのレベル分だけ増加させます。");
         addEnchantmentWithDesc(AEEnchantments.REACTIVE_ARMOR, "反応装甲", "一部のダメージタイプのアーマーおよびエンチャントを貫通する効果を無効化します。");
+        addEnchantmentWithDesc(AEEnchantments.MYSTIC_REMNANTS, "神秘の残滓", "一部のモブに特殊ドロップを追加します。");
         addEnchantmentWithDesc(AEEnchantments.CURSE_OF_IGNORANCE, "無知の呪い", "ツールチップを呪われた文字に置き換えます。");
         addEnchantmentWithDesc(AEEnchantments.CURSE_OF_ENCHANTMENT, "エンチャントの呪い", "アイテムのエンチャントを固定し、変更できなくします。");
         addEnchantmentWithDesc(AEEnchantments.DISTORTION, "歪曲", "外れた攻撃の判定を近くの敵へが歪めます。");

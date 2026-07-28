@@ -25,6 +25,8 @@ public class BrewingRecipeHandler {
                 processingIngredient(0.75f),
                 potion(Potions.LONG_STRENGTH),
                 new ItemStack(AEItems.GROWN_ARCANE_QUARTZ.get()));
+
+        builder.addStartMix(AEItems.ALLAY_WING.get(), Potions.REGENERATION);
     }
 
     private static Ingredient potion(Holder<Potion> potion) {

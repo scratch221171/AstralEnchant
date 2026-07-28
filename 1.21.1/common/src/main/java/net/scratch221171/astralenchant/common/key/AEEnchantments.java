@@ -162,6 +162,17 @@ public class AEEnchantments {
                                     Enchantment.constantCost(Integer.MAX_VALUE),
                                     16,
                                     EquipmentSlotGroup.CHEST))),
+            MYSTIC_REMNANTS =
+                    create(
+                            ID.MYSTIC_REMNANTS,
+                            lookups -> Enchantment.enchantment(Enchantment.definition(
+                                    lookups.items().getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
+                                    1,
+                                    3,
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    16,
+                                    EquipmentSlotGroup.MAINHAND))),
             CURSE_OF_IGNORANCE =
                     create(
                             ID.CURSE_OF_IGNORANCE,

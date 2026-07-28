@@ -33,6 +33,7 @@ public class CommonConfig {
                 OVERLOAD = defineToggle(ConfigID.OVERLOAD),
                 EXPANSE = defineToggle(ConfigID.EXPANSE),
                 REACTIVE_ARMOR = defineToggle(ConfigID.REACTIVE_ARMOR),
+                MYSTIC_REMNANTS = defineToggle(ConfigID.MYSTIC_REMNANTS),
                 CURSE_OF_IGNORANCE = defineToggle(ConfigID.CURSE_OF_IGNORANCE),
                 CURSE_OF_ENCHANTMENT = defineToggle(ConfigID.CURSE_OF_ENCHANTMENT),
                 DISTORTION = defineToggle(ConfigID.DISTORTION),

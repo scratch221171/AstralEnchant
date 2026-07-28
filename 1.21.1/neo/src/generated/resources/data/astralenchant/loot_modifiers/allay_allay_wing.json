@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:allay"
+      }
+    }
+  ],
+  "table": "astralenchant:entities/allay_wing"
+}

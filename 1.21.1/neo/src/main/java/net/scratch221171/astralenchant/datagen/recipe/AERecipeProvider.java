@@ -259,6 +259,11 @@ public class AERecipeProvider extends RecipeProvider {
                     .define('4', AEItems.ALLAY_WING)
                     .unlockedBy(getHasName(AEItems.ALLAY_WING), has(AEItems.ALLAY_WING))
                     .save(output);
+
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
+                    .requires(AEItems.ROTTEN_BONE)
+                    .unlockedBy(getHasName(AEItems.ROTTEN_BONE), has(AEItems.ROTTEN_BONE))
+                    .save(output, ModUtils.loc("bone_meal_from_rotten_bone"));
         }
 
         // エンチャント本
@@ -433,6 +438,22 @@ public class AERecipeProvider extends RecipeProvider {
                                 .define('5', enchantedBook(blast_prot, 4))
                                 .define('6', AEItems.ENCHANTMENT_VESSEL)
                                 .define('7', enchantedBook(fire_prot, 4));
+                    });
+
+            enchantedBookRecipe(
+                    output.withConditions(new ConfigCondition(ConfigID.MYSTIC_REMNANTS)),
+                    holderLookup,
+                    AEEnchantments.MYSTIC_REMNANTS,
+                    builder -> {
+                        var looting = holderLookup.holderOrThrow(Enchantments.LOOTING);
+                        builder.unlockedBy(getHasName(AEItems.ENCHANTMENT_VESSEL), has(AEItems.ENCHANTMENT_VESSEL))
+                                .pattern(" 1 ")
+                                .pattern("232")
+                                .pattern("141")
+                                .define('1', ItemTags.CANDLES)
+                                .define('2', Tags.Items.DRINKS_OMINOUS)
+                                .define('3', enchantedBook(looting, 3))
+                                .define('4', AEItems.ENCHANTMENT_VESSEL);
                     });
 
             enchantedBookRecipe(

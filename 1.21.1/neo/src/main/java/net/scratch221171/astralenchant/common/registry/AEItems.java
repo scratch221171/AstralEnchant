@@ -115,7 +115,9 @@ public class AEItems {
             String name, Item.Properties properties, Desc desc, @Nullable Style style) {
         return switch (desc.mode) {
             case NONE -> REGISTER.registerItem(name, p -> new AEItem(p, null, style), properties);
-            case DEFAULT -> REGISTER.registerItem(name, p -> new AEItem(p, CommonUtil.getAEItemLangKey(name) + ".desc", style), properties);
+            case DEFAULT ->
+                REGISTER.registerItem(
+                        name, p -> new AEItem(p, CommonUtil.getAEItemLangKey(name) + ".desc", style), properties);
             case CUSTOM -> REGISTER.registerItem(name, p -> new AEItem(p, desc.key, style), properties);
         };
     }
@@ -130,7 +132,10 @@ public class AEItems {
         return switch (desc.mode) {
             case NONE -> REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, null, style), properties);
             case DEFAULT ->
-                REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, CommonUtil.getAEItemLangKey(name) + ".desc", style), properties);
+                REGISTER.registerItem(
+                        name,
+                        p -> new AEArmorItem(material, type, p, CommonUtil.getAEItemLangKey(name) + ".desc", style),
+                        properties);
             case CUSTOM ->
                 REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, desc.key, style), properties);
         };

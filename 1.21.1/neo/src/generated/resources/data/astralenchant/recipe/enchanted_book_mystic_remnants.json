@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "mystic_remnants"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "minecraft:candles"
+    },
+    "2": {
+      "tag": "c:drinks/ominous"
+    },
+    "3": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:looting": 3
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "4": {
+      "item": "astralenchant:enchantment_vessel"
+    }
+  },
+  "pattern": [
+    " 1 ",
+    "232",
+    "141"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:mystic_remnants": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}

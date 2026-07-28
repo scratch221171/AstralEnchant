@@ -44,6 +44,7 @@ public class ConfigID {
             OVERLOAD = "overload",
             EXPANSE = "expanse",
             REACTIVE_ARMOR = "reactive_armor",
+            MYSTIC_REMNANTS = "mystic_remnants",
             CURSE_OF_IGNORANCE = "curse_of_ignorance",
             CURSE_OF_ENCHANTMENT = "curse_of_enchantment",
             DISTORTION = "distortion",

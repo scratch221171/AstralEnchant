@@ -18,6 +18,8 @@ import net.scratch221171.astralenchant.datagen.bootstrap.AEEnchantmentBootstrap;
 import net.scratch221171.astralenchant.datagen.guide.EnchantersGuideBook;
 import net.scratch221171.astralenchant.datagen.lang.AEEnglishLangProvider;
 import net.scratch221171.astralenchant.datagen.lang.AEJapaneseLangProvider;
+import net.scratch221171.astralenchant.datagen.entity.AEEntityLootTableProvider;
+import net.scratch221171.astralenchant.datagen.glm.AELootModifierProvider;
 import net.scratch221171.astralenchant.datagen.model.AEItemModelProvider;
 import net.scratch221171.astralenchant.datagen.recipe.AECrushingRecipeGen;
 import net.scratch221171.astralenchant.datagen.recipe.AEMixingRecipeGen;
@@ -43,9 +45,13 @@ public final class DataGenerators {
         event.createProvider((output, future) -> new LootTableProvider(
                 output,
                 Set.of(),
-                List.of(new LootTableProvider.SubProviderEntry(
-                        AEBlockLootTableProvider::new, LootContextParamSets.BLOCK)),
+                List.of(
+                        new LootTableProvider.SubProviderEntry(
+                                AEBlockLootTableProvider::new, LootContextParamSets.BLOCK),
+                        new LootTableProvider.SubProviderEntry(
+                                AEEntityLootTableProvider::new, LootContextParamSets.ENTITY)),
                 future));
+        event.createProvider(AELootModifierProvider::new);
 
         event.createProvider(AERecipeProvider::new);
         event.createProvider(AECrushingRecipeGen::new);
