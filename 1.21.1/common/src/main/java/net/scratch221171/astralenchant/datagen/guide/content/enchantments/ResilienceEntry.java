@@ -28,7 +28,7 @@ public class ResilienceEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
                 .withText(pageText(
@@ -37,10 +37,11 @@ public class ResilienceEntry extends EnchantmentEntry {
                         New line   \s
                         """,
                         """
-                        　復調を付けていると、全てのアイテムのクールダウン時間が短縮されます。
+                        　{0}を付けていると、全てのアイテムのクールダウン時間が短縮されます。
                         \\
-                        　バニラで恩恵を受けるのは{0}、{1}、{2}、{3}だけですが、modアイテムにも効果があります。
+                        　バニラで恩恵を受けるのは{1}、{2}、{3}、{4}だけですが、modアイテムにも効果があります。
                         """,
+                        translatedName(),
                         itemLink(Items.ENDER_PEARL),
                         itemLink(Items.CHORUS_FRUIT),
                         itemLink(Items.WIND_CHARGE),

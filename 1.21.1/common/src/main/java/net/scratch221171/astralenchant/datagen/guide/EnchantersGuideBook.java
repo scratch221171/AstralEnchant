@@ -7,7 +7,8 @@ import java.util.Map;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
-import net.scratch221171.astralenchant.datagen.guide.content.EnchantmentsCategory;
+import net.scratch221171.astralenchant.datagen.guide.content.EnchantmentCategory;
+import net.scratch221171.astralenchant.datagen.guide.content.ProgressionCategory;
 
 public class EnchantersGuideBook extends SingleBookSubProvider {
 
@@ -43,6 +44,7 @@ public class EnchantersGuideBook extends SingleBookSubProvider {
 
     @Override
     protected void generateCategories() {
-        this.add(new EnchantmentsCategory(this).generate());
+        this.add(new ProgressionCategory(this).generate());
+        this.add(new EnchantmentCategory(this).generate());
     }
 }

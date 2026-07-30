@@ -49,6 +49,14 @@ public abstract class EnchantmentEntry extends BilingualEntryProvider {
 
     protected abstract ResourceKey<Enchantment> key();
 
+    protected String translatedName() {
+        return "<t>" + CommonUtil.getLangKey(key()) + "<t>";
+    }
+
+    protected String translatedName(ResourceKey<Enchantment> key) {
+        return "<t>" + CommonUtil.getLangKey(key) + "<t>";
+    }
+
     protected void addDetails(EnchantmentLookups lookups) {
         var enchantment = AEEnchantments.getEnchantment(key(), lookups);
         var definition = enchantment.definition();
@@ -112,6 +120,7 @@ public abstract class EnchantmentEntry extends BilingualEntryProvider {
     @Override
     protected BookEntryModel wrappedAdditionalSetup(BookEntryModel entry) {
         this.useExistingNameKey(CommonUtil.getLangKey(key()));
+        this.useExistingDescKey(CommonUtil.getDescLangKey(key()));
         return entry;
     }
 

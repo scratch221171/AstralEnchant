@@ -7,7 +7,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.CommonUtil;
-import net.scratch221171.astralenchant.datagen.guide.content.EnchantmentsCategory;
+import net.scratch221171.astralenchant.datagen.guide.content.EnchantmentCategory;
 import net.scratch221171.astralenchant.datagen.util.EnchantmentEntry;
 
 public class EssenceOfEnchantmentEntry extends EnchantmentEntry {
@@ -28,18 +28,25 @@ public class EssenceOfEnchantmentEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
-                .withText(pageText("""
+                .withText(pageText(
+                        """
                         This is English!   \s
                         New line   \s
-                        """, """
-                        　エンチャントの極意は、アイテムの**自身を除く**全てのエンチャントの合計レベル(デフォルトでは{0}による増加レベルを除く)に応じて**全てのステータス**を増加させます。   \s
+                        """,
+                        """
+                        　{0}は、アイテムの**自身を除く**全てのエンチャントの合計レベル(デフォルトでは{1}による増加レベルを除く)に応じて**全てのステータス**を増加させます。   \s
                         　デフォルトでは1レベルにつき1%%、**基本値乗算加算**(ADD_MULTIPLIED_BASE)で増加します。   \s
                         　大きさ、重力など中立的な属性は変化せず、炎上時間など有害な属性は減少します。   \s
                         　また、curiosアイテムでも動作します。
-                        """, entryLink("オーバーロード", EnchantmentsCategory.CATEGORY_ID, ID.OVERLOAD))));
+                        """,
+                        translatedName(),
+                        entryLink(
+                                translatedName(AEEnchantments.OVERLOAD),
+                                EnchantmentCategory.CATEGORY_ID,
+                                ID.OVERLOAD))));
 
         addDetails(lookups);
     }

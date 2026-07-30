@@ -7,7 +7,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.CommonUtil;
-import net.scratch221171.astralenchant.datagen.guide.content.EnchantmentsCategory;
+import net.scratch221171.astralenchant.datagen.guide.content.EnchantmentCategory;
 import net.scratch221171.astralenchant.datagen.util.EnchantmentEntry;
 
 public class ReactiveArmorEntry extends EnchantmentEntry {
@@ -28,16 +28,20 @@ public class ReactiveArmorEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
-                .withText(pageText("""
+                .withText(pageText(
+                        """
                         This is English!   \s
                         New line   \s
-                        """, """
-                        　反応装甲を付けた防具を身に着けている場合、受けた攻撃が持つ**防具貫通効果**(奈落ダメージなど)及び**エンチャント貫通効果**(ウォーデンの衝撃波など)が無効化され、それらのダメージが防具で軽減できるようになります。   \s
-                        　なお、{0}による軽減貫通効果は無効化できません。
-                        """, entryLink("帰無", EnchantmentsCategory.CATEGORY_ID, ID.NULLIFICATION))));
+                        """,
+                        """
+                        　{0}を付けた防具を身に着けている場合、受けた攻撃が持つ**防具貫通効果**(奈落ダメージなど)及び**エンチャント貫通効果**(ウォーデンの衝撃波など)が無効化され、それらのダメージが防具で軽減できるようになります。   \s
+                        　なお、{1}による軽減貫通効果は無効化できません。
+                        """,
+                        translatedName(),
+                        entryLink("帰無", EnchantmentCategory.CATEGORY_ID, ID.NULLIFICATION))));
 
         addDetails(lookups);
     }

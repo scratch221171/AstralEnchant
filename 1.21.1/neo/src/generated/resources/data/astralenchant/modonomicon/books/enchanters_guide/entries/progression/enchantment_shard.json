@@ -1,0 +1,41 @@
+{
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "category": "progression",
+  "description": "book.astralenchant.enchanters_guide.progression.enchantment_shard.description",
+  "hide_while_locked": false,
+  "icon": {
+    "item": "astralenchant:enchantment_shard"
+  },
+  "name": "item.astralenchant.enchantment_shard",
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "item": {
+        "count": 1,
+        "item": "astralenchant:enchantment_shard"
+      },
+      "text": "book.astralenchant.enchanters_guide.progression.enchantment_shard.desc.text",
+      "title": "item.astralenchant.enchantment_shard"
+    },
+    {
+      "type": "modonomicon:smelting_recipe",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "recipe_id_1": "astralenchant:enchantment_shard_smelting",
+      "text": "book.astralenchant.enchanters_guide.progression.enchantment_shard.recipe.text",
+      "title1": "",
+      "title2": ""
+    }
+  ],
+  "show_when_any_parent_unlocked": false,
+  "sort_number": 0,
+  "x": -1,
+  "y": 0
+}

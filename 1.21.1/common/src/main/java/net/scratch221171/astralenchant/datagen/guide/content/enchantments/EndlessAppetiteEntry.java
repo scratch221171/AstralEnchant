@@ -27,16 +27,16 @@ public class EndlessAppetiteEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
                 .withText(pageText("""
                         This is English!   \s
                         New line   \s
                         """, """
-                        　果てしない食欲は、満腹度および隠し満腹度の上限を引き上げます。   \s
+                        　{0}は、満腹度および隠し満腹度の上限を引き上げます。   \s
                         　**なお、デフォルトの上限を超えた分は描写されません。**
-                        """)));
+                        """, translatedName())));
 
         addDetails(lookups);
     }

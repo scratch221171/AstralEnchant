@@ -1,0 +1,39 @@
+{
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "category": "enchantment",
+  "description": "enchantment.astralenchant.mystic_remnants.desc",
+  "hide_while_locked": false,
+  "icon": {
+    "item": "minecraft:enchanted_book"
+  },
+  "name": "enchantment.astralenchant.mystic_remnants",
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "show_title_separator": true,
+      "text": "book.astralenchant.enchanters_guide.enchantment.mystic_remnants.desc.text",
+      "title": "enchantment.astralenchant.mystic_remnants",
+      "use_markdown_in_title": false
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "recipe_id_1": "astralenchant:enchanted_book_mystic_remnants",
+      "text": "book.astralenchant.enchanters_guide.enchantment.mystic_remnants.detail.text",
+      "title1": "",
+      "title2": ""
+    }
+  ],
+  "show_when_any_parent_unlocked": false,
+  "sort_number": 10,
+  "x": 0,
+  "y": 0
+}

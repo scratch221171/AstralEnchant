@@ -434,7 +434,7 @@ public class AERecipeProvider extends RecipeProvider {
                                 .define('1', enchantedBook(prot, 4))
                                 .define('2', potion(Potions.TURTLE_MASTER))
                                 .define('3', enchantedBook(projectile_prot, 4))
-                                .define('4', Items.SCULK_CATALYST)
+                                .define('4', Items.TURTLE_HELMET)
                                 .define('5', enchantedBook(blast_prot, 4))
                                 .define('6', AEItems.ENCHANTMENT_VESSEL)
                                 .define('7', enchantedBook(fire_prot, 4));

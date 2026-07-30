@@ -27,16 +27,16 @@ public class ExpanseEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
                 .withText(pageText("""
                         This is English!   \s
                         New line   \s
                         """, """
-                        　*拡張は[Curios](https://modrinth.com/mod/curios)連携要素であり、**Curiosが存在しない場合無効化されます！***   \s
-                        　拡張はCuriosアイテムにのみ効果を発揮し、装着されているCurioスロットを増やします。デフォルトでは効果は重複しません。
-                        """)));
+                        　*{0}は[Curios](https://modrinth.com/mod/curios)連携要素であり、**Curiosが存在しない場合無効化されます！***   \s
+                        　{0}はCuriosアイテムにのみ効果を発揮し、装着されているCurioスロットを増やします。デフォルトでは効果は重複しません。
+                        """, translatedName())));
 
         addDetails(lookups);
     }

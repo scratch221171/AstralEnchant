@@ -1,6 +1,9 @@
 package net.scratch221171.astralenchant.datagen;
 
+import com.klikli_dev.modonomicon.Modonomicon;
 import com.klikli_dev.modonomicon.api.datagen.NeoBookProvider;
+import com.klikli_dev.modonomicon.datagen.DemoMultiblockProvider;
+import com.klikli_dev.modonomicon.datagen.book.DemoBook;
 import java.util.List;
 import java.util.Set;
 import net.minecraft.core.RegistrySetBuilder;
@@ -67,8 +70,7 @@ public final class DataGenerators {
         var jaJpCache = new AEJapaneseLangProvider(generator.getPackOutput());
 
         event.createProvider(output -> NeoBookProvider.of(
-                event, new EnchantersGuideBook(enUsCache, jaJpCache) // ← 両方渡す
-                ));
+                event, new EnchantersGuideBook(enUsCache, jaJpCache), new DemoBook(Modonomicon.MOD_ID, enUsCache)));
 
         // Client
         event.createProvider(output -> new AEBlockStateProvider(output, fileHelper));
@@ -76,5 +78,8 @@ public final class DataGenerators {
 
         generator.addProvider(event.includeClient(), enUsCache);
         generator.addProvider(event.includeClient(), jaJpCache);
+
+        generator.addProvider(
+                event.includeServer(), new DemoMultiblockProvider(generator.getPackOutput(), Modonomicon.MOD_ID));
     }
 }

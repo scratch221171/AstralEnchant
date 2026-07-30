@@ -28,7 +28,7 @@ public class MysticRemnantsEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
                 .withText(pageText(
@@ -37,14 +37,15 @@ public class MysticRemnantsEntry extends EnchantmentEntry {
                         New line   \s
                         """,
                         """
-                        神秘の残滓を付けた武器で一部の敵を倒すと、特殊なドロップをランダムでいくつか得られます。
-                        - ウィザー: {0}
-                        - ウォーデン: {1}
-                        - ボグド: {2}
-                        - アレイ: {3}
+                        　{0}を付けた武器で一部の敵を倒すと、特殊なドロップをランダムでいくつか得られます。
+                        - ウィザー: {1}
+                        - ウォーデン: {2}
+                        - ボグド: {3}
+                        - アレイ: {4}
 
                         確率は(レベル\\*5)%%、ロール数はそれぞれ異なります。
                         """,
+                        translatedName(),
                         itemLink(Items.WITHER_SKELETON_SKULL),
                         itemLink(Items.ECHO_SHARD),
                         itemLink(CommonUtil.getAEItem(ID.ROTTEN_BONE)),

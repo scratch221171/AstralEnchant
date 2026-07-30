@@ -27,14 +27,14 @@ public class LastStandEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
                 .withText(pageText("""
                         This is English!   \s
                         New line   \s
                         """, """
-                        　防具にラストスタンドを付けることで、経験値を消費して死亡をキャンセルできます。
+                        　防具に{0}を付けることで、経験値を消費して死亡をキャンセルできます。
                         \\
                         　消費経験値は**全ての防具のレベルの合計**に応じて変動します。*現在のレベル*(N)及び設定で変更できる*基本値*(B)、*割合*(R)、*最大値*(M)を用いて、消費されるコストは
                         \\
@@ -43,7 +43,7 @@ public class LastStandEntry extends EnchantmentEntry {
                         で計算されます。
                         \\
                         　デフォルトでは、/killなど無敵を貫通するダメージによる死亡もキャンセルします。
-                        """)));
+                        """, translatedName())));
 
         addDetails(lookups);
     }

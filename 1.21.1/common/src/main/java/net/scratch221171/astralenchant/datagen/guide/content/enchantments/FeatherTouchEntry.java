@@ -28,7 +28,7 @@ public class FeatherTouchEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
                 .withText(pageText(
@@ -37,12 +37,13 @@ public class FeatherTouchEntry extends EnchantmentEntry {
                         New line   \s
                         """,
                         """
-                        　シルクタッチの完全上位互換であるフェザータッチを付けることで、{0}などはもちろん、{1}や{2}も回収できるようになります。
+                        　シルクタッチの完全上位互換である{0}を付けることで、{1}などはもちろん、{2}や{3}も回収できるようになります。
                         \\
                         　対象が**ブロックエンティティ**(チェストやかまどなど)の場合、コンポーネントを保存したままアイテム化することが出来ます。この時[#](fc842d)オレンジ色のパーティクル[#]()が発生します。
                         \\
                         　また、スニーク時は**ブロックの状態**(ブロックの向きや水没状態など)なども保存します。この時[#](17adad)青色のパーティクル[#]()が発生します。
                         """,
+                        translatedName(),
                         itemLink(Items.GLASS),
                         itemLink(Items.BUDDING_AMETHYST),
                         itemLink(Items.REINFORCED_DEEPSLATE))));

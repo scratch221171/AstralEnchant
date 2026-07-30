@@ -27,14 +27,14 @@ public class NullificationEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
                 .withText(pageText("""
                         This is English!   \s
                         New line   \s
                         """, """
-                        　帰無を付けることによって、攻撃は以下の様々なダメージ軽減＆無効を貫通します。
+                        　{0}を付けることによって、攻撃は以下の様々なダメージ軽減＆無効を貫通します。
                         - 防御力、防具強度
                         - 無敵フレーム
                         - エフェクト
@@ -42,8 +42,8 @@ public class NullificationEntry extends EnchantmentEntry {
                         - 無敵状態
                         - 盾
 
-                        　帰無が付いた武器で攻撃すると、白いパーティクルが発生します。
-                        """)));
+                        　{0}が付いた武器で攻撃すると、白いパーティクルが発生します。
+                        """, translatedName())));
 
         addDetails(lookups);
     }

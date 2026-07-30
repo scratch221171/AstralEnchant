@@ -1,0 +1,39 @@
+{
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "category": "enchantment",
+  "description": "enchantment.astralenchant.curse_of_enchantment.desc",
+  "hide_while_locked": false,
+  "icon": {
+    "item": "minecraft:enchanted_book"
+  },
+  "name": "enchantment.astralenchant.curse_of_enchantment",
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "show_title_separator": true,
+      "text": "book.astralenchant.enchanters_guide.enchantment.curse_of_enchantment.desc.text",
+      "title": "enchantment.astralenchant.curse_of_enchantment",
+      "use_markdown_in_title": false
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "recipe_id_1": "astralenchant:enchanted_book_curse_of_enchantment",
+      "text": "book.astralenchant.enchanters_guide.enchantment.curse_of_enchantment.detail.text",
+      "title1": "",
+      "title2": ""
+    }
+  ],
+  "show_when_any_parent_unlocked": false,
+  "sort_number": 12,
+  "x": 0,
+  "y": 0
+}

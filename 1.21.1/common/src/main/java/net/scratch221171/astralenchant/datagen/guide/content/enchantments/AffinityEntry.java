@@ -28,20 +28,20 @@ public class AffinityEntry extends EnchantmentEntry {
 
     @Override
     protected void generatePages() {
-        page("content", () -> BookTextPageModel.create()
+        page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
                 // TODO: English Docs
                 .withText(pageText("""
                         This is English!   \s
                         New line   \s
                         """, """
-                        　親和が付いているアイテムは、以下の制限を無視して**任意のエンチャント**を付与できるようになります。
+                        　{0}が付いているアイテムは、以下の制限を無視して**任意のエンチャント**を付与できるようになります。
                         - 対応の対象かどうか
                         - エンチャント可能か
                         - エンチャントの競合
 
-                        　他modによって追加されるエンチャント合成手段には対応できない可能性があります。その場合は代わりに{0}を使用してください。
-                        """, itemLink(Items.ANVIL))));
+                        　他modによって追加されるエンチャント合成手段には対応できない可能性があります。その場合は代わりに{1}を使用してください。
+                        """, translatedName(), itemLink(Items.ANVIL))));
 
         addDetails(lookups);
     }

@@ -9,8 +9,8 @@ import net.scratch221171.astralenchant.ModUtils;
 
 public class CommonUtil {
 
-    public static Item getAEItem(String name) {
-        return BuiltInRegistries.ITEM.get(ModUtils.loc(name));
+    public static Item getAEItem(String id) {
+        return BuiltInRegistries.ITEM.get(ModUtils.loc(id));
     }
 
     public static String getLangKey(ResourceKey<Enchantment> key) {
