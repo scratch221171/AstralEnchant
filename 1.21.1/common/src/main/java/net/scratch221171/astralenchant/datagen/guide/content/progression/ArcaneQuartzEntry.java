@@ -23,7 +23,7 @@ public class ArcaneQuartzEntry extends ItemEntry {
     @Override
     protected void generatePages() {
         // TODO: English Translation
-        page("desc", () -> BookSpotlightPageModel.create().withTitle(CommonUtil.getAEItemLangKey(id())))
+        page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText(
                         """
@@ -36,6 +36,6 @@ public class ArcaneQuartzEntry extends ItemEntry {
                         itemLink(Items.QUARTZ),
                         itemLink(Items.AMETHYST_SHARD)));
 
-        page("recipe", () -> BookCraftingRecipePageModel.create().withRecipeId1(ModUtils.loc(ID.ARCANE_QUARTZ)));
+        page("recipe", () -> BookCraftingRecipePageModel.create().withRecipeId1(ModUtils.loc(id())));
     }
 }

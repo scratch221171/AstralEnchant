@@ -18,7 +18,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.effects.EnchantmentAttributeEffect;
-import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.key.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.CommonUtil;
@@ -87,8 +86,6 @@ public abstract class EnchantmentEntry extends BilingualEntryProvider {
                                             .map(EquipmentSlotGroup::getSerializedName)
                                             .toList()))));
         } else {
-            Constants.LOGGER.info("enchantment effect!!!");
-            Constants.LOGGER.info(enchantment.effects().toString());
             page("detail", () -> BookCraftingRecipePageModel.create()
                     .withRecipeId1(ModUtils.loc("enchanted_book_" + id()))
                     .withText(pageText(
@@ -119,8 +116,8 @@ public abstract class EnchantmentEntry extends BilingualEntryProvider {
 
     @Override
     protected BookEntryModel wrappedAdditionalSetup(BookEntryModel entry) {
-        this.useExistingNameKey(CommonUtil.getLangKey(key()));
-        this.useExistingDescKey(CommonUtil.getDescLangKey(key()));
+        useExistingNameKey(CommonUtil.getLangKey(key()));
+        useExistingDescKey(CommonUtil.getDescLangKey(key()));
         return entry;
     }
 

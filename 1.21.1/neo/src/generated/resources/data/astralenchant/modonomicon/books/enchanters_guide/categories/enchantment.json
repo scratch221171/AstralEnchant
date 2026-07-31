@@ -12,7 +12,7 @@
   "display_mode": "index",
   "entry_textures": "modonomicon:textures/gui/entry_textures.png",
   "icon": {
-    "item": "astralenchant:enchantment_vessel"
+    "item": "minecraft:enchanting_table"
   },
   "max_scroll_x": 512,
   "max_scroll_y": 512,

@@ -5,6 +5,7 @@ import com.klikli_dev.modonomicon.api.datagen.EntryBackground;
 import com.klikli_dev.modonomicon.api.datagen.EntryProvider;
 import com.klikli_dev.modonomicon.api.datagen.book.BookEntryModel;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.world.phys.Vec2;
 
 public abstract class BilingualEntryProvider extends EntryProvider {
 
@@ -81,7 +82,7 @@ public abstract class BilingualEntryProvider extends EntryProvider {
         return result;
     }
 
-    /** additionalSetup() の代わりにこちらをオーバーライドしてください（en/ja自動処理を上書きしないよう final にしています） */
+    /** additionalSetup() の代わり (en/ja自動処理を上書きしないようfinalに) */
     protected BookEntryModel wrappedAdditionalSetup(BookEntryModel entry) {
         return entry;
     }
@@ -89,5 +90,29 @@ public abstract class BilingualEntryProvider extends EntryProvider {
     @Override
     protected Pair<Integer, Integer> entryBackground() {
         return EntryBackground.DEFAULT;
+    }
+
+    @Override
+    public BookEntryModel generate(Vec2 location) {
+        this.context().entry(this.entryId());
+
+        var entry = LinkableBookEntryModel.create( // ← ここだけ変更
+                        this.modLoc(this.context().categoryId() + "/"
+                                + this.context().entryId()),
+                        this.context().entryName())
+                .withDescription(this.context().entryDescription());
+
+        this.add(this.context().entryName(), this.entryName());
+        this.add(this.context().entryDescription(), this.entryDescription());
+        entry.withIcon(this.entryIcon());
+        entry.withLocation(location);
+        entry.withEntryBackground(this.entryBackground());
+
+        this.entry = this.additionalSetup(entry);
+
+        this.generatePages();
+
+        this.parent.add(this.entry);
+        return this.entry;
     }
 }

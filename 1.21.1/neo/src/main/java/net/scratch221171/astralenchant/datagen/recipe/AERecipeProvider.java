@@ -36,8 +36,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
-import net.neoforged.neoforge.common.conditions.NotCondition;
-import net.neoforged.neoforge.common.conditions.OrCondition;
 import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.scratch221171.astralenchant.ID;
@@ -113,10 +111,13 @@ public class AERecipeProvider extends RecipeProvider {
                     .requires(AEItems.LAVAPROOF_ARCANE_QUARTZ)
                     .requires(AEItems.LAVAPROOF_ARCANE_QUARTZ)
                     .unlockedBy(getHasName(AEItems.LAVAPROOF_ARCANE_QUARTZ), has(AEItems.LAVAPROOF_ARCANE_QUARTZ))
-                    .save(output.withConditions(new NotCondition(new OrCondition(List.of(
-                            new ModLoadedCondition("ae2"),
-                            new ModLoadedCondition("create"),
-                            new ModLoadedCondition("oritech"))))));
+                    .save(
+                            output
+                            //                            .withConditions(new NotCondition(new OrCondition(List.of(
+                            //                            new ModLoadedCondition("ae2"),
+                            //                            new ModLoadedCondition("create"),
+                            //                            new ModLoadedCondition("oritech")))))
+                            );
 
             ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.RESONANT_ARCANE_QUARTZ)
                     .pattern("111")
@@ -239,7 +240,7 @@ public class AERecipeProvider extends RecipeProvider {
                     .unlockedBy(getHasName(AEItems.LUMINITE), has(AEItems.LUMINITE))
                     .save(output);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.REINFORCED_DEEPSLATE)
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Items.REINFORCED_DEEPSLATE)
                     .pattern("121")
                     .pattern("232")
                     .pattern("121")
@@ -247,9 +248,9 @@ public class AERecipeProvider extends RecipeProvider {
                     .define('2', Items.DEEPSLATE)
                     .define('3', Items.POLISHED_BASALT)
                     .unlockedBy(getHasName(AEItems.ROTTEN_BONE), has(AEItems.ROTTEN_BONE))
-                    .save(output);
+                    .save(output, ModUtils.loc(getPath(Items.REINFORCED_DEEPSLATE)));
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.BUDDING_AMETHYST)
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.BUDDING_AMETHYST)
                     .pattern("123")
                     .pattern("242")
                     .pattern("321")
@@ -258,7 +259,7 @@ public class AERecipeProvider extends RecipeProvider {
                     .define('3', AEItems.GROWN_ARCANE_QUARTZ)
                     .define('4', AEItems.ALLAY_WING)
                     .unlockedBy(getHasName(AEItems.ALLAY_WING), has(AEItems.ALLAY_WING))
-                    .save(output);
+                    .save(output, ModUtils.loc(getPath(Items.BUDDING_AMETHYST)));
 
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
                     .requires(AEItems.ROTTEN_BONE)
@@ -584,6 +585,10 @@ public class AERecipeProvider extends RecipeProvider {
         return BuiltInRegistries.ITEM
                 .get(ResourceLocation.fromNamespaceAndPath(namespace, path))
                 .asItem();
+    }
+
+    private static String getPath(Item item) {
+        return BuiltInRegistries.ITEM.getKey(item).getPath();
     }
 
     private Ingredient potion(Holder<Potion> potion) {

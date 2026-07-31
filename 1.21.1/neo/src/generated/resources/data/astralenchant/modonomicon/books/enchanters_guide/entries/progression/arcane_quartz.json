@@ -20,7 +20,7 @@
         "item": "astralenchant:arcane_quartz"
       },
       "text": "book.astralenchant.enchanters_guide.progression.arcane_quartz.desc.text",
-      "title": "item.astralenchant.arcane_quartz"
+      "title": ""
     },
     {
       "type": "modonomicon:crafting_recipe",
@@ -44,6 +44,6 @@
   ],
   "show_when_any_parent_unlocked": false,
   "sort_number": 1,
-  "x": 1,
-  "y": 0
+  "x": -7,
+  "y": 2
 }

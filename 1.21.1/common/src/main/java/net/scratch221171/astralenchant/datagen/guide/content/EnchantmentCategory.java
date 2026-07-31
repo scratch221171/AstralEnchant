@@ -4,8 +4,7 @@ import com.klikli_dev.modonomicon.api.datagen.ModonomiconProviderBase;
 import com.klikli_dev.modonomicon.api.datagen.book.BookCategoryModel;
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel;
 import com.klikli_dev.modonomicon.book.BookDisplayMode;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.scratch221171.astralenchant.ID;
+import net.minecraft.world.item.Items;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.datagen.guide.content.enchantments.*;
 import net.scratch221171.astralenchant.datagen.util.BilingualCategoryProvider;
@@ -60,7 +59,7 @@ public class EnchantmentCategory extends BilingualCategoryProvider {
 
     @Override
     protected BookIconModel categoryIcon() {
-        return BookIconModel.create(BuiltInRegistries.ITEM.get(ModUtils.loc(ID.ENCHANTMENT_VESSEL)));
+        return BookIconModel.create(Items.ENCHANTING_TABLE);
     }
 
     @Override

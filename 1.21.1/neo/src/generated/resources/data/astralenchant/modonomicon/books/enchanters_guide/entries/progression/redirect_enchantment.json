@@ -1,0 +1,30 @@
+{
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "category": "progression",
+  "category_to_open": "enchantment",
+  "description": "book.astralenchant.enchanters_guide.progression.redirect_enchantment.description",
+  "hide_while_locked": false,
+  "icon": {
+    "item": "minecraft:enchanting_table"
+  },
+  "name": "book.astralenchant.enchanters_guide.progression.redirect_enchantment.name",
+  "parents": [
+    {
+      "draw_arrow": true,
+      "entry": "progression/enchantment_vessel",
+      "line_enabled": true,
+      "line_reversed": false
+    },
+    {
+      "draw_arrow": true,
+      "entry": "progression/resonant_vessel",
+      "line_enabled": true,
+      "line_reversed": true
+    }
+  ],
+  "show_when_any_parent_unlocked": false,
+  "sort_number": 6,
+  "x": 3,
+  "y": -2
+}

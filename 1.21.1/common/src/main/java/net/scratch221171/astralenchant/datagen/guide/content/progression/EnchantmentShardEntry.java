@@ -6,7 +6,6 @@ import com.klikli_dev.modonomicon.api.datagen.book.page.BookSpotlightPageModel;
 import net.minecraft.world.item.Items;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
-import net.scratch221171.astralenchant.common.util.CommonUtil;
 import net.scratch221171.astralenchant.datagen.util.ItemEntry;
 
 public class EnchantmentShardEntry extends ItemEntry {
@@ -23,9 +22,7 @@ public class EnchantmentShardEntry extends ItemEntry {
     @Override
     protected void generatePages() {
         // TODO: English Translation
-        page("desc", () -> BookSpotlightPageModel.create().withTitle(CommonUtil.getAEItemLangKey(id())))
-                .withItem(item())
-                .withText(pageText("""
+        page("desc", BookSpotlightPageModel::create).withItem(item()).withText(pageText("""
                         """, """
                         　*書を焼き尽くすことは、知識を捨て去ることではない。紙は灰となり、文字は消え失せても、その本質たる叡智だけは炎によって磨かれ、純粋な欠片へと姿を変える。*
                         """));

@@ -19,7 +19,6 @@ public abstract class BilingualCategoryProvider extends CategoryProvider {
     protected String categoryNameJa() {
         return "";
     }
-    ;
 
     protected String categoryDescriptionJa() {
         return "";

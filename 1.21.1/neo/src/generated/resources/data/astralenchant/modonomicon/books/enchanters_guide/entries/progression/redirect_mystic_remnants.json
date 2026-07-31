@@ -1,0 +1,25 @@
+{
+  "type": "modonomicon:entry_link",
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "category": "progression",
+  "description": "book.astralenchant.enchanters_guide.progression.redirect_mystic_remnants.description",
+  "entry_to_open": "enchantment/mystic_remnants",
+  "hide_while_locked": false,
+  "icon": {
+    "item": "minecraft:enchanted_book"
+  },
+  "name": "book.astralenchant.enchanters_guide.progression.redirect_mystic_remnants.name",
+  "parents": [
+    {
+      "draw_arrow": true,
+      "entry": "progression/redirect_enchantment",
+      "line_enabled": true,
+      "line_reversed": false
+    }
+  ],
+  "show_when_any_parent_unlocked": false,
+  "sort_number": 8,
+  "x": 3,
+  "y": 0
+}

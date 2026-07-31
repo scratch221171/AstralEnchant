@@ -27,7 +27,7 @@ public abstract class ItemEntry extends BilingualEntryProvider {
 
     @Override
     protected BookEntryModel wrappedAdditionalSetup(BookEntryModel entry) {
-        this.useExistingNameKey(CommonUtil.getAEItemLangKey(id()));
+        useExistingNameKey(CommonUtil.getAEItemLangKey(id()));
         return entry;
     }
 
@@ -43,7 +43,7 @@ public abstract class ItemEntry extends BilingualEntryProvider {
 
     @Override
     protected BookIconModel entryIcon() {
-        return BookIconModel.create(CommonUtil.getAEItem(id()));
+        return BookIconModel.create(item());
     }
 
     @Override
