@@ -6,7 +6,7 @@ import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel;
 import net.minecraft.world.item.Item;
 import net.scratch221171.astralenchant.common.util.CommonUtil;
 
-public abstract class ItemEntry extends BilingualEntryProvider {
+public abstract class ItemEntry extends AEEntryProvider {
     public ItemEntry(CategoryProvider parent) {
         super(parent);
     }

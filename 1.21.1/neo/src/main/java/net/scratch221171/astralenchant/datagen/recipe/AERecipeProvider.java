@@ -41,8 +41,8 @@ import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
-import net.scratch221171.astralenchant.common.key.AEEnchantments;
-import net.scratch221171.astralenchant.common.key.AETags;
+import net.scratch221171.astralenchant.common.init.AEEnchantments;
+import net.scratch221171.astralenchant.common.init.AETags;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEDataComponents;
 import net.scratch221171.astralenchant.common.registry.AEItems;
@@ -256,7 +256,7 @@ public class AERecipeProvider extends RecipeProvider {
                     .pattern("321")
                     .define('1', Items.AMETHYST_SHARD)
                     .define('2', Blocks.AMETHYST_BLOCK)
-                    .define('3', AEItems.GROWN_ARCANE_QUARTZ)
+                    .define('3', AEItems.ARCANE_QUARTZ)
                     .define('4', AEItems.ALLAY_WING)
                     .unlockedBy(getHasName(AEItems.ALLAY_WING), has(AEItems.ALLAY_WING))
                     .save(output, ModUtils.loc(getPath(Items.BUDDING_AMETHYST)));

@@ -15,7 +15,7 @@ import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.registries.holdersets.AnyHolderSet;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
-import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.EnchantmentLookups;
 import net.scratch221171.astralenchant.config.ConfigID;
 

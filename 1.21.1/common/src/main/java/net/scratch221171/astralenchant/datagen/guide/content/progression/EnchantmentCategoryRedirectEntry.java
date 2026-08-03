@@ -3,13 +3,12 @@ package net.scratch221171.astralenchant.datagen.guide.content.progression;
 import com.klikli_dev.modonomicon.api.datagen.CategoryProvider;
 import com.klikli_dev.modonomicon.api.datagen.book.BookEntryModel;
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel;
-import java.awt.*;
 import net.minecraft.world.item.Items;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.datagen.guide.content.EnchantmentCategory;
-import net.scratch221171.astralenchant.datagen.util.BilingualEntryProvider;
+import net.scratch221171.astralenchant.datagen.util.AEEntryProvider;
 
-public class EnchantmentCategoryRedirectEntry extends BilingualEntryProvider {
+public class EnchantmentCategoryRedirectEntry extends AEEntryProvider {
     public EnchantmentCategoryRedirectEntry(CategoryProvider parent) {
         super(parent);
     }

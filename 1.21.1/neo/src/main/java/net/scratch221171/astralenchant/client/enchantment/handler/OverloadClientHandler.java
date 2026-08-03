@@ -5,7 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
-import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import net.scratch221171.astralenchant.common.util.CommonUtil;
 

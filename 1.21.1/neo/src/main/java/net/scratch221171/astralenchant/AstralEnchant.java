@@ -16,7 +16,7 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
-import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.loot.MysticRemnantsLootModifier;
 import net.scratch221171.astralenchant.common.registry.*;
 import net.scratch221171.astralenchant.common.util.AEUtil;

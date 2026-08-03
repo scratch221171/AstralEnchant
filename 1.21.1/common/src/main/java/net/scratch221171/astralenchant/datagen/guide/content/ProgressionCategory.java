@@ -8,9 +8,9 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.datagen.guide.content.progression.*;
-import net.scratch221171.astralenchant.datagen.util.BilingualCategoryProvider;
+import net.scratch221171.astralenchant.datagen.util.AECategoryProvider;
 
-public class ProgressionCategory extends BilingualCategoryProvider {
+public class ProgressionCategory extends AECategoryProvider {
 
     public static final String CATEGORY_ID = "progression";
 
@@ -21,7 +21,7 @@ public class ProgressionCategory extends BilingualCategoryProvider {
     @Override
     protected String[] generateEntryMap() {
         return new String[] {
-            "____________h______", "", "__s_f_______g______", "", "__r_e___k_j_i_o_p__", "", "a_b_c_d___l_m_n___q", "",
+            "____________h______", "", "__s_e_f_____g______", "", "__r_____k_j_i_o_p__", "", "a_b_c_d___l_m_n___q", "",
         };
     }
 
@@ -45,7 +45,8 @@ public class ProgressionCategory extends BilingualCategoryProvider {
         var buddingAmethyst = add(new BuddingAmethystEntry(this)
                 .generate('k')
                 .withParent(featherTouchEntryRedirect)
-                .withParent(allayWing));
+                .withParent(allayWing)
+                .withParent(parent(arcaneQuartz).withLineReversed(true)));
         var buddingArcaniumIngot = add(new BuddingArcaniumIngotEntry(this)
                 .generate('l')
                 .withParent(arcaniumIngot)

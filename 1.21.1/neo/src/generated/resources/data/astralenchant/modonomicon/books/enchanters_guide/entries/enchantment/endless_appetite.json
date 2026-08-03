@@ -5,7 +5,7 @@
   "description": "enchantment.astralenchant.endless_appetite.desc",
   "hide_while_locked": false,
   "icon": {
-    "item": "minecraft:enchanted_book"
+    "item": "minecraft:golden_carrot"
   },
   "name": "enchantment.astralenchant.endless_appetite",
   "pages": [

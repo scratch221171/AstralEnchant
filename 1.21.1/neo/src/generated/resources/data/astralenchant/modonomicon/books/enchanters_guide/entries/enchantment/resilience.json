@@ -5,7 +5,7 @@
   "description": "enchantment.astralenchant.resilience.desc",
   "hide_while_locked": false,
   "icon": {
-    "item": "minecraft:enchanted_book"
+    "item": "minecraft:clock"
   },
   "name": "enchantment.astralenchant.resilience",
   "pages": [

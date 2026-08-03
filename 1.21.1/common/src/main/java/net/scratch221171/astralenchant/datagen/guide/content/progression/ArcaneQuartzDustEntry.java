@@ -28,7 +28,7 @@ public class ArcaneQuartzDustEntry extends ItemEntry {
                 .withText(pageText("""
                         """, """
                         　*{0}を集め、精製して作られた高純度の魔法粉末。*   \s
-                        　*結晶としての形は失われても、内部に宿る魔力はなお健在であり、その膨大な表面積によって反応性は結晶以上に優れる。*
+                        　*結晶としての形は失われたが、その膨大な表面積によって反応性は結晶以上に優れる。*
                         """, itemLink(CommonUtil.getAEItem(ID.ARCANE_QUARTZ_TINY_DUST))));
 
         page("recipe", () -> BookCraftingRecipePageModel.create()
@@ -36,7 +36,7 @@ public class ArcaneQuartzDustEntry extends ItemEntry {
                 .withText(pageText(
                         """
                 """, """
-                {0}で{1}を粉砕しても得られます。
+                　{0}で{1}を粉砕しても得られます。
                 """, itemLink(Items.ANVIL), itemLink(CommonUtil.getAEItem(ID.GROWN_ARCANE_QUARTZ)))));
     }
 }

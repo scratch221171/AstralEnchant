@@ -23,15 +23,17 @@
       "title": ""
     },
     {
-      "type": "modonomicon:crafting_recipe",
+      "type": "modonomicon:spotlight",
       "anchor": "",
       "condition": {
         "type": "modonomicon:none"
       },
-      "recipe_id_1": "astralenchant:grown_arcane_quartz",
-      "text": "",
-      "title1": "",
-      "title2": ""
+      "item": {
+        "count": 1,
+        "item": "minecraft:brewing_stand"
+      },
+      "text": "book.astralenchant.enchanters_guide.progression.grown_arcane_quartz.recipe.text",
+      "title": "item.astralenchant.grown_arcane_quartz"
     }
   ],
   "parents": [

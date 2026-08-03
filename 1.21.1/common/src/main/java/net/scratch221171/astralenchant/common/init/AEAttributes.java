@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.common.key;
+package net.scratch221171.astralenchant.common.init;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

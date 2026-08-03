@@ -4,7 +4,7 @@ import com.klikli_dev.modonomicon.api.datagen.ModonomiconLanguageProvider;
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ID;
-import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;
@@ -22,13 +22,13 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
 
         // アイテム
         addItem(AEItems.ENCHANTMENT_SHARD, "エンチャントの欠片");
-        addItemWithDesc(AEItems.ARCANE_QUARTZ, "アーケインクォーツ", "古来よりその輝きは数々のエンチャンターを魅了した。");
-        addItem(AEItems.GROWN_ARCANE_QUARTZ, "成長したアーケインクォーツ");
-        addItem(AEItems.RESONANT_ARCANE_QUARTZ, "残響のアーケインクォーツ");
+        addItemWithDesc(AEItems.ARCANE_QUARTZ, "アーケインクォーツ", "おそらくクォーツではない");
+        addItemWithDesc(AEItems.GROWN_ARCANE_QUARTZ, "成長したアーケインクォーツ", "正確に言えばクォーツではない");
+        addItemWithDesc(AEItems.RESONANT_ARCANE_QUARTZ, "残響のアーケインクォーツ", "確実にクォーツではない");
         addItem(AEItems.ARCANE_QUARTZ_DUST, "アーケインクォーツダスト");
-        addItemWithDesc(AEItems.ARCANE_QUARTZ_TINY_DUST, "小さいアーケインクォーツダスト", "金床を落としてアーケインクォーツを粉砕することで得られます。");
+        addItem(AEItems.ARCANE_QUARTZ_TINY_DUST, "小さいアーケインクォーツダスト");
         addItemWithDesc(AEItems.LAVAPROOF_ARCANE_QUARTZ, "耐熱処理済みアーケインクォーツ", "うわぁ！ベトベトだぁ！");
-        addItemWithDesc(AEItems.LUMINITE, "ルミナイト", "エンチャンターのワークベンチの動力源として使えます。");
+        addItemWithDesc(AEItems.LUMINITE, "ルミナイト", "なんという輝き！");
         addItem(AEItems.ARCANIUM_INGOT, "アルカニウムインゴット");
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "芽生えたアルカニウムインゴット");
         addItem(AEItems.ENCHANTMENT_VESSEL, "エンチャントの依代");
@@ -51,27 +51,21 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         add("container.enchanters_workbench.cost", "エンチャント変更コスト：%1$s");
 
         // エンチャント
-        addEnchantmentWithDesc(AEEnchantments.NULLIFICATION, "帰無", "様々なダメージ軽減効果を無視し、攻撃が真のダメージを与えるようにします。");
+        addEnchantmentWithDesc(AEEnchantments.NULLIFICATION, "帰無", "攻撃が真のダメージを与えるようにします。");
         addEnchantmentWithDesc(AEEnchantments.LAST_STAND, "ラストスタンド", "経験値を消費して死を回避します。");
-        addEnchantmentWithDesc(
-                AEEnchantments.ESSENCE_OF_ENCHANTMENT,
-                "エンチャントの極意",
-                "このエンチャント以外のエンチャントのレベルの合計に応じて、アイテムの全ステータスに補正を掛けます。");
-        addEnchantmentWithDesc(AEEnchantments.RESILIENCE, "復調", "すべてのアイテムの使用クールダウンを短縮します。");
-        addEnchantmentWithDesc(
-                AEEnchantments.FEATHER_TOUCH,
-                "フェザータッチ",
-                "通常採取できないものも含め、ブロックをアイテム化します。ブロックエンティティのデータも保存し、スニーク時はブロックステートも同様に保存します。");
+        addEnchantmentWithDesc(AEEnchantments.ESSENCE_OF_ENCHANTMENT, "エンチャントの極意", "エンチャントの合計レベルのに応じてステータスを上昇させます。");
+        addEnchantmentWithDesc(AEEnchantments.RESILIENCE, "復調", "アイテムの使用クールダウンを短縮します。");
+        addEnchantmentWithDesc(AEEnchantments.FEATHER_TOUCH, "フェザータッチ", "様々なデータを保存しながら、あらゆるブロックを採取できるようにします。");
         addEnchantmentWithDesc(AEEnchantments.AFFINITY, "親和", "すべての制限を無視して、あらゆるエンチャントを付与できるようにします。");
         addEnchantmentWithDesc(AEEnchantments.ENDLESS_APPETITE, "果てしない食欲", "満腹度および隠し満腹度の上限を引き上げます。");
-        addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "オーバーロード", "既存のエンチャントのレベルをオーバーロードの値だけ増加させます。");
-        addEnchantmentWithDesc(AEEnchantments.EXPANSE, "拡張", "アイテムが現在装着されているキュリオスロットの数を、エンチャントのレベル分だけ増加させます。");
-        addEnchantmentWithDesc(AEEnchantments.REACTIVE_ARMOR, "反応装甲", "一部のダメージタイプのアーマーおよびエンチャントを貫通する効果を無効化します。");
+        addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "オーバーロード", "他のエンチャントのレベルを増加させます。");
+        addEnchantmentWithDesc(AEEnchantments.EXPANSE, "拡張", "キュリオスロットの数を増加させます。");
+        addEnchantmentWithDesc(AEEnchantments.REACTIVE_ARMOR, "反応装甲", "全てのダメージが防具およびエンチャントで軽減できるようにします。");
         addEnchantmentWithDesc(AEEnchantments.MYSTIC_REMNANTS, "神秘の残滓", "一部のモブに特殊ドロップを追加します。");
         addEnchantmentWithDesc(AEEnchantments.CURSE_OF_IGNORANCE, "無知の呪い", "ツールチップを呪われた文字に置き換えます。");
-        addEnchantmentWithDesc(AEEnchantments.CURSE_OF_ENCHANTMENT, "エンチャントの呪い", "アイテムのエンチャントを固定し、変更できなくします。");
+        addEnchantmentWithDesc(AEEnchantments.CURSE_OF_ENCHANTMENT, "エンチャントの呪い", "アイテムのエンチャントを変更できなくします。");
         addEnchantmentWithDesc(AEEnchantments.DISTORTION, "歪曲", "外れた攻撃の判定を近くの敵へが歪めます。");
-        addEnchantmentWithDesc(AEEnchantments.ALMIGHTY, "オールマイティ", "ツールを全てのブロックに対して適正にします。破壊不能なブロックを採掘可能にします。");
+        addEnchantmentWithDesc(AEEnchantments.ALMIGHTY, "オールマイティ", "ツールの採掘レベルを増加させ、全てのブロックに対して適正にします。");
 
         // attribute
         addAttributeWithDesc(AEAttributes.COOLDOWN_DURATION, "クールダウン時間", "アイテム使用のクールダウン時間の倍率");
@@ -79,7 +73,7 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addAttributeWithDesc(AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER, "隠し満腹度上限", "隠し満腹度の上限の倍率");
 
         // データコンポーネント
-        add("astralenchant.item.disabled_enchantments", "無効化されたエンチャント: %s");
+        add("astralenchant.item.disabled_enchantments", "無効化されたエンチャント: %s個");
 
         // クリエタブ
         add("itemGroup.astralenchant.main", "Astral Enchant");

@@ -24,10 +24,14 @@ public class BuddingArcaniumIngotEntry extends ItemEntry {
         // TODO: English Translation
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
-                .withText(pageText("""
-                        """, """
-                        　*{0}は養分となり、結晶は静かに成長を続ける。外見に大きな変化はないものの、その内部では魔力と合金が溶け合い、未熟でありながらも確かな生命にも似た変化が息づいている。*
-                        """, itemLink(CommonUtil.getAEItem(ID.ARCANIUM_INGOT))));
+                .withText(pageText(
+                        """
+                        """,
+                        """
+                        　*{0}を養分としながら静かに成長を続ける{1}。外見に大きな変化はないものの、その内部では合金と結晶が溶け合い、着実に成長してゆく。*
+                        """,
+                        itemLink(CommonUtil.getAEItem(ID.ARCANIUM_INGOT)),
+                        itemLink(CommonUtil.getAEItem(ID.ARCANE_QUARTZ))));
 
         page("recipe", () -> BookCraftingRecipePageModel.create().withRecipeId1(ModUtils.loc(id())));
     }

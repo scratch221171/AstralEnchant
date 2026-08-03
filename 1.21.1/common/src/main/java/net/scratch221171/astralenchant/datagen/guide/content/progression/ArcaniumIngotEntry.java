@@ -29,8 +29,8 @@ public class ArcaniumIngotEntry extends ItemEntry {
                         """
                         """,
                         """
-                        　*{0}を{1}と{2}へ溶け込ませることで生まれる、鈍い紫色の合金。*   \s
-                        　*見た目は一般的な金属と大きく変わらないが、その内部には微細な魔力で充満している。*
+                        　*{0}を{1}と{2}に練り込むことで作れる、淡い紫色の柔らかい合金。*   \s
+                        　*見た目は一般的な金属と大きく変わらないが、伝導性の良さゆえ結晶の苗床としてはうってつけだ。*
                         """,
                         itemLink(CommonUtil.getAEItem(ID.ARCANE_QUARTZ_TINY_DUST)),
                         itemLink(Items.IRON_INGOT),

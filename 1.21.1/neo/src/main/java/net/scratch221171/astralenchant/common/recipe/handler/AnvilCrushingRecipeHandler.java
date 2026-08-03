@@ -35,7 +35,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 import net.scratch221171.astralenchant.common.event.AnvilLandEvent;
-import net.scratch221171.astralenchant.common.key.AETags;
+import net.scratch221171.astralenchant.common.init.AETags;
 import net.scratch221171.astralenchant.common.registry.AEItems;
 
 public class AnvilCrushingRecipeHandler {

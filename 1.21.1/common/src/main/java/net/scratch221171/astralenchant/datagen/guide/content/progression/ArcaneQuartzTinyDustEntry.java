@@ -27,8 +27,8 @@ public class ArcaneQuartzTinyDustEntry extends ItemEntry {
                 .withItem(item())
                 .withText(pageText("""
                         """, """
-                        　*{0}を粉々に粉砕して得られる、きめ細かな紫色の結晶片。*   \s
-                        　*一粒一粒には微弱ながら魔力が宿っており、淡く輝きを放っている。原型を微塵も留めていないが、その魔力は決して失われてはいない。*
+                        　*{0}を粉々に粉砕して得られる、きめ細かな紫色の粉。*   \s
+                        　*一粒一粒が淡く輝きを放っている。原型を微塵も留めていないが、その叡智は決して失われてはいない。*
                         """, itemLink(CommonUtil.getAEItem(ID.ARCANE_QUARTZ))));
 
         page("recipe", () -> BookCraftingRecipePageModel.create()

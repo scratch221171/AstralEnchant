@@ -7,7 +7,7 @@ import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.scratch221171.astralenchant.Constants;
-import net.scratch221171.astralenchant.common.key.AETags;
+import net.scratch221171.astralenchant.common.init.AETags;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import org.jspecify.annotations.NonNull;
 

@@ -12,7 +12,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyC
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.AddTableLootModifier;
 import net.scratch221171.astralenchant.Constants;
-import net.scratch221171.astralenchant.datagen.entity.AEEntityLootTableProvider;
+import net.scratch221171.astralenchant.ID;
+import net.scratch221171.astralenchant.common.init.AELootTables;
 
 public class AELootModifierProvider extends GlobalLootModifierProvider {
     public AELootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -22,22 +23,21 @@ public class AELootModifierProvider extends GlobalLootModifierProvider {
     @Override
     protected void start() {
         add(
-                "wither_wither_skeleton_skull",
-                new AddTableLootModifier(
-                        new LootItemCondition[] {is(EntityType.WITHER)},
-                        AEEntityLootTableProvider.WITHER_SKELETON_SKULL));
+                ID.ENTITIES_NETHER_WART,
+                new AddTableLootModifier(new LootItemCondition[] {is(EntityType.WITCH)}, AELootTables.NETHER_WART));
         add(
-                "warden_echo_shard",
+                ID.ENTITIES_WITHER_SKELETON_SKULL,
                 new AddTableLootModifier(
-                        new LootItemCondition[] {is(EntityType.WARDEN)}, AEEntityLootTableProvider.ECHO_SHARD));
+                        new LootItemCondition[] {is(EntityType.WITHER)}, AELootTables.WITHER_SKELETON_SKULL));
         add(
-                "bogged_rotten_bone",
-                new AddTableLootModifier(
-                        new LootItemCondition[] {is(EntityType.BOGGED)}, AEEntityLootTableProvider.ROTTEN_BONE));
+                ID.ENTITIES_ECHO_SHARD,
+                new AddTableLootModifier(new LootItemCondition[] {is(EntityType.WARDEN)}, AELootTables.ECHO_SHARD));
         add(
-                "allay_allay_wing",
-                new AddTableLootModifier(
-                        new LootItemCondition[] {is(EntityType.ALLAY)}, AEEntityLootTableProvider.ALLAY_WING));
+                ID.ENTITIES_ROTTEN_BONE,
+                new AddTableLootModifier(new LootItemCondition[] {is(EntityType.BOGGED)}, AELootTables.ROTTEN_BONE));
+        add(
+                ID.ENTITIES_ALLAY_WING,
+                new AddTableLootModifier(new LootItemCondition[] {is(EntityType.ALLAY)}, AELootTables.ALLAY_WING));
     }
 
     private static LootItemCondition is(EntityType<?> type) {

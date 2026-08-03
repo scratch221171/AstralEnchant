@@ -4,7 +4,7 @@ import com.klikli_dev.modonomicon.api.datagen.ModonomiconLanguageProvider;
 import net.minecraft.data.PackOutput;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ID;
-import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.registry.AEBlocks;
 import net.scratch221171.astralenchant.common.registry.AEItems;
@@ -21,19 +21,13 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         add("modmenu.descriptionTranslation." + Constants.MODID, "Adds enchantments you've never seen before.");
         // アイテム
         addItem(AEItems.ENCHANTMENT_SHARD, "Enchantment Shard");
-        addItemWithDesc(
-                AEItems.ARCANE_QUARTZ,
-                "Arcane Quartz",
-                "Its radiance has enthralled countless enchanters since ancient times.");
-        addItem(AEItems.GROWN_ARCANE_QUARTZ, "Grown Arcane Quartz Dust");
-        addItem(AEItems.RESONANT_ARCANE_QUARTZ, "Resonant Arcane Quartz");
+        addItemWithDesc(AEItems.ARCANE_QUARTZ, "Arcane Quartz", "Probably not quartz.");
+        addItemWithDesc(AEItems.GROWN_ARCANE_QUARTZ, "Grown Arcane Quartz Dust", "Not actually quartz.");
+        addItemWithDesc(AEItems.RESONANT_ARCANE_QUARTZ, "Resonant Arcane Quartz", "Definitely not quartz.");
         addItem(AEItems.ARCANE_QUARTZ_DUST, "Arcane Quartz Dust");
-        addItemWithDesc(
-                AEItems.ARCANE_QUARTZ_TINY_DUST,
-                "Arcane Quartz Tiny Dust",
-                "Obtained by crushing Arcane Quartz using a falling anvil.");
+        addItem(AEItems.ARCANE_QUARTZ_TINY_DUST, "Arcane Quartz Tiny Dust");
         addItemWithDesc(AEItems.LAVAPROOF_ARCANE_QUARTZ, "Lavaproof Arcane Quartz", "Whoa! It's all sticky!");
-        addItemWithDesc(AEItems.LUMINITE, "Luminite", "Can be used as fuel for the Enchanter's Workbench.");
+        addItemWithDesc(AEItems.LUMINITE, "Luminite", "What a brilliant glow!");
         addItem(AEItems.ARCANIUM_INGOT, "Arcanium Ingot");
         addItem(AEItems.BUDDING_ARCANIUM_INGOT, "Budding Arcanium Ingot");
         addItem(AEItems.ENCHANTMENT_VESSEL, "Enchantment Vessel");

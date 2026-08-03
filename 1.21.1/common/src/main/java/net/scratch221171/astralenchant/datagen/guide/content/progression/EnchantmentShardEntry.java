@@ -24,7 +24,7 @@ public class EnchantmentShardEntry extends ItemEntry {
         // TODO: English Translation
         page("desc", BookSpotlightPageModel::create).withItem(item()).withText(pageText("""
                         """, """
-                        　*書を焼き尽くすことは、知識を捨て去ることではない。紙は灰となり、文字は消え失せても、その本質たる叡智だけは炎によって磨かれ、純粋な欠片へと姿を変える。*
+                        　*本を焼き尽くしても、知識が消え去ることはない。紙は灰となり、文字は消え失せても、その本質たる叡智だけは炎によって磨かれ、純粋な欠片へと姿を変える。*
                         """));
 
         page("recipe", () -> BookSmeltingRecipePageModel.create()
@@ -33,9 +33,8 @@ public class EnchantmentShardEntry extends ItemEntry {
                         """
                         """,
                         """
-                        　{0}は任意の{1}を{2}や{3}で精錬することで1つ作れます。
+                        　任意の{0}を{1}や{2}で精錬すること作れます。
                         """,
-                        translatedName(),
                         itemLink(Items.ENCHANTED_BOOK),
                         itemLink(Items.FURNACE),
                         itemLink((Items.BLAST_FURNACE)))));

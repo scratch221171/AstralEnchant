@@ -46,6 +46,12 @@
       "entry": "progression/allay_wing",
       "line_enabled": true,
       "line_reversed": false
+    },
+    {
+      "draw_arrow": true,
+      "entry": "progression/arcane_quartz",
+      "line_enabled": true,
+      "line_reversed": true
     }
   ],
   "show_when_any_parent_unlocked": false,

@@ -4,10 +4,10 @@ import com.klikli_dev.modonomicon.api.datagen.CategoryProvider;
 import com.klikli_dev.modonomicon.api.datagen.ModonomiconProviderBase;
 import com.klikli_dev.modonomicon.api.datagen.book.BookCategoryModel;
 
-public abstract class BilingualCategoryProvider extends CategoryProvider {
+public abstract class AECategoryProvider extends CategoryProvider {
     protected static final String JA_JP = "ja_jp";
 
-    public BilingualCategoryProvider(ModonomiconProviderBase parent) {
+    public AECategoryProvider(ModonomiconProviderBase parent) {
         super(parent);
     }
 

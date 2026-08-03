@@ -51,5 +51,12 @@ public final class ID {
             SATURATION_LEVEL_CAP_MULTIPLIER = "saturation_level_cap_multiplier",
 
             // Advancement
-            ROOT = "root";
+            ROOT = "root",
+
+            // Loot Tables
+            ENTITIES_NETHER_WART = "entities/nether_wart",
+            ENTITIES_WITHER_SKELETON_SKULL = "entities/wither_skeleton_skull",
+            ENTITIES_ECHO_SHARD = "entities/echo_shard",
+            ENTITIES_ROTTEN_BONE = "entities/rotten_bone",
+            ENTITIES_ALLAY_WING = "entities/allay_wing";
 }

@@ -23,7 +23,7 @@ public class BrewingRecipeHandler {
         builder.addRecipe(processingIngredient(0.5f), potion(Potions.LONG_FIRE_RESISTANCE), processingStack(0.75f));
         builder.addRecipe(
                 processingIngredient(0.75f),
-                potion(Potions.LONG_STRENGTH),
+                potion(Potions.STRONG_STRENGTH),
                 new ItemStack(AEItems.GROWN_ARCANE_QUARTZ.get()));
 
         builder.addStartMix(AEItems.ALLAY_WING.get(), Potions.REGENERATION);

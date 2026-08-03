@@ -23,6 +23,12 @@ import org.jspecify.annotations.Nullable;
 public class AEItems {
     public static final DeferredRegister.Items REGISTER = DeferredRegister.createItems(Constants.MODID);
 
+    public static final DeferredItem<ModonomiconItem> ENCHANTERS_GUIDE = REGISTER.register(
+            ID.ENCHANTERS_GUIDE,
+            () -> new ModonomiconItem(new Item.Properties()
+                    .stacksTo(1)
+                    .component(DataComponentRegistry.BOOK_ID.get(), ModUtils.loc(ID.ENCHANTERS_GUIDE))));
+
     public static final DeferredItem<AEItem>
             ENCHANTMENT_SHARD =
                     registerAEItem(
@@ -31,22 +37,19 @@ public class AEItems {
                                     .rarity(Rarity.UNCOMMON)
                                     .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)),
             ARCANE_QUARTZ = registerAEItem(ID.ARCANE_QUARTZ, Desc.defaultKey(), null),
-            GROWN_ARCANE_QUARTZ = registerAEItem(ID.GROWN_ARCANE_QUARTZ),
+            GROWN_ARCANE_QUARTZ = registerAEItem(ID.GROWN_ARCANE_QUARTZ, Desc.defaultKey(), null),
             RESONANT_ARCANE_QUARTZ =
-                    registerAEItem(ID.RESONANT_ARCANE_QUARTZ, new Item.Properties().rarity(Rarity.UNCOMMON)),
-            ARCANE_QUARTZ_DUST = registerAEItem(ID.ARCANE_QUARTZ_DUST),
-            ARCANE_QUARTZ_TINY_DUST =
                     registerAEItem(
-                            ID.ARCANE_QUARTZ_TINY_DUST, Desc.defaultKey(), Style.EMPTY.withColor(ChatFormatting.GRAY)),
+                            ID.RESONANT_ARCANE_QUARTZ,
+                            new Item.Properties().rarity(Rarity.UNCOMMON),
+                            Desc.defaultKey(),
+                            null),
+            ARCANE_QUARTZ_DUST = registerAEItem(ID.ARCANE_QUARTZ_DUST),
+            ARCANE_QUARTZ_TINY_DUST = registerAEItem(ID.ARCANE_QUARTZ_TINY_DUST),
             LAVAPROOF_ARCANE_QUARTZ =
                     registerAEItem(
                             ID.LAVAPROOF_ARCANE_QUARTZ, new Item.Properties().fireResistant(), Desc.defaultKey(), null),
-            LUMINITE =
-                    registerAEItem(
-                            ID.LUMINITE,
-                            new Item.Properties().fireResistant(),
-                            Desc.defaultKey(),
-                            Style.EMPTY.withColor(ChatFormatting.GRAY)),
+            LUMINITE = registerAEItem(ID.LUMINITE, new Item.Properties().fireResistant(), Desc.defaultKey(), null),
             ARCANIUM_INGOT = registerAEItem(ID.ARCANIUM_INGOT),
             BUDDING_ARCANIUM_INGOT = registerAEItem(ID.BUDDING_ARCANIUM_INGOT),
             ENCHANTMENT_VESSEL =
@@ -93,12 +96,6 @@ public class AEItems {
                             Desc.key("armorMaterial.astralenchant.arcanium.desc"),
                             Style.EMPTY.withColor(ChatFormatting.GRAY));
 
-    public static final DeferredItem<ModonomiconItem> ENCHANTERS_GUIDE = REGISTER.register(
-            ID.ENCHANTERS_GUIDE,
-            () -> new ModonomiconItem(new Item.Properties()
-                    .stacksTo(1)
-                    .component(DataComponentRegistry.BOOK_ID.get(), ModUtils.loc(ID.ENCHANTERS_GUIDE))));
-
     private static DeferredItem<AEItem> registerAEItem(String name) {
         return registerAEItem(name, new Item.Properties());
     }
@@ -114,7 +111,7 @@ public class AEItems {
     private static DeferredItem<AEItem> registerAEItem(
             String name, Item.Properties properties, Desc desc, @Nullable Style style) {
         return switch (desc.mode) {
-            case NONE -> REGISTER.registerItem(name, p -> new AEItem(p, null, style), properties);
+            case NONE -> REGISTER.registerItem(name, AEItem::new, properties);
             case DEFAULT ->
                 REGISTER.registerItem(
                         name, p -> new AEItem(p, CommonUtil.getAEItemLangKey(name) + ".desc", style), properties);
@@ -130,7 +127,7 @@ public class AEItems {
             Desc desc,
             @Nullable Style style) {
         return switch (desc.mode) {
-            case NONE -> REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, null, style), properties);
+            case NONE -> REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p), properties);
             case DEFAULT ->
                 REGISTER.registerItem(
                         name,

@@ -5,7 +5,7 @@
   "description": "enchantment.astralenchant.curse_of_ignorance.desc",
   "hide_while_locked": false,
   "icon": {
-    "item": "minecraft:enchanted_book"
+    "item": "minecraft:ink_sac"
   },
   "name": "enchantment.astralenchant.curse_of_ignorance",
   "pages": [

@@ -5,7 +5,7 @@
   "description": "enchantment.astralenchant.reactive_armor.desc",
   "hide_while_locked": false,
   "icon": {
-    "item": "minecraft:enchanted_book"
+    "item": "minecraft:turtle_helmet"
   },
   "name": "enchantment.astralenchant.reactive_armor",
   "pages": [

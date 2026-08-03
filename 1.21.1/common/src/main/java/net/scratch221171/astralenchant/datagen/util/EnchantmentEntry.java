@@ -19,11 +19,11 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.effects.EnchantmentAttributeEffect;
 import net.scratch221171.astralenchant.ModUtils;
-import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.CommonUtil;
 import net.scratch221171.astralenchant.common.util.EnchantmentLookups;
 
-public abstract class EnchantmentEntry extends BilingualEntryProvider {
+public abstract class EnchantmentEntry extends AEEntryProvider {
 
     protected final EnchantmentLookups lookups = new EnchantmentLookups() {
         public HolderLookup.RegistryLookup<Item> items() {

@@ -6,7 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EnchantmentTagsProvider;
 import net.minecraft.tags.EnchantmentTags;
 import net.scratch221171.astralenchant.Constants;
-import net.scratch221171.astralenchant.common.key.AEEnchantments;
+import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import org.jspecify.annotations.NonNull;
 
 public class AEEnchantmentTagsProvider extends EnchantmentTagsProvider {

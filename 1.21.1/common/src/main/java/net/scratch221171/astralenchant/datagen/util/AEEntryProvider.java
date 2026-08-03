@@ -5,15 +5,17 @@ import com.klikli_dev.modonomicon.api.datagen.EntryBackground;
 import com.klikli_dev.modonomicon.api.datagen.EntryProvider;
 import com.klikli_dev.modonomicon.api.datagen.book.BookEntryModel;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.phys.Vec2;
 
-public abstract class BilingualEntryProvider extends EntryProvider {
+public abstract class AEEntryProvider extends EntryProvider {
 
     protected static final String JA_JP = "ja_jp";
     private String existingNameKey;
     private String existingDescriptionKey;
 
-    public BilingualEntryProvider(CategoryProvider parent) {
+    public AEEntryProvider(CategoryProvider parent) {
         super(parent);
     }
 
@@ -90,6 +92,15 @@ public abstract class BilingualEntryProvider extends EntryProvider {
     @Override
     protected Pair<Integer, Integer> entryBackground() {
         return EntryBackground.DEFAULT;
+    }
+
+    protected String itemLink(ItemLike item, String components) {
+        return itemLink("", item, components);
+    }
+
+    protected String itemLink(String text, ItemLike item, String components) {
+        var rl = BuiltInRegistries.ITEM.getKey(item.asItem());
+        return this.format("[{0}](item://{1}[{2}])", text, rl, components);
     }
 
     @Override

@@ -7,9 +7,9 @@ import com.klikli_dev.modonomicon.book.BookDisplayMode;
 import net.minecraft.world.item.Items;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.datagen.guide.content.enchantments.*;
-import net.scratch221171.astralenchant.datagen.util.BilingualCategoryProvider;
+import net.scratch221171.astralenchant.datagen.util.AECategoryProvider;
 
-public class EnchantmentCategory extends BilingualCategoryProvider {
+public class EnchantmentCategory extends AECategoryProvider {
 
     public static final String CATEGORY_ID = "enchantment";
 

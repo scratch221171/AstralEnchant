@@ -1,9 +1,10 @@
 {
   "entries": [
-    "astralenchant:wither_wither_skeleton_skull",
-    "astralenchant:warden_echo_shard",
-    "astralenchant:bogged_rotten_bone",
-    "astralenchant:allay_allay_wing"
+    "astralenchant:entities/nether_wart",
+    "astralenchant:entities/wither_skeleton_skull",
+    "astralenchant:entities/echo_shard",
+    "astralenchant:entities/rotten_bone",
+    "astralenchant:entities/allay_wing"
   ],
   "replace": false
 }

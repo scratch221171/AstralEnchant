@@ -5,7 +5,7 @@
   "description": "enchantment.astralenchant.last_stand.desc",
   "hide_while_locked": false,
   "icon": {
-    "item": "minecraft:enchanted_book"
+    "item": "minecraft:totem_of_undying"
   },
   "name": "enchantment.astralenchant.last_stand",
   "pages": [

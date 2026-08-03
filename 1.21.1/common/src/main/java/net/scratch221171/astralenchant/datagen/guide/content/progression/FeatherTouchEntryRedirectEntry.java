@@ -8,9 +8,9 @@ import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.datagen.guide.content.EnchantmentCategory;
-import net.scratch221171.astralenchant.datagen.util.BilingualEntryProvider;
+import net.scratch221171.astralenchant.datagen.util.AEEntryProvider;
 
-public class FeatherTouchEntryRedirectEntry extends BilingualEntryProvider {
+public class FeatherTouchEntryRedirectEntry extends AEEntryProvider {
     public FeatherTouchEntryRedirectEntry(CategoryProvider parent) {
         super(parent);
     }

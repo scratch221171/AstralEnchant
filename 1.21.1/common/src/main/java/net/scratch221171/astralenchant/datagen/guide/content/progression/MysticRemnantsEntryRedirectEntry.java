@@ -7,9 +7,9 @@ import net.minecraft.world.item.Items;
 import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.datagen.guide.content.EnchantmentCategory;
-import net.scratch221171.astralenchant.datagen.util.BilingualEntryProvider;
+import net.scratch221171.astralenchant.datagen.util.AEEntryProvider;
 
-public class MysticRemnantsEntryRedirectEntry extends BilingualEntryProvider {
+public class MysticRemnantsEntryRedirectEntry extends AEEntryProvider {
     public MysticRemnantsEntryRedirectEntry(CategoryProvider parent) {
         super(parent);
     }
