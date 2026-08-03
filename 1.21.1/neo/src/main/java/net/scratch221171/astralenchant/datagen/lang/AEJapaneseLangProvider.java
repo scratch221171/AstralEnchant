@@ -58,6 +58,7 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addEnchantmentWithDesc(AEEnchantments.FEATHER_TOUCH, "フェザータッチ", "様々なデータを保存しながら、あらゆるブロックを採取できるようにします。");
         addEnchantmentWithDesc(AEEnchantments.AFFINITY, "親和", "すべての制限を無視して、あらゆるエンチャントを付与できるようにします。");
         addEnchantmentWithDesc(AEEnchantments.ENDLESS_APPETITE, "果てしない食欲", "満腹度および隠し満腹度の上限を引き上げます。");
+        addEnchantmentWithDesc(AEEnchantments.DEXTERITY, "器用", "アイテム使用による速度低下を防ぎます。");
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "オーバーロード", "他のエンチャントのレベルを増加させます。");
         addEnchantmentWithDesc(AEEnchantments.EXPANSE, "拡張", "キュリオスロットの数を増加させます。");
         addEnchantmentWithDesc(AEEnchantments.REACTIVE_ARMOR, "反応装甲", "全てのダメージが防具およびエンチャントで軽減できるようにします。");

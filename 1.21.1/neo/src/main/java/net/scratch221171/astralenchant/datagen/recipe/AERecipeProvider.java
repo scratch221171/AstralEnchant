@@ -389,6 +389,22 @@ public class AERecipeProvider extends RecipeProvider {
                             .define('9', Items.MUSHROOM_STEW));
 
             enchantedBookRecipe(
+                    output.withConditions(new ConfigCondition(ConfigID.DEXTERITY)),
+                    holderLookup,
+                    AEEnchantments.DEXTERITY,
+                    builder -> {
+                        var swift_sneak = holderLookup.holderOrThrow(Enchantments.SWIFT_SNEAK);
+                        builder.unlockedBy(getHasName(AEItems.ENCHANTMENT_VESSEL), has(AEItems.ENCHANTMENT_VESSEL))
+                                .pattern("121")
+                                .pattern("232")
+                                .pattern("141")
+                                .define('1', Items.SUGAR)
+                                .define('2', potion(Potions.STRONG_SWIFTNESS))
+                                .define('3', enchantedBook(swift_sneak, 3))
+                                .define('4', AEItems.ENCHANTMENT_VESSEL);
+                    });
+
+            enchantedBookRecipe(
                     output.withConditions(new ConfigCondition(ConfigID.OVERLOAD)),
                     holderLookup,
                     AEEnchantments.OVERLOAD,

@@ -41,6 +41,7 @@ public class ConfigID {
             FEATHER_TOUCH = "feather_touch",
             AFFINITY = "affinity",
             ENDLESS_APPETITE = "endless_appetite",
+            DEXTERITY = "dexterity",
             OVERLOAD = "overload",
             EXPANSE = "expanse",
             REACTIVE_ARMOR = "reactive_armor",

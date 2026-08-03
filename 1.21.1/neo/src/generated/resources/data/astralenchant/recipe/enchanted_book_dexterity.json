@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "dexterity"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:sugar"
+    },
+    "2": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "minecraft:strong_swiftness"
+        }
+      },
+      "items": "minecraft:potion"
+    },
+    "3": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:swift_sneak": 3
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "4": {
+      "item": "astralenchant:enchantment_vessel"
+    }
+  },
+  "pattern": [
+    "121",
+    "232",
+    "141"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:dexterity": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}

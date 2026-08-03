@@ -30,6 +30,7 @@ public class CommonConfig {
                 FEATHER_TOUCH = defineToggle(ConfigID.FEATHER_TOUCH),
                 AFFINITY = defineToggle(ConfigID.AFFINITY),
                 ENDLESS_APPETITE = defineToggle(ConfigID.ENDLESS_APPETITE),
+                DEXTERITY = defineToggle(ConfigID.DEXTERITY),
                 OVERLOAD = defineToggle(ConfigID.OVERLOAD),
                 EXPANSE = defineToggle(ConfigID.EXPANSE),
                 REACTIVE_ARMOR = defineToggle(ConfigID.REACTIVE_ARMOR),

@@ -35,21 +35,12 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addItem(AEItems.ROTTEN_BONE, "Rotten Bone");
         addItemWithDesc(AEItems.ALLAY_WING, "Allay Wing", "How inhumane!");
 
-        addItemWithDesc(
-                AEItems.ARCANIUM_HELMET,
-                "Arcanium Helmet",
-                "When the item breaks, its enchantments are dropped as enchanted books.");
-        addItemWithDesc(
-                AEItems.ARCANIUM_CHESTPLATE,
-                "Arcanium Chestplate",
-                "When the item breaks, its enchantments are dropped as enchanted books.");
-        addItemWithDesc(
-                AEItems.ARCANIUM_LEGGINGS,
-                "Arcanium Leggings",
-                "When the item breaks, its enchantments are dropped as enchanted books.");
-        addItemWithDesc(
-                AEItems.ARCANIUM_BOOTS,
-                "Arcanium Boots",
+        addItem(AEItems.ARCANIUM_HELMET, "Arcanium Helmet");
+        addItem(AEItems.ARCANIUM_CHESTPLATE, "Arcanium Chestplate");
+        addItem(AEItems.ARCANIUM_LEGGINGS, "Arcanium Leggings");
+        addItem(AEItems.ARCANIUM_BOOTS, "Arcanium Boots");
+        add(
+                "armorMaterial.astralenchant.arcanium.desc",
                 "When the item breaks, its enchantments are dropped as enchanted books.");
 
         // ブロック
@@ -85,6 +76,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 AEEnchantments.AFFINITY,
                 "Affinity",
                 "Ignores all restrictions and allows any enchantment to be applied.");
+        addEnchantmentWithDesc(AEEnchantments.DEXTERITY, "Dexterity", "Prevents slowdown when using items.");
         addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "Overload", "Increases the level of existing enchantments.");
         addEnchantmentWithDesc(
                 AEEnchantments.EXPANSE,

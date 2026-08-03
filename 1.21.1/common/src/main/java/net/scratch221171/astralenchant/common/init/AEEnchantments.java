@@ -129,6 +129,17 @@ public class AEEnchantments {
                                                     .getOrThrow(AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER),
                                             new LevelBasedValue.LevelsSquared(0f),
                                             AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL))),
+            DEXTERITY =
+                    create(
+                            ID.DEXTERITY,
+                            lookups -> Enchantment.enchantment(Enchantment.definition(
+                                    lookups.items().getOrThrow(ItemTags.LEG_ARMOR_ENCHANTABLE),
+                                    1,
+                                    1,
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    16,
+                                    EquipmentSlotGroup.LEGS))),
             OVERLOAD =
                     create(
                             ID.OVERLOAD,

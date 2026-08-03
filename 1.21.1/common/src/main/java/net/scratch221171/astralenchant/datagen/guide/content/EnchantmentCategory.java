@@ -31,6 +31,7 @@ public class EnchantmentCategory extends AECategoryProvider {
         add(new FeatherTouchEntry(this).generate());
         add(new AffinityEntry(this).generate());
         add(new EndlessAppetiteEntry(this).generate());
+        add(new DexterityEntry(this).generate());
         add(new OverloadEntry(this).generate());
         add(new ExpanseEntry(this).generate());
         add(new ReactiveArmorEntry(this).generate());
