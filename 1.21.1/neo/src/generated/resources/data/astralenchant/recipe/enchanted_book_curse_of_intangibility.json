@@ -1,0 +1,51 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "curse_of_intangibility"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "astralenchant:vex_wing"
+    },
+    "2": {
+      "item": "minecraft:ender_eye"
+    },
+    "3": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "4": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:depth_strider": 3
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "5": {
+      "item": "astralenchant:resonant_vessel"
+    }
+  },
+  "pattern": [
+    "121",
+    "343",
+    "151"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:curse_of_intangibility": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}

@@ -540,6 +540,23 @@ public class AERecipeProvider extends RecipeProvider {
                                 .define('6', AEItems.ENCHANTMENT_VESSEL)
                                 .define('7', ItemTags.HOES);
                     });
+
+            enchantedBookRecipe(
+                    output.withConditions(new ConfigCondition(ConfigID.CURSE_OF_INTANGIBILITY)),
+                    holderLookup,
+                    AEEnchantments.CURSE_OF_INTANGIBILITY,
+                    builder -> {
+                        var depth_strider = holderLookup.holderOrThrow(Enchantments.DEPTH_STRIDER);
+                        builder.unlockedBy(getHasName(AEItems.RESONANT_VESSEL), has(AEItems.RESONANT_VESSEL))
+                                .pattern("121")
+                                .pattern("343")
+                                .pattern("151")
+                                .define('1', AEItems.VEX_WING)
+                                .define('2', Items.ENDER_EYE)
+                                .define('3', Items.PHANTOM_MEMBRANE)
+                                .define('4', enchantedBook(depth_strider, 3))
+                                .define('5', AEItems.RESONANT_VESSEL);
+                    });
         }
 
         // mod連携レシピ

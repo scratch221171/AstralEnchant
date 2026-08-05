@@ -18,7 +18,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
 
     @Override
     protected void addTranslations() {
-        add("modmenu.descriptionTranslation." + Constants.MODID, "Adds enchantments you've never seen before.");
+        add("modmenu.descriptionTranslation.astralenchant", "In search of enchantments yet to be discovered...");
         // アイテム
         addItem(AEItems.ENCHANTMENT_SHARD, "Enchantment Shard");
         addItemWithDesc(AEItems.ARCANE_QUARTZ, "Arcane Quartz", "Probably not quartz.");
@@ -34,6 +34,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addItem(AEItems.RESONANT_VESSEL, "Resonant Vessel");
         addItem(AEItems.ROTTEN_BONE, "Rotten Bone");
         addItemWithDesc(AEItems.ALLAY_WING, "Allay Wing", "How inhumane!");
+        addItem(AEItems.VEX_WING, "Vex Wing");
 
         addItem(AEItems.ARCANIUM_HELMET, "Arcanium Helmet");
         addItem(AEItems.ARCANIUM_CHESTPLATE, "Arcanium Chestplate");
@@ -99,6 +100,10 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 AEEnchantments.ALMIGHTY,
                 "Almighty",
                 "Makes the tool suitable for all blocks. Enables mining of indestructible blocks.");
+        addEnchantmentWithDesc(
+                AEEnchantments.CURSE_OF_INTANGIBILITY,
+                "Curse Of Intangibility",
+                "Make the player pass through blocks.");
 
         // attribute
         addAttributeWithDesc(

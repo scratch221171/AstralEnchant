@@ -38,6 +38,9 @@ public class AELootModifierProvider extends GlobalLootModifierProvider {
         add(
                 ID.ENTITIES_ALLAY_WING,
                 new AddTableLootModifier(new LootItemCondition[] {is(EntityType.ALLAY)}, AELootTables.ALLAY_WING));
+        add(
+                ID.ENTITIES_VEX_WING,
+                new AddTableLootModifier(new LootItemCondition[] {is(EntityType.VEX)}, AELootTables.VEX_WING));
     }
 
     private static LootItemCondition is(EntityType<?> type) {

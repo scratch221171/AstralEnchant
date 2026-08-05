@@ -106,6 +106,9 @@ public class ServerConfig {
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }
 
+        public static final ConfigEntries REACTIVE_ARMOR =
+                BUILDER.comment("Reactive Armor").category(ConfigID.REACTIVE_ARMOR, ReactiveArmor.ENTRIES);
+
         public static final class ReactiveArmor {
             private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
 

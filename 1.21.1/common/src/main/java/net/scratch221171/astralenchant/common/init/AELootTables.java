@@ -12,10 +12,10 @@ public class AELootTables {
             WITHER_SKELETON_SKULL = create(ID.ENTITIES_WITHER_SKELETON_SKULL),
             ECHO_SHARD = create(ID.ENTITIES_ECHO_SHARD),
             ROTTEN_BONE = create(ID.ENTITIES_ROTTEN_BONE),
-            ALLAY_WING = create(ID.ENTITIES_ALLAY_WING);
+            ALLAY_WING = create(ID.ENTITIES_ALLAY_WING),
+            VEX_WING = create(ID.ENTITIES_VEX_WING);
 
     private static ResourceKey<LootTable> create(String id) {
         return ResourceKey.create(Registries.LOOT_TABLE, ModUtils.loc(id));
     }
-    ;
 }

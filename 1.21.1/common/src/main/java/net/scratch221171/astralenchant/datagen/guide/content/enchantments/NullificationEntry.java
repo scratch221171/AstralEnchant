@@ -44,6 +44,7 @@ public class NullificationEntry extends EnchantmentEntry {
                         - 無敵状態
                         - 盾
 
+                        　{0}の貫通力は*/kill*と同じです。そのため、*/kill*に耐性のあるmobには効果がありません。   \s
                         　{0}が付いた武器で攻撃すると、白いパーティクルが発生します。
                         """, translatedName())));
 

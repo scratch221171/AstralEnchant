@@ -66,5 +66,12 @@ public class AEEntityLootTableProvider implements LootTableSubProvider {
                                 .setRolls(BinomialDistributionGenerator.binomial(2, 0.5F))
                                 .add(LootItem.lootTableItem(AEItems.ALLAY_WING.get()))
                                 .when(() -> condition)));
+        output.accept(
+                AELootTables.VEX_WING,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(BinomialDistributionGenerator.binomial(2, 0.5F))
+                                .add(LootItem.lootTableItem(AEItems.VEX_WING.get()))
+                                .when(() -> condition)));
     }
 }

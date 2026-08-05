@@ -23,6 +23,7 @@ public final class ID {
             ENCHANTERS_GUIDE = "enchanters_guide",
             ROTTEN_BONE = "rotten_bone",
             ALLAY_WING = "allay_wing",
+            VEX_WING = "vex_wing",
 
             // Blocks
             ARCANIUM_BLOCK = "arcanium_block",
@@ -45,6 +46,7 @@ public final class ID {
             CURSE_OF_ENCHANTMENT = "curse_of_enchantment",
             DISTORTION = "distortion",
             ALMIGHTY = "almighty",
+            CURSE_OF_INTANGIBILITY = "curse_of_intangibility",
 
             // Attribute
             COOLDOWN_DURATION = "cooldown_duration",
@@ -59,5 +61,6 @@ public final class ID {
             ENTITIES_WITHER_SKELETON_SKULL = "entities/wither_skeleton_skull",
             ENTITIES_ECHO_SHARD = "entities/echo_shard",
             ENTITIES_ROTTEN_BONE = "entities/rotten_bone",
-            ENTITIES_ALLAY_WING = "entities/allay_wing";
+            ENTITIES_ALLAY_WING = "entities/allay_wing",
+            ENTITIES_VEX_WING = "entities/vex_wing";
 }

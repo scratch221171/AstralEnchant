@@ -4,7 +4,8 @@
     "astralenchant:entities/wither_skeleton_skull",
     "astralenchant:entities/echo_shard",
     "astralenchant:entities/rotten_bone",
-    "astralenchant:entities/allay_wing"
+    "astralenchant:entities/allay_wing",
+    "astralenchant:entities/vex_wing"
   ],
   "replace": false
 }

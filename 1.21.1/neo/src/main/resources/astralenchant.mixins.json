@@ -14,6 +14,7 @@
     "FoodDataMixin",
     "ItemCooldownsMixin",
     "ItemStackMixin",
+    "LivingEntityMixin",
     "PlayerMixin"
   ],
   "injectors": {

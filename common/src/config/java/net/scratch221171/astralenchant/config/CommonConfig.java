@@ -38,7 +38,8 @@ public class CommonConfig {
                 CURSE_OF_IGNORANCE = defineToggle(ConfigID.CURSE_OF_IGNORANCE),
                 CURSE_OF_ENCHANTMENT = defineToggle(ConfigID.CURSE_OF_ENCHANTMENT),
                 DISTORTION = defineToggle(ConfigID.DISTORTION),
-                ALMIGHTY = defineToggle(ConfigID.ALMIGHTY);
+                ALMIGHTY = defineToggle(ConfigID.ALMIGHTY),
+                CURSE_OF_INTANGIBILITY = defineToggle(ConfigID.CURSE_OF_INTANGIBILITY);
 
         private static ConfigEntry.BooleanEntry defineToggle(String configId) {
             ConfigEntry.BooleanEntry entry = BUILDER.worldRestart().define(configId, true);

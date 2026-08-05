@@ -61,7 +61,8 @@ public class AEItems {
                             ID.RESONANT_VESSEL,
                             new Item.Properties().stacksTo(1).rarity(Rarity.RARE)),
             ROTTEN_BONE = registerAEItem(ID.ROTTEN_BONE),
-            ALLAY_WING = registerAEItem(ID.ALLAY_WING, Desc.defaultKey(), null);
+            ALLAY_WING = registerAEItem(ID.ALLAY_WING, Desc.defaultKey(), null),
+            VEX_WING = registerAEItem(ID.VEX_WING);
     public static final DeferredItem<AEArmorItem>
             ARCANIUM_HELMET =
                     registerAEArmorItem(

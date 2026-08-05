@@ -18,7 +18,7 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
 
     @Override
     protected void addTranslations() {
-        add("modmenu.descriptionTranslation." + Constants.MODID, "エンチャントであなたを、驚かせたい");
+        add("modmenu.descriptionTranslation.astralenchant", "まだ見ぬエンチャントを求めて...");
 
         // アイテム
         addItem(AEItems.ENCHANTMENT_SHARD, "エンチャントの欠片");
@@ -35,6 +35,7 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addItem(AEItems.RESONANT_VESSEL, "残響の依代");
         addItem(AEItems.ROTTEN_BONE, "朽ちた骨");
         addItemWithDesc(AEItems.ALLAY_WING, "アレイの羽", "なんと非人道的な！");
+        addItem(AEItems.VEX_WING, "ヴェックスの羽");
 
         addItem(AEItems.ARCANIUM_HELMET, "アルカニウムのヘルメット");
         addItem(AEItems.ARCANIUM_CHESTPLATE, "アルカニウムのチェストプレート");
@@ -67,6 +68,7 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addEnchantmentWithDesc(AEEnchantments.CURSE_OF_ENCHANTMENT, "エンチャントの呪い", "アイテムのエンチャントを変更できなくします。");
         addEnchantmentWithDesc(AEEnchantments.DISTORTION, "歪曲", "外れた攻撃の判定を近くの敵へが歪めます。");
         addEnchantmentWithDesc(AEEnchantments.ALMIGHTY, "オールマイティ", "ツールの採掘レベルを増加させ、全てのブロックに対して適正にします。");
+        addEnchantmentWithDesc(AEEnchantments.CURSE_OF_INTANGIBILITY, "無実体の呪い", "ブロックを貫通します。");
 
         // attribute
         addAttributeWithDesc(AEAttributes.COOLDOWN_DURATION, "クールダウン時間", "アイテム使用のクールダウン時間の倍率");

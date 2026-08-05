@@ -16,7 +16,7 @@ public abstract class PlayerMixin {
     public abstract ItemCooldowns getCooldowns();
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void init(CallbackInfo ci) {
+    private void astralenchant$init(CallbackInfo ci) {
         var self = (Player) (Object) this;
         ((IPlayerAccessor) this.getCooldowns()).astralenchant$setPlayer(self);
     }

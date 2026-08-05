@@ -29,6 +29,7 @@ public class AEEnchantmentBootstrap {
         consumer.accept(AEEnchantments.FEATHER_TOUCH, new ConfigCondition(ConfigID.FEATHER_TOUCH));
         consumer.accept(AEEnchantments.AFFINITY, new ConfigCondition(ConfigID.AFFINITY));
         consumer.accept(AEEnchantments.ENDLESS_APPETITE, new ConfigCondition(ConfigID.ENDLESS_APPETITE));
+        consumer.accept(AEEnchantments.DEXTERITY, new ConfigCondition(ConfigID.DEXTERITY));
         consumer.accept(AEEnchantments.OVERLOAD, new ConfigCondition(ConfigID.OVERLOAD));
         consumer.accept(AEEnchantments.REACTIVE_ARMOR, new ConfigCondition(ConfigID.REACTIVE_ARMOR));
         consumer.accept(AEEnchantments.MYSTIC_REMNANTS, new ConfigCondition(ConfigID.MYSTIC_REMNANTS));
@@ -36,6 +37,7 @@ public class AEEnchantmentBootstrap {
         consumer.accept(AEEnchantments.CURSE_OF_ENCHANTMENT, new ConfigCondition(ConfigID.CURSE_OF_ENCHANTMENT));
         consumer.accept(AEEnchantments.DISTORTION, new ConfigCondition(ConfigID.DISTORTION));
         consumer.accept(AEEnchantments.ALMIGHTY, new ConfigCondition(ConfigID.ALMIGHTY));
+        consumer.accept(AEEnchantments.CURSE_OF_INTANGIBILITY, new ConfigCondition(ConfigID.CURSE_OF_INTANGIBILITY));
 
         // Compat
         consumer.accept(

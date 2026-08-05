@@ -50,7 +50,7 @@ public class EnchantmentEvents {
         LastStandHandler.revivePlayer(e);
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
     private static void onInvulnerabilityCheck(EntityInvulnerabilityCheckEvent e) {
         NullificationHandler.addDamageTag(e);
         ReactiveArmorHandler.disableDamageTag(e);

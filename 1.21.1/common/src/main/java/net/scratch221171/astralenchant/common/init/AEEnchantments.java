@@ -227,7 +227,18 @@ public class AEEnchantments {
                                     Enchantment.constantCost(Integer.MAX_VALUE),
                                     Enchantment.constantCost(Integer.MAX_VALUE),
                                     16,
-                                    EquipmentSlotGroup.MAINHAND)));
+                                    EquipmentSlotGroup.MAINHAND))),
+            CURSE_OF_INTANGIBILITY =
+                    create(
+                            ID.CURSE_OF_INTANGIBILITY,
+                            lookups -> Enchantment.enchantment(Enchantment.definition(
+                                    lookups.items().getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
+                                    1,
+                                    1,
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    32,
+                                    EquipmentSlotGroup.FEET)));
 
     private static ResourceKey<Enchantment> create(
             String name, Function<EnchantmentLookups, Enchantment.Builder> func) {
