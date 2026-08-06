@@ -27,7 +27,7 @@ public class GrownArcaneQuartzEntry extends ItemEntry {
                         """
                         """,
                         """
-                        　*ポーションを触媒として{0}を完全に吸収し、成長しきった{1}の姿。*
+                        　*ポーションを触媒として{0}を完全に吸収し、成長しきった{1}。*
                         　*ひんやりとした触感とずしりとした重量感が、その貴重さを物語っている。*
                         """,
                         itemLink(CommonUtil.getAEItem(ID.ARCANIUM_INGOT)),

@@ -28,7 +28,7 @@ public class LavaProofArcaneQuartz extends ItemEntry {
                 .withText(pageText(
                         """
                         """, """
-                         *{0}に{1}を塗りたくった代物。きっとこれで耐熱処理が出来ているに違いない！*
+                         *{0}に{1}を塗りたくった代物。きっと耐熱処理が出来ているに違いない！*
                         """, itemLink(CommonUtil.getAEItem(ID.ARCANE_QUARTZ)), itemLink(Items.MAGMA_CREAM)));
 
         page("recipe", () -> BookCraftingRecipePageModel.create().withRecipeId1(ModUtils.loc(id())));

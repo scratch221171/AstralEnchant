@@ -22,7 +22,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         // アイテム
         addItem(AEItems.ENCHANTMENT_SHARD, "Enchantment Shard");
         addItemWithDesc(AEItems.ARCANE_QUARTZ, "Arcane Quartz", "Probably not quartz.");
-        addItemWithDesc(AEItems.GROWN_ARCANE_QUARTZ, "Grown Arcane Quartz Dust", "Not actually quartz.");
+        addItemWithDesc(AEItems.GROWN_ARCANE_QUARTZ, "Grown Arcane Quartz", "Not quartz, to be precise.");
         addItemWithDesc(AEItems.RESONANT_ARCANE_QUARTZ, "Resonant Arcane Quartz", "Definitely not quartz.");
         addItem(AEItems.ARCANE_QUARTZ_DUST, "Arcane Quartz Dust");
         addItem(AEItems.ARCANE_QUARTZ_TINY_DUST, "Arcane Quartz Tiny Dust");
@@ -55,20 +55,17 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         add("container.enchanters_workbench.cost", "Switching Cost: %1$s");
 
         // エンチャント
-        addEnchantmentWithDesc(
-                AEEnchantments.NULLIFICATION,
-                "Nullification",
-                "Negates various damage reductions, and makes attacks deal their full damage.");
+        addEnchantmentWithDesc(AEEnchantments.NULLIFICATION, "Nullification", "Makes attacks deal true damage.");
         addEnchantmentWithDesc(AEEnchantments.LAST_STAND, "Last Stand", "Consumes experience points to avoid death.");
         addEnchantmentWithDesc(
                 AEEnchantments.ESSENCE_OF_ENCHANTMENT,
                 "Essence of Enchantment",
-                "Increases all item stats based on the total level of all enchantments other than this one.");
+                "Increases stats based on the total level of your enchantments.");
         addEnchantmentWithDesc(AEEnchantments.RESILIENCE, "Resilience", "Reduces the cooldown of all items.");
         addEnchantmentWithDesc(
                 AEEnchantments.FEATHER_TOUCH,
                 "Feather Touch",
-                "Collects even normally unobtainable blocks as an item. Preserves block entity data, and while sneaking, preserves block states as well.");
+                "Allows you to harvest any block while preserving various data.");
         addEnchantmentWithDesc(
                 AEEnchantments.ENDLESS_APPETITE,
                 "Endless Appetite",
@@ -78,19 +75,16 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 "Affinity",
                 "Ignores all restrictions and allows any enchantment to be applied.");
         addEnchantmentWithDesc(AEEnchantments.DEXTERITY, "Dexterity", "Prevents slowdown when using items.");
-        addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "Overload", "Increases the level of existing enchantments.");
-        addEnchantmentWithDesc(
-                AEEnchantments.EXPANSE,
-                "Expanse",
-                "Increases the number of curio slots the item currently occupies by the enchantment level.");
+        addEnchantmentWithDesc(AEEnchantments.OVERLOAD, "Overload", "Increases the level of other enchantments.");
+        addEnchantmentWithDesc(AEEnchantments.EXPANSE, "Expanse", "Increases the number of Curios slots.");
         addEnchantmentWithDesc(
                 AEEnchantments.REACTIVE_ARMOR,
                 "Reactive Armor",
-                "Negates effects that bypass armor and enchantments for certain types of damage.");
+                "Allows all damage to be mitigated by armor and enchantments.");
         addEnchantmentWithDesc(
                 AEEnchantments.MYSTIC_REMNANTS, "Mystic Remnants", "Adds special drops to certain mobs.");
         addEnchantmentWithDesc(
-                AEEnchantments.CURSE_OF_IGNORANCE, "Curse of Ignorance", "Replaces the tooltip with obscured text.");
+                AEEnchantments.CURSE_OF_IGNORANCE, "Curse of Ignorance", "Replaces the tooltip with cursed text.");
         addEnchantmentWithDesc(
                 AEEnchantments.CURSE_OF_ENCHANTMENT,
                 "Curse of Enchantment",
@@ -99,11 +93,11 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addEnchantmentWithDesc(
                 AEEnchantments.ALMIGHTY,
                 "Almighty",
-                "Makes the tool suitable for all blocks. Enables mining of indestructible blocks.");
+                "Increases the tool's mining level and makes it effective on all blocks.");
         addEnchantmentWithDesc(
                 AEEnchantments.CURSE_OF_INTANGIBILITY,
                 "Curse Of Intangibility",
-                "Make the player pass through blocks.");
+                "Makes the player pass through blocks.");
 
         // attribute
         addAttributeWithDesc(
@@ -147,7 +141,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addConfig("enchantment_settings", "Enchantment Settings");
         addConfigWithDesc(
                 ConfigID.EXTRA_TAG,
-                "Applied Tags",
+                "Applied Damage Tags",
                 "Manages the tags applied to attacks. If any invalid values are present, the default values will be used.");
         addConfigWithDesc(
                 ConfigID.IGNORE_BYPASSES_INVULNERABILITY_TAG,
@@ -172,7 +166,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addConfigWithDesc(
                 ConfigID.INCLUDE_OVERLOAD_IN_TOTAL,
                 "Include Overload in total",
-                "Whether to include bonuses from overloading applied to other enchantments in the total level. Regardless of this setting, Overload levels are always applied to the level of Essence of Enchant itself.");
+                "Whether to include bonuses from overloading applied to other enchantments in the total level. Regardless of this setting, Overload levels are always applied to the level of Essence of Enchantment itself.");
         addConfigWithDesc(
                 ConfigID.MULTIPLIER,
                 "Modifier Bonus per Level (%)",
@@ -199,7 +193,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 "You can increase the number of slots indefinitely by nesting them.");
         addConfigWithDesc(
                 ConfigID.DISABLED_TAG,
-                "Removed Tags",
+                "Removed Damage Tags",
                 "Manages the tags removed from attacks. If any invalid values are present, the default values will be used.");
         addConfigWithDesc(
                 ConfigID.HIDE_NAME,
@@ -221,7 +215,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 ConfigID.UNBREAKABLE_BLOCK_HARDNESS,
                 "Unbreakable Block Hardness",
                 "The hardness value applied when mining unbreakable blocks, such as bedrock.");
-        addConfigWithDesc("enchantment_toggling", "Enchantment Toggling", "REQUIRE SERVER RESTART!");
+        addConfigWithDesc("enchantment_toggling", "Enchantment Toggling", "REQUIRES A SERVER RESTART!");
     }
 
     @Override

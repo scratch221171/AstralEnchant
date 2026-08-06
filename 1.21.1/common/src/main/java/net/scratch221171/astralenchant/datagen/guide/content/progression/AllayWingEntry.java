@@ -25,8 +25,15 @@ public class AllayWingEntry extends ItemEntry {
     @Override
     protected void generatePages() {
         // TODO: English Translation
-        page("desc", BookSpotlightPageModel::create)
-                .withItem(item())
+        page("desc", BookSpotlightPageModel::create).withItem(item()).withText(pageText("""
+                """, """
+                　*ああ、なんてこった！まさか、よりによって何の罪もないアレイを殺してしまうなんて。彼らはあなたのために空を飛び、落とし物を拾い、文句ひとつ言わず働いてくれていたというのに。*   \s
+                　*今手に持っているその羽を見て、胸の奥が少しも痛まないと言い切れるだろうか？今夜ベッドに入ったあと、あなたはふと天井を見つめながら「別に殺さなくてもよかったんじゃないか…？」と考え込んでしまうかもしれない。*   \s
+                　*彼らは最期の瞬間、何を思っていただろうか？「ご主人様を怒らせちゃったのかな？」だろうか。それとも、「助けてご主人様！」だろうか。*   \s
+                　*もちろん、もう確かめる術はない。あなたが殺めてしまったからだ。その羽はまさしくあなたの選択の結果なのである。おめでとう。*
+                """));
+
+        page("entity", () -> BookEntityPageModel.create()
                 .withText(pageText(
                         """
                 """,
@@ -37,11 +44,8 @@ public class AllayWingEntry extends ItemEntry {
                                 CommonUtil.getLangKey(AEEnchantments.MYSTIC_REMNANTS),
                                 EnchantmentCategory.CATEGORY_ID,
                                 ID.MYSTIC_REMNANTS),
-                        EntityType.ALLAY.getDescriptionId()));
-
-        page("entity", () -> BookEntityPageModel.create()
+                        EntityType.ALLAY.getDescriptionId()))
                 .withEntityId(
-                        BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.ALLAY).toString())
-                .withScale(0.5F));
+                        BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.ALLAY).toString()));
     }
 }

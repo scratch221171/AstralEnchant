@@ -25,8 +25,12 @@ public class RottenBoneEntry extends ItemEntry {
     @Override
     protected void generatePages() {
         // TODO: English Translation
-        page("desc", BookSpotlightPageModel::create)
-                .withItem(item())
+        page("desc", BookSpotlightPageModel::create).withItem(item()).withText(pageText("""
+                """, """
+                　*朽ち果ててなお異様な強度を保ち続ける骨片。古代文明では深層岩の補強技術に組み込まれ、貴重な素材として重宝された。*
+                """));
+
+        page("entity", () -> BookEntityPageModel.create()
                 .withText(pageText(
                         """
                 """,
@@ -37,9 +41,7 @@ public class RottenBoneEntry extends ItemEntry {
                                 CommonUtil.getLangKey(AEEnchantments.MYSTIC_REMNANTS),
                                 EnchantmentCategory.CATEGORY_ID,
                                 ID.MYSTIC_REMNANTS),
-                        EntityType.BOGGED.getDescriptionId()));
-
-        page("entity", () -> BookEntityPageModel.create()
+                        EntityType.BOGGED.getDescriptionId()))
                 .withEntityId(
                         BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.BOGGED).toString()));
     }

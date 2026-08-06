@@ -33,8 +33,8 @@
       "name": "",
       "offset": 0.0,
       "rotate": true,
-      "scale": 0.5,
-      "text": ""
+      "scale": 1.0,
+      "text": "book.astralenchant.enchanters_guide.progression.allay_wing.entity.text"
     }
   ],
   "parents": [

@@ -23,7 +23,8 @@ public class ResonantVesselEntry extends ItemEntry {
         // TODO: English Translation
         page("desc", BookSpotlightPageModel::create).withItem(item()).withText(pageText("""
                         """, """
-                        temp
+                        　*スカルクの力を用いて、エンチャントとの共鳴を極限まで高めた書物。*   \s
+                        　*より高位で繊細なエンチャントを引き寄せるには必須不可欠だろう。*
                         """));
 
         page("recipe", () -> BookCraftingRecipePageModel.create().withRecipeId1(ModUtils.loc(id())));

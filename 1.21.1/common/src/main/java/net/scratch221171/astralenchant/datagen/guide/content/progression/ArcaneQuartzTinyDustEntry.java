@@ -35,7 +35,7 @@ public class ArcaneQuartzTinyDustEntry extends ItemEntry {
                 .withRecipeId1(ModUtils.loc(id()))
                 .withText(pageText("""
                 """, """
-                {0}で{1}を粉砕しても得られます。
+                　**{0}で{1}を粉砕しても得られます。**
                 """, itemLink(Items.ANVIL), itemLink(CommonUtil.getAEItem(ID.ARCANE_QUARTZ)))));
     }
 }
