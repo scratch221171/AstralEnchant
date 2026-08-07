@@ -34,7 +34,6 @@ public final class DataGenerators {
     public static void gatherData(GatherDataEvent event) {
         Constants.LOGGER.info("Loading DataGenerators");
         var generator = event.getGenerator();
-        var lookup = event.getLookupProvider();
         var fileHelper = event.getExistingFileHelper();
 
         // Server
@@ -66,10 +65,7 @@ public final class DataGenerators {
         var enUsCache = new AEEnglishLangProvider(generator.getPackOutput());
         var jaJpCache = new AEJapaneseLangProvider(generator.getPackOutput());
 
-        event.createProvider(output -> NeoBookProvider.of(
-                event, new EnchantersGuideBook(enUsCache, jaJpCache)
-                //                , new DemoBook(Modonomicon.MOD_ID, enUsCache)
-                ));
+        event.createProvider(output -> NeoBookProvider.of(event, new EnchantersGuideBook(enUsCache, jaJpCache)));
 
         // Client
         event.createProvider(output -> new AEBlockStateProvider(output, fileHelper));
@@ -77,9 +73,5 @@ public final class DataGenerators {
 
         generator.addProvider(event.includeClient(), enUsCache);
         generator.addProvider(event.includeClient(), jaJpCache);
-
-        //        generator.addProvider(
-        //                event.includeServer(), new DemoMultiblockProvider(generator.getPackOutput(),
-        // Modonomicon.MOD_ID));
     }
 }

@@ -57,7 +57,6 @@ public abstract class AEEntryProvider extends EntryProvider {
     protected String entryNameJa() {
         return entryName();
     }
-    ;
 
     protected String entryDescJa() {
         return entryDescription();

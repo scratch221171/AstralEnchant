@@ -12,7 +12,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-// TODO: 倍率が下がった時の余剰分の処理
 @Mixin(FoodData.class)
 public abstract class FoodDataMixin implements IPlayerAccessor {
 
@@ -34,6 +33,7 @@ public abstract class FoodDataMixin implements IPlayerAccessor {
     @Inject(method = "tick", at = @At("HEAD"))
     private void astralenchant$capturePlayer(Player player, CallbackInfo ci) {
         astralenchant$setPlayer(player);
+        // 上限を超えた分をclamp(倍率が下がった時のため)
         add(0, 0);
     }
 
