@@ -54,7 +54,8 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         // エンチャント
         addEnchantmentWithDesc(AEEnchantments.NULLIFICATION, "帰無", "攻撃が真のダメージを与えるようにします。");
         addEnchantmentWithDesc(AEEnchantments.LAST_STAND, "ラストスタンド", "経験値を消費して死を回避します。");
-        addEnchantmentWithDesc(AEEnchantments.ESSENCE_OF_ENCHANTMENT, "エンチャントの極意", "エンチャントの合計レベルのに応じてステータスを上昇させます。");
+        addEnchantmentWithDesc(
+                AEEnchantments.ESSENCE_OF_ENCHANTMENT, "エンチャントの極意", "自身を除くエンチャントの合計レベルのに応じてステータスを上昇させます。");
         addEnchantmentWithDesc(AEEnchantments.RESILIENCE, "復調", "アイテムの使用クールダウンを短縮します。");
         addEnchantmentWithDesc(AEEnchantments.FEATHER_TOUCH, "フェザータッチ", "様々なデータを保存しながら、あらゆるブロックを採取できるようにします。");
         addEnchantmentWithDesc(AEEnchantments.AFFINITY, "親和", "すべての制限を無視して、あらゆるエンチャントを付与できるようにします。");

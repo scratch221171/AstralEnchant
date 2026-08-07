@@ -21,10 +21,12 @@ public class ResonantArcaneQuartzEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
+
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText("""
+                        A crystal that has been partially transformed as Sculk encroaches upon {0}.
+                        Its pulsing resonance will likely be the key to reaching even greater heights.
                         """, """
                         　*{0}をスカルクが侵食し、半ば変質した結晶。*
                         　*脈打つ残響は、さらなる高みへの鍵となるだろう。*

@@ -31,10 +31,9 @@ public class CurseOfIgnoranceEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText("""
-                        This is English!   \s
-                        New line   \s
+                        {0} makes the tooltip hard to read. If you squint, you might be able to make out a little...   \s
+                        By default it also hides the name of the item, which may affect things like the item preview from [EnhancedTooltip](https://modrinth.com/mod/enhancedtooltips).
                         """, """
                         　{0}はツールチップを読みにくくします。目を凝らせばいくらかは見えるかもしれません...   \s
                         　デフォルトではアイテムの名前を隠しますが、[EnhancedTooltip](https://modrinth.com/mod/enhancedtooltips)のアイテムプレビューなどに影響するかもしれません。

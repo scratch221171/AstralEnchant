@@ -32,18 +32,20 @@ public class ReactiveArmorEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText(
                         """
-                        This is English!   \s
-                        New line   \s
+                        While wearing armor enchanted with {0}, the **armor-piercing effects** (such as void damage) and **enchantment-piercing effects** (such as the sonic boom of the Warden) of incoming attacks are negated, allowing that damage to be mitigated by armor.   \s
+                        Note that the piercing effect from {1} cannot be negated.
                         """,
                         """
                         　{0}を付けた防具を身に着けている場合、受けた攻撃が持つ**防具貫通効果**(奈落ダメージなど)及び**エンチャント貫通効果**(ウォーデンの衝撃波など)が無効化され、それらのダメージが防具で軽減できるようになります。   \s
                         　なお、{1}による軽減貫通効果は無効化できません。
                         """,
                         translatedName(),
-                        entryLink("帰無", EnchantmentCategory.CATEGORY_ID, ID.NULLIFICATION))));
+                        entryLink(
+                                translatedName(AEEnchantments.NULLIFICATION),
+                                EnchantmentCategory.CATEGORY_ID,
+                                ID.NULLIFICATION))));
 
         addDetails(lookups);
     }

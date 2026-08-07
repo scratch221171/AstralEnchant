@@ -22,10 +22,11 @@ public class ArcaneQuartzDustEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText("""
+                        A high-purity powder made by gathering and refining {0}.   \s
+                        It has lost its crystalline form, but thanks to its enormous surface area, it is even more reactive than the crystal itself.
                         """, """
                         　*{0}を集め、精製して作られた高純度の粉末。*   \s
                         　*結晶としての形は失われたが、その膨大な表面積によって反応性は結晶以上に優れる。*
@@ -35,8 +36,9 @@ public class ArcaneQuartzDustEntry extends ItemEntry {
                 .withRecipeId1(ModUtils.loc(id()))
                 .withText(pageText(
                         """
-                """, """
-                　**{0}で{1}を粉砕しても得られます。**
-                """, itemLink(Items.ANVIL), itemLink(CommonUtil.getAEItem(ID.GROWN_ARCANE_QUARTZ)))));
+                        **Can also be obtained by crushing {1} with {0}.**
+                        """, """
+                        **{0}で{1}を粉砕しても得られます。**
+                        """, itemLink(Items.ANVIL), itemLink(CommonUtil.getAEItem(ID.GROWN_ARCANE_QUARTZ)))));
     }
 }

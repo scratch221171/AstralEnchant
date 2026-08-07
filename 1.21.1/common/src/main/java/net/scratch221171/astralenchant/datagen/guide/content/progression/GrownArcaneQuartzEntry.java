@@ -20,11 +20,13 @@ public class GrownArcaneQuartzEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
+
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText(
                         """
+                        {1} that has fully grown, using a potion as a catalyst to completely absorb {0}.
+                        Its cool touch and heavy weight speak to its rarity.
                         """,
                         """
                         　*ポーションを触媒として{0}を完全に吸収し、成長しきった{1}。*
@@ -38,14 +40,27 @@ public class GrownArcaneQuartzEntry extends ItemEntry {
                 .withTitle(CommonUtil.getAEItemLangKey(id()))
                 .withText(pageText(
                         """
-                    """,
+                        Can be brewed by adding {1}, {2}, {3}, and {4} in order to {0}.
+                        """,
                         """
-                    {0}に順番に{1}、{2}、{3}、{4}を加えることで醸造できます。
-                    """,
+                        {0}に順番に{1}、{2}、{3}、{4}を加えることで醸造できます。
+                        """,
                         itemLink(CommonUtil.getAEItem(ID.BUDDING_ARCANIUM_INGOT)),
-                        itemLink("再生のポーション", Items.POTION, "potion_contents={potion:\"long_regeneration\"}"),
-                        itemLink("治癒のポーション", Items.POTION, "potion_contents={potion:\"strong_healing\"}"),
-                        itemLink("耐火のポーション", Items.POTION, "potion_contents={potion:\"long_fire_resistance\"}"),
-                        itemLink("力のポーション", Items.POTION, "potion_contents={potion:\"strong_strength\"}"))));
+                        itemLink(
+                                "item.minecraft.potion.effect.regeneration",
+                                Items.POTION,
+                                "potion_contents={potion:\"long_regeneration\"}"),
+                        itemLink(
+                                "item.minecraft.potion.effect.healing",
+                                Items.POTION,
+                                "potion_contents={potion:\"strong_healing\"}"),
+                        itemLink(
+                                "item.minecraft.potion.effect.fire_resistance",
+                                Items.POTION,
+                                "potion_contents={potion:\"long_fire_resistance\"}"),
+                        itemLink(
+                                "item.minecraft.potion.effect.strength",
+                                Items.POTION,
+                                "potion_contents={potion:\"strong_strength\"}"))));
     }
 }

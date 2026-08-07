@@ -31,10 +31,9 @@ public class EndlessAppetiteEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText("""
-                        This is English!   \s
-                        New line   \s
+                        {0} raises the maximum Food Level and hidden Saturation Level.   \s
+                        **Note that any amount beyond the vanilla default cap will not be displayed.**
                         """, """
                         　{0}は、満腹度および隠し満腹度の上限を引き上げます。   \s
                         　**なお、デフォルトの上限を超えた分は描写されません。**

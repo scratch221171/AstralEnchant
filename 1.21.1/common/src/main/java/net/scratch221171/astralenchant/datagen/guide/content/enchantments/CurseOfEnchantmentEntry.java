@@ -32,11 +32,10 @@ public class CurseOfEnchantmentEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText(
                         """
-                        This is English!   \s
-                        New line   \s
+                                {0} prevents the enchantments on the item from being changed.   \s
+                                It cannot be changed by combining at {1}, removing at {2}, switching at {3}, the effect of {4}, or any other means added by other mods.
                         """,
                         """
                         　{0}はアイテムのエンチャントを変更不可にします。   \s

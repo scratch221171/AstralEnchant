@@ -31,10 +31,13 @@ public class AffinityEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText("""
-                        This is English!   \s
-                        New line   \s
+                        Items with {0} can have **any enchantment** applied, ignoring the following restrictions:
+                        - Whether the item type is supported
+                        - Whether the item is enchantable
+                        - Enchantment conflicts
+
+                        This may not work with enchantment-combining methods added by other mods. If that happens, use {1} instead.
                         """, """
                         　{0}が付いているアイテムは、以下の制限を無視して**任意のエンチャント**を付与できるようになります。
                         - 対応の対象かどうか

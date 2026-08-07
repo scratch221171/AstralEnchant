@@ -60,7 +60,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addEnchantmentWithDesc(
                 AEEnchantments.ESSENCE_OF_ENCHANTMENT,
                 "Essence of Enchantment",
-                "Increases stats based on the total level of your enchantments.");
+                "Increases stats based on the total level other than this one of your enchantments.");
         addEnchantmentWithDesc(AEEnchantments.RESILIENCE, "Resilience", "Reduces the cooldown of all items.");
         addEnchantmentWithDesc(
                 AEEnchantments.FEATHER_TOUCH,

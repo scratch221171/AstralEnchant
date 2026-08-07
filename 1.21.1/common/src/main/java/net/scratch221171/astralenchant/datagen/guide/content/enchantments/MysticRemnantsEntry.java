@@ -31,11 +31,16 @@ public class MysticRemnantsEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText(
                         """
-                        This is English!   \s
-                        New line   \s
+                        Defeating certain enemies with a weapon enchanted with {0} has a random chance of granting special drops.
+                        - Witch: {1}
+                        - Wither: {2}
+                        - Warden: {3}
+                        - Bogged: {4}
+                        - Allay: {5}
+
+                        The chance is (level\\*5)%%, and the number of rolls differs for each.
                         """,
                         """
                         　{0}を付けた武器で一部の敵を倒すと、特殊なドロップをランダムでいくつか得られます。

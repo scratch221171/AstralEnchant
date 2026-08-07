@@ -31,11 +31,10 @@ public class AlmightyEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText(
                         """
-                        This is English!   \s
-                        New line   \s
+                        Applying {0} raises the mining tier of the tool — iron at level 1, diamond at level 2, and netherite at level 3 — and at level 4, by default, also allows mining unbreakable blocks such as {1}.   \s
+                        {0} removes the tool-type restriction and raises the mining tier, but mining speed still depends on the original tier of the tool. For example, a level-4 {2} with {0} can mine {3}, but since its speed is still that of a wooden tool, it will take an incredibly long time.
                         """,
                         """
                         　{0}を付けると、そのツールの採掘ティアをlv1で鉄、lv2でダイヤモンド、lv3でネザライトまで増加させ、lv4でさらにデフォルトでは{1}などの不可壊なブロックが採掘できるようにします。   \s

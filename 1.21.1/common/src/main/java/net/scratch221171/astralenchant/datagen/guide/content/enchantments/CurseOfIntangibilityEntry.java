@@ -30,10 +30,8 @@ public class CurseOfIntangibilityEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText("""
-                        This is English!   \s
-                        New line   \s
+                        {0} completely removes collision between entities and blocks. As a result, **mobs and players without the ability to fly will fall into the void when wearing it.**   \s
                         """, """
                         　{0}はエンティティとブロックの衝突を完全になくします。そのため、**飛行能力を持たないモブやプレイヤーは装着すると奈落へ落ちます。**   \s
                         """, translatedName())));

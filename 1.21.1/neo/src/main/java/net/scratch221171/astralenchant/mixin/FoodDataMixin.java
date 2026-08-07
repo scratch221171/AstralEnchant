@@ -7,14 +7,17 @@ import net.minecraft.world.food.FoodData;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
 import net.scratch221171.astralenchant.common.util.IPlayerAccessor;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // TODO: 倍率が下がった時の余剰分の処理
-// TODO: apple skin連携
 @Mixin(FoodData.class)
-public class FoodDataMixin implements IPlayerAccessor {
+public abstract class FoodDataMixin implements IPlayerAccessor {
+
+    @Shadow
+    protected abstract void add(int p_340988_, float p_340961_);
 
     @Unique private Player astralenchant$player;
 
@@ -30,7 +33,8 @@ public class FoodDataMixin implements IPlayerAccessor {
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void astralenchant$capturePlayer(Player player, CallbackInfo ci) {
-        this.astralenchant$setPlayer(player);
+        astralenchant$setPlayer(player);
+        add(0, 0);
     }
 
     @Redirect(method = "add(IF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Mth;clamp(III)I"))

@@ -21,11 +21,12 @@ public class BuddingArcaniumIngotEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
+
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText(
                         """
+                        {1}, quietly continuing to grow while feeding on {0} as nourishment. Its outward appearance shows little change, but inside, alloy and crystal are steadily merging and growing.
                         """,
                         """
                         　*{0}を養分としながら静かに成長を続ける{1}。外見に大きな変化はないものの、その内部では合金と結晶が溶け合い、着実に成長してゆく。*

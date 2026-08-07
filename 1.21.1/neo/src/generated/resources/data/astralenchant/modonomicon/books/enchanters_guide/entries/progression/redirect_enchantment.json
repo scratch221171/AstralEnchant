@@ -3,7 +3,7 @@
   "background_v_index": 0,
   "category": "progression",
   "category_to_open": "enchantment",
-  "description": "book.astralenchant.enchanters_guide.progression.redirect_enchantment.description",
+  "description": "",
   "hide_while_locked": false,
   "icon": {
     "item": "minecraft:enchanting_table"

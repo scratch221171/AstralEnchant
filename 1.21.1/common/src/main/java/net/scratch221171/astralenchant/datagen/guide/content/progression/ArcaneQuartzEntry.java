@@ -22,11 +22,12 @@ public class ArcaneQuartzEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText(
                         """
+                        A material born by possessing plain {1} and {2} with {0}, the crystallized remains of burned-out knowledge.   \s
+                        This faintly glowing crystal is the fruit of the pursuit of knowledge by the ancient enchanters. Whoever handles it must never forget its weight and value.
                         """,
                         """
                         　*燃え尽きた知識の結晶である{0}を、まっさらな{1}と{2}に憑依させることで生まれる素材。*   \s

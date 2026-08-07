@@ -40,11 +40,12 @@ public class ReinforcedDeepslateEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
+
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText(
                         """
+                        Can be harvested with a tool that has <t>{0}<t> applied.
                         """,
                         """
                         　<t>{0}<t>を付けたツールで採取することができます。
@@ -57,8 +58,9 @@ public class ReinforcedDeepslateEntry extends ItemEntry {
         page("recipe", () -> BookCraftingRecipePageModel.create()
                 .withRecipeId1(ModUtils.loc(id()))
                 .withText(pageText("""
-                """, """
-                　{0}からクラフトして入手することもできます。
-                """, itemLink(CommonUtil.getAEItem(ID.ROTTEN_BONE)))));
+                        Can also be obtained by crafting it from {0}.
+                        """, """
+                        　{0}からクラフトして入手することもできます。
+                        """, itemLink(CommonUtil.getAEItem(ID.ROTTEN_BONE)))));
     }
 }

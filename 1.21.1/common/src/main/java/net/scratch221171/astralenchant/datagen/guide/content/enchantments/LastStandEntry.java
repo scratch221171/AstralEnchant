@@ -31,19 +31,16 @@ public class LastStandEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText("""
-                        This is English!   \s
-                        New line   \s
+                        Applying {0} to armor lets you consume experience points to cancel death.   \s
+                        The amount of experience consumed scales with **the total level of all worn armor**. Using the *current level* (N) and *enchantment level* (L) along with the *base cost* (B), *rate* (R), and *maximum* (M) values configurable in the settings, the cost consumed is calculated as   \s
+                        min(M,N\\*R/√L+B/L)   \s
+                        By default, this also cancels death from damage that bypasses invulnerability, such as /kill.
                         """, """
-                        　防具に{0}を付けることで、経験値を消費して死亡をキャンセルできます。
-                        \\
-                        　消費経験値は**全ての防具のレベルの合計**に応じて変動します。*現在のレベル*(N)及び設定で変更できる*基本値*(B)、*割合*(R)、*最大値*(M)を用いて、消費されるコストは
-                        \\
-                        min(M,N\\*R/√L+B/L)
-                        \\
-                        で計算されます。
-                        \\
+                        　防具に{0}を付けることで、経験値を消費して死亡をキャンセルできます。   \s
+                        　消費経験値は**全ての防具のレベルの合計**に応じて変動します。*現在の経験値レベル*(N)、*エンチャントレベル*(L)及び設定で変更できる*基本値*(B)、*割合*(R)、*最大値*(M)を用いて、消費されるコストは   \s
+                        min(M,N\\*R/√L+B/L)   \s
+                        で計算されます。   \s
                         　デフォルトでは、/killなど無敵を貫通するダメージによる死亡もキャンセルします。
                         """, translatedName())));
 

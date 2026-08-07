@@ -32,11 +32,12 @@ public class EssenceOfEnchantmentEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText(
                         """
-                        This is English!   \s
-                        New line   \s
+                        {0} increases **all stats** based on the total level of all the enchantments on the item **except itself** (by default, excluding levels added by {1}).   \s
+                        By default, this grants 1%% per level using **ADD_MULTIPLIED_BASE**.   \s
+                        Neutral attributes such as size and gravity are unaffected, while harmful attributes such as burn duration are decreased.   \s
+                        It also works on Curios items.
                         """,
                         """
                         　{0}は、アイテムの**自身を除く**全てのエンチャントの合計レベル(デフォルトでは{1}による増加レベルを除く)に応じて**全てのステータス**を増加させます。   \s

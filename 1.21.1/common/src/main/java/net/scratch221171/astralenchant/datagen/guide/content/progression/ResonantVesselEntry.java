@@ -20,12 +20,14 @@ public class ResonantVesselEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
+
         page("desc", BookSpotlightPageModel::create).withItem(item()).withText(pageText("""
-                        """, """
-                        　*スカルクの力を用いて、エンチャントとの共鳴を極限まで高めた書物。*   \s
-                        　*より高位で繊細なエンチャントを引き寄せるには必須不可欠だろう。*
-                        """));
+                A tome that uses the power of Sculk to maximize its resonance with enchantments.   \s
+                It is likely indispensable for drawing in higher-tier, more delicate enchantments.
+                """, """
+                　*スカルクの力を用いて、エンチャントとの共鳴を極限まで高めた書物。*   \s
+                　*より高位で繊細なエンチャントを引き寄せるには必須不可欠だろう。*
+                """));
 
         page("recipe", () -> BookCraftingRecipePageModel.create().withRecipeId1(ModUtils.loc(id())));
     }

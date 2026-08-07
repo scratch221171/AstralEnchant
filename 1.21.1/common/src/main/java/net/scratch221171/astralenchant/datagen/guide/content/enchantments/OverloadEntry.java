@@ -32,11 +32,11 @@ public class OverloadEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText(
                         """
-                        This is English!   \s
-                        New line   \s
+                        {0} raises the level of every enchantment on the item **other than itself**, by an amount equal to **its own level**.   \s
+                        By default, the levels it adds are not included in the total level of {1}.   \s
+                        In the tooltip, it shines in rainbow colors, making its presence known.
                         """,
                         """
                         　{0}は、**自身を除く**アイテムの全てのエンチャントのレベルを、**自身のレベルだけ**引き上げます。   \s

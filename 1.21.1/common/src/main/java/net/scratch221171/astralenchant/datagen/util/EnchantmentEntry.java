@@ -65,12 +65,25 @@ public abstract class EnchantmentEntry extends AEEntryProvider {
             page("detail", () -> BookCraftingRecipePageModel.create()
                     .withRecipeId1(ModUtils.loc("enchanted_book_" + id()))
                     .withText(pageText(
-                            "Desc in English",
                             """
-                            [最大レベル]{0}   \s
-                            [金床コスト]{1}   \s
-                            [対応アイテム]{2}   \s
-                            [スロット]{3}
+                            **[Max Level]**   \s
+                            {0}   \s
+                            **[Anvil Cost]**   \s
+                            {1}   \s
+                            **[Supported Items]**   \s
+                            {2}   \s
+                            **[Slot]**   \s
+                            {3}
+                            """,
+                            """
+                            **[最大レベル]**   \s
+                            {0}   \s
+                            **[金床コスト]**   \s
+                            {1}   \s
+                            **[対応アイテム]**   \s
+                            {2}   \s
+                            **[スロット]**   \s
+                            {3}
                             """,
                             definition.maxLevel(),
                             definition.anvilCost(),
@@ -79,7 +92,7 @@ public abstract class EnchantmentEntry extends AEEntryProvider {
                                     .unwrapKey()
                                     .map(TagKey::location)
                                     .map(ResourceLocation::getPath)
-                                    .orElse("任意のアイテム"),
+                                    .orElse("Any Item"),
                             String.join(
                                     ", ",
                                     definition.slots().stream()
@@ -89,13 +102,28 @@ public abstract class EnchantmentEntry extends AEEntryProvider {
             page("detail", () -> BookCraftingRecipePageModel.create()
                     .withRecipeId1(ModUtils.loc("enchanted_book_" + id()))
                     .withText(pageText(
-                            "Desc in English",
                             """
-                            [最大レベル]{0}   \s
-                            [金床コスト]{1}   \s
-                            [対応アイテム]{2}   \s
-                            [スロット]{3}   \s
-                            [属性効果]{4}
+                            **[Max Level]**   \s
+                            {0}   \s
+                            **[Anvil Cost]**   \s
+                            {1}   \s
+                            **[Supported Items]**   \s
+                            {2}   \s
+                            **[Slot]**   \s
+                            {3}   \s
+                            **[Attribute Effects]**{4}
+                            """,
+                            """
+                            **[最大レベル]**   \s
+                            {0}   \s
+                            **[金床コスト]**   \s
+                            {1}   \s
+                            **[対応アイテム]**   \s
+                            {2}   \s
+                            **[スロット]**   \s
+                            {3}   \s
+                            **[属性効果]**   \s
+                            {4}
                             """,
                             definition.maxLevel(),
                             definition.anvilCost(),
@@ -104,7 +132,7 @@ public abstract class EnchantmentEntry extends AEEntryProvider {
                                     .unwrapKey()
                                     .map(TagKey::location)
                                     .map(ResourceLocation::getPath)
-                                    .orElse("任意のアイテム"),
+                                    .orElse("Any Item"),
                             String.join(
                                     ", ",
                                     definition.slots().stream()
@@ -124,11 +152,6 @@ public abstract class EnchantmentEntry extends AEEntryProvider {
     @Override
     protected String entryName() {
         return id().replace('_', ' ');
-    }
-
-    @Override
-    protected String entryDescription() {
-        return "";
     }
 
     @Override

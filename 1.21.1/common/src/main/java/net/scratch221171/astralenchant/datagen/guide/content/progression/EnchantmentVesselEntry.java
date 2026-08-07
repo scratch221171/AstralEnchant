@@ -21,10 +21,12 @@ public class EnchantmentVesselEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
+
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText("""
+                        A tome that, by abandoning the purpose of storing information, has become more compatible with enchantments than a {0}.
+                        By using various materials as catalysts, it can draw in specific kinds of enchantments.
                         """, """
                         　*情報を保存するという目的を切り捨てたことで、エンチャントとの相性に関しては{0}よりも優れるようになった書物。*
                         　*様々な素材を触媒として使うことで、決まった種類のエンチャントを呼び寄せることができる。*

@@ -3,7 +3,7 @@
   "background_u_index": 0,
   "background_v_index": 0,
   "category": "progression",
-  "description": "book.astralenchant.enchanters_guide.progression.redirect_feather_touch.description",
+  "description": "",
   "entry_to_open": "enchantment/feather_touch",
   "hide_while_locked": false,
   "icon": {

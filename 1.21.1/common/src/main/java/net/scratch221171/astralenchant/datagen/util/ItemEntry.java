@@ -37,11 +37,6 @@ public abstract class ItemEntry extends AEEntryProvider {
     }
 
     @Override
-    protected String entryDescription() {
-        return "";
-    }
-
-    @Override
     protected BookIconModel entryIcon() {
         return BookIconModel.create(item());
     }

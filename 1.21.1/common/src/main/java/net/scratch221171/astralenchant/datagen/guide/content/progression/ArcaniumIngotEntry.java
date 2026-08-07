@@ -22,11 +22,12 @@ public class ArcaniumIngotEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText(
                         """
+                        A soft, pale purple alloy made by kneading {0} into {1} and {2}.   \s
+                        It does not look much different from ordinary metal, but its excellent conductivity makes it an ideal seedbed for crystal growth.
                         """,
                         """
                         　*{0}を{1}と{2}に練り込むことで作れる、淡い紫色の柔らかい合金。*   \s

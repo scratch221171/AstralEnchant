@@ -21,10 +21,12 @@ public class LuminiteEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
+
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText("""
+                        A crystal with a beautiful gradient, formed by treating {0} with lava.
+                        Intense heat has altered its crystal structure, and with the right handling, energy could likely be drawn out from within.
                         """, """
                         　*{0}を溶岩で処理して出来上がる、美しいグラデーションを持つ結晶。*
                         　*高熱により結晶構造が変化していて、うまく扱えば内部からエネルギーを取り出せるだろう。*

@@ -24,8 +24,11 @@ public class AllayWingEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
         page("desc", BookSpotlightPageModel::create).withItem(item()).withText(pageText("""
+                Oh no. Did you really have to kill an innocent Allay, of all things? It flew for you, gathered your dropped items, and worked without a single complaint.   \s
+                Looking at the wing in your hand now, can you honestly say your chest does not ache at all? Tonight, as you lie in bed staring at the ceiling, you might find yourself wondering, did I really have to kill it...?   \s
+                What was going through its mind in its final moment? Maybe, did I make the master angry? Or maybe, help me, master!   \s
+                Of course, there is no way to know now. You are the one who killed it. That wing is exactly the result of your choice. Congratulations.
                 """, """
                 　*ああ、なんてこった！まさか、よりによって何の罪もないアレイを殺してしまうなんて。彼らはあなたのために空を飛び、落とし物を拾い、文句ひとつ言わず働いてくれていたというのに。*   \s
                 　*今手に持っているその羽を見て、胸の奥が少しも痛まないと言い切れるだろうか？今夜ベッドに入ったあと、あなたはふと天井を見つめながら「別に殺さなくてもよかったんじゃないか…？」と考え込んでしまうかもしれない。*   \s
@@ -36,10 +39,11 @@ public class AllayWingEntry extends ItemEntry {
         page("entity", () -> BookEntityPageModel.create()
                 .withText(pageText(
                         """
-                """,
+                        Rarely dropped when defeating <t>{1}<t> with a weapon enchanted with <t>{0}<t>.
+                        """,
                         """
-                <t>{0}<t>を付けた武器で<t>{1}<t>を倒すと稀にドロップします。
-                """,
+                        <t>{0}<t>を付けた武器で<t>{1}<t>を倒すと稀にドロップします。
+                        """,
                         entryLink(
                                 CommonUtil.getLangKey(AEEnchantments.MYSTIC_REMNANTS),
                                 EnchantmentCategory.CATEGORY_ID,

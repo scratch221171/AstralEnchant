@@ -34,11 +34,6 @@ public class MysticRemnantsEntryRedirectEntry extends AEEntryProvider {
     }
 
     @Override
-    protected String entryDescription() {
-        return "";
-    }
-
-    @Override
     protected BookIconModel entryIcon() {
         return BookIconModel.create(Items.ENCHANTED_BOOK);
     }

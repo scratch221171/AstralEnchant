@@ -24,8 +24,9 @@ public class RottenBoneEntry extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
+
         page("desc", BookSpotlightPageModel::create).withItem(item()).withText(pageText("""
+                A bone fragment that retains an unnatural strength even as it decays. Ancient civilizations incorporated it into deepslate reinforcement techniques, prizing it as a valuable material.
                 """, """
                 　*朽ち果ててなお異様な強度を保ち続ける骨片。古代文明では深層岩の補強技術に組み込まれ、貴重な素材として重宝された。*
                 """));
@@ -33,10 +34,11 @@ public class RottenBoneEntry extends ItemEntry {
         page("entity", () -> BookEntityPageModel.create()
                 .withText(pageText(
                         """
-                """,
+                        Rarely dropped when defeating <t>{1}<t> with a weapon enchanted with <t>{0}<t>.
+                        """,
                         """
-                <t>{0}<t>を付けた武器で<t>{1}<t>を倒すと稀にドロップします。
-                """,
+                        <t>{0}<t>を付けた武器で<t>{1}<t>を倒すと稀にドロップします。
+                        """,
                         entryLink(
                                 CommonUtil.getLangKey(AEEnchantments.MYSTIC_REMNANTS),
                                 EnchantmentCategory.CATEGORY_ID,

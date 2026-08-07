@@ -31,10 +31,13 @@ public class DexterityEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText("""
-                        This is English!   \s
-                        New line   \s
+                        {0} prevents movement speed from being reduced while using an item, and even lets you start sprinting while still using one. For example, all slowdown caused by:
+                        - Eating
+                        - Drawing back a {1}
+                        - Using a {2}
+
+                        is removed entirely.
                         """, """
                         　{0}はアイテム使用中の歩行速度低下を防ぎ、さらに使用中でも走り始められるようにします。例えば、
                         - 食事

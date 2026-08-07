@@ -31,15 +31,13 @@ public class ResilienceEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText(
                         """
-                        This is English!   \s
-                        New line   \s
+                        While {0} is applied, the cooldown duration of all items is reduced.   \s
+                        In vanilla, only {1}, {2}, {3}, and {4} benefit from this, but it also affects modded items.
                         """,
                         """
-                        　{0}を付けていると、全てのアイテムのクールダウン時間が短縮されます。
-                        \\
+                        　{0}を付けていると、全てのアイテムのクールダウン時間が短縮されます。   \s
                         　バニラで恩恵を受けるのは{1}、{2}、{3}、{4}だけですが、modアイテムにも効果があります。
                         """,
                         translatedName(),

@@ -22,11 +22,12 @@ public class LavaProofArcaneQuartz extends ItemEntry {
 
     @Override
     protected void generatePages() {
-        // TODO: English Translation
+
         page("desc", BookSpotlightPageModel::create)
                 .withItem(item())
                 .withText(pageText(
                         """
+                        A thing made by smearing {1} all over {0}. Surely this must count as heat-resistant treatment!
                         """, """
                          *{0}に{1}を塗りたくった代物。きっと耐熱処理が出来ているに違いない！*
                         """, itemLink(CommonUtil.getAEItem(ID.ARCANE_QUARTZ)), itemLink(Items.MAGMA_CREAM)));

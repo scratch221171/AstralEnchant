@@ -31,10 +31,9 @@ public class ExpanseEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText("""
-                        This is English!   \s
-                        New line   \s
+                        *{0} is a [Curios](https://modrinth.com/mod/curios) integration feature, and **is disabled if Curios is not installed!***   \s
+                        {0} only affects Curios items, increasing the number of Curio slots the item occupies. By default, this effect does not stack.
                         """, """
                         　*{0}は[Curios](https://modrinth.com/mod/curios)連携要素であり、**Curiosが存在しない場合無効化されます！***   \s
                         　{0}はCuriosアイテムにのみ効果を発揮し、装着されているCurioスロットを増やします。デフォルトでは効果は重複しません。

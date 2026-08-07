@@ -2,7 +2,7 @@
   "background_u_index": 0,
   "background_v_index": 0,
   "category": "progression",
-  "description": "book.astralenchant.enchanters_guide.progression.grown_arcane_quartz.description",
+  "description": "",
   "hide_while_locked": false,
   "icon": {
     "item": "astralenchant:grown_arcane_quartz"

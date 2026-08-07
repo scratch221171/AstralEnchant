@@ -12,8 +12,8 @@ public abstract class AECategoryProvider extends CategoryProvider {
     }
 
     protected void add(String key, String enUs, String jaJp) {
-        this.add(key, enUs);
-        this.add(this.lang(JA_JP), key, jaJp);
+        add(key, enUs);
+        add(lang(JA_JP), key, jaJp);
     }
 
     protected String categoryNameJa() {
@@ -26,12 +26,12 @@ public abstract class AECategoryProvider extends CategoryProvider {
 
     @Override
     protected final BookCategoryModel additionalSetup(BookCategoryModel category) {
-        this.add(this.lang(JA_JP), this.context().categoryName(), this.categoryNameJa());
-        var descJa = this.categoryDescriptionJa();
-        if (!this.categoryDescription().isEmpty() && !descJa.isEmpty()) {
-            this.add(this.lang(JA_JP), this.context().categoryDescription(), descJa);
+        add(lang(JA_JP), context().categoryName(), categoryNameJa());
+        var descJa = categoryDescriptionJa();
+        if (!categoryDescription().isEmpty() && !descJa.isEmpty()) {
+            add(lang(JA_JP), context().categoryDescription(), descJa);
         }
-        return this.wrappedAdditionalSetup(category);
+        return wrappedAdditionalSetup(category);
     }
 
     protected BookCategoryModel wrappedAdditionalSetup(BookCategoryModel category) {

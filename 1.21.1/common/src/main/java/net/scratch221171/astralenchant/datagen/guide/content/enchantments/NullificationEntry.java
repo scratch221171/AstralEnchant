@@ -31,10 +31,17 @@ public class NullificationEntry extends EnchantmentEntry {
     protected void generatePages() {
         page("desc", () -> BookTextPageModel.create()
                 .withTitle(CommonUtil.getLangKey(key()))
-                // TODO: English Docs
                 .withText(pageText("""
-                        This is English!   \s
-                        New line   \s
+                        By applying {0}, attacks bypass the following forms of damage reduction and negation:
+                        - Armor points and armor toughness
+                        - Invulnerability frames
+                        - Effects
+                        - Enchantments
+                        - Invulnerable state
+                        - Shields
+
+                        The penetration of {0} is equivalent to */kill*. As a result, it has no effect on mobs that are resistant to */kill*.   \s
+                        Attacking with a weapon enchanted with {0} produces white particles.
                         """, """
                         　{0}を付けることによって、攻撃は以下の様々なダメージ軽減＆無効を貫通します。
                         - 防御力、防具強度

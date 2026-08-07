@@ -33,11 +33,6 @@ public class EnchantmentCategoryRedirectEntry extends AEEntryProvider {
     }
 
     @Override
-    protected String entryDescription() {
-        return "";
-    }
-
-    @Override
     protected BookIconModel entryIcon() {
         return BookIconModel.create(Items.ENCHANTING_TABLE);
     }
