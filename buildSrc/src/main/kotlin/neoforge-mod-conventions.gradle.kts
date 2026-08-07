@@ -142,6 +142,10 @@ val generateModMetadata = tasks.register<ProcessResources>("generateModMetadata"
 sourceSets.main.get().resources.srcDir(generateModMetadata)
 neoForge.ideSyncTask(generateModMetadata)
 
+tasks.named("sourcesJar") {
+    dependsOn(generateModMetadata)
+}
+
 tasks.jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from(project(commonProject).sourceSets.main.get().output)

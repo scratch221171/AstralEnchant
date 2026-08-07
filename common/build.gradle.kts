@@ -15,6 +15,8 @@ dependencies {
 
 java.toolchain {
     languageVersion = JavaLanguageVersion.of(17)
+    @Suppress("UnstableApiUsage")
+    vendor = JvmVendorSpec.JETBRAINS
 }
 
 spotless {
