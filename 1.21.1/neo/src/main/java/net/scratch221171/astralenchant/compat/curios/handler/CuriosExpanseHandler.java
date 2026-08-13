@@ -14,7 +14,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.event.CurioAttributeModifierEvent;
 import top.theillusivec4.curios.api.type.ISlotType;
 
-public final class CuriosSlotExpansionHandler {
+public final class CuriosExpanseHandler {
 
     public static void expandSlot(CurioAttributeModifierEvent event) {
         ItemStack stack = event.getItemStack();
@@ -30,13 +30,11 @@ public final class CuriosSlotExpansionHandler {
             if (slotContext.index() >= baseSize) return;
         }
 
-        AEUtil.getEnchantmentHolder(AEEnchantments.EXPANSE, slotContext.entity())
-                .map(stack::getEnchantmentLevel)
-                .filter(level -> level > 0)
-                .ifPresent(level -> {
-                    Multimap<Holder<Attribute>, AttributeModifier> map = HashMultimap.create();
-                    CuriosApi.addSlotModifier(map, slotId, event.getId(), level, AttributeModifier.Operation.ADD_VALUE);
-                    map.forEach(event::addModifier);
-                });
+        int level = AEUtil.getEnchantmentLevel(AEEnchantments.EXPANSE, stack);
+        if (level > 0) {
+            Multimap<Holder<Attribute>, AttributeModifier> map = HashMultimap.create();
+            CuriosApi.addSlotModifier(map, slotId, event.getId(), level, AttributeModifier.Operation.ADD_VALUE);
+            map.forEach(event::addModifier);
+        }
     }
 }
