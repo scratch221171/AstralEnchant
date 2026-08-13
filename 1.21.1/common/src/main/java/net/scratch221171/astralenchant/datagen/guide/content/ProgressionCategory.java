@@ -21,7 +21,7 @@ public class ProgressionCategory extends AECategoryProvider {
     @Override
     protected String[] generateEntryMap() {
         return new String[] {
-            "____________h______", "", "__s_e_f_____g______", "", "__r_____k_j_i_o_p__", "", "a_b_c_d___l_m_n___q", "",
+            "__t_________h______", "", "__s_e_f_____g______", "", "__r_____k_j_i_o_p__", "", "a_b_c_d___l_m_n___q", "",
         };
     }
 
@@ -68,6 +68,8 @@ public class ProgressionCategory extends AECategoryProvider {
         var lavaProofArcaneQuartz =
                 add(new LavaProofArcaneQuartz(this).generate('r').withParent(arcaneQuartz));
         var luminite = add(new LuminiteEntry(this).generate('s').withParent(lavaProofArcaneQuartz));
+        var enchanters_workbench =
+                add(new EnchantersWorkbenchEntry(this).generate('t').withParent(luminite));
     }
 
     @Override

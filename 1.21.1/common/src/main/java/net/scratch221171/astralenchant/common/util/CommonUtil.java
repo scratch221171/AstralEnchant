@@ -24,6 +24,10 @@ public class CommonUtil {
         return Util.makeDescriptionId("item", ModUtils.loc(name));
     }
 
+    public static String getAEBlockLangKey(String name) {
+        return Util.makeDescriptionId("block", ModUtils.loc(name));
+    }
+
     public static String getDescLangKey(ResourceKey<Enchantment> key) {
         return key.location().toLanguageKey("enchantment", "desc");
     }

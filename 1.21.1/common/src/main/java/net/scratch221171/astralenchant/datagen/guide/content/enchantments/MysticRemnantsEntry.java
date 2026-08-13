@@ -39,6 +39,7 @@ public class MysticRemnantsEntry extends EnchantmentEntry {
                         - Warden: {3}
                         - Bogged: {4}
                         - Allay: {5}
+                        - Vex: {6}
 
                         The chance is (level\\*5)%%, and the number of rolls differs for each.
                         """,
@@ -49,6 +50,7 @@ public class MysticRemnantsEntry extends EnchantmentEntry {
                         - ウォーデン: {3}
                         - ボグド: {4}
                         - アレイ: {5}
+                        - ヴェックス: {6}
 
                         確率は(レベル\\*5)%%、ロール数はそれぞれ異なります。
                         """,
@@ -57,7 +59,8 @@ public class MysticRemnantsEntry extends EnchantmentEntry {
                         itemLink(Items.WITHER_SKELETON_SKULL),
                         itemLink(Items.ECHO_SHARD),
                         itemLink(CommonUtil.getAEItem(ID.ROTTEN_BONE)),
-                        itemLink(CommonUtil.getAEItem(ID.ALLAY_WING)))));
+                        itemLink(CommonUtil.getAEItem(ID.ALLAY_WING)),
+                        itemLink(CommonUtil.getAEItem(ID.VEX_WING)))));
 
         addDetails(lookups);
     }
