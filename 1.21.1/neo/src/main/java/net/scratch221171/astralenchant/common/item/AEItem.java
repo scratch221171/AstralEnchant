@@ -11,11 +11,6 @@ public class AEItem extends Item implements IAEDescribable {
 
     @Nullable protected final Style style;
 
-    /** REGISTER.registerSimpleItem相当(説明なし) */
-    public AEItem(Properties properties) {
-        this(properties, null, null);
-    }
-
     public AEItem(Properties properties, @Nullable String descKey, @Nullable Style style) {
         super(properties);
         this.descKey = descKey;

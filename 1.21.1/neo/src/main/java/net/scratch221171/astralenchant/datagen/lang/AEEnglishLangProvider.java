@@ -35,6 +35,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addItem(AEItems.ROTTEN_BONE, "Rotten Bone");
         addItemWithDesc(AEItems.ALLAY_WING, "Allay Wing", "How inhumane!");
         addItem(AEItems.VEX_WING, "Vex Wing");
+        addItemWithDesc(AEItems.ENCHANTMENT_SEEDS, "Enchantment Seeds", "Resets the player's enchantment seed.");
 
         addItem(AEItems.ARCANIUM_HELMET, "Arcanium Helmet");
         addItem(AEItems.ARCANIUM_CHESTPLATE, "Arcanium Chestplate");

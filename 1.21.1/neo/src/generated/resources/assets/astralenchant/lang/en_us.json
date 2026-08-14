@@ -227,6 +227,8 @@
   "item.astralenchant.arcanium_ingot": "Arcanium Ingot",
   "item.astralenchant.arcanium_leggings": "Arcanium Leggings",
   "item.astralenchant.budding_arcanium_ingot": "Budding Arcanium Ingot",
+  "item.astralenchant.enchantment_seeds": "Enchantment Seeds",
+  "item.astralenchant.enchantment_seeds.desc": "Resets the player's enchantment seed.",
   "item.astralenchant.enchantment_shard": "Enchantment Shard",
   "item.astralenchant.enchantment_vessel": "Enchantment Vessel",
   "item.astralenchant.grown_arcane_quartz": "Grown Arcane Quartz",

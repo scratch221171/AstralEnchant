@@ -36,6 +36,7 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addItem(AEItems.ROTTEN_BONE, "朽ちた骨");
         addItemWithDesc(AEItems.ALLAY_WING, "アレイの羽", "なんと非人道的な！");
         addItem(AEItems.VEX_WING, "ヴェックスの羽");
+        addItemWithDesc(AEItems.ENCHANTMENT_SEEDS, "エンチャントの種", "プレイヤーのエンチャントシードをリセットします。");
 
         addItem(AEItems.ARCANIUM_HELMET, "アルカニウムのヘルメット");
         addItem(AEItems.ARCANIUM_CHESTPLATE, "アルカニウムのチェストプレート");

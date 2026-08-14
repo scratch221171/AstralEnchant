@@ -16,10 +16,6 @@ public class AEArmorItem extends ArmorItem implements IAEDescribable {
 
     @Nullable private final Style style;
 
-    public AEArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties) {
-        this(material, type, properties, null, null);
-    }
-
     public AEArmorItem(
             Holder<ArmorMaterial> material,
             Type type,

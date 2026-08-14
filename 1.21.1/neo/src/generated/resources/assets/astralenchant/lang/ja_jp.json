@@ -227,6 +227,8 @@
   "item.astralenchant.arcanium_ingot": "アルカニウムインゴット",
   "item.astralenchant.arcanium_leggings": "アルカニウムのレギンス",
   "item.astralenchant.budding_arcanium_ingot": "芽生えたアルカニウムインゴット",
+  "item.astralenchant.enchantment_seeds": "エンチャントの種",
+  "item.astralenchant.enchantment_seeds.desc": "プレイヤーのエンチャントシードをリセットします。",
   "item.astralenchant.enchantment_shard": "エンチャントの欠片",
   "item.astralenchant.enchantment_vessel": "エンチャントの依代",
   "item.astralenchant.grown_arcane_quartz": "成長したアーケインクォーツ",

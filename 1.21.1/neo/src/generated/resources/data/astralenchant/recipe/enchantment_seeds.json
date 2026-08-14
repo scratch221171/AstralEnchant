@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "c:seeds"
+    },
+    "2": {
+      "item": "astralenchant:enchantment_shard"
+    }
+  },
+  "pattern": [
+    "111",
+    "121",
+    "111"
+  ],
+  "result": {
+    "count": 8,
+    "id": "astralenchant:enchantment_seeds"
+  }
+}

@@ -8,6 +8,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Style;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -17,6 +18,7 @@ import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.item.AEArmorItem;
 import net.scratch221171.astralenchant.common.item.AEItem;
+import net.scratch221171.astralenchant.common.item.EnchantmentSeedsItem;
 import net.scratch221171.astralenchant.common.util.CommonUtil;
 import org.jspecify.annotations.Nullable;
 
@@ -63,6 +65,20 @@ public class AEItems {
             ROTTEN_BONE = registerAEItem(ID.ROTTEN_BONE),
             ALLAY_WING = registerAEItem(ID.ALLAY_WING, Desc.defaultKey(), null),
             VEX_WING = registerAEItem(ID.VEX_WING);
+
+    public static final DeferredItem<EnchantmentSeedsItem> ENCHANTMENT_SEEDS = registerAEItem(
+            ID.ENCHANTMENT_SEEDS,
+            new Item.Properties()
+                    .food(new FoodProperties.Builder()
+                            .nutrition(1)
+                            .saturationModifier(0.1F)
+                            .alwaysEdible()
+                            .fast()
+                            .build()),
+            Desc.defaultKey(),
+            Style.EMPTY.withColor(ChatFormatting.GRAY),
+            EnchantmentSeedsItem::new);
+
     public static final DeferredItem<AEArmorItem>
             ARCANIUM_HELMET =
                     registerAEArmorItem(
@@ -111,12 +127,17 @@ public class AEItems {
 
     private static DeferredItem<AEItem> registerAEItem(
             String name, Item.Properties properties, Desc desc, @Nullable Style style) {
+        return registerAEItem(name, properties, desc, style, AEItem::new);
+    }
+
+    private static <T extends AEItem> DeferredItem<T> registerAEItem(
+            String name, Item.Properties properties, Desc desc, @Nullable Style style, AEItemFactory<T> factory) {
         return switch (desc.mode) {
-            case NONE -> REGISTER.registerItem(name, AEItem::new, properties);
+            case NONE -> REGISTER.registerItem(name, p -> factory.create(p, null, null), properties);
             case DEFAULT ->
                 REGISTER.registerItem(
-                        name, p -> new AEItem(p, CommonUtil.getAEItemLangKey(name) + ".desc", style), properties);
-            case CUSTOM -> REGISTER.registerItem(name, p -> new AEItem(p, desc.key, style), properties);
+                        name, p -> factory.create(p, CommonUtil.getAEItemLangKey(name) + ".desc", style), properties);
+            case CUSTOM -> REGISTER.registerItem(name, p -> factory.create(p, desc.key, style), properties);
         };
     }
 
@@ -128,7 +149,7 @@ public class AEItems {
             Desc desc,
             @Nullable Style style) {
         return switch (desc.mode) {
-            case NONE -> REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p), properties);
+            case NONE -> REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, null, null), properties);
             case DEFAULT ->
                 REGISTER.registerItem(
                         name,
@@ -162,5 +183,10 @@ public class AEItems {
         static Desc none() {
             return new Desc(Mode.NONE, null);
         }
+    }
+
+    @FunctionalInterface
+    public interface AEItemFactory<T extends AEItem> {
+        T create(Item.Properties properties, @Nullable String descKey, @Nullable Style style);
     }
 }

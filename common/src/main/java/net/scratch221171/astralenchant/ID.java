@@ -24,6 +24,7 @@ public final class ID {
             ROTTEN_BONE = "rotten_bone",
             ALLAY_WING = "allay_wing",
             VEX_WING = "vex_wing",
+            ENCHANTMENT_SEEDS = "enchantment_seeds",
 
             // Blocks
             ARCANIUM_BLOCK = "arcanium_block",

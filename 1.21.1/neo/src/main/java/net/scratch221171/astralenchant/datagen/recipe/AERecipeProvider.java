@@ -265,6 +265,15 @@ public class AERecipeProvider extends RecipeProvider {
                     .requires(AEItems.ROTTEN_BONE)
                     .unlockedBy(getHasName(AEItems.ROTTEN_BONE), has(AEItems.ROTTEN_BONE))
                     .save(output, ModUtils.loc("bone_meal_from_rotten_bone"));
+
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ENCHANTMENT_SEEDS, 8)
+                    .pattern("111")
+                    .pattern("121")
+                    .pattern("111")
+                    .define('1', Tags.Items.SEEDS)
+                    .define('2', AEItems.ENCHANTMENT_SHARD)
+                    .unlockedBy(getHasName(AEItems.ENCHANTMENT_SHARD), has(AEItems.ENCHANTMENT_SHARD))
+                    .save(output);
         }
 
         // エンチャント本
