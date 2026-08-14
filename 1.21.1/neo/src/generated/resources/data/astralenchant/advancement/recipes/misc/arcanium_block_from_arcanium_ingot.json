@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "astralenchant:arcanium_block_from_ingot"
+        "recipe": "astralenchant:arcanium_block_from_arcanium_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "astralenchant:arcanium_block_from_ingot"
+      "astralenchant:arcanium_block_from_arcanium_ingot"
     ]
   }
 }

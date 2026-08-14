@@ -68,7 +68,7 @@ public class AERecipeProvider extends RecipeProvider {
                             0.0f,
                             400)
                     .unlockedBy("has_enchanted_book", has(Items.ENCHANTED_BOOK))
-                    .save(output, ModUtils.loc("enchantment_shard_smelting"));
+                    .save(output, ModUtils.loc(ID.ENCHANTMENT_SHARD + "_smelting"));
 
             SimpleCookingRecipeBuilder.blasting(
                             Ingredient.of(Items.ENCHANTED_BOOK),
@@ -77,7 +77,7 @@ public class AERecipeProvider extends RecipeProvider {
                             0.0f,
                             200)
                     .unlockedBy("has_enchanted_book", has(Items.ENCHANTED_BOOK))
-                    .save(output, ModUtils.loc("enchantment_shard_blasting"));
+                    .save(output, ModUtils.loc(ID.ENCHANTMENT_SHARD + "_blasting"));
         }
 
         // 素材
@@ -152,7 +152,7 @@ public class AERecipeProvider extends RecipeProvider {
                     .requires(Items.GOLD_NUGGET)
                     .requires(AETags.Items.TINY_DUSTS_ARCANE_QUARTZ)
                     .unlockedBy(getHasName(AEItems.ARCANE_QUARTZ_TINY_DUST), has(AEItems.ARCANE_QUARTZ_TINY_DUST))
-                    .save(output, ModUtils.loc("arcanium_ingot_from_arcane_quartz"));
+                    .save(output, ModUtils.loc(ID.ARCANIUM_INGOT + "_from_" + ID.ARCANE_QUARTZ));
 
             ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEBlocks.ARCANIUM_BLOCK)
                     .pattern("111")
@@ -161,11 +161,12 @@ public class AERecipeProvider extends RecipeProvider {
                     .define('1', AETags.Items.INGOTS_ARCANIUM)
                     .define('2', AEItems.ARCANIUM_INGOT)
                     .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
-                    .save(output, ModUtils.loc("arcanium_block_from_ingot"));
+                    .save(output, ModUtils.loc(ID.ARCANIUM_BLOCK + "_from_" + ID.ARCANIUM_INGOT));
+
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AEItems.ARCANIUM_INGOT, 9)
                     .requires(AETags.Items.STORAGE_BLOCKS_ARCANIUM)
                     .unlockedBy(getHasName(AEBlocks.ARCANIUM_BLOCK), has(AETags.Items.STORAGE_BLOCKS_ARCANIUM))
-                    .save(output, ModUtils.loc("arcanium_ingot_from_block"));
+                    .save(output, ModUtils.loc(ID.ARCANIUM_INGOT + "_from_" + ID.ARCANIUM_BLOCK));
 
             var budding = new ItemStack(AEItems.BUDDING_ARCANIUM_INGOT.get(), 4);
             budding.set(AEDataComponents.PROCESSING_PROGRESS, 0f);
@@ -264,7 +265,7 @@ public class AERecipeProvider extends RecipeProvider {
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
                     .requires(AEItems.ROTTEN_BONE)
                     .unlockedBy(getHasName(AEItems.ROTTEN_BONE), has(AEItems.ROTTEN_BONE))
-                    .save(output, ModUtils.loc("bone_meal_from_rotten_bone"));
+                    .save(output, ModUtils.loc(getPath(Items.BONE_MEAL) + "_from_" + ID.ROTTEN_BONE));
 
             ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.ENCHANTMENT_SEEDS, 8)
                     .pattern("111")
@@ -274,6 +275,18 @@ public class AERecipeProvider extends RecipeProvider {
                     .define('2', AEItems.ENCHANTMENT_SHARD)
                     .unlockedBy(getHasName(AEItems.ENCHANTMENT_SHARD), has(AEItems.ENCHANTMENT_SHARD))
                     .save(output);
+
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.VEX_ARMOR_TRIM_SMITHING_TEMPLATE, 2)
+                    .pattern("121")
+                    .pattern("131")
+                    .pattern("111")
+                    .define('1', Items.DIAMOND)
+                    .define('2', AEItems.VEX_WING)
+                    .define('3', Items.COBBLESTONE)
+                    .unlockedBy(getHasName(AEItems.VEX_WING), has(AEItems.VEX_WING))
+                    .save(
+                            output,
+                            ModUtils.loc(getPath(Items.VEX_ARMOR_TRIM_SMITHING_TEMPLATE) + "_from_" + ID.VEX_WING));
         }
 
         // エンチャント本

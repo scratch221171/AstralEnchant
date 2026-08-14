@@ -4,6 +4,7 @@ import java.util.Comparator;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
@@ -13,6 +14,7 @@ import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.scratch221171.astralenchant.common.condition.ConfigCondition;
@@ -33,6 +35,7 @@ public class AstralEnchant {
 
         modEventBus.addListener(this::registerMisc);
         modEventBus.addListener(this::registerCreativeTabs);
+        modEventBus.addListener(this::addCreative);
         modEventBus.addListener(this::commonSetup);
 
         AEItems.register(modEventBus);
@@ -94,6 +97,23 @@ public class AstralEnchant {
                                                             h.value().getMaxLevel()))))))
                             .build());
         });
+    }
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(AEItems.ARCANIUM_HELMET);
+            event.accept(AEItems.ARCANIUM_CHESTPLATE);
+            event.accept(AEItems.ARCANIUM_LEGGINGS);
+            event.accept(AEItems.ARCANIUM_BOOTS);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(AEBlocks.ENCHANTERS_WORKBENCH);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(AEBlocks.ARCANIUM_BLOCK);
+        }
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:diamond"
+    },
+    "2": {
+      "item": "astralenchant:vex_wing"
+    },
+    "3": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "pattern": [
+    "121",
+    "131",
+    "111"
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraft:vex_armor_trim_smithing_template"
+  }
+}
