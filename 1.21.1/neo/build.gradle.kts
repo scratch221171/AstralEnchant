@@ -23,6 +23,7 @@ val patchouliVersion: String by project
 
 val curiosVersion: String by project
 val modonomiconVersion: String by project
+val clumpsVersion: String by project
 
 // Mod Dependencies
 dependencies {
@@ -65,6 +66,9 @@ dependencies {
 
     implementation(libs.modonomicon.neoforge, req(modonomiconVersion))
     ciRuntimeMods(libs.modonomicon.neoforge, req(modonomiconVersion))
+
+    implementation(libs.clumps, req(clumpsVersion))
+    ciRuntimeMods(libs.clumps, req(clumpsVersion))
 }
 
 spotless {

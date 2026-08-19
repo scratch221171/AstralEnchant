@@ -7,6 +7,7 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.client.enchantment.handler.CurseOfIgnoranceClientHandler;
 import net.scratch221171.astralenchant.client.enchantment.handler.EssenceOfEnchantmentClientHandler;
+import net.scratch221171.astralenchant.client.enchantment.handler.OverMendingClientHandler;
 import net.scratch221171.astralenchant.client.enchantment.handler.OverloadClientHandler;
 
 @EventBusSubscriber(modid = Constants.MODID)
@@ -16,6 +17,7 @@ public class EnchantmentEvents {
     private static void onItemTooltip(ItemTooltipEvent event) {
         EssenceOfEnchantmentClientHandler.shine(event);
         OverloadClientHandler.rainbowColor(event);
+        OverMendingClientHandler.insertExtraDurabilityLine(event);
         CurseOfIgnoranceClientHandler.makeUnreadable(event);
     }
 }

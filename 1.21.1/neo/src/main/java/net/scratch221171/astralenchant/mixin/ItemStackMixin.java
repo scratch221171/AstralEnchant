@@ -1,5 +1,6 @@
 package net.scratch221171.astralenchant.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
@@ -24,6 +25,7 @@ import net.scratch221171.astralenchant.common.enchantment.handler.EssenceOfEncha
 import net.scratch221171.astralenchant.common.event.ItemSetEnchantmentEvent;
 import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.item.AEArmorItem;
+import net.scratch221171.astralenchant.common.registry.AEDataComponents;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
@@ -135,5 +137,31 @@ public abstract class ItemStackMixin implements IItemStackExtension {
         }
 
         original.call(stack, amount);
+    }
+
+    @ModifyExpressionValue(
+            method =
+                    "hurtAndBreak(ILnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;Ljava/util/function/Consumer;)V",
+            at =
+                    @At(
+                            value = "INVOKE",
+                            target =
+                                    "Lnet/minecraft/world/item/enchantment/EnchantmentHelper;processDurabilityChange(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;I)I"))
+    private int astralenchant$consumeExtraDurability(int postUnbreakingDamage) {
+        var self = (ItemStack) (Object) this;
+        if (postUnbreakingDamage <= 0) return postUnbreakingDamage;
+
+        int extra = self.getOrDefault(AEDataComponents.EXTRA_DURABILITY, 0);
+        if (extra <= 0) return postUnbreakingDamage;
+
+        int consumed = Math.min(extra, postUnbreakingDamage);
+        int remaining = extra - consumed;
+        if (remaining > 0) {
+            self.set(AEDataComponents.EXTRA_DURABILITY, remaining);
+        } else {
+            self.remove(AEDataComponents.EXTRA_DURABILITY);
+        }
+
+        return postUnbreakingDamage - consumed;
     }
 }

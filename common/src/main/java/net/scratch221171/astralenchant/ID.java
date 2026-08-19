@@ -48,6 +48,7 @@ public final class ID {
             DISTORTION = "distortion",
             ALMIGHTY = "almighty",
             CURSE_OF_INTANGIBILITY = "curse_of_intangibility",
+            OVER_MENDING = "over_mending",
 
             // Attribute
             COOLDOWN_DURATION = "cooldown_duration",

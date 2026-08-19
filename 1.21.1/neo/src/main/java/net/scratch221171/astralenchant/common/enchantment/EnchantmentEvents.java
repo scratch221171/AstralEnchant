@@ -10,6 +10,7 @@ import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
@@ -76,5 +77,10 @@ public class EnchantmentEvents {
     private static void onAnvilUpdate(AnvilUpdateEvent e) {
         AffinityHandler.forceUncanceled(e);
         CurseOfEnchantmentHandler.forceCancel(e);
+    }
+
+    @SubscribeEvent
+    private static void onPickupXP(PlayerXpEvent.PickupXp e) {
+        OverMendingHandler.addExtraDurability(e);
     }
 }

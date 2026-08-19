@@ -22,6 +22,7 @@ import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.loot.MysticRemnantsLootModifier;
 import net.scratch221171.astralenchant.common.registry.*;
 import net.scratch221171.astralenchant.common.util.AEUtil;
+import net.scratch221171.astralenchant.compat.clumps.ClumpsCompat;
 import net.scratch221171.astralenchant.compat.curios.CuriosCompat;
 import net.scratch221171.astralenchant.config.ModConfigs;
 import net.scratch221171.astralenchant.mdk.config.PlatformConfigRegistrar;
@@ -47,6 +48,10 @@ public class AstralEnchant {
 
         if (ModList.get().isLoaded("curios")) {
             CuriosCompat.registerCuriosEvents();
+        }
+
+        if (ModList.get().isLoaded("clumps")) {
+            ClumpsCompat.registerClumpsEvents();
         }
 
         NeoForgeMod.enableMergedAttributeTooltips();

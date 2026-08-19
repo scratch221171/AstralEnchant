@@ -1,0 +1,20 @@
+{
+  "anvil_cost": 16,
+  "description": {
+    "translate": "enchantment.astralenchant.over_mending"
+  },
+  "max_cost": {
+    "base": 2147483647,
+    "per_level_above_first": 0
+  },
+  "max_level": 5,
+  "min_cost": {
+    "base": 2147483647,
+    "per_level_above_first": 0
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#minecraft:enchantable/durability",
+  "weight": 1
+}

@@ -22,6 +22,9 @@ public class AEDataComponents {
             DISABLED_ENCHANTMENTS =
                     register("disabled_enchantments", builder -> builder.persistent(DisabledEnchantments.CODEC));
 
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> EXTRA_DURABILITY =
+            register("extra_durability", builder -> builder.persistent(Codec.intRange(0, Integer.MAX_VALUE)));
+
     private static <T> DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(
             String name, UnaryOperator<DataComponentType.Builder<T>> builderOperator) {
         return REGISTER.register(

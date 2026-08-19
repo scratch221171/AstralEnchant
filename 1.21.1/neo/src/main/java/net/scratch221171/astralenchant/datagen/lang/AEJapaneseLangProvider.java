@@ -42,14 +42,14 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addItem(AEItems.ARCANIUM_CHESTPLATE, "アルカニウムのチェストプレート");
         addItem(AEItems.ARCANIUM_LEGGINGS, "アルカニウムのレギンス");
         addItem(AEItems.ARCANIUM_BOOTS, "アルカニウムのブーツ");
-        add("armorMaterial.astralenchant.arcanium.desc", "アイテムが壊れると、付いていたエンチャントが本としてドロップします。");
+        add("armorMaterial." + Constants.MODID + ".arcanium.desc", "アイテムが壊れると、付いていたエンチャントが本としてドロップします。");
 
         // ブロック
         addBlock(AEBlocks.ARCANIUM_BLOCK, "アルカニウムブロック");
         addBlock(AEBlocks.ENCHANTERS_WORKBENCH, "エンチャンターのワークベンチ");
         add("container." + Constants.MODID + ".enchanters_workbench", "エンチャントの切り替え");
-        add("gui.astralenchant.enchanters_workbench.locked_curse", "呪いは切り替えられません！");
-        add("gui.astralenchant.enchanters_workbench.locked_conflict", "他のエンチャントと競合しているため有効化できません！");
+        add("gui." + Constants.MODID + ".enchanters_workbench.locked_curse", "呪いは切り替えられません！");
+        add("gui." + Constants.MODID + ".enchanters_workbench.locked_conflict", "他のエンチャントと競合しているため有効化できません！");
         add("container.enchanters_workbench.cost", "エンチャント変更コスト：%1$s");
 
         // エンチャント
@@ -71,6 +71,7 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addEnchantmentWithDesc(AEEnchantments.DISTORTION, "歪曲", "外れた攻撃の判定を近くの敵へが歪めます。");
         addEnchantmentWithDesc(AEEnchantments.ALMIGHTY, "オールマイティ", "ツールの採掘レベルを増加させ、全てのブロックに対して適正にします。");
         addEnchantmentWithDesc(AEEnchantments.CURSE_OF_INTANGIBILITY, "無実体の呪い", "ブロックを貫通します。");
+        addEnchantmentWithDesc(AEEnchantments.OVER_MENDING, "過修繕", "経験値オーブを追加の耐久値に変換します。");
 
         // attribute
         addAttributeWithDesc(AEAttributes.COOLDOWN_DURATION, "クールダウン時間", "アイテム使用のクールダウン時間の倍率");
@@ -78,11 +79,12 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addAttributeWithDesc(AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER, "隠し満腹度上限", "隠し満腹度の上限の倍率");
 
         // データコンポーネント
-        add("astralenchant.item.disabled_enchantments", "無効化されたエンチャント: %s個");
+        add("item.disabled_enchantments", "無効化されたエンチャント: %s個");
+        add("item.extra_durability", "追加の耐久値: ");
 
         // クリエタブ
-        add("itemGroup.astralenchant.main", "Astral Enchant");
-        add("itemGroup.astralenchant.enchantment", "Astral Enchant - エンチャント");
+        add("itemGroup." + Constants.MODID + ".main", "Astral Enchant");
+        add("itemGroup." + Constants.MODID + ".enchantment", "Astral Enchant - エンチャント");
 
         // 進捗
         addAdvancementWithDesc(ID.ROOT, "Astral Enchant", "あなたも今日からエンチャンター！");

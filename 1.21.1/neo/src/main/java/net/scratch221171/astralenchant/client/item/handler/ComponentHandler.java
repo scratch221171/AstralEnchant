@@ -1,10 +1,14 @@
 package net.scratch221171.astralenchant.client.item.handler;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.client.event.RegisterItemDecorationsEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
+import net.scratch221171.astralenchant.client.item.renderer.ExtraDurabilityBarDecorator;
 import net.scratch221171.astralenchant.client.item.renderer.ProgressBarDecorator;
 import net.scratch221171.astralenchant.common.component.DisabledEnchantments;
 import net.scratch221171.astralenchant.common.registry.AEDataComponents;
@@ -18,12 +22,17 @@ public class ComponentHandler {
         if (component == DisabledEnchantments.EMPTY) return;
         event.getToolTip()
                 .addLast(Component.translatable(
-                                "astralenchant.item.disabled_enchantments",
+                                "item.disabled_enchantments",
                                 component.entries().size())
                         .withStyle(ChatFormatting.DARK_GRAY));
     }
 
     public static void registerDecorations(RegisterItemDecorationsEvent event) {
         event.register(AEItems.BUDDING_ARCANIUM_INGOT, new ProgressBarDecorator());
+        for (Item item : BuiltInRegistries.ITEM) {
+            if (item != Items.AIR) {
+                event.register(item, new ExtraDurabilityBarDecorator());
+            }
+        }
     }
 }

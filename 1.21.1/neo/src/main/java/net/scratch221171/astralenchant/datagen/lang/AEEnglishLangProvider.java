@@ -42,16 +42,16 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addItem(AEItems.ARCANIUM_LEGGINGS, "Arcanium Leggings");
         addItem(AEItems.ARCANIUM_BOOTS, "Arcanium Boots");
         add(
-                "armorMaterial.astralenchant.arcanium.desc",
+                "armorMaterial." + Constants.MODID + ".arcanium.desc",
                 "When the item breaks, its enchantments are dropped as enchanted books.");
 
         // ブロック
         addBlock(AEBlocks.ARCANIUM_BLOCK, "Arcanium Block");
         addBlock(AEBlocks.ENCHANTERS_WORKBENCH, "Enchanter's Workbench");
-        add("container." + Constants.MODID + ".enchanters_workbench", "Switch Enchantments");
-        add("gui.astralenchant.enchanters_workbench.locked_curse", "This curse can't be toggled!");
+        add("container.." + Constants.MODID + "..enchanters_workbench", "Switch Enchantments");
+        add("gui." + Constants.MODID + ".enchanters_workbench.locked_curse", "This curse can't be toggled!");
         add(
-                "gui.astralenchant.enchanters_workbench.locked_conflict",
+                "gui." + Constants.MODID + ".enchanters_workbench.locked_conflict",
                 "Can't be enabled because it conflicts with another enchantment!");
         add("container.enchanters_workbench.cost", "Switching Cost: %1$s");
 
@@ -99,6 +99,8 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 AEEnchantments.CURSE_OF_INTANGIBILITY,
                 "Curse Of Intangibility",
                 "Makes the player pass through blocks.");
+        addEnchantmentWithDesc(
+                AEEnchantments.OVER_MENDING, "Over Mending", "Converts experience orbs into extra durability.");
 
         // attribute
         addAttributeWithDesc(
@@ -113,11 +115,12 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 "Multiplier for the Saturation Level Cap");
 
         // データコンポーネント
-        add("astralenchant.item.disabled_enchantments", "disabled enchantment(s): %s");
+        add("item.disabled_enchantments", "disabled enchantment(s): %s");
+        add("item.extra_durability", "Extra Durability: ");
 
         // クリエタブ
-        add("itemGroup.astralenchant.main", "Astral Enchant");
-        add("itemGroup.astralenchant.enchantment", "Astral Enchant - Enchantment");
+        add("itemGroup." + Constants.MODID + ".main", "Astral Enchant");
+        add("itemGroup." + Constants.MODID + ".enchantment", "Astral Enchant - Enchantment");
 
         // 進捗
         addAdvancementWithDesc(ID.ROOT, "Astral Enchant", "You're an enchanter starting today!");

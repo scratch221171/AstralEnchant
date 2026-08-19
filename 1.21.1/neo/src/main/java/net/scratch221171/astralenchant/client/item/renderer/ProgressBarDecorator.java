@@ -24,11 +24,12 @@ public class ProgressBarDecorator implements IItemDecorator {
             @NotNull GuiGraphics guiGraphics, @NotNull Font font, @NotNull ItemStack stack, int xOffset, int yOffset) {
         float progress = stack.getOrDefault(AEDataComponents.PROCESSING_PROGRESS, -1f);
         if (progress >= 0) {
+            guiGraphics.flush();
+
             // Calculate positions based on whether the power bar is visible
             int barY = yOffset + 13; // Adjust Y position based on power bar visibility
             int barWidth = (int) Math.ceil(progress * 13F);
 
-            long time = System.currentTimeMillis();
             int barColor = Mth.hsvToRgb(Math.max(0.0F, progress) / 3.0F, 1.0F, 1.0F);
             // Render fluid bar
             renderBar(guiGraphics, xOffset + 2, barY, barWidth, barColor);
@@ -39,10 +40,15 @@ public class ProgressBarDecorator implements IItemDecorator {
     }
 
     private void renderBar(GuiGraphics guiGraphics, int x, int y, int width, int color) {
+        guiGraphics.pose().pushPose();
+        guiGraphics.pose().translate(0F, 0F, 100F);
+
         // Render the background of the bar (black)
         guiGraphics.fill(RenderType.guiOverlay(), x, y, x + 13, y + 2, 0xFF303030);
 
         // Render the fluid bar with the calculated width and color
         guiGraphics.fill(RenderType.guiOverlay(), x, y, x + width, y + 1, color | 0xFF000000);
+
+        guiGraphics.pose().popPose();
     }
 }
