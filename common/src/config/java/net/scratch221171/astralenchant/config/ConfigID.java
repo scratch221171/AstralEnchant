@@ -49,6 +49,7 @@ public class ConfigID {
             CURSE_OF_IGNORANCE = "curse_of_ignorance",
             CURSE_OF_ENCHANTMENT = "curse_of_enchantment",
             DISTORTION = "distortion",
+            OVER_MENDING = "over_mending",
             ALMIGHTY = "almighty",
             CURSE_OF_INTANGIBILITY = "curse_of_intangibility";
 }

@@ -545,6 +545,23 @@ public class AERecipeProvider extends RecipeProvider {
                     });
 
             enchantedBookRecipe(
+                    output.withConditions(new ConfigCondition(ConfigID.OVER_MENDING)),
+                    holderLookup,
+                    AEEnchantments.OVER_MENDING,
+                    builder -> {
+                        var mending = holderLookup.holderOrThrow(Enchantments.MENDING);
+                        builder.unlockedBy(getHasName(AEItems.RESONANT_VESSEL), has(AEItems.RESONANT_VESSEL))
+                                .pattern("121")
+                                .pattern("343")
+                                .pattern("151")
+                                .define('1', Items.EXPERIENCE_BOTTLE)
+                                .define('2', Tags.Items.GEMS_DIAMOND)
+                                .define('3', Items.REINFORCED_DEEPSLATE)
+                                .define('4', enchantedBook(mending, 1))
+                                .define('5', AEItems.RESONANT_VESSEL);
+                    });
+
+            enchantedBookRecipe(
                     output.withConditions(new ConfigCondition(ConfigID.ALMIGHTY)),
                     holderLookup,
                     AEEnchantments.ALMIGHTY,

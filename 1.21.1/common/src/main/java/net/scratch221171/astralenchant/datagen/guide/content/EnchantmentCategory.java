@@ -39,6 +39,7 @@ public class EnchantmentCategory extends AECategoryProvider {
         add(new CurseOfIgnoranceEntry(this).generate());
         add(new CurseOfEnchantmentEntry(this).generate());
         add(new DistortionEntry(this).generate());
+        add(new OverMendingEntry(this).generate());
         add(new AlmightyEntry(this).generate());
         add(new CurseOfIntangibilityEntry(this).generate());
     }

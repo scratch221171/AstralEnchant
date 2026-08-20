@@ -38,6 +38,7 @@ public class CommonConfig {
                 CURSE_OF_IGNORANCE = defineToggle(ConfigID.CURSE_OF_IGNORANCE),
                 CURSE_OF_ENCHANTMENT = defineToggle(ConfigID.CURSE_OF_ENCHANTMENT),
                 DISTORTION = defineToggle(ConfigID.DISTORTION),
+                OVER_MENDING = defineToggle(ConfigID.OVER_MENDING),
                 ALMIGHTY = defineToggle(ConfigID.ALMIGHTY),
                 CURSE_OF_INTANGIBILITY = defineToggle(ConfigID.CURSE_OF_INTANGIBILITY);
 

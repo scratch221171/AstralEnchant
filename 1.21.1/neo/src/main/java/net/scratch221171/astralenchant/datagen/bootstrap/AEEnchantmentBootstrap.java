@@ -36,6 +36,7 @@ public class AEEnchantmentBootstrap {
         consumer.accept(AEEnchantments.CURSE_OF_IGNORANCE, new ConfigCondition(ConfigID.CURSE_OF_IGNORANCE));
         consumer.accept(AEEnchantments.CURSE_OF_ENCHANTMENT, new ConfigCondition(ConfigID.CURSE_OF_ENCHANTMENT));
         consumer.accept(AEEnchantments.DISTORTION, new ConfigCondition(ConfigID.DISTORTION));
+        consumer.accept(AEEnchantments.OVER_MENDING, new ConfigCondition(ConfigID.OVER_MENDING));
         consumer.accept(AEEnchantments.ALMIGHTY, new ConfigCondition(ConfigID.ALMIGHTY));
         consumer.accept(AEEnchantments.CURSE_OF_INTANGIBILITY, new ConfigCondition(ConfigID.CURSE_OF_INTANGIBILITY));
 

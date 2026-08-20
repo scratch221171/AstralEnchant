@@ -48,8 +48,8 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addBlock(AEBlocks.ARCANIUM_BLOCK, "アルカニウムブロック");
         addBlock(AEBlocks.ENCHANTERS_WORKBENCH, "エンチャンターのワークベンチ");
         add("container." + Constants.MODID + ".enchanters_workbench", "エンチャントの切り替え");
-        add("gui." + Constants.MODID + ".enchanters_workbench.locked_curse", "呪いは切り替えられません！");
-        add("gui." + Constants.MODID + ".enchanters_workbench.locked_conflict", "他のエンチャントと競合しているため有効化できません！");
+        add("gui." + Constants.MODID + ".enchanters_workbench.locked_curse", "呪いエンチャントは切り替えられません！");
+        add("gui." + Constants.MODID + ".enchanters_workbench.locked_conflict", "他のエンチャントと競合しています！");
         add("container.enchanters_workbench.cost", "エンチャント変更コスト：%1$s");
 
         // エンチャント

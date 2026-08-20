@@ -40,7 +40,7 @@ public class NullificationEntry extends EnchantmentEntry {
                         - Invulnerable state
                         - Shields
 
-                        The penetration of {0} is equivalent to */kill*. As a result, it has no effect on mobs that are resistant to */kill*.   \s
+                        The penetration of {0} is equivalent to *generic_kill*. As a result, it has no effect on mobs that are resistant to *generic_kill*.   \s
                         Attacking with a weapon enchanted with {0} produces white particles.
                         """, """
                         　{0}を付けることによって、攻撃は以下の様々なダメージ軽減＆無効を貫通します。
@@ -51,7 +51,7 @@ public class NullificationEntry extends EnchantmentEntry {
                         - 無敵状態
                         - 盾
 
-                        　{0}の貫通力は*/kill*と同じです。そのため、*/kill*に耐性のあるmobには効果がありません。   \s
+                        　{0}の貫通力は*generic_kill*と同じです。そのため、*generic_kill*に耐性のあるmobには効果がありません。   \s
                         　{0}が付いた武器で攻撃すると、白いパーティクルが発生します。
                         """, translatedName())));
 

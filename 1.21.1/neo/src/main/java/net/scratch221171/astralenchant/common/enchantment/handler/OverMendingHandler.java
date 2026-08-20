@@ -25,19 +25,10 @@ public class OverMendingHandler {
     }
 
     public static int repairPlayerItems(ServerPlayer player, int value) {
-        var optional =
-                //                EnchantmentHelper.getRandomItemWith(EnchantmentEffectComponents.REPAIR_WITH_XP,
-                // player, stack -> {
-                //                    int level = AEUtil.getEnchantmentLevel(AEEnchantments.OVER_MENDING, stack);
-                //                    return !stack.isDamaged()
-                //                            && level > 0
-                //                            && stack.getOrDefault(AEDataComponents.EXTRA_DURABILITY, 0) <
-                // maxExtra(level);
-                //                });
-                getRandomItemWith(player, stack -> {
-                    int level = AEUtil.getEnchantmentLevel(AEEnchantments.OVER_MENDING, stack);
-                    return level > 0 && stack.getOrDefault(AEDataComponents.EXTRA_DURABILITY, 0) < maxExtra(level);
-                });
+        var optional = getRandomItemWith(player, stack -> {
+            int level = AEUtil.getEnchantmentLevel(AEEnchantments.OVER_MENDING, stack);
+            return level > 0 && stack.getOrDefault(AEDataComponents.EXTRA_DURABILITY, 0) < maxExtra(level);
+        });
         if (optional.isPresent()) {
             var stack = optional.get();
             int level = AEUtil.getEnchantmentLevel(AEEnchantments.OVER_MENDING, stack);

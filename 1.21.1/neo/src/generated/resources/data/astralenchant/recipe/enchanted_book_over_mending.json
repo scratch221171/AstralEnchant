@@ -1,0 +1,51 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "astralenchant:config_condition",
+      "config_id": "over_mending"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:experience_bottle"
+    },
+    "2": {
+      "tag": "c:gems/diamond"
+    },
+    "3": {
+      "item": "minecraft:reinforced_deepslate"
+    },
+    "4": {
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "levels": {
+            "minecraft:mending": 1
+          }
+        }
+      },
+      "items": "minecraft:enchanted_book"
+    },
+    "5": {
+      "item": "astralenchant:resonant_vessel"
+    }
+  },
+  "pattern": [
+    "121",
+    "343",
+    "151"
+  ],
+  "result": {
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "astralenchant:over_mending": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "minecraft:enchanted_book"
+  }
+}

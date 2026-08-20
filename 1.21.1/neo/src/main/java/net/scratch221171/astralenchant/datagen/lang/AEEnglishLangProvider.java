@@ -48,11 +48,9 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         // ブロック
         addBlock(AEBlocks.ARCANIUM_BLOCK, "Arcanium Block");
         addBlock(AEBlocks.ENCHANTERS_WORKBENCH, "Enchanter's Workbench");
-        add("container.." + Constants.MODID + "..enchanters_workbench", "Switch Enchantments");
-        add("gui." + Constants.MODID + ".enchanters_workbench.locked_curse", "This curse can't be toggled!");
-        add(
-                "gui." + Constants.MODID + ".enchanters_workbench.locked_conflict",
-                "Can't be enabled because it conflicts with another enchantment!");
+        add("container." + Constants.MODID + ".enchanters_workbench", "Switch Enchantments");
+        add("gui." + Constants.MODID + ".enchanters_workbench.locked_curse", "Curse enchantments can't be toggled!");
+        add("gui." + Constants.MODID + ".enchanters_workbench.locked_conflict", "Conflicts with another enchantment!");
         add("container.enchanters_workbench.cost", "Switching Cost: %1$s");
 
         // エンチャント
@@ -70,7 +68,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
         addEnchantmentWithDesc(
                 AEEnchantments.ENDLESS_APPETITE,
                 "Endless Appetite",
-                "Increase the maximum FoodLevel and SaturationLevel.");
+                "Increases the maximum FoodLevel and SaturationLevel.");
         addEnchantmentWithDesc(
                 AEEnchantments.AFFINITY,
                 "Affinity",

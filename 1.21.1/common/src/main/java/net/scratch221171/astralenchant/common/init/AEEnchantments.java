@@ -217,7 +217,6 @@ public class AEEnchantments {
                                     Enchantment.constantCost(Integer.MAX_VALUE),
                                     16,
                                     EquipmentSlotGroup.HAND))),
-            // TODO: Guide
             OVER_MENDING =
                     create(
                             ID.OVER_MENDING,
@@ -228,7 +227,7 @@ public class AEEnchantments {
                                     Enchantment.constantCost(Integer.MAX_VALUE),
                                     Enchantment.constantCost(Integer.MAX_VALUE),
                                     16,
-                                    EquipmentSlotGroup.MAINHAND))),
+                                    EquipmentSlotGroup.ANY))),
             ALMIGHTY =
                     create(
                             ID.ALMIGHTY,
