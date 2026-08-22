@@ -22,5 +22,7 @@ public class AEEnchantmentTagsProvider extends EnchantmentTagsProvider {
                         AEEnchantments.CURSE_OF_ENCHANTMENT,
                         AEEnchantments.CURSE_OF_INTANGIBILITY);
         tag(EnchantmentTags.ON_RANDOM_LOOT).add(AEEnchantments.CURSE_OF_IGNORANCE, AEEnchantments.CURSE_OF_ENCHANTMENT);
+        AEEnchantments.getAll()
+                .forEach(enchantment -> tag(EnchantmentTags.TREASURE).add(enchantment));
     }
 }
