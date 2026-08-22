@@ -24,6 +24,7 @@ val patchouliVersion: String by project
 val curiosVersion: String by project
 val modonomiconVersion: String by project
 val clumpsVersion: String by project
+val appleskinVersion: String by project
 
 // Mod Dependencies
 dependencies {
@@ -69,6 +70,9 @@ dependencies {
 
     implementation(libs.clumps, req(clumpsVersion))
     ciRuntimeMods(libs.clumps, req(clumpsVersion))
+
+    implementation(libs.appleskin, req(appleskinVersion))
+    ciRuntimeMods(libs.appleskin, req(appleskinVersion))
 }
 
 spotless {

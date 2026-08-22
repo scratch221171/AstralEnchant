@@ -49,3 +49,4 @@ curios = { module = "top.theillusivec4.curios:curios-neoforge" }
 modonomicon-common = { module = "com.klikli_dev:modonomicon-1.21.1-common" }
 modonomicon-neoforge = { module = "com.klikli_dev:modonomicon-1.21.1-neoforge" }
 clumps = { module = "maven.modrinth:clumps" }
+appleskin = { module = "squeek.appleskin:appleskin-neoforge" }

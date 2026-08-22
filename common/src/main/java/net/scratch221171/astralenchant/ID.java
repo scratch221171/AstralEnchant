@@ -53,7 +53,6 @@ public final class ID {
             // Attribute
             COOLDOWN_DURATION = "cooldown_duration",
             FOOD_LEVEL_CAP_MULTIPLIER = "food_level_cap_multiplier",
-            SATURATION_LEVEL_CAP_MULTIPLIER = "saturation_level_cap_multiplier",
 
             // Advancement
             ROOT = "root",

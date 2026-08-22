@@ -10,8 +10,5 @@ public class EndlessAppetiteHandler {
         if (!event.has(EntityType.PLAYER, AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER)) {
             event.add(EntityType.PLAYER, AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER, 1.0);
         }
-        if (!event.has(EntityType.PLAYER, AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER)) {
-            event.add(EntityType.PLAYER, AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER, 1.0);
-        }
     }
 }

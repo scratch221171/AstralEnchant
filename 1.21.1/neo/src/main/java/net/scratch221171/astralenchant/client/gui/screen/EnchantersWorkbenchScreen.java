@@ -1,4 +1,4 @@
-package net.scratch221171.astralenchant.client.screen;
+package net.scratch221171.astralenchant.client.gui.screen;
 
 import java.util.List;
 import net.minecraft.ChatFormatting;

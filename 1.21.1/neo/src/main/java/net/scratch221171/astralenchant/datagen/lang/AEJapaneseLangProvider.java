@@ -76,7 +76,6 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         // attribute
         addAttributeWithDesc(AEAttributes.COOLDOWN_DURATION, "クールダウン時間", "アイテム使用のクールダウン時間の倍率");
         addAttributeWithDesc(AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER, "満腹度上限", "満腹度の上限の倍率");
-        addAttributeWithDesc(AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER, "隠し満腹度上限", "隠し満腹度の上限の倍率");
 
         // データコンポーネント
         add("item.disabled_enchantments", "無効化されたエンチャント: %s個");

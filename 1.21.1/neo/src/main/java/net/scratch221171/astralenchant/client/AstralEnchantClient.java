@@ -8,8 +8,8 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.scratch221171.astralenchant.Constants;
+import net.scratch221171.astralenchant.client.gui.screen.EnchantersWorkbenchScreen;
 import net.scratch221171.astralenchant.client.mdk.config.KeyedConfigScreen;
-import net.scratch221171.astralenchant.client.screen.EnchantersWorkbenchScreen;
 import net.scratch221171.astralenchant.common.registry.AEMenuTypes;
 
 @Mod(value = Constants.MODID, dist = Dist.CLIENT)

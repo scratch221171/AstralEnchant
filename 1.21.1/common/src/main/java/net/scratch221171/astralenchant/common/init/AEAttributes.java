@@ -13,7 +13,4 @@ public class AEAttributes {
 
     public static final ResourceKey<Attribute> FOOD_LEVEL_CAP_MULTIPLIER =
             ResourceKey.create(Registries.ATTRIBUTE, ModUtils.loc(ID.FOOD_LEVEL_CAP_MULTIPLIER));
-
-    public static final ResourceKey<Attribute> SATURATION_LEVEL_CAP_MULTIPLIER =
-            ResourceKey.create(Registries.ATTRIBUTE, ModUtils.loc(ID.SATURATION_LEVEL_CAP_MULTIPLIER));
 }

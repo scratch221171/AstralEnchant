@@ -210,6 +210,11 @@ subprojects {
                 includeGroup("com.klikli_dev")
             }
         }
+
+        maven {
+            url = uri("https://maven.ryanliptak.com/")
+        }
+
     }
 
     tasks.withType<JavaCompile>().configureEach {

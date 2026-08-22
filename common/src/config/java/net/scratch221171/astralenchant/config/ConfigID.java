@@ -3,6 +3,7 @@ package net.scratch221171.astralenchant.config;
 public class ConfigID {
 
     public static final String
+            // Server
             // Enchantment Settings
             // Nullification
             EXTRA_TAG = "extra_tag",
@@ -33,6 +34,7 @@ public class ConfigID {
             CAN_BREAK_UNBREAKABLE = "can_break_unbreakable",
             UNBREAKABLE_BLOCK_HARDNESS = "unbreakable_block_hardness",
 
+            // Common
             // Enchantment Toggling
             NULLIFICATION = "nullification",
             LAST_STAND = "last_stand",
@@ -51,5 +53,10 @@ public class ConfigID {
             DISTORTION = "distortion",
             OVER_MENDING = "over_mending",
             ALMIGHTY = "almighty",
-            CURSE_OF_INTANGIBILITY = "curse_of_intangibility";
+            CURSE_OF_INTANGIBILITY = "curse_of_intangibility",
+
+            // Client
+            DISPLAY_CONDITION = "display_condition",
+            SHOW_CAP = "show_cap",
+            PERCENTAGE_STYLE = "percentage_style";
 }

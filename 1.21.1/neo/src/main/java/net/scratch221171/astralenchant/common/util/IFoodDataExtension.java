@@ -1,11 +1,11 @@
 package net.scratch221171.astralenchant.common.util;
 
 public interface IFoodDataExtension extends IPlayerAccessor {
-    float astralenchant$getFoodOverflow();
+    int astralenchant$getFoodLevel();
 
-    float astralenchant$getSaturationOverflow();
+    float astralenchant$getSaturationLevel();
 
-    void astralenchant$setFoodOverflow(float value);
+    void astralenchant$setFoodLevel(int value);
 
-    void astralenchant$setSaturationOverflow(float value);
+    void astralenchant$setSaturationLevel(float value);
 }

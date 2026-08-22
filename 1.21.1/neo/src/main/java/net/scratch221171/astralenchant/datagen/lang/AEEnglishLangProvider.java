@@ -107,10 +107,6 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 "Multiplier applied to item use cooldown duration");
         addAttributeWithDesc(
                 AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER, "Food Level Cap", "Multiplier for the Food Level Cap");
-        addAttributeWithDesc(
-                AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER,
-                "Saturation Level Cap",
-                "Multiplier for the Saturation Level Cap");
 
         // データコンポーネント
         add("item.disabled_enchantments", "disabled enchantment(s): %s");

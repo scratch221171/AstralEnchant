@@ -7,8 +7,9 @@ import net.scratch221171.astralenchant.mdk.config.ConfigSide;
 public final class ModConfigs {
     public static final ConfigDeclaration SERVER = ConfigDeclaration.of(ConfigSide.SERVER, ServerConfig.ENTRIES);
     public static final ConfigDeclaration COMMON = ConfigDeclaration.of(ConfigSide.COMMON, CommonConfig.ENTRIES);
+    public static final ConfigDeclaration CLIENT = ConfigDeclaration.of(ConfigSide.CLIENT, ClientConfig.ENTRIES);
 
-    public static final List<ConfigDeclaration> ALL = List.of(SERVER, COMMON);
+    public static final List<ConfigDeclaration> ALL = List.of(SERVER, COMMON, CLIENT);
 
     private ModConfigs() {}
 }

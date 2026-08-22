@@ -22,10 +22,6 @@ public class AEAttributes {
             FOOD_LEVEL_CAP_MULTIPLIER =
                     ATTRIBUTES.register(ID.FOOD_LEVEL_CAP_MULTIPLIER, () -> new RangedAttribute(
                                     "attribute.astralenchant." + ID.FOOD_LEVEL_CAP_MULTIPLIER, 1.0, 0.0, 1024.0)
-                            .setSyncable(true)),
-            SATURATION_LEVEL_CAP_MULTIPLIER =
-                    ATTRIBUTES.register(ID.SATURATION_LEVEL_CAP_MULTIPLIER, () -> new RangedAttribute(
-                                    "attribute.astralenchant." + ID.SATURATION_LEVEL_CAP_MULTIPLIER, 1.0, 0.0, 1024.0)
                             .setSyncable(true));
 
     public static void register(IEventBus eventBus) {
