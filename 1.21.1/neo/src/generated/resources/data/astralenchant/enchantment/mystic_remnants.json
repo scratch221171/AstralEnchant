@@ -10,13 +10,13 @@
     "translate": "enchantment.astralenchant.mystic_remnants"
   },
   "max_cost": {
-    "base": 2147483647,
-    "per_level_above_first": 0
+    "base": 150,
+    "per_level_above_first": 10
   },
   "max_level": 3,
   "min_cost": {
-    "base": 2147483647,
-    "per_level_above_first": 0
+    "base": 100,
+    "per_level_above_first": 10
   },
   "slots": [
     "mainhand"

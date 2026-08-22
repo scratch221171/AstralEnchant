@@ -18,6 +18,9 @@ import net.scratch221171.astralenchant.common.util.EnchantmentLookups;
 
 public class AEEnchantments {
 
+    private static final Enchantment.Cost MIN_COST = Enchantment.dynamicCost(100, 10);
+    private static final Enchantment.Cost MAX_COST = Enchantment.dynamicCost(150, 10);
+
     private static final HashMap<ResourceKey<Enchantment>, Function<EnchantmentLookups, Enchantment.Builder>> LIST =
             new HashMap<>();
 
@@ -41,8 +44,8 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
                                     1,
                                     1,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     32,
                                     EquipmentSlotGroup.MAINHAND))),
             LAST_STAND =
@@ -52,28 +55,22 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
                                     1,
                                     3,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     32,
                                     EquipmentSlotGroup.ARMOR))),
             ESSENCE_OF_ENCHANTMENT =
                     create(
                             ID.ESSENCE_OF_ENCHANTMENT,
                             lookups -> Enchantment.enchantment(Enchantment.definition(
-                                    lookups.anyItems(),
-                                    1,
-                                    5,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    32,
-                                    EquipmentSlotGroup.ANY))),
+                                    lookups.anyItems(), 1, 5, MIN_COST, MAX_COST, 32, EquipmentSlotGroup.ANY))),
             RESILIENCE =
                     create(ID.RESILIENCE, lookups -> Enchantment.enchantment(Enchantment.definition(
                                     lookups.items().getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE),
                                     1,
                                     3,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     16,
                                     EquipmentSlotGroup.CHEST))
                             .withEffect(
@@ -90,28 +87,22 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.MINING_LOOT_ENCHANTABLE),
                                     1,
                                     1,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     16,
                                     EquipmentSlotGroup.MAINHAND))),
             AFFINITY =
                     create(
                             ID.AFFINITY,
                             lookups -> Enchantment.enchantment(Enchantment.definition(
-                                    lookups.anyItems(),
-                                    1,
-                                    1,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    32,
-                                    EquipmentSlotGroup.ANY))),
+                                    lookups.anyItems(), 1, 1, MIN_COST, MAX_COST, 32, EquipmentSlotGroup.ANY))),
             ENDLESS_APPETITE =
                     create(ID.ENDLESS_APPETITE, lookups -> Enchantment.enchantment(Enchantment.definition(
                                     lookups.items().getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE),
                                     1,
                                     3,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     32,
                                     EquipmentSlotGroup.CHEST))
                             .withEffect(
@@ -119,14 +110,6 @@ public class AEEnchantments {
                                     new EnchantmentAttributeEffect(
                                             ModUtils.loc(ID.ENDLESS_APPETITE),
                                             lookups.attributes().getOrThrow(AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER),
-                                            new LevelBasedValue.LevelsSquared(0f),
-                                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE))
-                            .withEffect(
-                                    EnchantmentEffectComponents.ATTRIBUTES,
-                                    new EnchantmentAttributeEffect(
-                                            ModUtils.loc(ID.ENDLESS_APPETITE),
-                                            lookups.attributes()
-                                                    .getOrThrow(AEAttributes.SATURATION_LEVEL_CAP_MULTIPLIER),
                                             new LevelBasedValue.LevelsSquared(0f),
                                             AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL))),
             DEXTERITY =
@@ -136,32 +119,20 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.LEG_ARMOR_ENCHANTABLE),
                                     1,
                                     1,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     16,
                                     EquipmentSlotGroup.LEGS))),
             OVERLOAD =
                     create(
                             ID.OVERLOAD,
                             lookups -> Enchantment.enchantment(Enchantment.definition(
-                                    lookups.anyItems(),
-                                    1,
-                                    5,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    32,
-                                    EquipmentSlotGroup.ANY))),
+                                    lookups.anyItems(), 1, 5, MIN_COST, MAX_COST, 32, EquipmentSlotGroup.ANY))),
             EXPANSE =
                     create(
                             ID.EXPANSE,
                             lookups -> Enchantment.enchantment(Enchantment.definition(
-                                    lookups.anyItems(),
-                                    1,
-                                    2,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    16,
-                                    EquipmentSlotGroup.ANY))),
+                                    lookups.anyItems(), 1, 2, MIN_COST, MAX_COST, 16, EquipmentSlotGroup.ANY))),
             REACTIVE_ARMOR =
                     create(
                             ID.REACTIVE_ARMOR,
@@ -169,8 +140,8 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE),
                                     1,
                                     1,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     16,
                                     EquipmentSlotGroup.CHEST))),
             MYSTIC_REMNANTS =
@@ -180,8 +151,8 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
                                     1,
                                     3,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     16,
                                     EquipmentSlotGroup.MAINHAND))),
             CURSE_OF_IGNORANCE =
@@ -213,8 +184,8 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
                                     1,
                                     3,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     16,
                                     EquipmentSlotGroup.HAND))),
             OVER_MENDING =
@@ -224,8 +195,8 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.DURABILITY_ENCHANTABLE),
                                     1,
                                     5,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     16,
                                     EquipmentSlotGroup.ANY))),
             ALMIGHTY =
@@ -235,8 +206,8 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.MINING_LOOT_ENCHANTABLE),
                                     1,
                                     4,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     16,
                                     EquipmentSlotGroup.MAINHAND))),
             CURSE_OF_INTANGIBILITY =
@@ -246,8 +217,8 @@ public class AEEnchantments {
                                     lookups.items().getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
                                     1,
                                     1,
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
-                                    Enchantment.constantCost(Integer.MAX_VALUE),
+                                    MIN_COST,
+                                    MAX_COST,
                                     32,
                                     EquipmentSlotGroup.FEET)));
 

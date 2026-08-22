@@ -18,27 +18,18 @@
         },
         "attribute": "astralenchant:food_level_cap_multiplier",
         "id": "astralenchant:endless_appetite",
-        "operation": "add_multiplied_base"
-      },
-      {
-        "amount": {
-          "type": "minecraft:levels_squared",
-          "added": 0.0
-        },
-        "attribute": "astralenchant:saturation_level_cap_multiplier",
-        "id": "astralenchant:endless_appetite",
         "operation": "add_multiplied_total"
       }
     ]
   },
   "max_cost": {
-    "base": 2147483647,
-    "per_level_above_first": 0
+    "base": 150,
+    "per_level_above_first": 10
   },
   "max_level": 3,
   "min_cost": {
-    "base": 2147483647,
-    "per_level_above_first": 0
+    "base": 100,
+    "per_level_above_first": 10
   },
   "slots": [
     "chest"
