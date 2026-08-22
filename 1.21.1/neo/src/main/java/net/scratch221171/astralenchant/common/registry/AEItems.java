@@ -18,6 +18,7 @@ import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 import net.scratch221171.astralenchant.common.item.AEArmorItem;
 import net.scratch221171.astralenchant.common.item.AEItem;
+import net.scratch221171.astralenchant.common.item.ArcaniumArmorItem;
 import net.scratch221171.astralenchant.common.item.EnchantmentSeedsItem;
 import net.scratch221171.astralenchant.common.util.CommonUtil;
 import org.jspecify.annotations.Nullable;
@@ -87,7 +88,8 @@ public class AEItems {
                             ArmorItem.Type.HELMET,
                             new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(15)),
                             Desc.key("armorMaterial.astralenchant.arcanium.desc"),
-                            Style.EMPTY.withColor(ChatFormatting.GRAY)),
+                            Style.EMPTY.withColor(ChatFormatting.GRAY),
+                            ArcaniumArmorItem::new),
             ARCANIUM_CHESTPLATE =
                     registerAEArmorItem(
                             ID.ARCANIUM_CHESTPLATE,
@@ -95,7 +97,8 @@ public class AEItems {
                             ArmorItem.Type.CHESTPLATE,
                             new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(15)),
                             Desc.key("armorMaterial.astralenchant.arcanium.desc"),
-                            Style.EMPTY.withColor(ChatFormatting.GRAY)),
+                            Style.EMPTY.withColor(ChatFormatting.GRAY),
+                            ArcaniumArmorItem::new),
             ARCANIUM_LEGGINGS =
                     registerAEArmorItem(
                             ID.ARCANIUM_LEGGINGS,
@@ -103,7 +106,8 @@ public class AEItems {
                             ArmorItem.Type.LEGGINGS,
                             new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(15)),
                             Desc.key("armorMaterial.astralenchant.arcanium.desc"),
-                            Style.EMPTY.withColor(ChatFormatting.GRAY)),
+                            Style.EMPTY.withColor(ChatFormatting.GRAY),
+                            ArcaniumArmorItem::new),
             ARCANIUM_BOOTS =
                     registerAEArmorItem(
                             ID.ARCANIUM_BOOTS,
@@ -111,7 +115,8 @@ public class AEItems {
                             ArmorItem.Type.BOOTS,
                             new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(15)),
                             Desc.key("armorMaterial.astralenchant.arcanium.desc"),
-                            Style.EMPTY.withColor(ChatFormatting.GRAY));
+                            Style.EMPTY.withColor(ChatFormatting.GRAY),
+                            ArcaniumArmorItem::new);
 
     private static DeferredItem<AEItem> registerAEItem(String name) {
         return registerAEItem(name, new Item.Properties());
@@ -141,22 +146,23 @@ public class AEItems {
         };
     }
 
-    private static DeferredItem<AEArmorItem> registerAEArmorItem(
+    private static <T extends AEArmorItem> DeferredItem<AEArmorItem> registerAEArmorItem(
             String name,
             Holder<ArmorMaterial> material,
             ArmorItem.Type type,
             Item.Properties properties,
             Desc desc,
-            @Nullable Style style) {
+            @Nullable Style style,
+            AEArmorItemFactory<T> factory) {
         return switch (desc.mode) {
-            case NONE -> REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, null, null), properties);
+            case NONE -> REGISTER.registerItem(name, p -> factory.create(material, type, p, null, null), properties);
             case DEFAULT ->
                 REGISTER.registerItem(
                         name,
-                        p -> new AEArmorItem(material, type, p, CommonUtil.getAEItemLangKey(name) + ".desc", style),
+                        p -> factory.create(material, type, p, CommonUtil.getAEItemLangKey(name) + ".desc", style),
                         properties);
             case CUSTOM ->
-                REGISTER.registerItem(name, p -> new AEArmorItem(material, type, p, desc.key, style), properties);
+                REGISTER.registerItem(name, p -> factory.create(material, type, p, desc.key, style), properties);
         };
     }
 
@@ -188,5 +194,15 @@ public class AEItems {
     @FunctionalInterface
     public interface AEItemFactory<T extends AEItem> {
         T create(Item.Properties properties, @Nullable String descKey, @Nullable Style style);
+    }
+
+    @FunctionalInterface
+    public interface AEArmorItemFactory<T extends AEArmorItem> {
+        T create(
+                Holder<ArmorMaterial> material,
+                ArmorItem.Type type,
+                Item.Properties properties,
+                @Nullable String descKey,
+                @Nullable Style style);
     }
 }

@@ -4,11 +4,14 @@
   "key": {
     "1": {
       "tag": "c:ingots/arcanium"
+    },
+    "2": {
+      "item": "minecraft:emerald"
     }
   },
   "pattern": [
     "111",
-    "1 1"
+    "121"
   ],
   "result": {
     "count": 1,

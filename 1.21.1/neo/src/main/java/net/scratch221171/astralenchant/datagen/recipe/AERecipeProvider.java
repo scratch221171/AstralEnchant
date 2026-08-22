@@ -201,31 +201,35 @@ public class AERecipeProvider extends RecipeProvider {
 
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AEItems.ARCANIUM_HELMET)
                     .pattern("111")
-                    .pattern("1 1")
+                    .pattern("121")
                     .define('1', AETags.Items.INGOTS_ARCANIUM)
+                    .define('2', Items.EMERALD)
                     .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
                     .save(output);
 
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AEItems.ARCANIUM_CHESTPLATE)
                     .pattern("1 1")
                     .pattern("111")
-                    .pattern("111")
+                    .pattern("121")
                     .define('1', AETags.Items.INGOTS_ARCANIUM)
+                    .define('2', Items.DIAMOND)
                     .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
                     .save(output);
 
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AEItems.ARCANIUM_LEGGINGS)
                     .pattern("111")
-                    .pattern("1 1")
+                    .pattern("2 2")
                     .pattern("1 1")
                     .define('1', AETags.Items.INGOTS_ARCANIUM)
+                    .define('2', Items.AMETHYST_SHARD)
                     .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
                     .save(output);
 
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AEItems.ARCANIUM_BOOTS)
                     .pattern("1 1")
-                    .pattern("1 1")
+                    .pattern("2 2")
                     .define('1', AETags.Items.INGOTS_ARCANIUM)
+                    .define('2', Items.QUARTZ)
                     .unlockedBy(getHasName(AEItems.ARCANIUM_INGOT), has(AETags.Items.INGOTS_ARCANIUM))
                     .save(output);
 

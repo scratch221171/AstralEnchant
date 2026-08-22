@@ -4,11 +4,14 @@
   "key": {
     "1": {
       "tag": "c:ingots/arcanium"
+    },
+    "2": {
+      "item": "minecraft:quartz"
     }
   },
   "pattern": [
     "1 1",
-    "1 1"
+    "2 2"
   ],
   "result": {
     "count": 1,
