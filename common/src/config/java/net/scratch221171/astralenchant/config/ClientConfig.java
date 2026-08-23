@@ -9,7 +9,7 @@ public class ClientConfig {
     private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
 
     public static final ConfigEntries FOOD_LEVEL_DISPLAY =
-            BUILDER.comment("Food Level Display").category("food_level_Display", FoodLevelDisplay.ENTRIES);
+            BUILDER.comment("Food Level Display").category("food_level_display", FoodLevelDisplay.ENTRIES);
 
     public static final class FoodLevelDisplay {
         private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();

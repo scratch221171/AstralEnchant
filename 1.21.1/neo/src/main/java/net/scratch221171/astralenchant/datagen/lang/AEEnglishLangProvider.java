@@ -136,6 +136,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 "Craft an Enchanter's Workbench. Swap your enchantments at will!");
 
         // 設定
+        // Server
         addConfig("enchantment_settings", "Enchantment Settings");
         addConfigWithDesc(
                 ConfigID.EXTRA_TAG,
@@ -213,7 +214,21 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 ConfigID.UNBREAKABLE_BLOCK_HARDNESS,
                 "Unbreakable Block Hardness",
                 "The hardness value applied when mining unbreakable blocks, such as bedrock.");
+
+        // Common
         addConfigWithDesc("enchantment_toggling", "Enchantment Toggling", "REQUIRES A SERVER RESTART!");
+
+        // Client
+        addConfigWithDesc("food_level_display", "Food Level Display", "Compatible with appleskin!");
+        addConfigWithDesc(
+                ConfigID.DISPLAY_CONDITION,
+                "Display Condition",
+                "ALWAYS: Always display CONDITIONAL: Display when the food level cap multiplier is not 1 NEVER: Do not display");
+        addConfigWithDesc(ConfigID.SHOW_CAP, "Display the Cap", "Ignored when percentage display is enabled!");
+        addConfigWithDesc(
+                ConfigID.PERCENTAGE_STYLE,
+                "Percentage Display",
+                "Displays the current value as a percentage of the current cap, with the cap set to 100%%, rather than displaying the actual value.");
     }
 
     @Override
