@@ -5,7 +5,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
-import net.scratch221171.astralenchant.common.util.IFoodDataExtension;
+import net.scratch221171.astralenchant.common.util.IPlayerAccessor;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(FoodData.class)
-public abstract class FoodDataMixin implements IFoodDataExtension {
+public abstract class FoodDataMixin implements IPlayerAccessor {
 
     @Shadow
     protected abstract void add(int foodLevel, float saturationLevel);
@@ -56,25 +56,5 @@ public abstract class FoodDataMixin implements IFoodDataExtension {
         return astralenchant$getPlayer()
                 .map(player -> (int) (original * player.getAttributeValue(AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER)))
                 .orElse(original);
-    }
-
-    @Override
-    public int astralenchant$getFoodLevel() {
-        return foodLevel;
-    }
-
-    @Override
-    public float astralenchant$getSaturationLevel() {
-        return saturationLevel;
-    }
-
-    @Override
-    public void astralenchant$setFoodLevel(int value) {
-        foodLevel = value;
-    }
-
-    @Override
-    public void astralenchant$setSaturationLevel(float value) {
-        saturationLevel = value;
     }
 }

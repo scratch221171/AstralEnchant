@@ -23,7 +23,7 @@ public final class AppetiteDisplayClientEvents {
     @SubscribeEvent
     public static void onRenderGuiLayerPre(RenderGuiLayerEvent.Pre event) {
         if (event.getName().equals(VanillaGuiLayers.FOOD_LEVEL)
-                && AppetiteDisplayLayer.INSTANCE.isEnabled(Minecraft.getInstance().player)) {
+                && AppetiteDisplayLayer.isEnabled(Minecraft.getInstance().player)) {
             event.setCanceled(true);
         }
     }

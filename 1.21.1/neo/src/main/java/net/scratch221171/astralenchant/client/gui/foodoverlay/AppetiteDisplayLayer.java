@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import net.neoforged.fml.ModList;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
-import net.scratch221171.astralenchant.common.util.IFoodDataExtension;
+import net.scratch221171.astralenchant.compat.appleskin.client.AppetiteDisplayState;
 import net.scratch221171.astralenchant.config.ClientConfig;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
@@ -25,9 +25,9 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
     private static final float MIN_BLOCK_SCALE = 0.5f;
     private static final int MAX_BLOCK_WIDTH = 42;
 
-    private static final boolean APPLESKIN_LOADED = ModList.get().isLoaded("appleskin");
-    private static final int HIDDEN_TEXT_COLOR = 0xFFFF55;
-    private static final ResourceLocation APPLESKIN_ICONS =
+    public static final boolean APPLESKIN_LOADED = ModList.get().isLoaded("appleskin");
+    public static final int HIDDEN_TEXT_COLOR = 0xFFFF55;
+    public static final ResourceLocation APPLESKIN_ICONS =
             ResourceLocation.fromNamespaceAndPath("appleskin", "textures/icons.png");
 
     private AppetiteDisplayLayer() {}
@@ -37,16 +37,12 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
 
         Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
-        if (player == null) return;
-        if (player.isSpectator()) return;
+        if (!isEnabled(player)) return;
         if (!shouldRender(mc)) return;
 
         FoodData foodData = player.getFoodData();
-        if (!(foodData instanceof IFoodDataExtension ext)) return;
 
-        if (!isEnabled(player)) return;
-
-        int foodLevel = ext.astralenchant$getFoodLevel();
+        int foodLevel = foodData.getFoodLevel();
         int cap = (int) (20 * player.getAttributeValue(AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER));
 
         String text = ClientConfig.FoodLevelDisplay.PERCENTAGE_STYLE.getAsBoolean()
@@ -59,27 +55,19 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
         int right = screenWidth / 2 + 90;
         int top = screenHeight - 39;
 
-        int leftEdge = drawScaledBlock(guiGraphics, text, right, top, null, 0xFFFFFF);
-
-        if (APPLESKIN_LOADED) {
-            int saturation = Math.round(ext.astralenchant$getSaturationLevel());
-            String hiddenText = ClientConfig.FoodLevelDisplay.PERCENTAGE_STYLE.getAsBoolean()
-                    ? (Math.round(saturation * 100f / cap) + "%")
-                    : (formatCount(saturation)
-                            + (ClientConfig.FoodLevelDisplay.SHOW_CAP.getAsBoolean() ? "/" + formatCount(cap) : ""));
-            drawScaledBlock(guiGraphics, hiddenText, leftEdge, top, APPLESKIN_ICONS, HIDDEN_TEXT_COLOR);
-        }
+        AppetiteDisplayState.anchorRightX = drawScaledBlock(guiGraphics, text, right, top, null, 0xFFFFFF);
+        AppetiteDisplayState.anchorTopY = top;
     }
 
-    public boolean isEnabled(@Nullable Player player) {
-        return switch (ClientConfig.FoodLevelDisplay.DISPLAY_CONDITION.get()) {
+    public static boolean isEnabled(@Nullable Player player) {
+        return player != null && switch (ClientConfig.FoodLevelDisplay.DISPLAY_CONDITION.get()) {
             case ALWAYS -> true;
             case NEVER -> false;
-            case CONDITIONAL -> player != null && player.getAttributeValue(AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER) != 1;
+            case CONDITIONAL -> player.getAttributeValue(AEAttributes.FOOD_LEVEL_CAP_MULTIPLIER) != 1;
         };
     }
 
-    private void drawOutlinedText(GuiGraphics guiGraphics, String text, int x, int y, int color) {
+    static void drawOutlinedText(GuiGraphics guiGraphics, String text, int x, int y, int color) {
         var font = Minecraft.getInstance().font;
         int black = 0x000000;
         guiGraphics.drawString(font, text, x - 1, y, black, false);
@@ -89,14 +77,14 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
         guiGraphics.drawString(font, text, x, y, color, false);
     }
 
-    private boolean shouldRender(Minecraft mc) {
+    static boolean shouldRender(Minecraft mc) {
         if (mc.player != null
                 && mc.player.getVehicle() != null
                 && !mc.player.getVehicle().showVehicleHealth()) return false;
         return mc.gameMode != null && mc.gameMode.canHurtPlayer();
     }
 
-    private static String formatCount(int value) {
+    public static String formatCount(int value) {
         if (value >= 1_000_000) {
             return String.format("%.1fM", value / 1_000_000f);
         }
@@ -112,7 +100,7 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
      * hiddenIconTexture が null なら通常アイコン(FOOD_FULL_SPRITE)、
      * 非nullならAppleSkinアイコンシート(u=3*ICON_SIZE固定)を使用する。
      */
-    private int drawScaledBlock(
+    public static int drawScaledBlock(
             GuiGraphics guiGraphics,
             String text,
             int rightX,

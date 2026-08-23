@@ -26,6 +26,7 @@
     "requireAnnotations": true
   },
   "client": [
-    "client.LocalPlayerMixin"
+    "client.LocalPlayerMixin",
+    "compat.client.appleskin.HUDOverlayHandlerAccessor"
   ]
 }
