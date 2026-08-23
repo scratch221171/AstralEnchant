@@ -93,6 +93,7 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addAdvancementWithDesc(ID.ENCHANTERS_WORKBENCH, "こいつを待ってたぜ", "エンチャンターのワークベンチを作る。自由に切り替えよう！");
 
         // 設定
+        // Server
         addConfig("enchantment_settings", "エンチャントの設定");
         addConfigWithDesc(ConfigID.EXTRA_TAG, "適用されるダメージタグ", "攻撃に適用されるタグを管理します。無効な値が存在する場合はデフォルト値が使用されます。");
         addConfigWithDesc(
@@ -124,7 +125,15 @@ public class AEJapaneseLangProvider extends AELangProvider implements Modonomico
         addConfigWithDesc(
                 ConfigID.CAN_BREAK_UNBREAKABLE, "破壊不能ブロックを破壊可能", "レベル4で岩盤などを破壊できます。プレイヤー以外が使ったときの効果は保証できません。");
         addConfigWithDesc(ConfigID.UNBREAKABLE_BLOCK_HARDNESS, "破壊不能なブロックの硬さ", "岩盤など破壊不能なブロックを採掘する際に適用される硬さ。");
+
+        // Common
         addConfigWithDesc("enchantment_toggling", "エンチャントの切り替え", "サーバーの再起動が必要です！");
+
+        // Client
+        addConfigWithDesc("food_level_display", "満腹度表示", "appleskinと互換性があります！");
+        addConfigWithDesc(ConfigID.DISPLAY_CONDITION, "表示条件", "ALWAYS: 常に表示 CONDITIONAL: 満腹度上限倍率が1以外のとき表示 NEVER: 非表示");
+        addConfigWithDesc(ConfigID.SHOW_CAP, "上限を表示", "パーセンテージ表示の場合は無視されます！");
+        addConfigWithDesc(ConfigID.PERCENTAGE_STYLE, "パーセンテージ表示", "実際の値ではなく、現在の上限を100%%としたときの割合で表示します。");
     }
 
     @Override

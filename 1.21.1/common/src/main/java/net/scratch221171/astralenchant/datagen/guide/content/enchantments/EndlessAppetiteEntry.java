@@ -33,10 +33,10 @@ public class EndlessAppetiteEntry extends EnchantmentEntry {
                 .withTitle(CommonUtil.getLangKey(key()))
                 .withText(pageText("""
                         {0} raises the maximum Food Level and hidden Saturation Level.   \s
-                        **Note that any amount beyond the vanilla default cap will not be displayed.**
+                        **Note that by default, the food bar will be displayed as a numerical value. For more details, please refer to the client settings.**
                         """, """
                         　{0}は、満腹度および隠し満腹度の上限を引き上げます。   \s
-                        　**なお、デフォルトの上限を超えた分は描写されません。**
+                        　**なお、デフォルトでは満腹度バーの描画が数値ベースに変更されます。詳しくはクライアントの設定を参照してください。**
                         """, translatedName())));
 
         addDetails(lookups);
