@@ -1,5 +1,4 @@
 import groovy.json.JsonOutput
-import net.scratch221171.mdk.build.supportsGameTestServer
 import net.scratch221171.mdk.build.platformArtifacts
 import net.scratch221171.mdk.build.supportsGameTestServer
 import org.gradle.plugins.ide.idea.model.IdeaModel
@@ -15,12 +14,12 @@ plugins {
 
 modPublishing {
     curseForge {
-        // projectId.set("123456")
+        projectId.set("1425211")
         client.set(true)
         server.set(true)
     }
     modrinth {
-        // projectId.set("xxxxxxxx")
+        projectId.set("xc1R7sOR")
         environment.set(CLIENT_AND_SERVER)
     }
 }
