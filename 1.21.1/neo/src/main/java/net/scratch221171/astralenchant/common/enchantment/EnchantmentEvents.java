@@ -62,7 +62,7 @@ public class EnchantmentEvents {
         NullificationHandler.spawnParticles(e);
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOW)
     private static void onGetEnchantmentLevel(GetEnchantmentLevelEvent e) {
         OverloadHandler.modifyLevels(e);
     }

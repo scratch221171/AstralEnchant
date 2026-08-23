@@ -1,6 +1,7 @@
 package net.scratch221171.astralenchant.mixin;
 
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodData;
 import net.minecraft.world.item.ItemCooldowns;
 import net.scratch221171.astralenchant.common.util.IPlayerAccessor;
 import net.scratch221171.astralenchant.common.util.IPlayerExtension;
@@ -14,15 +15,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class PlayerMixin implements IPlayerExtension {
 
     @Shadow
+    protected int enchantmentSeed;
+
+    @Shadow
     public abstract ItemCooldowns getCooldowns();
 
     @Shadow
-    protected int enchantmentSeed;
+    public abstract FoodData getFoodData();
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void astralenchant$init(CallbackInfo ci) {
         var self = (Player) (Object) this;
         ((IPlayerAccessor) this.getCooldowns()).astralenchant$setPlayer(self);
+        ((IPlayerAccessor) this.getFoodData()).astralenchant$setPlayer(self);
     }
 
     @Override

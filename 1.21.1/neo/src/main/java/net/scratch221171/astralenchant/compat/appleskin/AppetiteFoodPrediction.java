@@ -10,8 +10,7 @@ public final class AppetiteFoodPrediction {
 
     public record Result(int nutritionGain, float saturationGain) {}
 
-    @Nullable
-    public static Result queryHeldFood(Player player) {
+    @Nullable public static Result queryHeldFood(Player player) {
         FoodHelper.QueriedFoodResult queried = query(player.getMainHandItem(), player);
         if (queried == null) {
             queried = query(player.getOffhandItem(), player);

@@ -5,24 +5,17 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
-import net.scratch221171.astralenchant.common.util.IPlayerAccessor;
+import net.scratch221171.astralenchant.common.util.IFoodDataExtension;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(FoodData.class)
-public abstract class FoodDataMixin implements IPlayerAccessor {
+public abstract class FoodDataMixin implements IFoodDataExtension {
 
     @Shadow
     protected abstract void add(int foodLevel, float saturationLevel);
-
-    @Shadow
-    private int foodLevel;
-
-    @Shadow
-    private float saturationLevel;
 
     @Unique private Player astralenchant$player;
 
@@ -36,10 +29,8 @@ public abstract class FoodDataMixin implements IPlayerAccessor {
         return Optional.ofNullable(this.astralenchant$player);
     }
 
-    @Inject(method = "tick", at = @At("HEAD"))
-    private void astralenchant$capturePlayer(Player player, CallbackInfo ci) {
-        astralenchant$setPlayer(player);
-        // 上限を超えた分をclamp(倍率が下がった時のため)
+    @Override
+    public void astralenchant$update() {
         add(0, 0);
     }
 

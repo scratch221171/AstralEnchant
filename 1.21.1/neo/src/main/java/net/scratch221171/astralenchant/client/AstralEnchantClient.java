@@ -13,7 +13,6 @@ import net.scratch221171.astralenchant.client.gui.screen.EnchantersWorkbenchScre
 import net.scratch221171.astralenchant.client.mdk.config.KeyedConfigScreen;
 import net.scratch221171.astralenchant.common.registry.AEMenuTypes;
 import net.scratch221171.astralenchant.compat.appleskin.AppleSkinCompat;
-import net.scratch221171.astralenchant.compat.curios.CuriosCompat;
 
 @Mod(value = Constants.MODID, dist = Dist.CLIENT)
 public class AstralEnchantClient {
