@@ -122,6 +122,13 @@ Build a specific platform:
 
 Artifacts are written under each configured project directory, such as `26.1.2/fabric/build/libs/`. Additional runtime-only mod jars declared through `ciRuntimeMods` are collected under that project directory's `build/ciRuntimeMods/` for CI.
 
+Each loader convention declares its platform identity and the Gradle tasks that
+produce its release artifacts through `platformArtifacts`. The generated CI
+matrix records the actual archive file names from those tasks. A configured
+sources task makes its sources jar a required release artifact; omit the
+sources task declaration for a platform that deliberately does not generate
+one.
+
 ## Running
 
 Run a client:
@@ -445,6 +452,90 @@ commit and release tag to the selected branch after the jars and release notes
 are ready. Release notes include breaking changes, `feat`, `fix`, and `perf`
 commits. Template maintenance commits with the `mdk` type and other commit
 types are omitted.
+
+### CurseForge And Modrinth Publishing
+
+The separate `Publish` workflow copies the jars and release notes from an
+existing GitHub Release to CurseForge, Modrinth, or both. It is a dry run by
+default and can publish all platform projects or a comma-separated subset such
+as `1.20.1-fabric,1.21.1-neo`.
+
+Before publishing:
+
+```kotlin
+modPublishing {
+    curseForge {
+        projectId.set("123456")
+        client.set(true)
+        server.set(true)
+    }
+    modrinth {
+        projectId.set("project-slug")
+        environment.set(CLIENT_AND_SERVER)
+    }
+}
+```
+
+1. In the root `build.gradle.kts` `modPublishing` block, uncomment and fill the
+   `projectId` for each destination service you plan to select.
+2. For each selected service, review CurseForge's `client` and `server` flags
+   or Modrinth's typed `environment` value in the same block. These describe
+   where the mod can be installed; they cannot be inferred reliably from loader
+   build settings. In particular, Modrinth distinguishes `CLIENT_AND_SERVER`
+   (required on both sides) from `CLIENT_OR_SERVER` (installable on either side
+   independently).
+3. For a non-dry-run publish, add the GitHub repository secret required by each
+   selected service: `CURSEFORGE_TOKEN` and/or `MODRINTH_TOKEN`.
+4. Create a GitHub Release with the `Release` workflow before running
+   `Publish` for its tag.
+
+To run the Publish workflow:
+
+1. Open **Actions** > **Publish** > **Run workflow** on GitHub.
+2. Select the target GitHub Release tag from **Use workflow from**. Do not
+   select a branch.
+3. Choose the destination services and other publishing options, then run the
+   workflow.
+
+Artifact names, Minecraft versions, loader names, Java versions, optional
+sources jars, and convention-provided publishing dependencies are derived from
+each project's `platformArtifacts` metadata. `fabric-api-conventions` registers
+Fabric API, while the Fabric and modern LexForge config conventions register
+Forge Config API Port. A project-specific convention or build script can add
+another required dependency without editing the publish workflow:
+
+```kotlin
+import net.meatwo310.mdk.build.PublishedDependencyType.OPTIONAL
+import net.meatwo310.mdk.build.publishDependency
+
+publishDependency(
+    curseForgeSlug = "dependency-curseforge-slug",
+    modrinthSlug = "dependency-modrinth-slug",
+    type = OPTIONAL,
+)
+
+publishDependency(
+    modrinthSlug = "modrinth-only-dependency",
+)
+```
+
+To inspect one target locally without uploading, run:
+
+```sh
+./gradlew publishMods \
+  -PpublishGitHubRepository=owner/repository \
+  -PpublishTag=v1.0.0 \
+  -PpublishProjects=1.21.1-fabric \
+  -PpublishDestination=modrinth \
+  -PpublishDryRun=true
+```
+
+Public GitHub Releases need no additional authentication. Set `GITHUB_TOKEN`
+when downloading from a private repository or when authenticated API access is
+otherwise required.
+
+Use a checkout whose `version.txt` and enabled projects match the selected
+release. Dry-run reports are written under `build/publishMods/`.
 
 ## Receiving Upstream Updates
 

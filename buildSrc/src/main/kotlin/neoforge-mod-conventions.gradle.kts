@@ -1,4 +1,5 @@
 import net.scratch221171.mdk.build.configureCiRuntimeMods
+import net.scratch221171.mdk.build.configurePlatformArtifacts
 import net.scratch221171.mdk.build.supportsGameTestServer
 import org.gradle.api.file.DuplicatesStrategy
 
@@ -30,6 +31,7 @@ val parchmentMinecraftVersion = project.findProperty("parchmentMinecraftVersion"
 val parchmentMappingsVersion = project.findProperty("parchmentMappingsVersion")?.toString()
 val neoDataRun = project.findProperty("neoDataRun")?.toString() ?: "data"
 configureCiRuntimeMods()
+configurePlatformArtifacts(loader = "neo", javaVersion = javaVersion.toInt(), sourcesJarTaskName = "sourcesJar")
 
 dependencies {
     implementation(project(commonProject))

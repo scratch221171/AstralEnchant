@@ -1,5 +1,7 @@
 import groovy.json.JsonOutput
 import net.scratch221171.mdk.build.supportsGameTestServer
+import net.scratch221171.mdk.build.platformArtifacts
+import net.scratch221171.mdk.build.supportsGameTestServer
 import org.gradle.plugins.ide.idea.model.IdeaModel
 
 plugins {
@@ -8,6 +10,19 @@ plugins {
     id("net.minecraftforge.gradle") apply false
     id("net.neoforged.moddev") apply false
     id("net.neoforged.moddev.legacyforge") apply false
+    id("mod-publish-conventions")
+}
+
+modPublishing {
+    curseForge {
+        // projectId.set("123456")
+        client.set(true)
+        server.set(true)
+    }
+    modrinth {
+        // projectId.set("xxxxxxxx")
+        environment.set(CLIENT_AND_SERVER)
+    }
 }
 
 tasks.named<Wrapper>("wrapper").configure {
@@ -31,9 +46,11 @@ tasks.register("writeCiBuildMatrix") {
 
     val ciBuildMatrix = ciBuildProjects.map { projectName ->
         val targetProject = project(":$projectName")
-        val minecraftVersion = targetProject.property("minecraftVersion").toString()
-        val loader = projectName.substringAfterLast("-")
-        val javaVersion = targetProject.findProperty("javaVersion")?.toString() ?: "17"
+        evaluationDependsOn(targetProject.path)
+        val artifacts = targetProject.platformArtifacts()
+        val minecraftVersion = artifacts.minecraftVersion
+        val loader = artifacts.loader
+        val javaVersion = artifacts.javaVersion.toString()
         val fabricApiVersion = targetProject.findProperty("fabricApiVersion")
             ?.toString()
             ?.substringBefore("+")
@@ -46,7 +63,6 @@ tasks.register("writeCiBuildMatrix") {
             ?.toString()
             ?.toBooleanStrictOrNull()
             ?: true
-        val modloader = if (loader == "neo") "neoforge" else loader
         val mcRuntimeTest = when (loader) {
             "forge" -> "lexforge"
             "neo" -> "neoforge"
@@ -54,9 +70,15 @@ tasks.register("writeCiBuildMatrix") {
         }
         val supportsGameTestServer = minecraftVersion.supportsGameTestServer()
         val commonProjectName = "$minecraftVersion-common"
+        val expectedProjectName = "$minecraftVersion-$loader"
 
         if (loader !in supportedLoaders) {
             throw GradleException("Unsupported loader '$loader' in CI build project '$projectName'")
+        }
+        if (projectName != expectedProjectName) {
+            throw GradleException(
+                "CI build project '$projectName' declares platform '$expectedProjectName'",
+            )
         }
         if (minecraftVersion.isBlank()) {
             throw GradleException("Project '$projectName' must define minecraftVersion")
@@ -78,9 +100,13 @@ tasks.register("writeCiBuildMatrix") {
             "run_game_test_server" to (supportsGameTestServer && loader in setOf("forge", "neo")),
             "run_server" to !supportsGameTestServer,
             "run_mc_runtime_test" to runMcRuntimeTest,
-            "modloader" to modloader,
+            "modloader" to artifacts.modLoader,
             "mc_runtime_test" to mcRuntimeTest,
-            "artifact_regex" to ".*$loader.*",
+            "archive_base_name" to artifacts.archiveBaseName,
+            "main_artifact" to artifacts.mainArtifactName,
+            "sources_artifact" to artifacts.sourcesArtifactName,
+            "release_artifacts" to artifacts.releaseArtifactNames,
+            "modloader_regex" to ".*$loader.*",
         )
     }
 

@@ -1,3 +1,4 @@
+import net.scratch221171.mdk.build.PlatformArtifactsExtension
 import net.scratch221171.mdk.build.VersionCatalogLibrary
 import net.scratch221171.mdk.build.library
 import net.scratch221171.mdk.build.module
@@ -6,6 +7,11 @@ import net.scratch221171.mdk.build.versionCatalog
 plugins {
     id("fabric-mod-conventions")
     id("net.fabricmc.fabric-loom-remap")
+}
+
+extensions.configure<PlatformArtifactsExtension> {
+    mainJarTaskName.set("remapJar")
+    sourcesJarTaskName.set("remapSourcesJar")
 }
 
 val modId = project.property("modId").toString()
