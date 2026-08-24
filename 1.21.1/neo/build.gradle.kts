@@ -1,4 +1,5 @@
 import net.scratch221171.mdk.build.req
+import net.scratch221171.mdk.build.platformArtifacts
 
 plugins {
     id("neoforge-mod-conventions")
@@ -73,6 +74,20 @@ dependencies {
 
     implementation(libs.appleskin, req(appleskinVersion))
     ciRuntimeMods(libs.appleskin, req(appleskinVersion))
+}
+
+platformArtifacts {
+    publishingDependencies {
+        required("modonomicon")
+        optional("enchantment-descriptions")
+        optional("curios")
+        optional("clumps")
+        optional("appleskin")
+        optional {
+            curseForge = "dependency-curseforge-slug"
+            modrinth = "dependency-modrinth-slug"
+        }
+    }
 }
 
 spotless {
