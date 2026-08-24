@@ -21,6 +21,8 @@ public class ConfigID {
             // Feather Touch
             SAVE_BLOCK_ENTITY = "save_block_entity",
             SAVE_BLOCK_STATE = "save_block_state",
+            // Overload
+            BLACKLIST = "blacklist",
             // Expanse
             STACKABLE = "stackable",
             // Reactive Armor

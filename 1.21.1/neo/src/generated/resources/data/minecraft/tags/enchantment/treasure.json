@@ -1,22 +1,22 @@
 {
   "values": [
+    "astralenchant:affinity",
+    "astralenchant:almighty",
+    "astralenchant:curse_of_enchantment",
+    "astralenchant:curse_of_ignorance",
     "astralenchant:curse_of_intangibility",
+    "astralenchant:dexterity",
+    "astralenchant:distortion",
+    "astralenchant:endless_appetite",
+    "astralenchant:essence_of_enchantment",
+    "astralenchant:expanse",
+    "astralenchant:feather_touch",
+    "astralenchant:last_stand",
     "astralenchant:mystic_remnants",
     "astralenchant:nullification",
-    "astralenchant:resilience",
-    "astralenchant:reactive_armor",
-    "astralenchant:feather_touch",
-    "astralenchant:dexterity",
-    "astralenchant:curse_of_ignorance",
-    "astralenchant:almighty",
     "astralenchant:over_mending",
-    "astralenchant:affinity",
-    "astralenchant:last_stand",
-    "astralenchant:expanse",
-    "astralenchant:curse_of_enchantment",
-    "astralenchant:distortion",
-    "astralenchant:essence_of_enchantment",
-    "astralenchant:endless_appetite",
-    "astralenchant:overload"
+    "astralenchant:overload",
+    "astralenchant:reactive_armor",
+    "astralenchant:resilience"
   ]
 }

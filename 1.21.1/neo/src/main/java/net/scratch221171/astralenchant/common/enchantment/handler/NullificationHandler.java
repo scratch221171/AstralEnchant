@@ -63,7 +63,7 @@ public class NullificationHandler {
             }
         }
         if (error) {
-            for (String loc : ServerConfig.EnchantmentSettings.ReactiveArmor.DISABLED_TAG.defaultValue()) {
+            for (String loc : ServerConfig.EnchantmentSettings.Nullification.EXTRA_TAG.defaultValue()) {
                 var id = ResourceLocation.tryParse(loc);
                 if (id != null) tags.add(TagKey.create(Registries.DAMAGE_TYPE, id));
             }

@@ -1,8 +1,14 @@
 package net.scratch221171.astralenchant.common.enchantment.handler;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.event.enchanting.GetEnchantmentLevelEvent;
+import net.scratch221171.astralenchant.Constants;
 import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
+import net.scratch221171.astralenchant.config.ServerConfig;
 
 public class OverloadHandler {
 
@@ -24,12 +30,33 @@ public class OverloadHandler {
             }
 
             var enchantments = event.getEnchantments();
+            var blacklist = getOverloadBlacklist();
             for (var entry : enchantments.keySet()) {
-                if (!entry.is(AEEnchantments.OVERLOAD)) {
+                if (!entry.is(AEEnchantments.OVERLOAD) && blacklist.stream().noneMatch(entry::is)) {
                     int current = enchantments.getLevel(entry);
                     enchantments.upgrade(entry, current + bonus);
                 }
             }
         });
+    }
+
+    private static List<ResourceLocation> getOverloadBlacklist() {
+        List<ResourceLocation> enchantments = new ArrayList<>();
+        boolean error = false;
+        for (String entry : ServerConfig.EnchantmentSettings.Overload.BLACKLIST.get()) {
+            try {
+                Optional.of(entry).map(ResourceLocation::tryParse).map(enchantments::add);
+            } catch (Exception e) {
+                Constants.LOGGER.error("Error while loading tags for Overload!", e);
+                Constants.LOGGER.error("using default value instead...");
+                error = true;
+            }
+        }
+        if (error) {
+            for (String entry : ServerConfig.EnchantmentSettings.Overload.BLACKLIST.defaultValue()) {
+                Optional.of(entry).map(ResourceLocation::tryParse).map(enchantments::add);
+            }
+        }
+        return enchantments;
     }
 }

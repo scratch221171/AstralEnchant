@@ -1,5 +1,6 @@
 package net.scratch221171.astralenchant.datagen.tag;
 
+import java.util.Comparator;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -22,7 +23,8 @@ public class AEEnchantmentTagsProvider extends EnchantmentTagsProvider {
                         AEEnchantments.CURSE_OF_ENCHANTMENT,
                         AEEnchantments.CURSE_OF_INTANGIBILITY);
         tag(EnchantmentTags.ON_RANDOM_LOOT).add(AEEnchantments.CURSE_OF_IGNORANCE, AEEnchantments.CURSE_OF_ENCHANTMENT);
-        AEEnchantments.getAll()
+        AEEnchantments.getAll().stream()
+                .sorted(Comparator.comparing(key -> key.location().getPath()))
                 .forEach(enchantment -> tag(EnchantmentTags.TREASURE).add(enchantment));
     }
 }

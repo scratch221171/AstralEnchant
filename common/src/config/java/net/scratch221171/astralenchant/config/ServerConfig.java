@@ -95,6 +95,19 @@ public class ServerConfig {
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }
 
+        public static final ConfigEntries OVERLOAD =
+                BUILDER.comment("Overload").category(ConfigID.OVERLOAD, Overload.ENTRIES);
+
+        public static final class Overload {
+            private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
+
+            // ResourceLocationを使えないのでしょうがない
+            public static final ConfigEntry.ListEntry<String> BLACKLIST =
+                    BUILDER.defineList(ConfigID.BLACKLIST, List.of(), () -> "minecraft:aqua_affinity", e -> true);
+
+            public static final ConfigEntries ENTRIES = BUILDER.build();
+        }
+
         public static final ConfigEntries EXPANSE =
                 BUILDER.comment("Expanse").category(ConfigID.EXPANSE, Expanse.ENTRIES);
 

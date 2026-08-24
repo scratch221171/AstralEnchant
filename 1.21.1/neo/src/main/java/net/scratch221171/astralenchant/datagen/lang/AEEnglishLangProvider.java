@@ -186,6 +186,7 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 ConfigID.SAVE_BLOCK_STATE,
                 "Preserve Block State",
                 "Converts blocks into items while preserving their block state, such as orientation.");
+        addConfigWithDesc(ConfigID.BLACKLIST, "Blacklist", "Exclude from overload targets.");
         addConfigWithDesc(
                 ConfigID.STACKABLE,
                 "Can be stacked",
