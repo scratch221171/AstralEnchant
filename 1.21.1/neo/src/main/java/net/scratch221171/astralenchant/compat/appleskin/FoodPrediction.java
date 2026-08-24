@@ -5,8 +5,8 @@ import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
 import squeek.appleskin.helpers.FoodHelper;
 
-public final class AppetiteFoodPrediction {
-    private AppetiteFoodPrediction() {}
+public final class FoodPrediction {
+    private FoodPrediction() {}
 
     public record Result(int nutritionGain, float saturationGain) {}
 

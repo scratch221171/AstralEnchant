@@ -1,38 +1,34 @@
-package net.scratch221171.astralenchant.client.gui.foodoverlay;
+package net.scratch221171.astralenchant.client.gui.food;
 
-import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.LayeredDraw;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import net.scratch221171.astralenchant.common.registry.AEAttributes;
-import net.scratch221171.astralenchant.compat.appleskin.client.AppetiteDisplayState;
 import net.scratch221171.astralenchant.config.ClientConfig;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
-public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
-
-    public static final AppetiteDisplayLayer INSTANCE = new AppetiteDisplayLayer();
+public final class NumericFoodDisplayRenderer {
 
     private static final ResourceLocation FOOD_FULL_SPRITE = ResourceLocation.withDefaultNamespace("hud/food_full");
     private static final ResourceLocation FOOD_EMPTY_SPRITE = ResourceLocation.withDefaultNamespace("hud/food_empty");
+    private static final ResourceLocation FOOD_FULL_HUNGER_SPRITE =
+            ResourceLocation.withDefaultNamespace("hud/food_full_hunger");
+    private static final ResourceLocation FOOD_EMPTY_HUNGER_SPRITE =
+            ResourceLocation.withDefaultNamespace("hud/food_empty_hunger");
 
     private static final int ICON_SIZE = 9;
     private static final float MIN_BLOCK_SCALE = 0.5f;
     private static final int MAX_BLOCK_WIDTH = 42;
 
-    private AppetiteDisplayLayer() {}
-
-    @Override
-    public void render(@NonNull GuiGraphics guiGraphics, @NonNull DeltaTracker deltaTracker) {
+    public static void render(@NonNull GuiGraphics guiGraphics) {
 
         Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
-        if (!isEnabled(player)) return;
-        if (!shouldRender(mc)) return;
+        if (player == null || !shouldRender(mc)) return;
 
         FoodData foodData = player.getFoodData();
 
@@ -46,9 +42,17 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
 
         DisplayText dt = buildDisplayText(foodLevel, cap);
         BlockLayout layout = drawScaledBlock(guiGraphics, dt.value(), dt.suffix(), right, top, null, 0xFFFFFF);
-        AppetiteDisplayState.anchorRightX = layout.nextAnchorX();
-        AppetiteDisplayState.anchorTopY = top;
-        AppetiteDisplayState.normalValueRightEdgeX = layout.valueRightEdgeX();
+        States.anchorRightX = layout.nextAnchorX();
+        States.anchorTopY = top;
+        States.normalValueRightEdgeX = layout.valueRightEdgeX();
+    }
+
+    public static boolean shouldRender(Minecraft mc) {
+        return isEnabled(mc.player)
+                && !mc.options.hideGui
+                && mc.gameMode != null
+                && mc.gameMode.canHurtPlayer()
+                && !(mc.player.getVehicle() != null && mc.player.getVehicle().showVehicleHealth());
     }
 
     public static boolean isEnabled(@Nullable Player player) {
@@ -69,13 +73,6 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
         guiGraphics.drawString(font, text, x, y - 1, black, false);
         guiGraphics.drawString(font, text, x, y + 1, black, false);
         guiGraphics.drawString(font, text, x, y, color, false);
-    }
-
-    static boolean shouldRender(Minecraft mc) {
-        if (mc.player != null
-                && mc.player.getVehicle() != null
-                && !mc.player.getVehicle().showVehicleHealth()) return false;
-        return mc.gameMode != null && mc.gameMode.canHurtPlayer();
     }
 
     public static String formatCount(int value) {
@@ -116,12 +113,15 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
         guiGraphics.pose().scale(scale, scale, 1.0f);
 
         int localIconX = -blockWidth;
-        guiGraphics.blitSprite(FOOD_EMPTY_SPRITE, localIconX, 0, ICON_SIZE, ICON_SIZE);
+        boolean hasHunger = mc.player != null && mc.player.hasEffect(MobEffects.HUNGER);
+        guiGraphics.blitSprite(
+                hasHunger ? FOOD_EMPTY_HUNGER_SPRITE : FOOD_EMPTY_SPRITE, localIconX, 0, ICON_SIZE, ICON_SIZE);
         // appleskin専用テクスチャ
         if (hiddenIconTexture != null) {
             guiGraphics.blit(hiddenIconTexture, localIconX, 0, 3 * ICON_SIZE, 0, ICON_SIZE, ICON_SIZE);
         } else {
-            guiGraphics.blitSprite(FOOD_FULL_SPRITE, localIconX, 0, ICON_SIZE, ICON_SIZE);
+            guiGraphics.blitSprite(
+                    hasHunger ? FOOD_FULL_HUNGER_SPRITE : FOOD_FULL_SPRITE, localIconX, 0, ICON_SIZE, ICON_SIZE);
         }
 
         int localTextX = localIconX + ICON_SIZE + 2;
@@ -136,10 +136,6 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
         return new BlockLayout(nextAnchorX, valueRightEdgeX);
     }
 
-    public record BlockLayout(int nextAnchorX, int valueRightEdgeX) {}
-
-    public record DisplayText(String value, String suffix) {}
-
     public static DisplayText buildDisplayText(int level, int cap) {
         if (ClientConfig.FoodLevelDisplay.PERCENTAGE_STYLE.getAsBoolean()) {
             return new DisplayText(String.valueOf(Math.round(level * 100f / cap)), "%");
@@ -147,4 +143,14 @@ public final class AppetiteDisplayLayer implements LayeredDraw.Layer {
         String suffix = ClientConfig.FoodLevelDisplay.SHOW_CAP.getAsBoolean() ? "/" + formatCount(cap) : "";
         return new DisplayText(formatCount(level), suffix);
     }
+
+    public static final class States {
+        public static int anchorRightX;
+        public static int anchorTopY;
+        public static int normalValueRightEdgeX;
+    }
+
+    public record BlockLayout(int nextAnchorX, int valueRightEdgeX) {}
+
+    public record DisplayText(String value, String suffix) {}
 }

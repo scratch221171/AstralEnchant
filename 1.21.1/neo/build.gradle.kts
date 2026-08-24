@@ -83,10 +83,6 @@ platformArtifacts {
         optional("curios")
         optional("clumps")
         optional("appleskin")
-        optional {
-            curseForge = "dependency-curseforge-slug"
-            modrinth = "dependency-modrinth-slug"
-        }
     }
 }
 

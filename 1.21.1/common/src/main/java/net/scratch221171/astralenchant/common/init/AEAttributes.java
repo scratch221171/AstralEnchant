@@ -7,7 +7,6 @@ import net.scratch221171.astralenchant.ID;
 import net.scratch221171.astralenchant.ModUtils;
 
 public class AEAttributes {
-    // neo側では使われないが、enchantmentのbuilderのために必要
     public static final ResourceKey<Attribute> COOLDOWN_DURATION =
             ResourceKey.create(Registries.ATTRIBUTE, ModUtils.loc(ID.COOLDOWN_DURATION));
 
