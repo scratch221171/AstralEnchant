@@ -7,6 +7,6 @@ import net.scratch221171.astralenchant.compat.curios.handler.CuriosExpanseHandle
 public class CuriosCompat {
     public static void registerCuriosEvents() {
         NeoForge.EVENT_BUS.addListener(CuriosEssenceOfEnchantmentHandler::addCurioAttribute);
-        NeoForge.EVENT_BUS.addListener(CuriosExpanseHandler::expandSlot);
+        NeoForge.EVENT_BUS.addListener(CuriosExpanseHandler::addModifier);
     }
 }

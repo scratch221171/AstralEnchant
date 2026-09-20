@@ -23,7 +23,6 @@ public class OverloadHandler {
             // StackOverFlow防止用のIS_CALCULATING
             IS_CALCULATING.set(true);
             try {
-                // 他のリスナーの変更も含めた最新の OVERLOAD レベルを安全に取得
                 bonus = event.getStack().getEnchantmentLevel(overload);
             } finally {
                 IS_CALCULATING.set(false);

@@ -114,7 +114,8 @@ public class ServerConfig {
         public static final class Expanse {
             private static final ConfigEntryBuilder BUILDER = new ConfigEntryBuilder();
 
-            public static final ConfigEntry.BooleanEntry STACKABLE = BUILDER.define(ConfigID.STACKABLE, false);
+            public static final ConfigEntry.BooleanEntry BASE_SLOTS_ONLY =
+                    BUILDER.define(ConfigID.BASE_SLOTS_ONLY, true);
 
             public static final ConfigEntries ENTRIES = BUILDER.build();
         }

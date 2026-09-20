@@ -188,9 +188,9 @@ public class AEEnglishLangProvider extends AELangProvider implements Modonomicon
                 "Converts blocks into items while preserving their block state, such as orientation.");
         addConfigWithDesc(ConfigID.BLACKLIST, "Blacklist", "Exclude from overload targets.");
         addConfigWithDesc(
-                ConfigID.STACKABLE,
-                "Can be stacked",
-                "You can increase the number of slots indefinitely by nesting them.");
+                ConfigID.BASE_SLOTS_ONLY,
+                "Works only in base slots",
+                "By disabling this, slots can be expanded indefinitely by nesting items.");
         addConfigWithDesc(
                 ConfigID.DISABLED_TAG,
                 "Removed Damage Tags",

@@ -24,7 +24,7 @@ public class ConfigID {
             // Overload
             BLACKLIST = "blacklist",
             // Expanse
-            STACKABLE = "stackable",
+            BASE_SLOTS_ONLY = "base_slots_only",
             // Reactive Armor
             DISABLED_TAG = "disabled_tag",
             // Curse Of Ignorance
