@@ -2,6 +2,7 @@ package net.scratch221171.astralenchant.compat.curios.handler;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import java.util.Optional;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -25,9 +26,9 @@ public final class CuriosExpanseHandler {
         if (level <= 0) return;
 
         if (ServerConfig.EnchantmentSettings.Expanse.BASE_SLOTS_ONLY.getAsBoolean()) {
-            int baseSize = CuriosApi.getSlot(
-                            slotContext.identifier(), slotContext.entity().level())
-                    .map(ISlotType::getSize)
+            int baseSize = Optional.ofNullable(slotContext.entity())
+                    .flatMap(entity -> CuriosApi.getSlot(slotContext.identifier(), entity.level())
+                            .map(ISlotType::getSize))
                     .orElse(0);
             if (slotContext.index() >= baseSize) return;
         }

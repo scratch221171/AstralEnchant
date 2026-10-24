@@ -39,7 +39,7 @@ public record ToggleEnchantmentPayload(int containerId, ResourceLocation enchant
             if (!(serverPlayer.containerMenu instanceof EnchantersWorkbenchMenu menu)) return;
 
             ResourceKey<Enchantment> key = ResourceKey.create(Registries.ENCHANTMENT, payload.enchantmentId());
-            menu.handleToggleRequest(serverPlayer, key);
+            menu.handleToggleRequest(key);
         });
     }
 }

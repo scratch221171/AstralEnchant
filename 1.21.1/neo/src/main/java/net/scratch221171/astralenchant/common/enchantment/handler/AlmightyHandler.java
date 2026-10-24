@@ -1,9 +1,11 @@
 package net.scratch221171.astralenchant.common.enchantment.handler;
 
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
+import net.minecraft.world.level.block.GameMasterBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.util.AEUtil;
@@ -48,5 +50,15 @@ public class AlmightyHandler {
             return tier.getSpeed();
         }
         return 1.0F;
+    }
+
+    public static float modifyDestroySpeed(float hardness, BlockState state, Player player) {
+        if (!ServerConfig.EnchantmentSettings.Almighty.CAN_BREAK_UNBREAKABLE.getAsBoolean()) return hardness;
+        if (hardness >= 0 || state.getBlock() instanceof GameMasterBlock) return hardness;
+
+        int level = AEUtil.getEnchantmentLevel(AEEnchantments.ALMIGHTY, player.getMainHandItem());
+        if (level < 4) return hardness; // lv1~3では岩盤は破壊不可
+
+        return (float) ServerConfig.EnchantmentSettings.Almighty.UNBREAKABLE_BLOCK_HARDNESS.getAsDouble();
     }
 }

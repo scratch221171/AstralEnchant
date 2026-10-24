@@ -47,7 +47,6 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
     private final ContainerLevelAccess access;
     private final boolean serverSide;
     private final DataSlot cost = DataSlot.standalone();
-    private final DataSlot canTakeOutput = DataSlot.standalone();
 
     public int getCost() {
         return this.cost.get();
@@ -136,7 +135,9 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
 
         updatingResult = true;
         try {
-            if (input.isEmpty() || pendingToggles.isEmpty()) {
+            if (input.isEmpty()
+                    || pendingToggles.isEmpty()
+                    || AEUtil.getEnchantmentLevel(AEEnchantments.CURSE_OF_ENCHANTMENT, input) > 0) {
                 this.resultSlots.setItem(OUTPUT_SLOT, ItemStack.EMPTY);
                 return;
             }
@@ -161,10 +162,9 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
     public static ItemStack applyToggles(
             ItemStack input, Set<ResourceKey<Enchantment>> toggles, HolderLookup.Provider provider) {
         ItemStack preview = input.copy();
-        boolean isBook = preview.is(Items.ENCHANTED_BOOK);
-        var component = isBook ? DataComponents.STORED_ENCHANTMENTS : DataComponents.ENCHANTMENTS;
+        var type = preview.is(Items.ENCHANTED_BOOK) ? DataComponents.STORED_ENCHANTMENTS : DataComponents.ENCHANTMENTS;
 
-        ItemEnchantments current = preview.getOrDefault(component, ItemEnchantments.EMPTY);
+        ItemEnchantments current = preview.getOrDefault(type, ItemEnchantments.EMPTY);
         DisabledEnchantments disabled =
                 preview.getOrDefault(AEDataComponents.DISABLED_ENCHANTMENTS.get(), DisabledEnchantments.EMPTY);
 
@@ -196,7 +196,7 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
             }
         }
 
-        preview.set(component, mutable.toImmutable());
+        preview.set(type, mutable.toImmutable());
         if (disabled.isEmpty()) {
             preview.remove(AEDataComponents.DISABLED_ENCHANTMENTS.get());
         } else {
@@ -205,7 +205,7 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
         return preview;
     }
 
-    public void handleToggleRequest(Player player, ResourceKey<Enchantment> key) {
+    public void handleToggleRequest(ResourceKey<Enchantment> key) {
         if (!this.serverSide) return;
 
         ItemStack input = this.inputSlots.getItem(INPUT_SLOT);
@@ -234,9 +234,8 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
     }
 
     private void resolveConflicts(ItemStack input, HolderLookup.Provider provider) {
-        boolean isBook = input.is(Items.ENCHANTED_BOOK);
-        var component = isBook ? DataComponents.STORED_ENCHANTMENTS : DataComponents.ENCHANTMENTS;
-        ItemEnchantments original = input.getOrDefault(component, ItemEnchantments.EMPTY);
+        var type = input.is(Items.ENCHANTED_BOOK) ? DataComponents.STORED_ENCHANTMENTS : DataComponents.ENCHANTMENTS;
+        ItemEnchantments original = input.getOrDefault(type, ItemEnchantments.EMPTY);
         var lookup = provider.lookupOrThrow(Registries.ENCHANTMENT);
 
         boolean affinityOriginallyEnabled = AEUtil.getEnchantmentLevel(AEEnchantments.AFFINITY, original) > 0;
@@ -311,9 +310,8 @@ public class EnchantersWorkbenchMenu extends AbstractContainerMenu {
         List<DisplayEntry> result = new ArrayList<>();
         if (stack.isEmpty()) return result;
 
-        boolean isBook = stack.is(Items.ENCHANTED_BOOK);
-        var component = isBook ? DataComponents.STORED_ENCHANTMENTS : DataComponents.ENCHANTMENTS;
-        ItemEnchantments current = stack.getTagEnchantments();
+        var type = stack.is(Items.ENCHANTED_BOOK) ? DataComponents.STORED_ENCHANTMENTS : DataComponents.ENCHANTMENTS;
+        ItemEnchantments current = stack.getOrDefault(type, ItemEnchantments.EMPTY);
         DisabledEnchantments disabled =
                 stack.getOrDefault(AEDataComponents.DISABLED_ENCHANTMENTS.get(), DisabledEnchantments.EMPTY);
         var lookup = provider.lookupOrThrow(Registries.ENCHANTMENT);

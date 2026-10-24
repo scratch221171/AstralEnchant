@@ -50,6 +50,23 @@ public class OverMendingHandler {
         }
     }
 
+    public static int consumeExtraDurability(ItemStack stack, int postUnbreakingDamage) {
+        if (postUnbreakingDamage <= 0) return postUnbreakingDamage;
+
+        int extra = stack.getOrDefault(AEDataComponents.EXTRA_DURABILITY, 0);
+        if (extra <= 0) return postUnbreakingDamage;
+
+        int consumed = Math.min(extra, postUnbreakingDamage);
+        int remaining = extra - consumed;
+        if (remaining > 0) {
+            stack.set(AEDataComponents.EXTRA_DURABILITY, remaining);
+        } else {
+            stack.remove(AEDataComponents.EXTRA_DURABILITY);
+        }
+
+        return postUnbreakingDamage - consumed;
+    }
+
     public static int maxExtra(int level) {
         return 100 * level * level;
     }

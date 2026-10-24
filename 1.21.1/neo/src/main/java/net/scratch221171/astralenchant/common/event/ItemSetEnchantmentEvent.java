@@ -7,18 +7,19 @@ import net.neoforged.bus.api.Event;
 import net.neoforged.bus.api.ICancellableEvent;
 
 /**
- * {@link ItemStack#set(DataComponentType, Object)}によってアイテムのエンチャントが変更される時に呼ばれます。
- * <br>
- * このイベントをキャンセルすると、エンチャントは変更されません。
- * <br>
- * このイベントは{@link net.scratch221171.astralenchant.mixin.ItemStackMixin}を通して呼ばれます。
- * <br>
+ * Called when an item's enchantments are about to be changed through
+ * {@link ItemStack#set(DataComponentType, Object)}.
+ * Cancelling this event prevents the enchantments from being changed.
  */
 public class ItemSetEnchantmentEvent extends Event implements ICancellableEvent {
 
     private final ItemStack stack;
-    private final ItemEnchantments enchantments;
+    private ItemEnchantments enchantments;
 
+    /**
+     * @param stack the item stack whose enchantments are about to be changed
+     * @param enchantments all enchantments the item will have after the event
+     */
     public ItemSetEnchantmentEvent(ItemStack stack, ItemEnchantments enchantments) {
         this.stack = stack;
         this.enchantments = enchantments;
@@ -30,5 +31,9 @@ public class ItemSetEnchantmentEvent extends Event implements ICancellableEvent 
 
     public ItemEnchantments getEnchantments() {
         return enchantments;
+    }
+
+    public void setEnchantments(ItemEnchantments enchantments) {
+        this.enchantments = enchantments;
     }
 }

@@ -1,6 +1,7 @@
 package net.scratch221171.astralenchant.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
@@ -22,10 +23,10 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.extensions.IItemStackExtension;
 import net.scratch221171.astralenchant.common.enchantment.handler.AlmightyHandler;
 import net.scratch221171.astralenchant.common.enchantment.handler.EssenceOfEnchantmentHandler;
+import net.scratch221171.astralenchant.common.enchantment.handler.OverMendingHandler;
 import net.scratch221171.astralenchant.common.event.ItemSetEnchantmentEvent;
 import net.scratch221171.astralenchant.common.init.AEEnchantments;
 import net.scratch221171.astralenchant.common.item.AEArmorItem;
-import net.scratch221171.astralenchant.common.registry.AEDataComponents;
 import net.scratch221171.astralenchant.common.util.AEUtil;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
@@ -43,7 +44,7 @@ public abstract class ItemStackMixin implements IItemStackExtension {
             method = "forEachModifier(Lnet/minecraft/world/entity/EquipmentSlot;Ljava/util/function/BiConsumer;)V",
             at = @At("HEAD"),
             argsOnly = true)
-    private BiConsumer<Holder<Attribute>, AttributeModifier> wrap(
+    private BiConsumer<Holder<Attribute>, AttributeModifier> astralenchant$wrap(
             BiConsumer<Holder<Attribute>, AttributeModifier> original, EquipmentSlot slot) {
         return (attr, mod) -> {
             ItemStack self = (ItemStack) (Object) this;
@@ -59,7 +60,7 @@ public abstract class ItemStackMixin implements IItemStackExtension {
             method = "forEachModifier(Lnet/minecraft/world/entity/EquipmentSlotGroup;Ljava/util/function/BiConsumer;)V",
             at = @At("HEAD"),
             argsOnly = true)
-    private BiConsumer<Holder<Attribute>, AttributeModifier> wrap(
+    private BiConsumer<Holder<Attribute>, AttributeModifier> astralenchant$wrap(
             BiConsumer<Holder<Attribute>, AttributeModifier> original, EquipmentSlotGroup slotGroup) {
         return (attr, mod) -> {
             ItemStack self = (ItemStack) (Object) this;
@@ -71,23 +72,25 @@ public abstract class ItemStackMixin implements IItemStackExtension {
     }
 
     @SuppressWarnings("unchecked")
-    @Inject(method = "set", at = @At("HEAD"), cancellable = true)
-    private <T> void astralenchant$onEnchanted(
-            DataComponentType<? super T> type, T value, CallbackInfoReturnable<T> cir) {
-        if (!(type == DataComponents.ENCHANTMENTS && value instanceof ItemEnchantments enchantments)) return;
-
-        var stack = (ItemStack) (Object) this;
-
-        var event = new ItemSetEnchantmentEvent(stack, enchantments);
-        if (NeoForge.EVENT_BUS.post(event).isCanceled()) {
-            cir.setReturnValue((T) stack.get(DataComponents.ENCHANTMENTS));
+    @WrapMethod(method = "set")
+    private <T> T astralenchant$onEnchanted(DataComponentType<? super T> type, T value, Operation<T> original) {
+        if (type != DataComponents.ENCHANTMENTS || !(value instanceof ItemEnchantments enchantments)) {
+            return original.call(type, value);
         }
+
+        var self = (ItemStack) (Object) this;
+        var event = new ItemSetEnchantmentEvent(self, enchantments);
+
+        if (NeoForge.EVENT_BUS.post(event).isCanceled()) {
+            return (T) self.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
+        }
+
+        return original.call(type, event.getEnchantments());
     }
 
     @Inject(method = "isCorrectToolForDrops", at = @At("HEAD"), cancellable = true)
     private void astralenchant$forceCorrectTool(BlockState state, CallbackInfoReturnable<Boolean> cir) {
-        var self = (ItemStack) (Object) this;
-        if (AlmightyHandler.isAlmightyCorrectTool(self, state)) {
+        if (AlmightyHandler.isAlmightyCorrectTool((ItemStack) (Object) this, state)) {
             cir.setReturnValue(true);
         }
     }
@@ -95,9 +98,8 @@ public abstract class ItemStackMixin implements IItemStackExtension {
     @Inject(method = "getDestroySpeed", at = @At("RETURN"), cancellable = true)
     private void astralenchant$virtualSpeed(BlockState state, CallbackInfoReturnable<Float> cir) {
         var self = (ItemStack) (Object) this;
-        if (AEUtil.getEnchantmentLevel(AEEnchantments.ALMIGHTY, self) <= 0) return;
-
-        if (!(self.getItem() instanceof TieredItem tiered)) return;
+        if (!(AEUtil.getEnchantmentLevel(AEEnchantments.ALMIGHTY, self) > 0
+                && self.getItem() instanceof TieredItem tiered)) return;
 
         float virtual = AlmightyHandler.getVirtualDestroySpeed(tiered.getTier(), state);
         cir.setReturnValue(Math.max(cir.getReturnValue(), virtual));
@@ -148,20 +150,6 @@ public abstract class ItemStackMixin implements IItemStackExtension {
                             target =
                                     "Lnet/minecraft/world/item/enchantment/EnchantmentHelper;processDurabilityChange(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;I)I"))
     private int astralenchant$consumeExtraDurability(int postUnbreakingDamage) {
-        var self = (ItemStack) (Object) this;
-        if (postUnbreakingDamage <= 0) return postUnbreakingDamage;
-
-        int extra = self.getOrDefault(AEDataComponents.EXTRA_DURABILITY, 0);
-        if (extra <= 0) return postUnbreakingDamage;
-
-        int consumed = Math.min(extra, postUnbreakingDamage);
-        int remaining = extra - consumed;
-        if (remaining > 0) {
-            self.set(AEDataComponents.EXTRA_DURABILITY, remaining);
-        } else {
-            self.remove(AEDataComponents.EXTRA_DURABILITY);
-        }
-
-        return postUnbreakingDamage - consumed;
+        return OverMendingHandler.consumeExtraDurability((ItemStack) (Object) this, postUnbreakingDamage);
     }
 }
