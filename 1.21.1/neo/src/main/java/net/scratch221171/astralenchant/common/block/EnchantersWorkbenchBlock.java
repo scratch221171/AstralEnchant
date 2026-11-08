@@ -28,22 +28,20 @@ public class EnchantersWorkbenchBlock extends Block {
     }
 
     @Override
+    protected MenuProvider getMenuProvider(@NonNull BlockState state, @NonNull Level level, @NonNull BlockPos pos) {
+        return new SimpleMenuProvider(
+                (id, inv, player) -> new EnchantersWorkbenchMenu(id, inv, ContainerLevelAccess.create(level, pos)),
+                Component.translatable("container.astralenchant.enchanters_workbench"));
+    }
+
+    @Override
     protected @NonNull InteractionResult useWithoutItem(
             @NonNull BlockState state,
             Level level,
             @NonNull BlockPos pos,
             @NonNull Player player,
-            @NonNull BlockHitResult hitResult) {
-        if (!level.isClientSide) {
-            player.openMenu(this.getMenuProvider(level, pos));
-        }
+            @NonNull BlockHitResult hit) {
+        if (!level.isClientSide) player.openMenu(state.getMenuProvider(level, pos));
         return InteractionResult.SUCCESS;
-    }
-
-    private MenuProvider getMenuProvider(Level level, BlockPos pos) {
-        return new SimpleMenuProvider(
-                (containerId, inventory, p) ->
-                        new EnchantersWorkbenchMenu(containerId, inventory, ContainerLevelAccess.create(level, pos)),
-                Component.translatable("container.astralenchant.enchanters_workbench"));
     }
 }
